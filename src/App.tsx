@@ -1,10 +1,10 @@
 import "./App.css";
-import ExampleComponent from "./components/ExampleComponent"
+import Collaborators from "./components/Collaborators";
 
 function App() {
   return (
     <>
-      <ExampleComponent />
+      <Collaborators />
     </>
   );
 }
