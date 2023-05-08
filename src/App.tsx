@@ -1,12 +1,15 @@
 import "./App.css";
-import ExampleComponent from "./components/ExampleComponent"
+import HeaderComponent from "./components/HeaderComponent";
+// import ExampleComponent from "./components/ExampleComponent";
 
 function App() {
   return (
     <>
-      <ExampleComponent />
+      {/* <ExampleComponent /> */}
+      <HeaderComponent />
     </>
   );
 }
 
 export default App;
+
