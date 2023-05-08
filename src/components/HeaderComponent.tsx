@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import logo from '../images/ITA_header_logo.png';
+import castellano from '../images/castellano.png';
+import catala from '../images/catala.png';
+import english from '../images/english.png';
+import selector from '../images/sel_right.png';
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -10,11 +15,12 @@ const Header = () => {
     <header className="fixed top-4 left-3 right-3 z-50 bg-transparent flex justify-between items-center py-4 px-6">
       {/* Logo */}
       <div className="flex-shrink-0">
-        <img src="../../public/images/ITA_header_logo.png" alt="logo" className="scale-90" />
+        <img src={logo} alt="logo" className="scale-90" />
       </div>
 
       {/* Idiomas + Botón Entrar */}
       <div className="flex-grow flex justify-end items-center">
+
         {/* Botón Desplegable Idiomas */}
         <div className="relative mr-10" style={{ borderRadius: '10px', border: '1px solid #7E7E7E' }}>
           <div className="relative" style={{ borderRadius: '10px', border: '1px solid #7E7E7E' }}>
@@ -33,6 +39,7 @@ const Header = () => {
                 </svg>
               </div>
             </div>
+            
             {/* Tabla Idiomas (links) */}
             <ul className={`absolute right-0 top-full mt-6 w-80 rounded-xl bg-white border-2 border-gray-300 ${isDropdownOpen ? '' : 'hidden'}`}>
               <li className="flex items-center px-8 py-8 hover:bg-gray-200 flex-row">
@@ -41,7 +48,7 @@ const Header = () => {
                     Català
                   </div>
                 </div>
-                <img src="../../public/images/catala.png" alt="bandera Cat" className="h-53 w-53 scale-90 ml-4 flex-none" />
+                <img src={catala} alt="bandera Cat" className="h-53 w-53 scale-90 ml-4 flex-none" />
               </li>
               <li className="flex items-center px-8 py-8 hover:bg-gray-200 border-t border-gray-300 flex-row">
                 <div className="text-left flex-grow">
@@ -49,7 +56,7 @@ const Header = () => {
                     Castellano
                   </div>
                 </div>
-                <img src="../../public/images/castellano.png" alt="bandera Esp" className="h-53 w-53 scale-90 ml-4 flex-none" />
+                <img src={castellano} alt="bandera Esp" className="h-53 w-53 scale-90 ml-4 flex-none" />
               </li>
               <li className="flex items-center px-8 py-8 hover:bg-gray-200 border-t border-gray-300 flex-row">
                 <div className="text-left flex-grow">
@@ -57,7 +64,7 @@ const Header = () => {
                     English
                   </div>
                 </div>
-                <img src="../../public/images/english.png" alt="bandera Eng" className="h-53 w-53 scale-90 ml-4 flex-none" />
+                <img src={english} alt="bandera Eng" className="h-53 w-53 scale-90 ml-4 flex-none" />
               </li>
             </ul>
           </div>
@@ -66,7 +73,7 @@ const Header = () => {
         {/* Botón Entrar */}
         <button className="bg-transparent px-4 py-6 flex items-center" style={{ borderRadius: '10px', border: '1px solid black' }}>
           <div className="ml-8">
-            <img src="../../public/images/sel_right.png" className="h-8 w-8" />
+            <img src={selector} className="h-8 w-8" />
           </div>
           <span className="text-black font-bold ml-6 mr-8 text-2xl">Entrar</span>
         </button>
