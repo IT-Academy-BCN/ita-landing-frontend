@@ -1,6 +1,6 @@
 import "./App.css";
 import ExampleComponent from "./components/ExampleComponent"
-import TeamSectionComponent from "./components/teamSectionComponent"
+import TeamSectionComponent from "./components/teamSection/TeamSectionComponent"
 
 function App() {
   return (
