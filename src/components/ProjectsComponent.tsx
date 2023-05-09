@@ -1,5 +1,5 @@
 import curvedArrow from "../img/curvedArrow.svg";
-import { FaRegCircle } from "react-icons/fa";
+import { FaRegCircle, FaArrowRight } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
 const ProjectsComponent = () => (
@@ -52,7 +52,7 @@ const ProjectsComponent = () => (
               </p>
               <div className="card-actions justify-center">
                 <button className="btn btn-block btn-outline bg-base-100 border-none normal-case gap-2">
-                  Ir a app <i className="fa-solid fa-arrow-right"></i>
+                  Ir a app <FaArrowRight />
                 </button>
               </div>
             </div>
@@ -67,7 +67,7 @@ const ProjectsComponent = () => (
               </p>
               <div className="card-actions justify-center">
                 <button className="btn btn-block btn-outline bg-base-100 border-none normal-case gap-2">
-                  Ir a app <i className="fa-solid fa-arrow-right"></i>
+                  Ir a app <FaArrowRight />
                 </button>
               </div>
             </div>
@@ -82,7 +82,7 @@ const ProjectsComponent = () => (
               </p>
               <div className="card-actions justify-center">
                 <button className="btn btn-block btn-outline bg-base-100 border-none normal-case gap-2">
-                  Ir a app <i className="fa-solid fa-arrow-right"></i>
+                  Ir a app <FaArrowRight />
                 </button>
               </div>
             </div>
@@ -97,7 +97,7 @@ const ProjectsComponent = () => (
               </p>
               <div className="card-actions justify-center">
                 <button className="btn btn-block btn-outline bg-base-100 border-none normal-case gap-2">
-                  Ir a app <i className="fa-solid fa-arrow-right"></i>
+                  Ir a app <FaArrowRight />
                 </button>
               </div>
             </div>
@@ -112,7 +112,7 @@ const ProjectsComponent = () => (
               </p>
               <div className="card-actions justify-center">
                 <button className="btn btn-block btn-outline bg-base-100 border-none normal-case gap-2">
-                  Ir a app <i className="fa-solid fa-arrow-right"></i>
+                  Ir a app <FaArrowRight />
                 </button>
               </div>
             </div>
@@ -127,7 +127,7 @@ const ProjectsComponent = () => (
               </p>
               <div className="card-actions justify-center">
                 <button className="btn btn-block btn-outline bg-base-100 border-none normal-case gap-2">
-                  Ir a app <i className="fa-solid fa-arrow-right"></i>
+                  Ir a app <FaArrowRight />
                 </button>
               </div>
             </div>
