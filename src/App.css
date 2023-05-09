@@ -44,3 +44,10 @@
 .read-the-docs {
   color: #888;
 }
+
+
+/*Customize DaisyUI card style*/
+.card-title {
+  @apply text-projects-title;
+
+}
