@@ -54,4 +54,9 @@
 .card-title {
   @apply text-projects-title;
 
+} 
+
+.card-body {
+  padding: 0px;
+  text-align: left;
 }

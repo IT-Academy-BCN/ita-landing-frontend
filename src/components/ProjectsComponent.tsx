@@ -16,7 +16,7 @@ const ProjectsComponent = () => (
         </div>
         {/* Projects legend*/}
         <div className="grid grid-cols-6 p-5 justify-items-center mr-14">
-          <div className="col-start-4">
+          <div className="col-start-4 flex items-center gap-2">
             <IconContext.Provider
               value={{ color: "#bedfc8", className: "global-class-name" }}
             >
@@ -24,14 +24,14 @@ const ProjectsComponent = () => (
               Terminadas
             </IconContext.Provider>
           </div>
-          <div>
+          <div className="flex items-center gap-2">
             <IconContext.Provider
               value={{ color: "#f8e9b9", className: "global-class-name" }}
             >
               <FaRegCircle /> En construcción
             </IconContext.Provider>
           </div>
-          <div>
+          <div className = "flex items-center gap-2">
             <IconContext.Provider
               value={{ color: "#f7cbc4", className: "global-class-name" }}
             >
