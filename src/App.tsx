@@ -1,13 +1,12 @@
 import "./App.css";
-// import ExampleComponent from "./components/ExampleComponent";
-import HeaderComponent from "./components/HeaderComponent";
 import TeamSectionComponent from "./components/teamSection/TeamSectionComponent"
-
+import SloganComponent from "./components/SloganComponent"
+import HeaderComponent from "./components/HeaderComponent"
 function App() {
   return (
     <>
-      {/* <ExampleComponent /> */}
       <HeaderComponent />
+      <SloganComponent />
       <TeamSectionComponent />
     </>
   );
