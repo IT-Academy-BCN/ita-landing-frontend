@@ -32,7 +32,7 @@ const CardComponent = ({ pos, imgSrc1, imgSrc2, title, description, buttonText }
                     )}
                 </div>
                 <div className="flex justify-center items-center p-3 h-1/5">
-                    <p className="text-center font-poppins font-medium text-2xl text-black">{title}</p>
+                    <p className="text-center font-medium text-2xl text-black">{title}</p>
                 </div>
                 <a href="#" className="overlay absolute inset-0 flex flex-col m-[45px] mt-[75px] h-4/5 overflow-hidden opacity-0 text-left hover:opacity-100" style={{ backgroundColor: "#F0F0F0" }}>
                     {paragraphs.map((paragraphs, index) => (
