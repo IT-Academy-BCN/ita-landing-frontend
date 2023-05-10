@@ -1,13 +1,13 @@
 import "./App.css";
+import TeamSectionComponent from "./components/teamSection/TeamSectionComponent"
 import SloganComponent from "./components/SloganComponent"
-import HeaderComponent from "./components/HeaderComponent";
-// import ExampleComponent from "./components/ExampleComponent";
-
+import HeaderComponent from "./components/HeaderComponent"
 function App() {
   return (
     <>
-      <SloganComponent />
       <HeaderComponent />
+      <SloganComponent />
+      <TeamSectionComponent />
     </>
   );
 }
