@@ -24,11 +24,11 @@ const CardComponent = ({ pos, imgSrc1, imgSrc2, title, description, buttonText }
                 <div className="relative flex items-center justify-center p-2 h-4/6">
                     {imgSrc2 ? (
                         <>
-                            <img className="absolute -translate-x-7 -translate-y-10 max-h-24 h-3/4 z-10" src={imgSrc1} alt="Logo"></img>
-                            <img className="absolute translate-x-8 translate-y-4 max-h-24 h-3/4 z-0" src={imgSrc2} alt="Logo"></img>
+                            <img className="absolute -translate-x-7 -translate-y-6 max-h-24 h-3/4 z-10" src={imgSrc1} alt="Logo"></img>
+                            <img className="absolute translate-x-7 translate-y-6 max-h-24 h-3/4 z-0" src={imgSrc2} alt="Logo"></img>
                         </>
                     ) : (
-                        <img className="min-h-32 -translate-y-3 max-h-36" src={imgSrc1} alt="Logo"></img>
+                        <img className="min-h-32 max-h-36" src={imgSrc1} alt="Logo"></img>
                     )}
                 </div>
                 <div className="flex justify-center items-start h-1/6">
