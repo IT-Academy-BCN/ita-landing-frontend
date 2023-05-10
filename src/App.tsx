@@ -1,5 +1,5 @@
 import "./App.css";
-import Footer from "./components/footer"
+import Footer from "./components/Footer";
 import ExampleComponent from "./components/ExampleComponent";
 
 function App() {
