@@ -1,14 +1,20 @@
 import "./App.css";
-import ExampleComponent from "./components/ExampleComponent"
-import ProjectsComponent from "./components/ProjectsComponent"
 
+import TeamSectionComponent from "./components/teamSection/TeamSectionComponent"
+import SloganComponent from "./components/SloganComponent"
+import HeaderComponent from "./components/HeaderComponent"
+import ProjectsComponent from "./components/ProjectsComponent"
+      
 function App() {
   return (
     <>
-      <ExampleComponent />
+      <HeaderComponent />
+      <SloganComponent />
+      <TeamSectionComponent />
       <ProjectsComponent />
     </>
   );
 }
 
 export default App;
+
