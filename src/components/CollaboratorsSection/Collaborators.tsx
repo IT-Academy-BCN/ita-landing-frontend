@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Card from "./CollaboratorsCard";
+import CollaboratorsModal from "../Modals/CollaboratorsModal";
 
 
 function Collaborators() {
@@ -34,7 +35,9 @@ function Collaborators() {
         </div>
         </div>
         <div className="flex justify-end my-5 mr-10">
-            <a className="font-bold text-[#025E7E] active:underline " href="">{VT}</a>
+            {/* <a className="font-bold text-[#025E7E] active:underline " href="">{VT}</a> */}
+            <label htmlFor="CollaboratorsModal" className="font-bold text-[#025E7E] active:underline hover:text-purple-600 hover:cursor-pointer">{VT}</label>
+            <CollaboratorsModal />
         </div>
         <div>
             {active === "AngularCard" && <Card title="Angular" />}
