@@ -1,14 +1,16 @@
 import "./App.css";
-import Footer from "./components/footer"
-import ExampleComponent from "./components/ExampleComponent";
-
+import TeamSectionComponent from "./components/teamSection/TeamSectionComponent"
+import SloganComponent from "./components/SloganComponent"
+import HeaderComponent from "./components/HeaderComponent"
 function App() {
   return (
     <>
-      <ExampleComponent />
-      <Footer />
+      <HeaderComponent />
+      <SloganComponent />
+      <TeamSectionComponent />
     </>
   );
 }
 
 export default App;
+

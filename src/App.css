@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 .logo {
