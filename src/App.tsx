@@ -1,13 +1,15 @@
 import "./App.css";
+import TeamSectionComponent from "./components/teamSection/TeamSectionComponent"
+import SloganComponent from "./components/SloganComponent"
+import HeaderComponent from "./components/HeaderComponent"
 import Footer from "./components/Footer";
-import ExampleComponent from "./components/ExampleComponent";
-import Header from "./components/HeaderComponent";
 
 function App() {
   return (
     <>
-      <Header />
-      <ExampleComponent />
+      <HeaderComponent />
+      <SloganComponent />
+      <TeamSectionComponent />
       <Footer />
     </>
   );
