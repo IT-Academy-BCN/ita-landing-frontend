@@ -48,3 +48,15 @@
 .read-the-docs {
   color: #888;
 }
+
+
+/*Customize DaisyUI card style*/
+.card-title {
+  @apply text-projects-title;
+
+} 
+
+.card-body {
+  padding: 0px;
+  text-align: left;
+}
