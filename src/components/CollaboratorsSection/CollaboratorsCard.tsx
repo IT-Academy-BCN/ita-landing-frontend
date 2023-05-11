@@ -1,4 +1,4 @@
-const Card = ({title}: {title: string}) => {
+const CollaboratorsCard = ({title}: {title: string}) => {
     return (
         <div className="card">
             <p>{title}</p>
@@ -6,4 +6,4 @@ const Card = ({title}: {title: string}) => {
     )
 }
 
-export default Card;
+export default CollaboratorsCard;

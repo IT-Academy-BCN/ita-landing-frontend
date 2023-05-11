@@ -1,5 +1,5 @@
 import "./App.css";
-import Collaborators from "./components/Collaborators";
+import Collaborators from "./components/CollaboratorsSection/Collaborators";
 import HeaderComponent from "./components/HeaderComponent";
 
 
