@@ -15,8 +15,8 @@ const ProjectsComponent = () => (
           </h2>
         </div>
         {/* Projects legend*/}
-        <div className="grid grid-cols-6 p-5 justify-items-center mr-14">
-          <div className="col-start-4 flex items-center gap-2">
+        <div className="flex flex-col md:flex-row lg:justify-end justify-center m-7 gap-4">
+          <div className="flex justify-center items-center gap-2">
             <IconContext.Provider
               value={{ color: "#bedfc8", className: "global-class-name" }}
             >
@@ -24,14 +24,14 @@ const ProjectsComponent = () => (
               Terminadas
             </IconContext.Provider>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex justify-center items-center gap-2">
             <IconContext.Provider
               value={{ color: "#f8e9b9", className: "global-class-name" }}
             >
               <FaRegCircle /> En construcción
             </IconContext.Provider>
           </div>
-          <div className = "flex items-center gap-2">
+          <div className = "flex justify-center items-center gap-2">
             <IconContext.Provider
               value={{ color: "#f7cbc4", className: "global-class-name" }}
             >
@@ -43,7 +43,7 @@ const ProjectsComponent = () => (
         {/*Cards*/}
         <div className="flex flex-wrap gap-7 justify-center">
           {/*Card 1*/}
-          <div className="card w-96 bg-completed text-grey-it">
+          <div className="card w-80 bg-completed text-grey-it">
             <div className="card-body">
               <h2 className="card-title">Wiki</h2>
               <p>
@@ -58,7 +58,7 @@ const ProjectsComponent = () => (
             </div>
           </div>
           {/*Card 2*/}
-          <div className="card w-96 bg-completed text-grey-it">
+          <div className="card w-80 bg-completed text-grey-it">
             <div className="card-body">
               <h2 className="card-title">Challenges & Hackathons</h2>
               <p>
@@ -73,7 +73,7 @@ const ProjectsComponent = () => (
             </div>
           </div>
           {/*Card 3*/}
-          <div className="card w-96 bg-building text-grey-it">
+          <div className="card w-80 bg-building text-grey-it">
             <div className="card-body">
               <h2 className="card-title">Game!</h2>
               <p>
@@ -88,7 +88,7 @@ const ProjectsComponent = () => (
             </div>
           </div>
           {/*Card 4*/}
-          <div className="card w-96 bg-building text-grey-it">
+          <div className="card w-80 bg-building text-grey-it">
             <div className="card-body">
               <h2 className="card-title">ITA Profiles</h2>
               <p>
@@ -103,7 +103,7 @@ const ProjectsComponent = () => (
             </div>
           </div>
           {/*Card 5*/}
-          <div className="card w-96 bg-soon text-grey-it">
+          <div className="card w-80 bg-soon text-grey-it">
             <div className="card-body">
               <h2 className="card-title">Reports</h2>
               <p>
@@ -118,7 +118,7 @@ const ProjectsComponent = () => (
             </div>
           </div>
           {/*Card 6*/}
-          <div className="card w-96 bg-soon text-grey-it">
+          <div className="card w-80 bg-soon text-grey-it">
             <div className="card-body">
               <h2 className="card-title">ITA Brain</h2>
               <p>
