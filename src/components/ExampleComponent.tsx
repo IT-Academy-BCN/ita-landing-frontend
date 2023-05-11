@@ -1,6 +1,14 @@
+import { useEffect, useState } from "react";
 
-const ExampleComponent = () => (
-    <h1>🔥 Hola 🔥</h1>
-)
+const ExampleComponent = () => {
+  const [name, setName] = useState("initial Luis");
 
-export default ExampleComponent; 
+  useEffect(() => {
+    // Lógica que se ejecuta
+    setName("nueva variable cambiada en el useEffect")
+  }, []);
+
+  return <h1>🔥 Hoola: {name} 🔥</h1>;
+};
+
+export default ExampleComponent;
