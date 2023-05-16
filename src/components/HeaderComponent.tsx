@@ -5,6 +5,7 @@ import catala from "../images/catala.png";
 import english from "../images/english.png";
 import selector from "../images/sel_right.png";
 import menu from "../images/menu.png";
+import RegistrationModal from "./RegistrationModal";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -191,10 +192,13 @@ const Header = () => {
                     Entrar
                   </span>
                 </button>
+                
               </li>
             </ul>
           )}
         </div>
+          {/* <label htmlFor="RegistrationModal" className="font-bold text-[#025E7E] active:underline hover:text-purple-600 hover:cursor-pointer">test</label>
+          <RegistrationModal /> */}
       </div>
     </header>
   );
