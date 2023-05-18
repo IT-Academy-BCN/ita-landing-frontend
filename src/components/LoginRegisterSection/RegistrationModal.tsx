@@ -1,3 +1,6 @@
+import PasswordInput from "./PasswordInput";
+
+
 function RegistrationModal() {
   return (
     <>
@@ -19,10 +22,9 @@ function RegistrationModal() {
             <form action="" method="post">
             <input type="text" name="dni" placeholder="DNI o NIE" className="my-1.5 input input-bordered w-[85%] max-w-xs text-base" />
             <input type="text" name="email" placeholder="Email" className="my-1.5 input input-bordered w-[85%] max-w-xs text-base" />
-            <input type="password" name="password" placeholder="Contraseña" className="my-1.5 input input-bordered w-[85%] max-w-xs text-base" />
-            <input type="password" name="repeatPassword" placeholder="Repetir contraseña" className="my-1.5 input input-bordered w-[85%] max-w-xs text-base" />
-            <input type="password" name="adminCode" placeholder="Código administrador" className="my-1.5 input input-bordered w-[85%] max-w-xs text-base" />
-
+            <PasswordInput inputName="password" inputPlaceholder="Contraseña" />
+            <PasswordInput inputName="repeatPassword" inputPlaceholder="Repetir contraseña" />
+            <PasswordInput inputName="adminCode" inputPlaceholder="Código administrador" />
 
               <div className="modal-action flex justify-center">
                 <button
