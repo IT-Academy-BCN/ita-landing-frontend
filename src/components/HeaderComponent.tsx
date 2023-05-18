@@ -5,7 +5,7 @@ import catala from "../images/catala.png";
 import english from "../images/english.png";
 import selector from "../images/sel_right.png";
 import menu from "../images/menu.png";
-import RegistrationModal from "./RegistrationModal";
+import LoginModal from "./LoginRegisterSection/LoginModal";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -191,14 +191,18 @@ const Header = () => {
                   <span className="text-black font-bold ml-6 mr-16 mt-4 mb-4 text-2xl">
                     Entrar
                   </span>
+                  <LoginModal />
                 </button>
-                
               </li>
             </ul>
+            
           )}
+          
         </div>
-          {/* <label htmlFor="RegistrationModal" className="font-bold text-[#025E7E] active:underline hover:text-purple-600 hover:cursor-pointer">test</label>
-          <RegistrationModal /> */}
+        <label htmlFor="LoginModal" className="text-black font-bold ml-6 mr-16 mt-4 mb-4 text-2xl">
+            Test sdfgg
+          </label>
+          <LoginModal /> 
       </div>
     </header>
   );
