@@ -1,3 +1,4 @@
+import PasswordInput from "./PasswordInput";
 import RegistrationModal from "./RegistrationModal";
 
 function LoginModal() {
@@ -20,7 +21,7 @@ function LoginModal() {
             <div>
               <form action="" method="post">
               <input type="text" name="dni" placeholder="DNI o NIE" className="my-1.5 input input-bordered w-[85%] max-w-xs text-base" />
-              <input type="password" name="password" placeholder="Contraseña" className="my-1.5 input input-bordered w-[85%] max-w-xs text-base" />
+              <PasswordInput inputName="password" inputPlaceholder="Contraseña" />
             
               <div className="flex justify-end">
                 <a href="#" className="text-white text-base mr-6 mt-5 mb-8 underline hover:text-purple-600 hover:cursor-pointer">Recordar/cambiar contraseña</a>
