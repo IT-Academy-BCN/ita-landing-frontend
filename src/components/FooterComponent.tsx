@@ -12,16 +12,16 @@ const Footer = () => (
         />
       </div>
       <div className="flex justify-center mt-10 font-semibold">
-        <a className="mx-5 text-white hover:text-purple-600" href="https://www.barcelonactiva.cat/es/inicio">Barcelona Activa</a>
-        <a className="mx-5 text-white hover:text-purple-600" href="https://www.barcelonactiva.cat/es/itacademy">IT Academy</a>
-        <a className="mx-5 text-white hover:text-purple-600" href="">¿Cómo colaborar?</a>
-        <label htmlFor="NormativaModal" className="mx-5 text-white hover:text-purple-600 hover:cursor-pointer">Normativa</label>
+        <a className="link link-hover mx-5 text-[#ffffff] hover:text-[#ffffff]" href="https://www.barcelonactiva.cat/es/inicio">Barcelona Activa</a>
+        <a className="link link-hover mx-5 text-[#ffffff] hover:text-[#ffffff]" href="https://www.barcelonactiva.cat/es/itacademy">IT Academy</a>
+        <a className="link link-hover mx-5 text-[#ffffff] hover:text-[#ffffff]" href="">¿Cómo colaborar?</a>
+        <label htmlFor="NormativaModal" className="mx-5 text-white hover:text-purple-600 hover:cursor-pointer hover:underline">Normativa</label>
         <NormativaModal />
       </div>
       <div className="flex justify-center mt-20 font-medium pb-3">
-        <a className="mx-7 text-white hover:text-purple-600" href="">Términos</a>
-        <a className="mx-7 text-white hover:text-purple-600" href="">Privacidad</a>
-        <a className="mx-7 text-white hover:text-purple-600" href="">Cookies</a>
+        <a className="link link-hover mx-5 text-[#ffffff] hover:text-[#ffffff]" href="">Términos</a>
+        <a className="link link-hover mx-5 text-[#ffffff] hover:text-[#ffffff]" href="">Privacidad</a>
+        <a className="link link-hover mx-5 text-[#ffffff] hover:text-[#ffffff]" href="">Cookies</a>
       </div>
     </div>
   </div>
