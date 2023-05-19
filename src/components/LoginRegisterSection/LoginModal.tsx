@@ -24,7 +24,7 @@ function LoginModal() {
               <PasswordInput inputName="password" inputPlaceholder="Contraseña" />
             
               <div className="flex justify-end">
-                <a href="#" className="text-white text-base mr-6 mt-5 mb-8 underline hover:text-purple-600 hover:cursor-pointer">Recordar/cambiar contraseña</a>
+                <a href="#" className="text-[#ffffff] hover:text-[#ffffff] text-base mr-6 mt-5 mb-8 underline hover:text-purple-600 hover:cursor-pointer">Recordar/cambiar contraseña</a>
               </div>
   
                 <div className="modal-action flex justify-center">
