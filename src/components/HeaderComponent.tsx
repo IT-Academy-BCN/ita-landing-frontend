@@ -103,15 +103,19 @@ const Header = () => {
           style={{ borderRadius: "10px", border: "1px solid black" }}
         >
           <button
-            className="bg-transparent px-4 py-6 flex items-center"
+            className="bg-transparent px-1 py-3 flex items-center"
             style={{ borderRadius: "10px", border: "1px solid black" }}
           >
             <div className="ml-8">
               <img src={selector} className="h-8 w-8" />
             </div>
-            <span className="text-black font-bold ml-6 mr-8 text-2xl">
+            <label
+              htmlFor="LoginModal"
+              className="text-black hover:cursor-pointer font-bold ml-6 mr-16 mt-4 mb-4 text-2xl"
+            >
               Entrar
-            </span>
+            </label>
+            <LoginModal />
           </button>
         </div>
 
@@ -188,21 +192,18 @@ const Header = () => {
                   <div className="ml-16 mt-4 mb-4">
                     <img src={selector} className="h-8 w-8" />
                   </div>
-                  <span className="text-black font-bold ml-6 mr-16 mt-4 mb-4 text-2xl">
+                  <label
+                    htmlFor="LoginModal"
+                    className="text-black hover:cursor-pointer font-bold ml-6 mr-16 mt-4 mb-4 text-2xl"
+                  >
                     Entrar
-                  </span>
+                  </label>
                   <LoginModal />
                 </button>
               </li>
             </ul>
-            
           )}
-          
         </div>
-        <label htmlFor="LoginModal" className="text-black font-bold ml-6 mr-16 mt-4 mb-4 text-2xl">
-            Test sdfgg
-          </label>
-          <LoginModal /> 
       </div>
     </header>
   );
