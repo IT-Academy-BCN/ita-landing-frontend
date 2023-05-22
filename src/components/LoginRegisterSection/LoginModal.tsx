@@ -1,5 +1,4 @@
 import PasswordInput from "./PasswordInput";
-import RegistrationModal from "./RegistrationModal";
 
 function LoginModal() {
     return (
@@ -38,7 +37,6 @@ function LoginModal() {
             </div>
             <div className="flex justify-center">
               <label htmlFor="RegistrationModal" className="font-bold text-black mt-5 mb-1 underline hover:text-purple-600 hover:cursor-pointer">¿No tienes cuenta?, crear una</label>
-              <RegistrationModal />
             </div>
           </div>
         </div>
