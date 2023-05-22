@@ -6,6 +6,8 @@ import english from "../images/english.png";
 import selector from "../images/sel_right.png";
 import menu from "../images/menu.png";
 import LoginModal from "./LoginRegisterSection/LoginModal";
+import RegistrationModal from "./LoginRegisterSection/RegistrationModal";
+
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -116,6 +118,7 @@ const Header = () => {
               Entrar
             </label>
             <LoginModal />
+            <RegistrationModal />
           </button>
         </div>
 
@@ -199,6 +202,7 @@ const Header = () => {
                     Entrar
                   </label>
                   <LoginModal />
+                  <RegistrationModal />
                 </button>
               </li>
             </ul>
