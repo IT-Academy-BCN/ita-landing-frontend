@@ -6,6 +6,7 @@ import HeaderComponent from "./components/HeaderComponent"
 import Footer from "./components/FooterComponent"
 import ProjectsComponent from "./components/ProjectsComponent"
 import Collaborators from "./components/CollaboratorsSection/Collaborators"
+import FAQs from "./components/FAQsComponent"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <TeamSectionComponent />
       <ProjectsComponent />
       <Collaborators />
+      <FAQs />
       <Footer />
     </>
   );
