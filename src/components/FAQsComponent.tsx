@@ -16,6 +16,7 @@ const FAQs = () => {
           </div>
           <div className="collapse-content rounded-b-md bg-white">
             <p className="text-left text-black  text-4 font-poppins font-medium ml-9 mr-24 mt-9 mb-6">
+
               {faq.answer}
             </p>
           </div>
