@@ -1,7 +1,10 @@
 import NormativaModal from "./Modals/NormativaModal";
 
+
 const Footer = () => (
+  
   <footer className="bg-[#BA007C] w-screen absolute left-0">
+     
   <div className="mx-auto w-full py-6 text-white text-sm">
     <div>
       <div className="flex justify-center items-center">
