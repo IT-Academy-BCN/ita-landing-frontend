@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import logo from "../images/ITA_header_logo.png";
 import castellano from "../images/castellano.png";
 import catala from "../images/catala.png";
