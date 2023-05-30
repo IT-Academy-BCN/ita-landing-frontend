@@ -1,13 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import logo from "../images/ITA_header_logo.png";
 import castellano from "../images/castellano.png";
 import catala from "../images/catala.png";
 import english from "../images/english.png";
 import selector from "../images/sel_right.png";
 import menu from "../images/menu.png";
-import LoginModal from "./LoginRegisterSection/LoginModal";
-import RegistrationModal from "./LoginRegisterSection/RegistrationModal";
-
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -16,25 +13,25 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-4 left-3 right-3 z-50 bg-transparent flex justify-between items-center py-4 px-6">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#FFFF] flex justify-between items-center px-6 h-[150px] ">
       {/* Logo */}
       <div className="flex-shrink-0">
-        <img src={logo} alt="logo" className="scale-90" />
+        <img src={logo} alt="logo" className="scale-[0.65]" />
       </div>
 
       {/* Idiomas + Botón Entrar (solo visibles en pantallas grandes) */}
       <div className="flex-grow flex justify-end items-center">
         {/* Botón Desplegable Idiomas (solo visible en pantallas grandes) */}
         <div
-          className="hidden lg:block relative mr-10 cursor-pointer"
+          className="hidden lg:block relative mr-10 cursor-pointers"
           style={{ borderRadius: "10px", border: "1px solid #7E7E7E" }}
         >
           <div
-            className="relative"
+            className="relative "
             style={{ borderRadius: "10px", border: "1px solid #7E7E7E" }}
           >
             <div
-              className="flex items-center justify-between text-2xl text-gray-500 font-bold ml-3 mr-3 px-4 py-6"
+              className="flex items-center justify-between text-xl text-[#7E7E7E] font-bold h-20 ml-3 mr-3 px-4 py-6"
               onClick={toggleDropdown}
             >
               <span>Castellano</span>
@@ -55,13 +52,13 @@ const Header = () => {
 
             {/* Tabla Idiomas (links) (solo visible en pantallas grandes) */}
             <ul
-              className={`absolute right-0 top-full mt-6 w-80 rounded-xl bg-white border-2 border-gray-300 ${
+              className={`absolute right-0 top-full mt-6 w-80 rounded-xl bg-[#FFFF] border-2 border-[#BDBDBD] ${
                 isDropdownOpen ? "" : "hidden"
               }`}
             >
               <li className="flex items-center px-8 py-8 hover:bg-gray-200 flex-row">
                 <div className="text-left flex-grow">
-                  <div className="rounded-full h-53 w-53 flex items-left text-gray-600 font-bold text-3xl">
+                  <div className="rounded-full h-53 w-53 flex items-left text-[#4F4F4F] font-bold text-xl">
                     Català
                   </div>
                 </div>
@@ -71,9 +68,9 @@ const Header = () => {
                   className="h-53 w-53 scale-90 ml-4 flex-none"
                 />
               </li>
-              <li className="flex items-center px-8 py-8 hover:bg-gray-200 border-t border-gray-300 flex-row">
+              <li className="flex items-center px-8 py-8 hover:bg-gray-200 border-t border-[#BDBDBD] flex-row">
                 <div className="text-left flex-grow">
-                  <div className="rounded-full h-53 w-53 flex items-left text-gray-600 font-bold text-3xl">
+                  <div className="rounded-full h-53 w-53 flex items-left text-[#4F4F4F] font-bold text-xl">
                     Castellano
                   </div>
                 </div>
@@ -83,9 +80,9 @@ const Header = () => {
                   className="h-53 w-53 scale-90 ml-4 flex-none"
                 />
               </li>
-              <li className="flex items-center px-8 py-8 hover:bg-gray-200 border-t border-gray-300 flex-row">
+              <li className="flex items-center px-8 py-8 hover:bg-gray-200 border-t-2  border-[#BDBDBD] flex-row">
                 <div className="text-left flex-grow">
-                  <div className="rounded-full h-53 w-53 flex items-left text-gray-600 font-bold text-3xl">
+                  <div className="rounded-full h-53 w-53 flex items-left text-[#4F4F4F] font-bold text-xl">
                     English
                   </div>
                 </div>
@@ -105,20 +102,15 @@ const Header = () => {
           style={{ borderRadius: "10px", border: "1px solid black" }}
         >
           <button
-            className="bg-transparent px-1 py-3 flex items-center"
+            className="bg-transparent px-4 py-6 h-18 flex items-center text-[#1E1E1E]"
             style={{ borderRadius: "10px", border: "1px solid black" }}
           >
             <div className="ml-8">
               <img src={selector} className="h-8 w-8" />
             </div>
-            <label
-              htmlFor="LoginModal"
-              className="text-black hover:cursor-pointer font-bold ml-6 mr-16 mt-4 mb-4 text-2xl"
-            >
+            <span className="text-black font-bold ml-4 mr-4 text-xl">
               Entrar
-            </label>
-            <LoginModal />
-            <RegistrationModal />
+            </span>
           </button>
         </div>
 
@@ -141,10 +133,10 @@ const Header = () => {
 
           {/* Desplegable Idiomas + Administración (pantallas pequeñas) */}
           {isDropdownOpen && (
-            <ul className="lg:hidden absolute right-0 top-full mt-6 mr-0 rounded-tl-xl rounded-bl-xl bg-white border-2 border-gray-300">
-              <li className="flex items-center px-8 py-8 ml-4 mt-6 hover:bg-gray-200 flex-row">
+            <ul className="lg:hidden justify-items-end bg-[#FFFF] absolute top-full mt-16 mr-0 rounded-tl-xl rounded-bl-xl border-2 border-[#BDBDBD]">
+              <li className="flex items-center px-8 py-8 ml-4 mt-6 hover:bg-gray-200 flex-row text-[#7E7E7E]">
                 <div className="text-left flex-grow">
-                  <div className="rounded-full h-53 w-53 flex items-left text-black font-bold text-4xl">
+                  <div className="rounded-full h-53 w-53 flex items-left text-black font-bold text-2xl">
                     Idioma
                   </div>
                 </div>
@@ -155,7 +147,7 @@ const Header = () => {
                   alt="bandera Cat"
                   className="h-45 w-45 scale-90 flex-none"
                 />
-                <div className="text-left flex-grow ml-2 text-gray-600 text-2xl">
+                <div className="text-left flex-grow ml-2 text-gray-600 text-2xl text-[#7E7E7E]">
                   Català
                 </div>
               </li>
@@ -165,7 +157,7 @@ const Header = () => {
                   alt="bandera Esp"
                   className="h-45 w-45 scale-90 flex-none"
                 />
-                <div className="text-left flex-grow ml-2 text-gray-600 text-2xl">
+                <div className="text-left flex-grow ml-2 text-gray-600 text-2xl text-[#7E7E7E]">
                   Castellano
                 </div>
               </li>
@@ -175,13 +167,13 @@ const Header = () => {
                   alt="bandera Eng"
                   className="h-45 w-45 scale-90 flex-none"
                 />
-                <div className="text-left flex-grow ml-2 text-gray-600 text-2xl">
+                <div className="text-left flex-grow ml-2 text-gray-600 text-2xl text-[#7E7E7E]">
                   English
                 </div>
               </li>
               <li className="flex items-center px-8 py-8 ml-4 mr-8 mt-6 hover:bg-gray-200 flex-row">
                 <div className="text-left flex-grow">
-                  <div className="rounded-full h-53 w-53 flex items-left text-black font-bold text-4xl">
+                  <div className="rounded-full h-53 w-53 flex items-left text-black font-bold text-2xl text-[#7E7E7E]">
                     Administración
                   </div>
                 </div>
@@ -189,20 +181,15 @@ const Header = () => {
               {/* Botón Entrar pantallas pequeñas */}
               <li>
                 <button
-                  className="bg-transparent px-4 py-2 ml-12 mb-16 mt-0 flex items-center"
+                  className="bg-transparent px-4 py-2 ml-12 mb-8 mt-0 flex items-center"
                   style={{ borderRadius: "10px", border: "1px solid black" }}
                 >
-                  <div className="ml-16 mt-4 mb-4">
+                  <div className="ml-2 mt-4 mb-4">
                     <img src={selector} className="h-8 w-8" />
                   </div>
-                  <label
-                    htmlFor="LoginModal"
-                    className="text-black hover:cursor-pointer font-bold ml-6 mr-16 mt-4 mb-4 text-2xl"
-                  >
+                  <span className="text-black font-bold ml-6 mr-16 mt-4 mb-4 text-2xl text-[#1E1E1E]">
                     Entrar
-                  </label>
-                  <LoginModal />
-                  <RegistrationModal />
+                  </span>
                 </button>
               </li>
             </ul>
