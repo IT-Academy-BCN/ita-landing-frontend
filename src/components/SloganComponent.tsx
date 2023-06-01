@@ -10,12 +10,12 @@ import itacademyLogo from '../img/itacademylogo.png';
 const SloganComponent = () => (
     <>
         <div className="flex justify-center">
-            <svg className="md:visible invisible" width="1376" height="772" viewBox="0 0 1376 772" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="lg:visible xl:visible invisible sm:invisible" width="1376" height="772" viewBox="0 0 1376 772" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M36.5687 78.8927C8.57015 79.8101 -0.929365 92.1944 0.0705838 111V739.485C0.0705838 765.629 21.0695 771.592 36.5687 771.592C60.0675 771.592 1094.51 772.51 1118.01 771.592C1141.51 770.675 1154.01 766.547 1154.01 733.981C1154.01 701.414 1172.01 696.828 1194.51 696.828H1339C1371.5 696.828 1376 678.022 1376 659.216V111.918C1376 83.0208 1359.5 78.8927 1331 78.8927H1115.51C1071.02 78.8927 1055.52 73.3886 1055.52 38.529C1055.52 3.66943 1031.52 0 1012.02 0H309.059C274.061 0 270.061 20.6405 270.061 38.529C270.061 56.4175 264.062 78.8927 231.063 78.8927C198.065 78.8927 64.5673 77.9753 36.5687 78.8927Z" fill="#F0F0F0" />
             </svg>
-            <svg className="lg:invisible visible lg:w-0" width="15000" height="842" viewBox="0 0 366 842" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* <svg className="lg:invisible visible lg:w-0 " width="15000" height="842" viewBox="0 0 366 842" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M36.5687 94.8929C8.57015 95.8103 -0.929365 108.195 0.0705838 127V809.485C0.0705838 835.63 21.0695 841.593 36.5687 841.593H126H151.5C172 841.593 178.5 826 178.5 812.5C178.5 799 190 787 204.5 787H367.5V762.5C367.5 744.5 365.516 252.105 365.516 179.5V79.8929V39.5292V0.500232H265C249.36 0.500232 236.061 0.5 236.061 0.5V65.0002C236.061 82.8887 228.5 94.8929 204.5 94.8929C171.502 94.8929 64.5673 93.9756 36.5687 94.8929Z" fill="#F0F0F0" />
-            </svg>
+            </svg> */}
 
             <div className="overlay absolute flex justify-center ml-8 lg:ml-0 lg:flex lg:mt-[118px]">
                 <div className="lg:w-1/2 text-center justify-center pl-[62px] pt-[155px] lg:pt-16 lg:pl-32">
@@ -58,7 +58,7 @@ const SloganComponent = () => (
                                 </div>
                             </div>
                         </div>
-                        <div className="mt-6 w-[320px] h-[73px] lg:w-96 text-left">
+                        <div className="mt-6 mr-8 w-[320px] h-[73px] lg:w-96 text-left">
                             <p>
                                 La falta de experiencia te dificulta conseguir trabajo? Trabaja en equipo y ponte a prueba con nuestros proyectos
                             </p>

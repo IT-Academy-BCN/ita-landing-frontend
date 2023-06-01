@@ -9,13 +9,13 @@ const FAQs = () => {
         </h2>
       </div>
       {data.map((faq) => (
-        <div className="collapse  rounded-md pb-2 shadow-[0_0px_2px_12px_rgba(0,0,0,0.1)]">
+        <div className="collapse  rounded-md mb-5 shadow-xl">
           <input type="checkbox" className="peer" />
-          <div className="collapse-title absolute  rounded-b-md bg-[#FFFF] text-left text-[#000000] text-[16px] font-poppins font-bold peer-checked:bg-[#BA007C] peer-checked:rounded-b-[0px] peer-checked:text-secondary-content text-[16px] font-poppins font-bold ">
+          <div className="collapse-title absolute  rounded-b-md bg-white text-left text-black text-4 font-poppins font-bold peer-checked:bg-[#BA007C] peer-checked:rounded-b-[0px] peer-checked:text-secondary-content text-4 font-poppins font-bold ">
             {faq.title}
           </div>
-          <div className="collapse-content rounded-b-md bg-[#FFFF]">
-            <p className="text-left text-[#000000]  text-[16px] font-poppins font-medium ml-[36px] mr-[90px] mt-[34px] mb-[23px]">
+          <div className="collapse-content rounded-b-md bg-white">
+            <p className="text-left text-black  text-4 font-poppins font-medium ml-9 mr-24 mt-9 mb-6">
               {faq.answer}
             </p>
           </div>
