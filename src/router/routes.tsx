@@ -5,10 +5,12 @@ import BackOffice from "../pages/backOffice/BackOffice"
 
 function Router() {
     return(
+        <>
         <Routes>
             <Route path="/" element={<LandingPage/>} />
             <Route path="/backoffice" element={<BackOffice/>} />
         </Routes>
+        </>
     )
 }
 
