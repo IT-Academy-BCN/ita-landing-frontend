@@ -5,6 +5,7 @@ import catala from "../images/catala.png";
 import english from "../images/english.png";
 import selector from "../images/sel_right.png";
 import menu from "../images/menu.png";
+
 /*import LoginModal from "./LoginRegisterSection/LoginModal";
 import RegistrationModal from "./LoginRegisterSection/RegistrationModal";*/
   
@@ -15,31 +16,32 @@ const Header = () => {
     
   };
   return (
-    <header className=" top-0 left-0 right-0 z-50 bg-[#FFFF] flex justify-between items-center px-6 h-[150px] ">
+    <header className="absolute z-10 bg-[#FFFF] flex justify-between ">
       {/* Logo */}
  
- 
-      <div className="flex-shrink-0">
-        <img src={logo} alt="logo" className="scale-[0.65]" />
-      </div>
+  
+    <img src={logo} alt="logo" className="w-1/4 h-1/4"  />
+   
+        
+       
 
       {/* Idiomas + Botón Entrar (solo visibles en pantallas grandes) */}
-      <div className="flex-grow flex justify-end items-center">
+      <div className=" flex ">
         {/* Botón Desplegable Idiomas (solo visible en pantallas grandes) */}
         <div
           className="hidden lg:block relative mr-10 cursor-pointers"
-          style={{ borderRadius: "10px", border: "1px solid #7E7E7E" }}
+          
         >
           <div
             className="relative "
-            style={{ borderRadius: "10px", border: "1px solid #7E7E7E" }}
+            style={{ borderRadius: "10px", border: "2px solid #7E7E7E" }}
           >
             <div
-              className="flex items-center justify-between text-xl text-[#7E7E7E] font-bold h-20 ml-3 mr-3 px-4 py-6"
+              className="flex items-center justify-between text-xl text-[#7E7E7E] font-bold h-20"
               onClick={toggleDropdown}
             >
               <span>Castellano</span>
-              <div className="ml-2">
+              <div className=" ">
                 <svg
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -103,11 +105,11 @@ const Header = () => {
         {/* Botón Entrar (solo visible en pantallas grandes) */}
         <div
           className="hidden lg:block"
-          style={{ borderRadius: "10px", border: "1px solid black" }}
+          style={{ borderRadius: "10px", border: "2px solid black" }}
         >
           <button
-            className="bg-transparent px-4 py-6 h-18 flex items-center text-[#1E1E1E]"
-            style={{ borderRadius: "10px", border: "1px solid black" }}
+            className="bg-transparent   py-6 h-18 flex items-center text-[#1E1E1E]"
+            
           >
             <div className="ml-8">
               <img src={selector} className="h-8 w-8" />
