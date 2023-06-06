@@ -74,7 +74,7 @@ const SloganComponent = () => (
                 <div id="logos-section" className="lg:w-1/2 w-0 lg:visible invisible">
                     <img className="repel absolute mt-[34px] mr-[495px] ml-[108px]" src={angularLogo} alt="Angular Logo"></img>
                     <img className="repel absolute mt-[7px] mr-[118px] ml-[432px]" src={phpLogo} alt="PHP Logo"></img>
-                    <img className="repel absolute mt-[88px] mr-[225px] ml-[198px]" src={reactLogo} alt="React Logo"></img>
+                    <img className="repel absolute mt-[88px] mr-[225px] ml-[298px]" src={reactLogo} alt="React Logo"></img>
                     <img className="repel absolute mt-[232px] mr-[591px] ml-[-12px]" src={javaLogo} alt="Java Logo"></img>
                     <img className="repel absolute mt-[249px] mr-[396px] ml-[166px]" src={nodejsLogo} alt="Nodejs Logo"></img>
                     <img className="repel absolute mt-[228px] mr-[152px] ml-[465px]" src={pythonLogo} alt="Python Logo"></img>
