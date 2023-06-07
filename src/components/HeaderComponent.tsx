@@ -11,16 +11,7 @@ import { llamadaApiPokemon,incrementApi } from "../store/reducers/apiCall/apSlic
 
 const Header = () => {
   
-  //PRUEBA REDUX
-  const dispatch = useDispatch();
 
-  const {value} = useSelector((state:any)=> state.counter);
-  const {apiPokemon,number} = useSelector((state:any)=> state.apiCall);
-
-  useEffect(()=>{
-    llamadaApiPokemon(dispatch,number)
-  },[number]);
-  // FIN PRUEBA REDUX
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const toggleDropdown = () => {
@@ -28,26 +19,7 @@ const Header = () => {
   };
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#FFFF] flex justify-between items-center px-6 h-[150px] ">
-      {/* Logo */}
-      
-      {/*PRUEBA REDUX*/ }
-      <button onClick={()=> {value == 0 ? value == 0 : dispatch(decrement())}} >-1</button>
-          <h1>{value}</h1>
-      <button onClick={()=> dispatch(increment())}>+1</button>
-
-      <button onClick={()=> dispatch(incrementByAmount({arg1:5, arg2:100}))}>+ 5</button>
-
-      {
-        apiPokemon.map((pokemon:any)=>
-          {
-            return <div><p>({pokemon.name})</p></div> 
-          }
-        )
-        
-      }<button onClick={()=> dispatch(incrementApi((number+10))) }>next</button>
-      {/*FIN REDUX*/ }
-
-        
+      {/* Logo */}      
       <div className="flex-shrink-0">
         <img src={logo} alt="logo" className="scale-[0.65]" />
       </div>
