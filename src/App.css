@@ -8,9 +8,10 @@
 #root {
   max-width: 1376px;
   margin: 0 auto;
+ 
   text-align: center;  
    font-family: 'Poppins', sans-serif;
-  width:100%;
+padding-top: 2rem;
 }
 
 .logo {

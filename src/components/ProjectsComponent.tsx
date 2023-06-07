@@ -4,7 +4,7 @@ import { IconContext } from "react-icons";
 
 const ProjectsComponent = () => (
   <>
-    <div className="container p-14 flex">
+    <div className="container m-auto flex">
       {/*Projects section*/}
       <section className="flex mx-auto flex-col justify-center">
         {/*Projects title area*/}
@@ -15,7 +15,7 @@ const ProjectsComponent = () => (
           </h2>
         </div>
         {/* Projects legend*/}
-        <div className="flex flex-col md:flex-row lg:justify-end justify-center m-7 gap-4">
+        <div className="flex flex-col md:flex-row lg:w-3/4 lg:justify-end justify-center m-7 gap-4">
           <div className="flex justify-center items-center gap-2">
             <IconContext.Provider
               value={{ color: "#bedfc8", className: "global-class-name" }}

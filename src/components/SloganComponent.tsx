@@ -7,11 +7,12 @@ import scrumLogo from '../img/scrum.png';
 import nodejsLogo from '../img/nodejs.png';
 import gitLogo from '../img/git.png';
 import itacademyLogo from '../img/itacademylogo.png';
- 
+import HeaderComponent from '../components/HeaderComponent'
 const SloganComponent = () => (
     <>
-    
-        <div className="relative  flex justify-center " >
+        
+        <div className="relative flex justify-center m-auto " >
+            <HeaderComponent/>
             <svg className="lg:visible xl:visible invisible sm:invisible"     viewBox="0 0 1376 772" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M36.5687 78.8927C8.57015 79.8101 -0.929365 92.1944 0.0705838 111V739.485C0.0705838 765.629 21.0695 771.592 36.5687 771.592C60.0675 771.592 1094.51 772.51 1118.01 771.592C1141.51 770.675 1154.01 766.547 1154.01 733.981C1154.01 701.414 1172.01 696.828 1194.51 696.828H1339C1371.5 696.828 1376 678.022 1376 659.216V111.918C1376 83.0208 1359.5 78.8927 1331 78.8927H1115.51C1071.02 78.8927 1055.52 73.3886 1055.52 38.529C1055.52 3.66943 1031.52 0 1012.02 0H309.059C274.061 0 270.061 20.6405 270.061 38.529C270.061 56.4175 264.062 78.8927 231.063 78.8927C198.065 78.8927 64.5673 77.9753 36.5687 78.8927Z" fill="#F0F0F0" />
             </svg>
@@ -67,25 +68,24 @@ const SloganComponent = () => (
                         </div>
                     </div>
 
-                    <div className="absolute lg:invisible mt-[80px] ml-[170px]">
-                        <img className="h-[34px]" src="{{ asset('img/itacademylogo.png') }}" alt="IT Academy Logo"></img>
-                    </div>
+                     
                 </div>
 
 
-                <div id="logos-section" className="lg:w-1/2 w-0 lg:visible invisible">
-                    <img className="repel absolute mt-[34px] mr-[495px] ml-[108px]" src={angularLogo} alt="Angular Logo"></img>
-                    <img className="repel absolute mt-[7px] mr-[118px] ml-[432px]" src={phpLogo} alt="PHP Logo"></img>
-                    <img className="repel absolute mt-[88px] mr-[225px] ml-[298px]" src={reactLogo} alt="React Logo"></img>
-                    <img className="repel absolute mt-[232px] mr-[591px] ml-[-12px]" src={javaLogo} alt="Java Logo"></img>
-                    <img className="repel absolute mt-[249px] mr-[396px] ml-[166px]" src={nodejsLogo} alt="Nodejs Logo"></img>
-                    <img className="repel absolute mt-[228px] mr-[152px] ml-[465px]" src={pythonLogo} alt="Python Logo"></img>
-                    <img className="repel absolute mt-[429px] mr-[418px] ml-[159px]" src={gitLogo} alt="Git Logo"></img>
-                    <img className="repel absolute mt-[385px] mr-[216px] ml-[384px]" src={scrumLogo} alt="Scrum Logo"></img>
-                    <img className="absolute mt-[601px] mr-[32px] ml-[524px] mb-[54px]" src={itacademyLogo} alt="IT Academy Logo"></img>
-                </div>
+                <div id="logos-section" className="lg:w-1/2   lg:visible invisible relative grid  grid-cols-3      ">
+                    <img className=" lg:w-20 xl:w-28  top-0  right-1/3" src={angularLogo} alt="Angular Logo"></img>
+                    <img className=" lg:w-20 xl:w-32   top-0 right-10 " src={phpLogo} alt="PHP Logo"></img>
+                    <img className=" lg:w-20 xl:w-32  top-1/4 right-50 left-3/4" src={reactLogo} alt="React Logo"></img>
+                    <img className=" lg:w-20 xl:w-32  top-2/4  left-3/1" src={javaLogo} alt="Java Logo"></img>
+                    <img className=" lg:w-20 xl:w-32  top-2/4  left-2/3" src={nodejsLogo} alt="Nodejs Logo"></img>
+                    <img className=" lg:w-20 xl:w-32  top-52  right-10" src={pythonLogo} alt="Python Logo"></img>
+                    <img className=" lg:w-20 xl:w-32   top-3/4  right-20" src={scrumLogo} alt="Scrum Logo"></img>
+                    <img className=" lg:w-20 xl:w-32   top-3/4 left-2/3  " src={gitLogo} alt="Scrum Logo"></img>
 
+                </div>
+            
             </div>
+            <img className="absolute bottom-0 right-0  " src={itacademyLogo} alt="IT Academy Logo"></img>
 
         </div>
     </>

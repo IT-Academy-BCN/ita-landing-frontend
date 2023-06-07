@@ -16,20 +16,22 @@ const Header = () => {
     
   };
   return (
-    <header className="absolute z-10 bg-[#FFFF] flex justify-between ">
+    <header className="w-full z-10 absolute  flex justify-between ">
       {/* Logo */}
  
-  
-    <img src={logo} alt="logo" className="w-1/4 h-1/4"  />
+    <div>
+        <img src={logo} alt="logo" className="w-1/2"  />
+    </div>
+    
    
         
        
 
       {/* Idiomas + Botón Entrar (solo visibles en pantallas grandes) */}
-      <div className=" flex ">
+      <div className=" flex  ">
         {/* Botón Desplegable Idiomas (solo visible en pantallas grandes) */}
         <div
-          className="hidden lg:block relative mr-10 cursor-pointers"
+          className="hidden lg:block relative mr-10 cursor-pointer "
           
         >
           <div
@@ -37,11 +39,11 @@ const Header = () => {
             style={{ borderRadius: "10px", border: "2px solid #7E7E7E" }}
           >
             <div
-              className="flex items-center justify-between text-xl text-[#7E7E7E] font-bold h-20"
+              className="flex items-center justify-between text-sm text-[#7E7E7E] font-bold  p-4"
               onClick={toggleDropdown}
             >
               <span>Castellano</span>
-              <div className=" ">
+              <div >
                 <svg
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -108,13 +110,12 @@ const Header = () => {
           style={{ borderRadius: "10px", border: "2px solid black" }}
         >
           <button
-            className="bg-transparent   py-6 h-18 flex items-center text-[#1E1E1E]"
-            
+            className="bg-transparent  p-4 flex items-center text-[#1E1E1E]"
           >
-            <div className="ml-8">
-              <img src={selector} className="h-8 w-8" />
+            <div className=" ">
+              <img src={selector} className="h-5 w-5" />
             </div>
-            <span className="text-black font-bold ml-4 mr-4 text-xl">
+            <span className="text-black font-bold   text-sm">
               Entrar
             </span>
           </button>
