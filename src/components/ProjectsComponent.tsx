@@ -41,9 +41,9 @@ const ProjectsComponent = () => (
           </div>
         </div>
         {/*Cards*/}
-        <div className="flex flex-wrap gap-7 justify-center">
+        <div className="flex flex-wrap gap-7 justify-center ">
           {/*Card 1*/}
-          <div className="card w-80 bg-completed text-grey-it">
+          <div className="card md:w-80 m-5 md:m-0  bg-completed text-grey-it">
             <div className="card-body">
               <h2 className="card-title">Wiki</h2>
               <p>
@@ -58,7 +58,7 @@ const ProjectsComponent = () => (
             </div>
           </div>
           {/*Card 2*/}
-          <div className="card w-80 bg-completed text-grey-it">
+          <div className="card md:w-80 m-5 md:m-0 bg-completed text-grey-it">
             <div className="card-body">
               <h2 className="card-title">Challenges & Hackathons</h2>
               <p>
@@ -73,7 +73,7 @@ const ProjectsComponent = () => (
             </div>
           </div>
           {/*Card 3*/}
-          <div className="card w-80 bg-building text-grey-it">
+          <div className="card md:w-80 m-5 md:m-0  bg-building text-grey-it">
             <div className="card-body">
               <h2 className="card-title">Game!</h2>
               <p>
@@ -88,7 +88,7 @@ const ProjectsComponent = () => (
             </div>
           </div>
           {/*Card 4*/}
-          <div className="card w-80 bg-building text-grey-it">
+          <div className="card md:w-80 m-5 md:m-0  bg-building text-grey-it">
             <div className="card-body">
               <h2 className="card-title">ITA Profiles</h2>
               <p>
@@ -103,7 +103,7 @@ const ProjectsComponent = () => (
             </div>
           </div>
           {/*Card 5*/}
-          <div className="card w-80 bg-soon text-grey-it">
+          <div className="card md:w-80 m-5 md:m-0  bg-soon text-grey-it">
             <div className="card-body">
               <h2 className="card-title">Reports</h2>
               <p>
@@ -118,10 +118,10 @@ const ProjectsComponent = () => (
             </div>
           </div>
           {/*Card 6*/}
-          <div className="card w-80 bg-soon text-grey-it">
+          <div className="card md:w-80 m-5 md:m-0 p-0 bg-soon text-grey-it">
             <div className="card-body">
               <h2 className="card-title">ITA Brain</h2>
-              <p>
+              <p className="font-16">
                 Predicción de probabilidad de abandono de un alumno en función
                 de la información recogida en las apps y moodle.
               </p>

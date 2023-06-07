@@ -16,11 +16,11 @@ const Header = () => {
     
   };
   return (
-    <header className="w-full z-10 absolute  flex justify-between ">
+    <header className="w-full z-10 absolute flex  justify-between  ">
       {/* Logo */}
  
-    <div>
-        <img src={logo} alt="logo" className="w-1/2"  />
+    <div className="w-1/2 lg:w-auto ml-5 lg:ml-0 ">
+        <img src={logo} alt="logo"  className=" lg:w-1/2"  />
     </div>
     
    
@@ -124,15 +124,15 @@ const Header = () => {
         {/* Menú desplegable para pantallas pequeñas */}
         {/* <div className="flex-grow flex justify-end items-center"> */}
         <div
-          className="lg:hidden relative mr-0 pr-10 flex-grow flex justify-end items-center"
+          className="lg:hidden m  flex-grow flex justify-end items-center"
           style={{ borderRadius: "10px" }}
         >
           <button
-            className="bg-transparent px-4 py-6 flex items-center"
+            className="bg-transparent px-4 py-4 flex items-center"
             style={{ borderRadius: "10px" }}
             onClick={toggleDropdown}
           >
-            <div className="ml-8">
+            <div className="">
               <img src={menu} className="h-8 w-8" />
             </div>
           </button>
@@ -140,7 +140,7 @@ const Header = () => {
 
           {/* Desplegable Idiomas + Administración (pantallas pequeñas) */}
           {isDropdownOpen && (
-            <ul className="lg:hidden justify-items-end bg-[#FFFF] absolute top-full mt-16 mr-0 rounded-tl-xl rounded-bl-xl border-2 border-[#BDBDBD]">
+            <ul className="lg:hidden justify-items-end bg-[#FFFF] absolute top-full  mt-16 mr-0 rounded-tl-xl rounded-bl-xl border-2 border-[#BDBDBD]">
               <li className="flex items-center px-8 py-8 ml-4 mt-6 hover:bg-gray-200 flex-row text-[#7E7E7E]">
                 <div className="text-left flex-grow">
                   <div className="rounded-full h-53 w-53 flex items-left text-black font-bold text-2xl">
