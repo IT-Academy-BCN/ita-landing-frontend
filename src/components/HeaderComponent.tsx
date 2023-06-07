@@ -1,13 +1,10 @@
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import logo from "../images/ITA_header_logo.png";
 import castellano from "../images/castellano.png";
 import catala from "../images/catala.png";
 import english from "../images/english.png";
 import selector from "../images/sel_right.png";
 import menu from "../images/menu.png";
-import { useSelector, useDispatch } from "react-redux";
-import { increment,decrement,incrementByAmount } from "../store/reducers/counter/counterSlice";
-import { llamadaApiPokemon,incrementApi } from "../store/reducers/apiCall/apSlice";
 
 const Header = () => {
   
