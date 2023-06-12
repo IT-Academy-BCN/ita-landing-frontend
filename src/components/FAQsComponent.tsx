@@ -2,7 +2,7 @@ import data from "../mock-FAQS-data.json";
 
 const FAQs = () => {
   return (
-    <div>
+    <div className="w-3/4 m-auto">
       <div className="grid grid-cols-6 grid-rows-2">
         <h2 className="font-black text-[35px] font-poppins  text-center col-span-6">
           Preguntas frecuentes

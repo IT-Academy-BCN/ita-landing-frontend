@@ -8,9 +8,13 @@ import nodejsLogo from '../img/nodejs.png';
 import gitLogo from '../img/git.png';
 import itacademyLogo from '../img/itacademylogo.png';
 import HeaderComponent from '../components/HeaderComponent'
- const SloganComponent = () => (
+
+
+const SloganComponent = () => (
     <>
         
+        
+
         <div className="relative flex justify-center m-auto background-image-style  "   >
             <HeaderComponent/>
              

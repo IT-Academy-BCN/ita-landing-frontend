@@ -30,6 +30,12 @@ export const { apiCall , incrementApi} = apiSlice.actions
 export const llamadaApiPokemon =async(dispatch:any,number:number)=>{
 
   try { 
+
+    const regigSter = await fetch('https://87.106.229.119/api/register')
+    const registerDos = await regigSter.json();
+
+    console.log(registerDos)
+
     const dataOne =await  fetch(`https://pokeapi.co/api/v2/pokemon?limit=10&offset=${number}`);
     const dataDos = await dataOne.json();
     dispatch(apiCall(dataDos.results));  

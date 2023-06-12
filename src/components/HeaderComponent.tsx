@@ -5,12 +5,21 @@ import catala from "../images/catala.png";
 import english from "../images/english.png";
 import selector from "../images/sel_right.png";
 import menu from "../images/menu.png";
-
+import LoginComponent from "./headerComponents/loginComponent";
+import RegisterComponent from './headerComponents/Registercomponent';
 /*import LoginModal from "./LoginRegisterSection/LoginModal";
 import RegistrationModal from "./LoginRegisterSection/RegistrationModal";*/
   
 const Header = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  interface dropDownsFirst {
+    initialValue:boolean
+  }
+
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState (false);
+  const [isDropdownOpenEntrar, setIsDropdownOpenEntrar] = useState (false);
+  const [isDropdownOpenCuenta, setisDropdownOpenCuenta] = useState (false);
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
     
@@ -23,8 +32,7 @@ const Header = () => {
         <img src={logo} alt="logo"  className=" lg:w-1/2"  />
     </div>
     
-   
-        
+         
        
 
       {/* Idiomas + Botón Entrar (solo visibles en pantallas grandes) */}
@@ -35,11 +43,11 @@ const Header = () => {
           
         >
           <div
-            className="relative "
+            className="relative hover:bg-blue-100  "
             style={{ borderRadius: "10px", border: "2px solid #7E7E7E" }}
           >
             <div
-              className="flex items-center justify-between text-sm text-[#7E7E7E] font-bold  p-4"
+              className="flex  items-center justify-between text-sm text-[#7E7E7E] font-bold  p-4"
               onClick={toggleDropdown}
             >
               <span>Castellano</span>
@@ -60,11 +68,11 @@ const Header = () => {
 
             {/* Tabla Idiomas (links) (solo visible en pantallas grandes) */}
             <ul
-              className={`absolute right-0 top-full mt-6 w-80 rounded-xl bg-[#FFFF] border-2 border-[#BDBDBD] ${
+              className={`absolute   right-0 top-full mt-6 w-80 rounded-xl bg-[#FFFF] border-2 border-[#BDBDBD] ${
                 isDropdownOpen ? "" : "hidden"
               }`}
             >
-              <li className="flex items-center px-8 py-8 hover:bg-gray-200 flex-row">
+              <li className="flex items-center px-8 py-8 hover:bg-gray-100 hover:rounded-xl flex-row">
                 <div className="text-left flex-grow">
                   <div className="rounded-full h-53 w-53 flex items-left text-[#4F4F4F] font-bold text-xl">
                     Català
@@ -88,7 +96,7 @@ const Header = () => {
                   className="h-53 w-53 scale-90 ml-4 flex-none"
                 />
               </li>
-              <li className="flex items-center px-8 py-8 hover:bg-gray-200 border-t-2  border-[#BDBDBD] flex-row">
+              <li className=" hover:rounded-b-xl flex items-center px-8 py-8 hover:bg-gray-200 border-t-2  border-[#BDBDBD] flex-row">
                 <div className="text-left flex-grow">
                   <div className="rounded-full h-53 w-53 flex items-left text-[#4F4F4F] font-bold text-xl">
                     English
@@ -104,22 +112,37 @@ const Header = () => {
           </div>
         </div>
 
+
+
+
+
+
         {/* Botón Entrar (solo visible en pantallas grandes) */}
         <div
-          className="hidden lg:block"
+       
+          className="hidden lg:block hover:bg-blue-100 "
           style={{ borderRadius: "10px", border: "2px solid black" }}
         >
-          <button
-            className="bg-transparent  p-4 flex items-center text-[#1E1E1E]"
+          <button  
+           onClick={()=>{setIsDropdownOpen(false), setIsDropdownOpenEntrar(true)}} className="bg-transparent hover:border-transparent  p-4 flex   text-[#1E1E1E]"
           >
-            <div className=" ">
-              <img src={selector} className="h-5 w-5" />
+            <div>
+              <img src={selector} className="h-5 w-5 mr-3" />
             </div>
             <span className="text-black font-bold   text-sm">
               Entrar
             </span>
           </button>
         </div>
+         
+         
+         {isDropdownOpenEntrar ? <LoginComponent setisDropdownOpenCuenta={setisDropdownOpenCuenta}    setIsDropdownOpenEntrar={setIsDropdownOpenEntrar} /> : null
+          }
+          {
+          isDropdownOpenCuenta ?   <RegisterComponent setIsDropdownOpenEntrar={setIsDropdownOpenEntrar}  setisDropdownOpenCuenta={setisDropdownOpenCuenta}  /> : null
+          }
+
+
 
         {/* Menú desplegable para pantallas pequeñas */}
         {/* <div className="flex-grow flex justify-end items-center"> */}
@@ -127,20 +150,27 @@ const Header = () => {
           className="lg:hidden m  flex-grow flex justify-end items-center"
           style={{ borderRadius: "10px" }}
         >
-          <button
-            className="bg-transparent px-4 py-4 flex items-center"
+ 
+          <div
+            
+            className="cursor-pointer bg-transparent px-4 py-4 flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             style={{ borderRadius: "10px" }}
             onClick={toggleDropdown}
           >
             <div className="">
               <img src={menu} className="h-8 w-8" />
             </div>
-          </button>
+          </div>
           {/* </div> */}
 
           {/* Desplegable Idiomas + Administración (pantallas pequeñas) */}
           {isDropdownOpen && (
-            <ul className="lg:hidden justify-items-end bg-[#FFFF] absolute top-full  mt-16 mr-0 rounded-tl-xl rounded-bl-xl border-2 border-[#BDBDBD]">
+
+          
+
+           
+        <>
+            <ul    className=" z-50 lg:hidden justify-items-end bg-[#FFFF] absolute top-full  mt-16 mr-0 rounded-tl-xl rounded-bl-xl border-2 border-[#BDBDBD] ">
               <li className="flex items-center px-8 py-8 ml-4 mt-6 hover:bg-gray-200 flex-row text-[#7E7E7E]">
                 <div className="text-left flex-grow">
                   <div className="rounded-full h-53 w-53 flex items-left text-black font-bold text-2xl">
@@ -148,34 +178,34 @@ const Header = () => {
                   </div>
                 </div>
               </li>
-              <li className="flex items-center px-8 py-4 ml-4 hover:bg-gray-200 flex-row">
+              <li className="flex items-center px-8 py-4 ml-4    cursor-pointer    lg:hover:bg-gray-200 flex-row">
                 <img
                   src={catala}
                   alt="bandera Cat"
                   className="h-45 w-45 scale-90 flex-none"
                 />
                 <div className="text-left flex-grow ml-2 text-gray-600 text-2xl text-[#7E7E7E]">
-                  Català
+                 <h3 className=" hover:border-b-4 hover:border-blue-800">Català</h3> 
                 </div>
               </li>
-              <li className="flex items-center px-8 py-2 ml-4 hover:bg-gray-200 flex-row">
+              <li className="flex items-center px-8 py-2 ml-4 lg:hover:bg-gray-200 flex-row cursor-pointer">
                 <img
                   src={castellano}
                   alt="bandera Esp"
                   className="h-45 w-45 scale-90 flex-none"
                 />
                 <div className="text-left flex-grow ml-2 text-gray-600 text-2xl text-[#7E7E7E]">
-                  Castellano
+                <h3 className=" hover:border-b-4 hover:border-blue-800"> Castellano </h3>
                 </div>
               </li>
-              <li className="flex items-center px-8 py-2 ml-4 hover:bg-gray-200 flex-row">
+              <li className="flex items-center px-8 py-2 ml-4 lg:hover:bg-gray-200 flex-row cursor-pointer">
                 <img
                   src={english}
                   alt="bandera Eng"
                   className="h-45 w-45 scale-90 flex-none"
                 />
                 <div className="text-left flex-grow ml-2 text-gray-600 text-2xl text-[#7E7E7E]">
-                  English
+                <h3 className=" hover:border-b-4 hover:border-blue-800">  English</h3>
                 </div>
               </li>
               <li className="flex items-center px-8 py-8 ml-4 mr-8 mt-6 hover:bg-gray-200 flex-row">
@@ -199,7 +229,13 @@ const Header = () => {
                   </span>
                 </button>
               </li>
-            </ul>
+
+            </ul>              
+
+            <div onClick={()=>{ setIsDropdownOpen(false)}} className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+
+            </>
+
           )}
         </div>
       </div>

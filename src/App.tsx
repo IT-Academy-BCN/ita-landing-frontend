@@ -12,8 +12,8 @@ function App() {
     <>
       
       <SloganComponent />
-      <TeamSectionComponent />
       <ProjectsComponent />
+      <TeamSectionComponent />
       <Collaborators />
       <FAQs />
       <Footer />
