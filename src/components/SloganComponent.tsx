@@ -15,7 +15,7 @@ const SloganComponent = () => (
         
         
 
-        <div className="relative flex justify-center m-auto background-image-style  "   >
+        <div className="relative flex justify-center m-auto background-image-style mt-5 "   >
             <HeaderComponent/>
              
             {/* <svg className="lg:invisible visible lg:w-0 " width="15000" height="842" viewBox="0 0 366 842" fill="none" xmlns="http://www.w3.org/2000/svg">

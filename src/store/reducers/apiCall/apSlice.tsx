@@ -27,14 +27,22 @@ export const apiSlice = createSlice({
 
 export const { apiCall , incrementApi} = apiSlice.actions
 
-export const llamadaApiPokemon =async( dni:any )=>{
+export const llamadaApiPokemon =async( fullData:any )=>{
 
   try { 
 
-
-
-    alert(dni)
+    const endpoint = await fetch('https://87.106.229.119/api/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(fullData)
+    });
     
+    const dos = await endpoint.json();
+    
+    console.log('respuesta', dos);
 
      
      

@@ -16,7 +16,7 @@ const TeamsectionComponent = () => (
         </div>
                 
              
-            <h1 className="font-poppins font-bold text-5xl  leading-58 text-gray-800">Equipos de trabajo</h1>
+            <h1 className="font-poppins font-bold text-5xl  leading-58  ">Equipos de trabajo</h1>
             <h3 className="font-poppins font-medium text-base text-gray-500 mt-5">Los proyectos son realizados por
                 equipos que combinan las siguientes tecnologías</h3>
         </div>

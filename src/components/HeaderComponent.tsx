@@ -7,14 +7,11 @@ import selector from "../images/sel_right.png";
 import menu from "../images/menu.png";
 import LoginComponent from "./headerComponents/loginComponent";
 import RegisterComponent from './headerComponents/Registercomponent';
-/*import LoginModal from "./LoginRegisterSection/LoginModal";
+ /*import LoginModal from "./LoginRegisterSection/LoginModal";
 import RegistrationModal from "./LoginRegisterSection/RegistrationModal";*/
   
 const Header = () => {
-
-  interface dropDownsFirst {
-    initialValue:boolean
-  }
+ 
 
 
   const [isDropdownOpen, setIsDropdownOpen] = useState (false);
@@ -27,7 +24,7 @@ const Header = () => {
   return (
     <header className="w-full z-10 absolute flex  justify-between  ">
       {/* Logo */}
- 
+      
     <div className="w-1/2 lg:w-auto ml-5 lg:ml-0 ">
         <img src={logo} alt="logo"  className=" lg:w-1/2"  />
     </div>
@@ -43,11 +40,11 @@ const Header = () => {
           
         >
           <div
-            className="relative hover:bg-blue-100  "
-            style={{ borderRadius: "10px", border: "2px solid #7E7E7E" }}
+            className="relative btn btn-outline  "
+             
           >
             <div
-              className="flex  items-center justify-between text-sm text-[#7E7E7E] font-bold  p-4"
+              className="flex  items-center justify-between text-sm text-[#7E7E7E] font-bold   "
               onClick={toggleDropdown}
             >
               <span>Castellano</span>
@@ -118,25 +115,23 @@ const Header = () => {
 
 
         {/* Botón Entrar (solo visible en pantallas grandes) */}
-        <div
-       
-          className="hidden lg:block hover:bg-blue-100 "
-          style={{ borderRadius: "10px", border: "2px solid black" }}
+        <div 
+          className="hidden lg:block   "    
         >
           <button  
-           onClick={()=>{setIsDropdownOpen(false), setIsDropdownOpenEntrar(true)}} className="bg-transparent hover:border-transparent  p-4 flex   text-[#1E1E1E]"
+           onClick={()=>{setIsDropdownOpen(false), setIsDropdownOpenEntrar(true)}} className=" flex btn btn-outline "
           >
             <div>
               <img src={selector} className="h-5 w-5 mr-3" />
             </div>
-            <span className="text-black font-bold   text-sm">
-              Entrar
+            <span className="  font-bold   text-sm">
+              Entrar 
             </span>
           </button>
         </div>
+        
          
-         
-         {isDropdownOpenEntrar ? <LoginComponent setisDropdownOpenCuenta={setisDropdownOpenCuenta}    setIsDropdownOpenEntrar={setIsDropdownOpenEntrar} /> : null
+         {isDropdownOpenEntrar ? <LoginComponent setisDropdownOpenCuenta={setisDropdownOpenCuenta}    setIsDropdownOpenEntrar={setIsDropdownOpenEntrar} />   : null
           }
           {
           isDropdownOpenCuenta ?   <RegisterComponent setIsDropdownOpenEntrar={setIsDropdownOpenEntrar}  setisDropdownOpenCuenta={setisDropdownOpenCuenta}  /> : null
@@ -150,7 +145,7 @@ const Header = () => {
           className="lg:hidden m  flex-grow flex justify-end items-center"
           style={{ borderRadius: "10px" }}
         >
- 
+            
           <div
             
             className="cursor-pointer bg-transparent px-4 py-4 flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"

@@ -9,6 +9,8 @@ export default {
       "grey-it": "#7e7e7e",
     },
     extend: {},
+  },daisyui: {
+    themes: [ "dark","light" ],
   },
   plugins: [require("daisyui")],
 };

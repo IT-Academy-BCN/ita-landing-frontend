@@ -8,7 +8,7 @@ export default function loginComponent({setIsDropdownOpenEntrar,setisDropdownOpe
         
 <div
 
-      className={`absolute z-50 right-0 top-full mt-6 w-80 rounded-xl bg-[#FFFF] border-2 border-[#BDBDBD] `}
+      className={`absolute z-50 right-0 top-full mt-6 w-80 rounded-xl bg-white border-2 `}
     >
 
       <div className="p-3 flex " >
@@ -18,9 +18,9 @@ export default function loginComponent({setIsDropdownOpenEntrar,setisDropdownOpe
 
           <h1 className="text-start">Login</h1>
 
-          <input type="text" className="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="DNI o NIE" />
+          <input type="text" className="input input-bordered w-full max-w-xs" placeholder="DNI o NIE" />
 
-          <input type="password"  className="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Contraseña" />
+          <input type="password"  className="input input-bordered w-full max-w-xs" placeholder="Contraseña" />
 
 
           <a className="text-xs text-end">
@@ -28,7 +28,7 @@ export default function loginComponent({setIsDropdownOpenEntrar,setisDropdownOpe
             <span className="border-b-2 border-black">Recordar/Cambiar contraseña</span> 
           </a>
 
-          <button style={{backgroundColor: '#B91879', padding:'0.75rem', color:'white'}}>Login</button>
+          <button className='mt-5 btn btn-block bg-secondary' >Login</button>
 
           <a className="text-xs mt-5 ">
            <span  onClick={()=> {setIsDropdownOpenEntrar(false), setisDropdownOpenCuenta(true)} }  className="border-b-2 border-black">¿No tienes ninguna cuenta?, crear una</span> 
