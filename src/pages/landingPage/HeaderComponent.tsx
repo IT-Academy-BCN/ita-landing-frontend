@@ -15,8 +15,8 @@ const Header = () => {
 
 
   const [isDropdownOpen, setIsDropdownOpen] = useState (false);
-  const [isDropdownOpenEntrar, setIsDropdownOpenEntrar] = useState (false);
-  const [isDropdownOpenCuenta, setisDropdownOpenCuenta] = useState (false);
+  const [IsDropdownEnterButton, setIsDropdownEnterButton] = useState (false);
+  const [isDropdownCuenta, setisDropdownCuenta] = useState (false);
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
     
@@ -119,7 +119,7 @@ const Header = () => {
           className="hidden lg:block   "    
         >
           <button  
-           onClick={()=>{setIsDropdownOpen(false), setIsDropdownOpenEntrar(true)}} className=" flex btn btn-outline hover:bg-transparent hover:text-black"
+           onClick={()=>{setIsDropdownOpen(false), setIsDropdownEnterButton(true)}} className=" flex btn btn-outline hover:bg-transparent hover:text-black"
           >
             <div>
               <img src={selector} className="h-5 w-5 mr-3" />
@@ -131,10 +131,10 @@ const Header = () => {
         </div>
         
          
-         {isDropdownOpenEntrar ? <LoginComponent setisDropdownOpenCuenta={setisDropdownOpenCuenta}    setIsDropdownOpenEntrar={setIsDropdownOpenEntrar} />   : null
+         {IsDropdownEnterButton ? <LoginComponent setIsDropdownEnterButton={setIsDropdownEnterButton} setisDropdownCuenta={setisDropdownCuenta}     />   : null
           }
           {
-          isDropdownOpenCuenta ?   <RegisterComponent setIsDropdownOpenEntrar={setIsDropdownOpenEntrar}  setisDropdownOpenCuenta={setisDropdownOpenCuenta}  /> : null
+          isDropdownCuenta ?   <RegisterComponent setIsDropdownEnterButton={setIsDropdownEnterButton}  setisDropdownCuenta={setisDropdownCuenta}  /> : null
           }
 
 

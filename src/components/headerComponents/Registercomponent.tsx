@@ -1,7 +1,7 @@
  
 import cross from '../../img/cross.png';
 
-export default function loginComponent({setisDropdownOpenCuenta, setIsDropdownOpenEntrar}) {
+export default function loginComponent( {setIsDropdownEnterButton, setisDropdownCuenta }: {setIsDropdownEnterButton:any, setisDropdownCuenta:any} ) {
 
  
   return (
@@ -15,7 +15,7 @@ export default function loginComponent({setisDropdownOpenCuenta, setIsDropdownOp
     >
 
       <div className="p-3 flex " >
-            <img onClick={()=> setisDropdownOpenCuenta(false)} src={cross} className=" cursor-pointer w-3 ml-auto " alt="" />
+            <img onClick={()=> setisDropdownCuenta(false)} src={cross} className=" cursor-pointer w-3 ml-auto " alt="" />
       </div>
       <div className="flex flex-col  justify-evenly h-[450px] px-5 py-0  ">
 
@@ -38,14 +38,14 @@ export default function loginComponent({setisDropdownOpenCuenta, setIsDropdownOp
         </form>
 
           <a className="text-xs mt-5 ">
-           <span onClick={()=> {setIsDropdownOpenEntrar(true),  setisDropdownOpenCuenta(false)} } className="border-b-2 border-black">¿Tienes cuenta? acceder</span> 
+           <span onClick={()=> {setIsDropdownEnterButton(true),  setisDropdownCuenta(false)} } className="border-b-2 border-black">¿Tienes cuenta? acceder</span> 
           </a>
 
      </div> 
       
     </div>
 
-  <div onClick={()=>{ setisDropdownOpenCuenta(false)}} className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+  <div onClick={()=>{ setisDropdownCuenta(false)}} className="opacity-25 fixed inset-0 z-40 bg-black"></div>
 
 </div>
     </ >
