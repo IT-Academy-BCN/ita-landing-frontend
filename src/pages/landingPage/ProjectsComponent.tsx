@@ -1,4 +1,4 @@
-import curvedArrow from "../img/curvedArrow.svg";
+import curvedArrow from "../../img/curvedArrow.svg"
 import { FaRegCircle, FaArrowRight } from "react-icons/fa";
 import { IconContext } from "react-icons";
 

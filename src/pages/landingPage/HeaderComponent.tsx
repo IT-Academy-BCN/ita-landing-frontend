@@ -1,12 +1,12 @@
 import { useState } from "react";
-import logo from "../images/ITA_header_logo.png";
-import castellano from "../images/castellano.png";
-import catala from "../images/catala.png";
-import english from "../images/english.png";
-import selector from "../images/sel_right.png";
-import menu from "../images/menu.png";
-import LoginComponent from "./headerComponents/loginComponent";
-import RegisterComponent from './headerComponents/Registercomponent';
+import logo from "../../images/ITA_header_logo.png";
+import castellano from "../../images/castellano.png";
+import catala from "../../images/catala.png";
+import english from "../../images/english.png";
+import selector from "../../images/sel_right.png";
+import menu from "../../images/menu.png";
+import LoginComponent from "../../components/headerComponents/LoginComponent";
+import RegisterComponent from '../../components/headerComponents/Registercomponent';
  /*import LoginModal from "./LoginRegisterSection/LoginModal";
 import RegistrationModal from "./LoginRegisterSection/RegistrationModal";*/
   
@@ -230,12 +230,10 @@ const Header = () => {
             <div onClick={()=>{ setIsDropdownOpen(false)}} className="opacity-25 fixed inset-0 z-40 bg-black"></div>
 
             </>
-
           )}
         </div>
       </div>
     </header>
   );
 };
-
 export default Header;

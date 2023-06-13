@@ -1,4 +1,5 @@
-import data from "../mock-FAQS-data.json";
+import data from "../../data/mock-FAQS-data.json"
+
 
 const FAQs = () => {
   return (

@@ -1,20 +1,19 @@
-import angularLogo from '../img/angular.png';
-import phpLogo from '../img/php.png';
-import javaLogo from '../img/java.png';
-import pythonLogo from '../img/python.png';
-import reactLogo from '../img/react.png';
-import scrumLogo from '../img/scrum.png';
-import nodejsLogo from '../img/nodejs.png';
-import gitLogo from '../img/git.png';
-import itacademyLogo from '../img/itacademylogo.png';
-import HeaderComponent from '../components/HeaderComponent'
+import angularLogo from '../../img/angular.png';
+import phpLogo from '../../img/php.png';
+import javaLogo from '../../img/java.png';
+import pythonLogo from '../../img/python.png';
+import reactLogo from '../../img/react.png';
+import scrumLogo from '../../img/scrum.png';
+import nodejsLogo from '../../img/nodejs.png';
+import gitLogo from '../../img/git.png';
+import itacademyLogo from '../../img/itacademylogo.png';
+import HeaderComponent from '../../pages/landingPage/HeaderComponent'
 
 
 const SloganComponent = () => (
     <>
         
         
-
         <div className="relative flex justify-center m-auto background-image-style mt-5 "   >
             <HeaderComponent/>
              
@@ -105,4 +104,4 @@ const SloganComponent = () => (
 
 )
 
-export default SloganComponent
+export default SloganComponent;
