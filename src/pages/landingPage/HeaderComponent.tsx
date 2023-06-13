@@ -44,7 +44,7 @@ const Header = () => {
             onClick={toggleDropdown} 
           >
             <div
-              className="flex  items-center justify-between text-sm text-[#7E7E7E] font-bold   "
+              className="flex  items-center justify-between text-sm text-black font-bold   "
               
             >
               <span>Castellano</span>
@@ -65,7 +65,7 @@ const Header = () => {
 
             {/* Tabla Idiomas (links) (solo visible en pantallas grandes) */}
             <ul
-              className={`absolute   right-0 top-full mt-6 w-80 rounded-xl bg-[#FFFF] border-2 border-[#BDBDBD] ${
+              className={`absolute   right-0 top-full mt-6 w-80 rounded-xl bg-white border-2  ${
                 isDropdownOpen ? "" : "hidden"
               }`}
             >

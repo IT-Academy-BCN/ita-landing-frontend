@@ -8,16 +8,16 @@ function Collaborators() {
    // Aconsejo quitarlo, debajo está el resultado solo con el useState de arriba const [selectedItem, setSelectedItem] = useState(1);
     const VT = "Ver Todos >";
     const btnActive = " px-6 lg:mb-0 mb-5 ml-2 btn btn-ghost text-sm normal-case rounded-3xl bg-[#025E7E] text-white  ";
-    const btnInactive = "px-6 lg:mb-0 mb-5 ml-2 btn btn-ghost text-sm normal-case rounded-3xl active:bg-[#025E7E] active:text-white border-solid lg:border-transparent   border-2 border-indigo-900 min-w-10  ";
+    const btnInactive = "px-6 lg:mb-0 mb-5 ml-2 btn btn-ghost text-sm normal-case rounded-3xl active:bg-[#025E7E] active:text-white border-solid lg:border-transparent border-2 border-indigo-900 min-w-10  ";
  
     return (
         <section className="my-10  ">
         <div className="flex justify-center">
             <p className="text-4xl font-extrabold my-5">Colaboradores de proyectos</p>
         </div>
-        <div className="flex  justify-center  my-5 lg:w-[726px] w-11/12 m-auto  ">
+        <div className="flex  justify-center  my-5  w-11/12 m-auto  ">
         <div className="flex justify-center">
-            <div className="flex flex-wrap navbar   lg:bg-base-100  drop-shadow-md lg:justify-between justify-start rounded-full">
+            <div className="flex flex-wrap navbar lg:bg-base-100  drop-shadow-md lg:justify-between justify-start rounded-full">
                 
                 <a className={ active === "AngularCard" ? btnActive : btnInactive }
                                 onClick={() => {setActive("AngularCard")}} >Angular</a>

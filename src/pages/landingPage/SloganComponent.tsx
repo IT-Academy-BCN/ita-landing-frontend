@@ -21,8 +21,8 @@ const SloganComponent = () => (
                 <path d="M36.5687 94.8929C8.57015 95.8103 -0.929365 108.195 0.0705838 127V809.485C0.0705838 835.63 21.0695 841.593 36.5687 841.593H126H151.5C172 841.593 178.5 826 178.5 812.5C178.5 799 190 787 204.5 787H367.5V762.5C367.5 744.5 365.516 252.105 365.516 179.5V79.8929V39.5292V0.500232H265C249.36 0.500232 236.061 0.5 236.061 0.5V65.0002C236.061 82.8887 228.5 94.8929 204.5 94.8929C171.502 94.8929 64.5673 93.9756 36.5687 94.8929Z" fill="#F0F0F0" />
             </svg> */}
 
-            <div className="overlay   flex justify-center ml-8 lg:ml-0 lg:flex lg:mt-[118px]">
-                <div className="lg:w-1/2  text-center justify-center pl-[62px] pt-[155px] lg:pt-16 pl-0 lg:pl-32">
+            <div className="overlay   flex justify-center ml-8 lg:ml-0 lg:flex lg:mt-24">
+                <div className="lg:w-1/2  text-center justify-center pt-36 lg:pt-16  lg:pl-32">
                     <div className="font-black text-4xl lg:text-5xl text-left mr-8 lg:mr-16">
                         <p>
                             Gana y valida experiencia como programador
@@ -31,16 +31,16 @@ const SloganComponent = () => (
 
                     <div className="lg:invisible  lg:h-0  mt-[45px]">
                         <div className="flex  items-center justify-between md:justify-evenly">
-                            <img className="h-[53px] " src={angularLogo} alt="Angular Logo"></img>
-                            <img className="h-[69px]" src={reactLogo} alt="React Logo"></img>
-                            <img className="h-[64px]" src={nodejsLogo}  alt="Nodejs Logo"></img>
-                            <img className="h-[48px]" src={pythonLogo}  alt="Python Logo"></img>
-                            <img className="h-[68px]" src={phpLogo}  alt="PHP Logo"></img>
+                            <img className="h-14 " src={angularLogo} alt="Angular Logo"></img>
+                            <img className="h-14" src={reactLogo} alt="React Logo"></img>
+                            <img className="h-14" src={nodejsLogo}  alt="Nodejs Logo"></img>
+                            <img className="h-14" src={pythonLogo}  alt="Python Logo"></img>
+                            <img className="h-14" src={phpLogo}  alt="PHP Logo"></img>
                         </div>
                         <div className="flex items-center justify-evenly">
-                            <img className="h-[62px]" src={javaLogo}  alt="Java Logo"></img>
-                            <img className="h-[60px]" src={gitLogo}  alt="Git Logo"></img>
-                            <img className="h-[51px]" src={scrumLogo}  alt="Scrum Logo"></img>
+                            <img className="h-14" src={javaLogo}  alt="Java Logo"></img>
+                            <img className="h-14" src={gitLogo}  alt="Git Logo"></img>
+                            <img className="h-14" src={scrumLogo}  alt="Scrum Logo"></img>
                         </div>
                     </div>
             
@@ -48,8 +48,8 @@ const SloganComponent = () => (
                     <div className="mt-16      ">
                         <div className='w-96 md:w-full lg:w-3/4'>
                         <div className="text-start ">
-                            <img className="absolute mr-[18px]" src="{{ asset('img/Ellipse.png') }}" alt=""></img>
-                            <img className="absolute  ml-2 mr-[18px]" src="{{ asset('img/Vector.png') }}" alt=""></img>
+                            {/*<img className="absolute mr-[18px]" src="{{ asset('img/Ellipse.png') }}" alt=""></img>
+                            <img className="absolute  ml-2 mr-[18px]" src="{{ asset('img/Vector.png') }}" alt=""></img>*/}
                             <div className=" font-black">
                                 <p>
                                     ¿Cómo colaborar?
@@ -63,7 +63,7 @@ const SloganComponent = () => (
                                 </div>
                             </div>
                         </div>
-                        <div className="mt-6 mr-8 w-full h-[73px] lg:w-96 text-left">
+                        <div className="mt-6 mr-8 w-full lg:w-96 text-left">
                             <p>
                                 La falta de experiencia te dificulta conseguir trabajo? Trabaja en equipo y ponte a prueba con nuestros proyectos
                             </p>
