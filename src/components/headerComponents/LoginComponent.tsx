@@ -17,18 +17,18 @@ export default function loginComponent({setIsDropdownOpenEntrar,setisDropdownOpe
       <div className="flex flex-col  justify-evenly h-80 px-5 py-0  ">
 
           <h1 className="text-start">Login</h1>
-
+  
           <input type="text" className="input input-bordered w-full max-w-xs" placeholder="DNI o NIE" />
 
           <input type="password"  className="input input-bordered w-full max-w-xs" placeholder="Contraseña" />
 
-
+       
           <a className="text-xs text-end">
             
             <span className="border-b-2 border-black">Recordar/Cambiar contraseña</span> 
           </a>
 
-          <button className='mt-5 btn btn-block bg-secondary' >Login</button>
+          <button className='mt-5 btn btn-block bg-secondary ' >Login</button>
 
           <a className="text-xs mt-5 ">
            <span  onClick={()=> {setIsDropdownOpenEntrar(false), setisDropdownOpenCuenta(true)} }  className="border-b-2 border-black">¿No tienes ninguna cuenta?, crear una</span> 

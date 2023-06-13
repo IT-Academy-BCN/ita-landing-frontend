@@ -33,10 +33,9 @@ export default function loginComponent({setisDropdownOpenCuenta, setIsDropdownOp
            
           <input  name="Admin" type="number"  className="mt-2 input input-bordered w-full max-w-xs" placeholder="Administrador" />
                   
-                  <button   type='submit'  className='mt-5 btn btn-block bg-secondary'>Registro</button>
+                  <button   type='submit'  className='mt-5 btn btn-wide bg-secondary'>Registro</button>
 
         </form>
-
 
           <a className="text-xs mt-5 ">
            <span onClick={()=> {setIsDropdownOpenEntrar(true),  setisDropdownOpenCuenta(false)} } className="border-b-2 border-black">¿Tienes cuenta? acceder</span> 

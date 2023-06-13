@@ -40,12 +40,12 @@ const Header = () => {
           
         >
           <div
-            className="relative btn btn-outline  "
-             
+            className="relative btn btn-outline hover:bg-transparent  "
+            onClick={toggleDropdown} 
           >
             <div
               className="flex  items-center justify-between text-sm text-[#7E7E7E] font-bold   "
-              onClick={toggleDropdown}
+              
             >
               <span>Castellano</span>
               <div >
@@ -119,7 +119,7 @@ const Header = () => {
           className="hidden lg:block   "    
         >
           <button  
-           onClick={()=>{setIsDropdownOpen(false), setIsDropdownOpenEntrar(true)}} className=" flex btn btn-outline "
+           onClick={()=>{setIsDropdownOpen(false), setIsDropdownOpenEntrar(true)}} className=" flex btn btn-outline hover:bg-transparent hover:text-black"
           >
             <div>
               <img src={selector} className="h-5 w-5 mr-3" />
@@ -213,7 +213,7 @@ const Header = () => {
               {/* Botón Entrar pantallas pequeñas */}
               <li>
                 <button
-                  className="bg-transparent px-4 py-2 ml-12 mb-8 mt-0 flex items-center"
+                  className="bg-transparent transparent px-4 py-2 ml-12 mb-8 mt-0 flex items-center"
                   style={{ borderRadius: "10px", border: "1px solid black" }}
                 >
                   <div className="ml-2 mt-4 mb-4">
