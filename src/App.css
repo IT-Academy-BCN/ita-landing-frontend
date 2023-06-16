@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.btn.btn-neutral{
+  color: #7e7e7e;
+}
  
 
 body{
