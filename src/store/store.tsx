@@ -1,12 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 // ...
-import counter from './reducers/counter/counterSlice'
-import apSlice from './reducers/apiCall/apSlice'
+ import apiPostRegister from './reducers/apiCall/apiPostRegisterLogin'
 
 export const store = configureStore({
   reducer: {
-    counter: counter,
-    apiCall: apSlice
+    apiPostRegister: apiPostRegister
   },
 })
 
