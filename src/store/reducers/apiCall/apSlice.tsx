@@ -27,14 +27,28 @@ export const apiSlice = createSlice({
 
 export const { apiCall , incrementApi} = apiSlice.actions
 
-export const llamadaApiPokemon =async(dispatch:any,number:number)=>{
+export const llamadaApiPokemon =async( fullData:any )=>{
 
   try { 
-    const dataOne =await  fetch(`https://pokeapi.co/api/v2/pokemon?limit=10&offset=${number}`);
-    const dataDos = await dataOne.json();
-    dispatch(apiCall(dataDos.results));  
+
+    const endpoint = await fetch('https://87.106.229.119/api/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(fullData)
+    });
+    
+    const dos = await endpoint.json();
+    
+    console.log('respuesta', dos);
+
+     
+     
+     
   } catch (error) {
-    console.log(error)
+     console.log(error)
   }
 };
 

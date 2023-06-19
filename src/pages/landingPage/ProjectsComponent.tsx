@@ -4,18 +4,18 @@ import { IconContext } from "react-icons";
 
 const ProjectsComponent = () => (
   <>
-    <div className="container p-14 flex">
+    <div className=" container  mx-auto mt-20 flex ">
       {/*Projects section*/}
-      <section className="flex mx-auto flex-col justify-center">
+      <section className="flex  flex-col justify-center">
         {/*Projects title area*/}
-        <div className="grid grid-cols-6 grid-rows-2">
-          <img className="h-[44px]" src={curvedArrow}></img>
+        <div className="grid grid-cols-4 grid-rows-1  ">
+          <img className="h-[44px] mr-10 place-self-end md:p-0 pl-14" src={curvedArrow}></img>
           <h2 className="font-black text-3xl text-center col-span-6">
             Directorio de aplicaciones IT Academy
           </h2>
         </div>
         {/* Projects legend*/}
-        <div className="flex flex-col md:flex-row lg:justify-end justify-center m-7 gap-4">
+        <div className="flex flex-col md:flex-row lg:w-3/4  lg:justify-end justify-center mx-auto my-6  gap-4">
           <div className="flex justify-center items-center gap-2">
             <IconContext.Provider
               value={{ color: "#bedfc8", className: "global-class-name" }}
@@ -41,9 +41,9 @@ const ProjectsComponent = () => (
           </div>
         </div>
         {/*Cards*/}
-        <div className="flex flex-wrap gap-7 justify-center">
+        <div className="flex flex-wrap gap-7 justify-center ">
           {/*Card 1*/}
-          <div className="card w-80 bg-completed text-grey-it">
+          <div className="card md:w-80 m-5 md:m-0 p-0 lg:p-4  bg-completed text-grey-it">
             <div className="card-body">
               <h2 className="card-title">Wiki</h2>
               <p>
@@ -58,7 +58,7 @@ const ProjectsComponent = () => (
             </div>
           </div>
           {/*Card 2*/}
-          <div className="card w-80 bg-completed text-grey-it">
+          <div className="card md:w-80 m-5  p-0 md:m-0 lg:p-4 bg-completed text-grey-it">
             <div className="card-body">
               <h2 className="card-title">Challenges & Hackathons</h2>
               <p>
@@ -73,7 +73,7 @@ const ProjectsComponent = () => (
             </div>
           </div>
           {/*Card 3*/}
-          <div className="card w-80 bg-building text-grey-it">
+          <div className="card md:w-80 m-5 md:m-0 p-0 lg:p-4 bg-building text-grey-it">
             <div className="card-body">
               <h2 className="card-title">Game!</h2>
               <p>
@@ -88,7 +88,7 @@ const ProjectsComponent = () => (
             </div>
           </div>
           {/*Card 4*/}
-          <div className="card w-80 bg-building text-grey-it">
+          <div className="card md:w-80 m-5 md:m-0 p-0 lg:p-4 bg-building text-grey-it">
             <div className="card-body">
               <h2 className="card-title">ITA Profiles</h2>
               <p>
@@ -103,7 +103,7 @@ const ProjectsComponent = () => (
             </div>
           </div>
           {/*Card 5*/}
-          <div className="card w-80 bg-soon text-grey-it">
+          <div className="card md:w-80 m-5 md:m-0 p-0 lg:p-4 bg-soon text-grey-it">
             <div className="card-body">
               <h2 className="card-title">Reports</h2>
               <p>
@@ -118,10 +118,10 @@ const ProjectsComponent = () => (
             </div>
           </div>
           {/*Card 6*/}
-          <div className="card w-80 bg-soon text-grey-it">
+          <div className="card md:w-80 m-5 md:m-0 p-0 lg:p-4 bg-soon text-grey-it">
             <div className="card-body">
               <h2 className="card-title">ITA Brain</h2>
-              <p>
+              <p className="font-16">
                 Predicción de probabilidad de abandono de un alumno en función
                 de la información recogida en las apps y moodle.
               </p>
