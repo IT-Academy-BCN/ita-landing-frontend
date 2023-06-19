@@ -23,7 +23,7 @@ const SloganComponent = () => (
 
             <div className="overlay   flex justify-center ml-8 lg:ml-0 lg:flex lg:mt-24">
                 <div className="lg:w-1/2  text-center justify-center pt-36 lg:pt-16  lg:pl-32">
-                    <div className="font-black text-4xl lg:text-5xl text-left mr-8 lg:mr-16">
+                    <div className="font-black text-4xl lg:text-5xl text-left mr-8 lg:mr-16 leading-tight">
                         <p>
                             Gana y valida experiencia como programador
                         </p>
