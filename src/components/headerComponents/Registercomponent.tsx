@@ -8,6 +8,7 @@ export default function LoginComponent({ setIsDropdownEnterButton, setisDropdown
 //Avoid the user write letters.
    const [adminValue,setAdminValue]  = useState<number | null>(null);
     const onChangeValueAdmin=(e:any)=>{
+      console.log(adminValue)
       setAdminValue(parseInt(e.target.value))
     };
 
