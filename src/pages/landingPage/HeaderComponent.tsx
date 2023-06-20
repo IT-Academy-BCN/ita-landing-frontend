@@ -29,9 +29,6 @@ const Header = () => {
         <img src={logo} alt="logo"  className=" lg:w-1/2"  />
     </div>
     
-         
-       
-
       {/* Idiomas + Botón Entrar (solo visibles en pantallas grandes) */}
       <div className=" flex  ">
         {/* Botón Desplegable Idiomas (solo visible en pantallas grandes) */}

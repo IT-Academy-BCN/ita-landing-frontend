@@ -1,4 +1,5 @@
 export default {
+  plugins: [require("daisyui")],
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     colors: {
@@ -9,8 +10,6 @@ export default {
       "grey-it": "#7e7e7e",
     },
     extend: {},
-  },daisyui: {
-   
   },
-  plugins: [require("daisyui")],
+  
 };

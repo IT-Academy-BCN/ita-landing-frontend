@@ -6,14 +6,14 @@ export default function LoginComponent({ setIsDropdownEnterButton, setisDropdown
 
 
 //Avoid the user write letters.
-   const [adminValue,setAdminValue]  = useState<number | null>(null)
+   const [adminValue,setAdminValue]  = useState<number | null>(null);
     const onChangeValueAdmin=(e:any)=>{
       setAdminValue(parseInt(e.target.value))
     };
 
    const AdminValueCodeKey = (e: any) => {
     const key = e.keyCode || e.charCode;
-    const keyIsNumber = (key >= 48 && key <= 57);
+    const keyIsNumber = (key >= 48 && key <= 57 || key == 8 || key == 13);
     if (!keyIsNumber) {
       e.preventDefault();
     }
@@ -22,7 +22,7 @@ export default function LoginComponent({ setIsDropdownEnterButton, setisDropdown
 
 //Api Posting REDUX
   const dispatch = useDispatch();
-  let {messageError} = useSelector((state:any)=> state.apiPostRegister);
+  let {messageError,  isLoadingMessageError} = useSelector((state:any)=> state.apiPostRegister);
   const submitInformation = (e: any) => {
     handleSubmit(dispatch, e, 1, null);
   };
@@ -46,8 +46,13 @@ export default function LoginComponent({ setIsDropdownEnterButton, setisDropdown
               <input  onKeyDown={AdminValueCodeKey} onChange={onChangeValueAdmin} name="Admin" type="text" className="mt-2 input input-bordered w-full max-w-xs" placeholder="Administrador" />
               <button type='submit' className='mt-5 btn btn-wide bg-secondary'>Registro</button>
             </form> 
+            {
+              !isLoadingMessageError ?  <p>{messageError}</p> : <span className="loading loading-spinner loading-sm">...</span>
+
+            }
             
-            <p>{messageError}</p>
+
+
 
             
             <a className="text-xs mt-5">
