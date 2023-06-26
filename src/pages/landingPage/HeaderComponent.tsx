@@ -25,26 +25,23 @@ const Header = () => {
     <header className="w-full z-10 absolute flex  justify-between  ">
       {/* Logo */}
       
-    <div className="w-1/2 lg:w-auto ml-5 lg:ml-0 ">
+    <div className="w-1/2 md:w-1/4 lg:w-auto ml-5 lg:ml-0 ">
         <img src={logo} alt="logo"  className=" lg:w-1/2"  />
     </div>
     
-         
-       
-
       {/* Idiomas + Botón Entrar (solo visibles en pantallas grandes) */}
       <div className=" flex  ">
         {/* Botón Desplegable Idiomas (solo visible en pantallas grandes) */}
         <div
-          className="hidden lg:block relative mr-10 cursor-pointer "
+          className="hidden lg:block relative mr-10 cursor-pointer  "
           
         >
           <div
-            className="relative btn btn-outline hover:bg-transparent  "
+            className="relative btn btn-outline btn-neutral h-full hover:bg-transparent  "
             onClick={toggleDropdown} 
           >
             <div
-              className="flex  items-center justify-between text-sm text-black font-bold   "
+              className="flex  items-center justify-between text-sm text-neutral font-bold   "
               
             >
               <span>Castellano</span>
@@ -119,10 +116,10 @@ const Header = () => {
           className="hidden lg:block   "    
         >
           <button  
-           onClick={()=>{setIsDropdownOpen(false), setIsDropdownEnterButton(true)}} className=" flex btn btn-outline hover:bg-transparent hover:text-black"
+           onClick={()=>{setIsDropdownOpen(false), setIsDropdownEnterButton(true)}} className="h-full flex btn btn-outline hover:bg-transparent hover:text-black"
           >
             <div>
-              <img src={selector} className="h-5 w-5 mr-3" />
+              <img src={selector} className="h-5 w-5 mr-2" />
             </div>
             <span className="  font-bold   text-sm">
               Entrar 
