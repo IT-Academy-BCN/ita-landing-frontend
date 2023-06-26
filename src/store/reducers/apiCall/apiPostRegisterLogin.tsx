@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+import { PayloadAction } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 
@@ -9,7 +9,8 @@ messageError:String,
 isLogged:boolean,
 isLoadingMessageError:boolean
 }
-// Define the initial state using that type
+
+
 const initialState: errorMessageLogginBoolean = {
   messageError:'',
   isLogged:false,
@@ -39,7 +40,9 @@ export const apiSlice = createSlice({
 export const { setMessageError,eraseMessageError,setIsLogged } = apiSlice.actions;
 
 //Api call for login and register.
- export const handleSubmit = async(dispatch:any, e: any, number:number, navegador:any) => {
+
+
+ export const handleSubmit = async(dispatch:any, e:any, number:number, navegador:any) => {
   e.preventDefault();
   dispatch(setMessageError({errorMessage:'',loadingBoolean:true}));
 
@@ -47,7 +50,6 @@ export const { setMessageError,eraseMessageError,setIsLogged } = apiSlice.action
   
   //RESGISTER
    if(number === 1){
-    
     axios.post('http://87.106.229.119/api/register',formData)
     .then(resp=> {console.log( resp); dispatch(setMessageError({errorMessage: resp.data.result.message.split('.')[0],loadingBoolean:false}))})
     .catch(err=> console.log(err,'error'));
