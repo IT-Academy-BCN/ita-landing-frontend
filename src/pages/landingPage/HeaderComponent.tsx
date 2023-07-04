@@ -14,10 +14,10 @@ const Header = () => {
  
 
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState (false);
-  const [IsDropdownEnterButton, setIsDropdownEnterButton] = useState (false);
-  const [isDropdownCuenta, setisDropdownCuenta] = useState (false);
-  const toggleDropdown = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean> (false);
+  const [IsDropdownEnterButton, setIsDropdownEnterButton] = useState<boolean> (false);
+  const [isDropdownCuenta, setisDropdownCuenta] = useState<boolean> (false);
+  const toggleDropdown = ():void=> {
     setIsDropdownOpen(!isDropdownOpen);
     
   };

@@ -8,6 +8,7 @@ export default {
       soon: "#f7cbc4",
       "projects-title": "#1c1c1e",
       "grey-it": "#7e7e7e",
+      "backOffice-main":"#EBEBEB"
     },
     extend: {},
   },

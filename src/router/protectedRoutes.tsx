@@ -7,7 +7,7 @@ export default function ProtectedRoute() {
     
   return (
     <>
-        {isLogged == true ?<Outlet/> : <Navigate to={'/'}/> }
+        {isLogged == false ?<Outlet/> : <Navigate to={'/'}/> }
     </>
   )
 }
