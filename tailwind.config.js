@@ -1,7 +1,11 @@
 export default {
   plugins: [require("daisyui")],
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  daisyui:{
+    themes:["dark"],
+  },
   theme: {
+   
     colors: {
       completed: "#bedfc8",
       building: "#f8e9b9",
@@ -11,6 +15,6 @@ export default {
       "backOffice-main":"#EBEBEB"
     },
     extend: {},
-  },
+  }
   
 };
