@@ -52,7 +52,7 @@ export default function loginComponent({setIsDropdownEnterButton, setisDropdownC
             <span className="border-b-2 border-black">Recordar/Cambiar contraseña</span> 
           </a>
 
-          <button type='submit' className='mt-5 btn btn-block bg-secondary' >Login</button>
+          <button type='submit' className='mt-5 btn btn-block bg-pink-it text-white' >Login</button>
           
           </form>
 

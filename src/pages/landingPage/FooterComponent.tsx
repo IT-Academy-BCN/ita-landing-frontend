@@ -3,7 +3,7 @@ import NormativaModal from "./Modals/NormativaModal";
 
 const Footer = () => (
   
-  <footer className="bg-secondary w-screen absolute left-0 mt-5 ">
+  <footer className="bg-pink-it w-screen absolute left-0 mt-5 ">
      
   <div className="mx-auto w-full py-6 text-white text-sm">
     <div>

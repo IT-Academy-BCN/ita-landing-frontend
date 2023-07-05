@@ -1,9 +1,6 @@
 export default {
   plugins: [require("daisyui")],
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  daisyui:{
-    themes:["dark"],
-  },
   theme: {
    
     colors: {
@@ -12,7 +9,8 @@ export default {
       soon: "#f7cbc4",
       "projects-title": "#1c1c1e",
       "grey-it": "#7e7e7e",
-      "backOffice-main":"#EBEBEB"
+      "backOffice-main":"#EBEBEB",
+      'pink-it': '#BA007C'
     },
     extend: {},
   }
