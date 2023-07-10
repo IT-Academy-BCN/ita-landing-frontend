@@ -10,8 +10,8 @@ function LandingPage() {
     <>
      
       <SloganComponent />
-      <TeamsectionComponent />
       <ProjectsComponent />
+      <TeamsectionComponent />
       <Collaborators />
       <FAQs />
       <Footer />
