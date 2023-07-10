@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import itImage from '../../../images/ITA_Logo.png'
 import LogoOut from '../../../images/Sign-out.png'
 import axios from 'axios'
+import FAQs from '../../landingPage/FAQsComponent';
 export default function ViewBackOffice({setIsLogged,dispatch}:{setIsLogged:any,dispatch:any}) {
 
     const apiCall = ()=>{
@@ -20,8 +21,8 @@ export default function ViewBackOffice({setIsLogged,dispatch}:{setIsLogged:any,d
   return (
     
     <>
-        <main className="grid grid-cols-6 h-screen w-screen bg-backOffice-main">
-            <nav className="">
+        <main className="grid grid-cols-6 min-h-screen  w-screen bg-backOffice-main">
+            <nav className="h-full">
 
             <img src={itImage} alt="img-logo" />
 
@@ -33,9 +34,9 @@ export default function ViewBackOffice({setIsLogged,dispatch}:{setIsLogged:any,d
             </nav>
 
             <div className=" col-span-5 m-5 bg-white rounded-md">
-                <div>
-                    acordeon
-                </div>
+                <aside>
+                    <FAQs/>
+                </aside>
             </div>
         </main>
     </>

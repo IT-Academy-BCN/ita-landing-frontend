@@ -58,7 +58,7 @@ export default function loginComponent({setIsDropdownEnterButton, setisDropdownC
 
           {/* Icono de carga */}
           {
-              !isLoadingMessageError ?  <p className='mt-0'>{messageError}</p> : <span className="text-center loading loading-spinner loading-lg"></span>
+              !isLoadingMessageError  ?  <p className='mt-0'>{messageError}</p> : <div className='flex justify-center'><span className=" loading loading-spinner loading-lg "></span></div>
             }
           <a className="text-xs mt-5 ">
            <span  onClick={()=> { dispatch(eraseMessageError()); setIsDropdownEnterButton(false), setisDropdownCuenta(true)} }  className="border-b-2 border-black">¿No tienes ninguna cuenta?, crear una</span> 

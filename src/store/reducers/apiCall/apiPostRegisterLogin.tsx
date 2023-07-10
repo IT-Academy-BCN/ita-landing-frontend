@@ -4,17 +4,19 @@ import axios from 'axios'
 
 
  
-interface errorMessageLogginBoolean {
+interface loginRegisterParams {
 messageError:String,
 isLogged:boolean,
-isLoadingMessageError:boolean
+isLoadingMessageError:boolean,
+acces_token:string
 }
 
 
-const initialState: errorMessageLogginBoolean = {
+const initialState: loginRegisterParams = {
   messageError:'',
   isLogged:false,
-  isLoadingMessageError:false
+  isLoadingMessageError:false,
+  acces_token:''
 }
 
 export const apiSlice = createSlice({
@@ -33,11 +35,13 @@ export const apiSlice = createSlice({
       
     },setIsLogged:(state,actions)=>{
       state.isLogged = actions.payload
+    },setToken:(state,actions)=>{
+      state.acces_token = actions.payload
     }
   },
 })
 
-export const { setMessageError,eraseMessageError,setIsLogged } = apiSlice.actions;
+export const { setMessageError,eraseMessageError,setIsLogged,setToken } = apiSlice.actions;
 
 //Api call for login and register.
 
@@ -58,7 +62,7 @@ export const { setMessageError,eraseMessageError,setIsLogged } = apiSlice.action
     //LOGIN
    }else if(number === 2){ 
     axios.post('http://87.106.229.119/api/login',formData)
-    .then(resp=> {console.log( resp); dispatch(setIsLogged(true)); navegador('/backoffice');  })
+    .then(resp=> { dispatch(setToken(resp.data.result.access_token)); dispatch(setIsLogged(true)); navegador('/backoffice'); dispatch(setMessageError({errorMessage:'', loadingBoolean:false}))  })
     .catch(err=>{err.response.status==422? dispatch(setMessageError({errorMessage:err.response.data.message.split('.')[0], loadingBoolean:false})) : dispatch(setMessageError({errorMessage:err.response.data.result.message, loadingBoolean:false}))})
    }
   }
