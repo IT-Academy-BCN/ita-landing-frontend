@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-import data from "../../data/mock-FAQS-data.json"
-import axios from "axios";
+import { useEffect } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { RootState } from "../../store/store";
 import FaqsModified from "./FaqsModified";

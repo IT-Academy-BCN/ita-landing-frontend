@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { PayloadAction } from '@reduxjs/toolkit'
 import axios from 'axios'
-import { useDispatch } from 'react-redux'
+
 
 
 interface faqsData {
@@ -24,13 +23,11 @@ export const apiSlice = createSlice({
   reducers: {
     setFaqs:(state,action)=>{
         state.faqs = action.payload;
-    },postFaqs:(state,action)=>{
-
     }
   },
 })
 
-export const { setFaqs,postFaqs} = apiSlice.actions;
+export const { setFaqs } = apiSlice.actions;
 
   //llamada api a faqs//
 
