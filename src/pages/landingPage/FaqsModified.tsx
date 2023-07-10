@@ -15,11 +15,11 @@ export default function FaqsModified() {
         //constantes para el set //
       const dispatch = useDispatch();
 
-      let [booleanFaqs, setBooleanFaqs] = useState(false);
+      let [booleanFaqs, setBooleanFaqs] = useState<boolean>(false);
       
-      const [faqsContent, setFaqsContent] = useState({
-        title:'',
-        description:''
+      const [faqsContent, setFaqsContent] = useState<{ title: string, description: string }>({
+        title: '',
+        description: ''
       });
       
   return (
