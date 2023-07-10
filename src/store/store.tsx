@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 // ...
  import apiPostRegister from './reducers/apiCall/apiPostRegisterLogin'
+ import faqsReducer from './reducers/faqsCall/faqsReducer'
 
 export const store = configureStore({
   reducer: {
-    apiPostRegister: apiPostRegister
+    apiPostRegister: apiPostRegister,
+    faqsReducer:faqsReducer
   },
 })
 

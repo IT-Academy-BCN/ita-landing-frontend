@@ -15,6 +15,8 @@ function ViewBackOffice({setIsLogged,dispatch}:{setIsLogged:any,dispatch:any}) {
         setState({...state, faqs: false});
     }, []);
 
+
+  
     
     const [boldFont, setBoldFont] = useState({
         boldFaqs: false,
@@ -25,8 +27,9 @@ function ViewBackOffice({setIsLogged,dispatch}:{setIsLogged:any,dispatch:any}) {
     }, []);
 
   return (
+    
     <>
-        <main className="grid grid-cols-6 h-screen w-screen bg-backOffice-main">
+        <main className="grid grid-cols-6  w-screen min-h-screen  bg-backOffice-main">
 
             <nav>
                 <img src={itImage} alt="img-logo" className="mt-5 mx-auto"/>
