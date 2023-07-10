@@ -1,22 +1,10 @@
-import { useEffect } from 'react';
 import itImage from '../../../images/ITA_Logo.png'
 import LogoOut from '../../../images/Sign-out.png'
-import axios from 'axios'
 import FAQs from '../../landingPage/FAQsComponent';
 export default function ViewBackOffice({setIsLogged,dispatch}:{setIsLogged:any,dispatch:any}) {
 
-    const apiCall = ()=>{
 
-        axios.get('http://127.0.0.1:8000/api/faqs')
-        .then(resp=> {console.log(resp)})
-        .catch(err=> console.log(err,'error'));
-
-          
-    }
-
-   useEffect(()=>{
-    apiCall()
-   },[])
+  
     
   return (
     
