@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { RootState } from "../../store/store";
 import FaqsModified from "./FaqsModified";
-import { apiCall,deleteApiFaqs } from "../../store/reducers/faqsCall/faqsReducer";
+import { apiCall } from "../../store/reducers/faqsCall/faqsReducer";
+import deleteFaqIcon from '../../images/icon-delete-faq-backoffice.png';
+import DeleteFaqModal from "./Modals/DeleteFaqModal";
 
 
 const FAQs = () => {
@@ -40,6 +42,7 @@ const FAQs = () => {
     apiCall(dispatch)
   },[])
 
+  const [openModal, setOpenModal] = useState(false)
  
   return (
 
@@ -72,9 +75,10 @@ const FAQs = () => {
           <p>{faq.description}</p>
         </div>
 
-        <div className="justify-self-end">
-          <button className="btn btn-sm">Editar</button>
-          <button className="btn btn-sm btn-primary">Delete</button>
+        <div className="flex justify-self-end items-center">
+          <button className="mx-2 px-4 border-gray-500 h-[30px]">Editar</button>
+          <img src={deleteFaqIcon} className='h-[30px] cursor-pointer' onClick={() => {setOpenModal(true)}} alt="locker"/>
+          {openModal && <DeleteFaqModal closeModal={setOpenModal} />}
         </div>
 
       </div>
