@@ -58,29 +58,27 @@ const FAQs = () => {
       )
     }
   {faqs.map((faq:Faq, index:number) => (
-    <div
-      className={`collapse rounded-md ${
-         'mb-5'  // Agrega mb-5 si no es el último elemento
-      } shadow-xl`}
-      key={index}
-    >
-      <input type="checkbox" className="peer" />
-      <div className="collapse-title absolute  rounded-b-md bg-white text-left text-black text-4 font-poppins font-bold peer-checked:bg-[#BA007C] peer-checked:rounded-b-[0px] peer-checked:text-secondary-content text-4 font-poppins font-bold">
-        {faq.title}
-      </div>
-      <div className="collapse-content rounded-b-md bg-white">
-        <p className="text-left text-black  text-4 font-poppins font-medium ml-9 mr-24 mt-9 mb-6">
-          {faq.description}
-        </p>
-        
-        {window.location.pathname == '/backoffice' && (<div className="flex justify-end mr-20 pb-7">
-        
-        <button className="mr-5 xl:px-7 btn btn-outline-primary border-gray-600 bg-transparent text-gray-600" onClick={()=> deleteApiFaqs(faq.id,acces_token,dispatch)}>Eliminar</button>
-        <button className="btn xl:px-9  bg-pink-it text-white">Guardar</button>
+    <div className={`collapse rounded-md ${'mb-5'  // Agrega mb-5 si no es el último elemento
+      } shadow-xl`} key={index}>
+      
+      <div className="alert collapse">
 
-    </div>)}
+        <input type="radio" name="my-accordion-1" />
+        <div className="collapse-title">
+          {faq.title}
+        </div>
+
+        <div className="collapse-content w-full col-span-2"> 
+          <p>{faq.description}</p>
+        </div>
+
+        <div className="justify-self-end">
+          <button className="btn btn-sm">Editar</button>
+          <button className="btn btn-sm btn-primary">Delete</button>
+        </div>
 
       </div>
+
     </div>
   ))}
 </div>
