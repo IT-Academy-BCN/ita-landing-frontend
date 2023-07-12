@@ -44,48 +44,67 @@ const FAQs = () => {
 
   const [openModal, setOpenModal] = useState(false)
  
+
+  const [faqsState, setFaqsState] = useState(faqs)
+  const handleDescriptionChange = (index:number) => {
+    const newFaqs = [...faqsState];
+    newFaqs[index] = {...newFaqs[index], description: "Nueva respuesta"};
+    setFaqsState(newFaqs);
+  };
+
+  const [showEditButtons, setShowEditButtons] = useState(false);
+
   return (
 
-    
-    
-    <div className="w-3/4 m-auto ">
-        <div className="grid grid-cols-6 grid-rows-2">
-    <h2 className="font-black text-2xl font-poppins  text-center col-span-6">
-      Preguntas frecuentes
-    </h2>
-  </div>
-
-    {
-      window.location.pathname =='/backoffice'&&(
-        <FaqsModified/>
-      )
-    }
-  {faqs.map((faq:Faq, index:number) => (
-    <div className={`collapse rounded-md ${'mb-5'  // Agrega mb-5 si no es el último elemento
-      } shadow-xl`} key={index}>
-      
-      <div className="alert collapse">
-
-        <input type="radio" name="my-accordion-1" />
-        <div className="collapse-title">
-          {faq.title}
-        </div>
-
-        <div className="collapse-content w-full col-span-2"> 
-          <p>{faq.description}</p>
-        </div>
-
-        <div className="flex justify-self-end items-center">
-          <button className="mx-2 px-4 border-gray-500 h-[30px]">Editar</button>
-          <img src={deleteFaqIcon} className='h-[30px] cursor-pointer' onClick={() => {setOpenModal(true)}} alt="locker"/>
-          {openModal && <DeleteFaqModal closeModal={setOpenModal} />}
-        </div>
-
+    <div className="w-3/4 m-auto">
+      <div className="grid grid-cols-6 grid-rows-2">
+        <h2 className="font-black text-2xl font-poppins text-center col-span-6">
+          Preguntas frecuentes
+        </h2>
       </div>
 
+      { window.location.pathname =='/backoffice'&&(<FaqsModified/>) }
+
+      {faqsState.map((faq:Faq, index:number) => (
+        <div className={`collapse rounded-md ${'mb-5'  // Agrega mb-5 si no es el último elemento
+          } shadow-xl`} key={index}>
+            
+          <div className="alert collapse bg-pink-it">
+
+            <input type="radio" name="my-accordion-1" />
+            <div className="collapse-title bg-green-500">
+              {faq.title}
+            </div>
+
+            <div className="collapse-content w-full col-span-2 bg-blue-500"> 
+              <p>{faq.description}</p>
+
+              {showEditButtons &&
+                <div className="flex justify-end mt-6 mb-2 mr-4">
+                  <button className="mx-4 py-2 px-6 border-gray-500">Cancelar</button>
+                  <button className="py-2 px-6 bg-pink-it text-white">Guardar</button>
+                </div>
+              }
+
+            </div>
+
+            <div className="flex justify-self-end items-center bg-orange-500">
+              <button className="mx-2 px-4 border-gray-500 h-[30px]" onClick={() => {
+                handleDescriptionChange(index),
+                setShowEditButtons(true)
+                }}
+                >Editar</button>
+                
+              <img src={deleteFaqIcon} className='h-[30px] cursor-pointer' onClick={() => {setOpenModal(true)}} alt="locker"/>
+              {openModal && <DeleteFaqModal closeModal={setOpenModal} />}
+
+            </div>
+
+          </div>
+
+        </div>
+      ))}
     </div>
-  ))}
-</div>
   );
 };
 export default FAQs;
