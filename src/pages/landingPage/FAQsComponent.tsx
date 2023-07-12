@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { RootState } from "../../store/store";
 import FaqsModified from "./FaqsModified";
-import { apiCall } from "../../store/reducers/faqsCall/faqsReducer";
+import { apiCall, deleteApiFaqs } from "../../store/reducers/faqsCall/faqsReducer";
 import deleteFaqIcon from '../../images/icon-delete-faq-backoffice.png';
 import DeleteFaqModal from "./Modals/DeleteFaqModal";
+
 
 
 const FAQs = () => {
@@ -44,15 +45,39 @@ const FAQs = () => {
 
   const [openModal, setOpenModal] = useState(false)
  
+  const editableContent = (index:string) => {
+    const content = document.getElementById(index);
 
-  const [faqsState, setFaqsState] = useState(faqs)
-  const handleDescriptionChange = (index:number) => {
-    const newFaqs = [...faqsState];
-    newFaqs[index] = {...newFaqs[index], description: "Nueva respuesta"};
-    setFaqsState(newFaqs);
-  };
+    //ha de checkear si esta desplegado o no!!!
 
-  const [showEditButtons, setShowEditButtons] = useState(false);
+    if(content){
+      content.contentEditable = 'true'; // <-- 1r funció -> contentEditable
+      content.classList.add('bg-slate-200'); // <----- NO FUNCIONA!!!!
+
+      setShowSaveButtons(index) // <-- 2n funció --> SaveButtons de un indice = true (Cancelar y Guardar)
+      setShowEditButtons(false) // <-- 3a funció --> EditButton tots! [així esta be!] = false (Editar y Eliminar)
+
+    }
+  }
+
+  const [showSaveButtons, setShowSaveButtons] = useState(""); // botones de Cancelar y Guardar
+  const [showEditButtons, setShowEditButtons] = useState(true); // botones de Editar y Eliminar
+
+
+  const cancelEditContent = (index:number , description:string) => {
+    setShowEditButtons(true)
+    const content = document.getElementById(index.toString());
+    if(content){
+
+      //REFRESH DESCRIPTION DIV
+      
+
+      content.contentEditable = 'false';
+
+    }
+  }
+
+  const [faqsState, setFaqsState] = useState(faqs) //actualizar array de FAQS <-- ÚLTIMO PASO
 
   return (
 
@@ -73,32 +98,34 @@ const FAQs = () => {
 
             <input type="radio" name="my-accordion-1" />
             <div className="collapse-title bg-green-500">
-              {faq.title}
+              <p>{faqsState[index].title}</p>
             </div>
 
-            <div className="collapse-content w-full col-span-2 bg-blue-500"> 
-              <p>{faq.description}</p>
+            <div id={index.toString()} className="collapse-content w-full col-span-2"> 
+              <p id="description">{faqsState[index].description}</p>
 
-              {showEditButtons &&
+              {showSaveButtons === index.toString() &&
                 <div className="flex justify-end mt-6 mb-2 mr-4">
-                  <button className="mx-4 py-2 px-6 border-gray-500">Cancelar</button>
-                  <button className="py-2 px-6 bg-pink-it text-white">Guardar</button>
+                  <button className="mx-4 py-2 px-6 border-gray-500" onClick={() => cancelEditContent(index, faqsState[index].description)}>Cancelar</button>
+                  <button className="py-2 px-6 bg-pink-it text-white" onClick={() => setShowEditButtons(true)}>Guardar</button>
                 </div>
               }
 
             </div>
 
-            <div className="flex justify-self-end items-center bg-orange-500">
-              <button className="mx-2 px-4 border-gray-500 h-[30px]" onClick={() => {
-                handleDescriptionChange(index),
-                setShowEditButtons(true)
-                }}
-                >Editar</button>
-                
-              <img src={deleteFaqIcon} className='h-[30px] cursor-pointer' onClick={() => {setOpenModal(true)}} alt="locker"/>
-              {openModal && <DeleteFaqModal closeModal={setOpenModal} />}
+            {showEditButtons &&
+              <div className="flex justify-self-end items-center bg-orange-500">
+                <button className="mx-2 px-4 border-gray-500 h-[30px]" onClick={() => {
+                  editableContent(index.toString())
+                  }}
+                  >Editar</button>
+                  
+                <img src={deleteFaqIcon} className='h-[30px] cursor-pointer' onClick={() => {setOpenModal(true)}} alt="locker"/>
+                {openModal && <DeleteFaqModal closeModal={setOpenModal} faqId={faq.id} acces_token={acces_token} dispatch={dispatch}/>}
 
-            </div>
+              </div>
+            }
+
 
           </div>
 

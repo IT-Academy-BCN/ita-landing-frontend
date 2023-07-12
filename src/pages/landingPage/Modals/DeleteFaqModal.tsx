@@ -1,8 +1,7 @@
-// import { apiCall,deleteApiFaqs } from "../../../store/reducers/faqsCall/faqsReducer";
+import { apiCall,deleteApiFaqs } from "../../../store/reducers/faqsCall/faqsReducer";
 import locker from '../../../images/locker.png';
 
-
-function DeleteFaqModal({closeModal}) {
+function DeleteFaqModal({closeModal, faqId, acces_token, dispatch}) {
     return (
         <div className="">
             <div className="modal modal-open">
@@ -15,7 +14,7 @@ function DeleteFaqModal({closeModal}) {
                     <h1 className='text-2xl font-semibold'>¿Estás segur@?</h1>
                     <p className='max-w-[70%] text-center my-4'>Esta acción eliminará el elemento seleccionado</p>
 
-                    <button className="bg-pink-it min-w-[60%] py-2 mb-4 text-white"> Eliminar </button>
+                    <button className="bg-pink-it min-w-[60%] py-2 mb-4 text-white" onClick={()=> deleteApiFaqs(faqId, acces_token, dispatch)}> Eliminar </button>
 
                     <button className="min-w-[60%] py-2 mb-4 border-gray-500" onClick={() => closeModal(false)}> Cancelar </button>
 
