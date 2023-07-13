@@ -80,6 +80,22 @@ export const { setFaqs } = apiSlice.actions;
   };
 
 
+  //Put //
+  export const putApiFaqs =async(faqId:number, faqContent:any,acces_token:String, dispatch:any)=>{
+    try{
+      await axios.put(`http://87.106.229.119/api/faqs/'${faqId}`,faqContent,{
+        headers:{
+          Authorization:`Bearer ${acces_token}`
+        }
+      });  
+      await apiCall(dispatch);
+
+    }catch(error){
+      console.log(error)
+    }
+  
+  };
+
 
 
 export default apiSlice.reducer

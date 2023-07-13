@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { RootState } from "../../store/store";
 import FaqsModified from "./FaqsModified";
-import { apiCall, deleteApiFaqs } from "../../store/reducers/faqsCall/faqsReducer";
+import { apiCall, deleteApiFaqs, putApiFaqs } from "../../store/reducers/faqsCall/faqsReducer";
 import deleteFaqIcon from '../../images/icon-delete-faq-backoffice.png';
 import DeleteFaqModal from "./Modals/DeleteFaqModal";
 import $ from 'jquery';
@@ -55,9 +55,8 @@ const FAQs = () => {
       content.contentEditable = 'true';
       content.classList.add('bg-slate-200');
 
-      setShowSaveButtons(index)
       setShowEditButtons(false)
-
+      setShowSaveButtons(index)
     }
   }
 
@@ -74,7 +73,29 @@ const FAQs = () => {
     }
   }
 
+  const [newDescriptionValue, setNewDescriptionValue] = useState('');
+
+  const saveEditContent = (index:number, faqsStateIndexed:any) => {
+    setShowEditButtons(true)
+    const div = document.getElementById(index.toString());
+    const descriptionElement = document.getElementById("description"); // valor modificat de la description
+
+    setNewDescriptionValue(descriptionElement.innerHTML)
+
+    if(div){
+      div.contentEditable = 'false';
+    }
+
+    console.log(faqsStateIndexed.id, newDescriptionValue, acces_token, dispatch)
+
+    // putApiFaqs(faqsStateIndexed.id, newDescriptionValue, acces_token, dispatch)
+
+
+  }
+
   const [faqsState, setFaqsState] = useState(faqs)
+
+
 
   return (
 
@@ -104,7 +125,7 @@ const FAQs = () => {
               {showSaveButtons === index.toString() &&
                 <div className="flex justify-end mt-6 mb-2 mr-4" contentEditable="false">
                   <button className="mx-4 py-2 px-6 border-gray-500" onClick={() => cancelEditContent(index, faqsState[index].description)}>Cancelar</button>
-                  <button className="py-2 px-6 bg-pink-it text-white" onClick={() => setShowEditButtons(true)}>Guardar</button>
+                  <button className="py-2 px-6 bg-pink-it text-white" onClick={() => saveEditContent(index, faqsState[index])}>Guardar</button>
                 </div>
               }
 
