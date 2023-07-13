@@ -5,6 +5,7 @@ import FaqsModified from "./FaqsModified";
 import { apiCall, deleteApiFaqs } from "../../store/reducers/faqsCall/faqsReducer";
 import deleteFaqIcon from '../../images/icon-delete-faq-backoffice.png';
 import DeleteFaqModal from "./Modals/DeleteFaqModal";
+import $ from 'jquery';
 
 
 
@@ -51,33 +52,29 @@ const FAQs = () => {
     //ha de checkear si esta desplegado o no!!!
 
     if(content){
-      content.contentEditable = 'true'; // <-- 1r funció -> contentEditable
-      content.classList.add('bg-slate-200'); // <----- NO FUNCIONA!!!!
+      content.contentEditable = 'true';
+      content.classList.add('bg-slate-200');
 
-      setShowSaveButtons(index) // <-- 2n funció --> SaveButtons de un indice = true (Cancelar y Guardar)
-      setShowEditButtons(false) // <-- 3a funció --> EditButton tots! [així esta be!] = false (Editar y Eliminar)
+      setShowSaveButtons(index)
+      setShowEditButtons(false)
 
     }
   }
 
-  const [showSaveButtons, setShowSaveButtons] = useState(""); // botones de Cancelar y Guardar
-  const [showEditButtons, setShowEditButtons] = useState(true); // botones de Editar y Eliminar
-
+  const [showEditButtons, setShowEditButtons] = useState(true); // Editar & Eliminar buttons
+  const [showSaveButtons, setShowSaveButtons] = useState(""); // Cancelar & Guardar buttons
 
   const cancelEditContent = (index:number , description:string) => {
     setShowEditButtons(true)
     const content = document.getElementById(index.toString());
+
     if(content){
-
-      //REFRESH DESCRIPTION DIV
-      
-
       content.contentEditable = 'false';
-
+      $("#description").html(description);
     }
   }
 
-  const [faqsState, setFaqsState] = useState(faqs) //actualizar array de FAQS <-- ÚLTIMO PASO
+  const [faqsState, setFaqsState] = useState(faqs)
 
   return (
 
@@ -105,7 +102,7 @@ const FAQs = () => {
               <p id="description">{faqsState[index].description}</p>
 
               {showSaveButtons === index.toString() &&
-                <div className="flex justify-end mt-6 mb-2 mr-4">
+                <div className="flex justify-end mt-6 mb-2 mr-4" contentEditable="false">
                   <button className="mx-4 py-2 px-6 border-gray-500" onClick={() => cancelEditContent(index, faqsState[index].description)}>Cancelar</button>
                   <button className="py-2 px-6 bg-pink-it text-white" onClick={() => setShowEditButtons(true)}>Guardar</button>
                 </div>
