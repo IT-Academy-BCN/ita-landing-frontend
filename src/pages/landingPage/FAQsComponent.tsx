@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect , useState, useRef  } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { RootState } from "../../store/store";
 import FaqsModified from "./FaqsModified";
-import { apiCall, deleteApiFaqs, putApiFaqs } from "../../store/reducers/faqsCall/faqsReducer";
+import { apiCall,putApiFaqs } from "../../store/reducers/faqsCall/faqsReducer";
+
 import deleteFaqIcon from '../../images/icon-delete-faq-backoffice.png';
 import DeleteFaqModal from "./Modals/DeleteFaqModal";
-import $ from 'jquery';
-
 
 
 const FAQs = () => {
@@ -44,109 +43,124 @@ const FAQs = () => {
     apiCall(dispatch)
   },[])
 
-  const [openModal, setOpenModal] = useState(false)
- 
-  const editableContent = (index:string) => {
-    const content = document.getElementById(index);
 
-    //ha de checkear si esta desplegado o no!!!
+  const [faqsClone, setFaqClone] = useState(faqs) // Clone Faqs
 
-    if(content){
-      content.contentEditable = 'true';
-      content.classList.add('bg-slate-200');
+  const [deleteModal, setDeleteModal] = useState(false) // DeleteModal
 
-      setShowEditButtons(false)
-      setShowSaveButtons(index)
-    }
-  }
+  const [titleButtons, setTitleButtons] = useState(true); // Editar & Eliminar buttons
+  const [descriptionButtons, setDescriptionButtons] = useState(false); // Cancelar & Guardar buttons
 
-  const [showEditButtons, setShowEditButtons] = useState(true); // Editar & Eliminar buttons
-  const [showSaveButtons, setShowSaveButtons] = useState(""); // Cancelar & Guardar buttons
+  const [isContentEditing, setIsContentIsEditing] = useState(false); // Title & Description editable
 
-  const cancelEditContent = (index:number , description:string) => {
-    setShowEditButtons(true)
-    const content = document.getElementById(index.toString());
+  const [inputNewTitleValue, setInputNewTitleValue] = useState('');
+  const [inputNewDescriptionValue, setInputNewDescriptionValue] = useState('');
 
-    if(content){
-      content.contentEditable = 'false';
-      $("#description").html(description);
-    }
-  }
+  const [positionId, setPositionId] = useState('')
 
-  const [newDescriptionValue, setNewDescriptionValue] = useState('');
 
-  const saveEditContent = (index:number, faqsStateIndexed:any) => {
-    setShowEditButtons(true)
-    const div = document.getElementById(index.toString());
-    const descriptionElement = document.getElementById("description"); // valor modificat de la description
+  const displayInput = (index:number, faq:any) => {
 
-    setNewDescriptionValue(descriptionElement.innerHTML)
+    setTitleButtons(false)
 
-    if(div){
-      div.contentEditable = 'false';
+    const checkbox = document.getElementById(index.toString()) as HTMLInputElement;
+    if (checkbox && !checkbox.checked) {
+      checkbox.checked = true;
     }
 
-    console.log(faqsStateIndexed.id, newDescriptionValue, acces_token, dispatch)
+    setPositionId(index.toString())
+    setDescriptionButtons(true)
 
-    // putApiFaqs(faqsStateIndexed.id, newDescriptionValue, acces_token, dispatch)
+    setInputNewTitleValue(faq.title)
+    setInputNewDescriptionValue(faq.description)
 
-
+    setIsContentIsEditing(true)
   }
 
-  const [faqsState, setFaqsState] = useState(faqs)
 
+  const cancelEditing = (index: number, faq: any) => {
+    
+    setTitleButtons(true)
+    setDescriptionButtons(false)
 
+    setIsContentIsEditing(false)
+    
+    setInputNewTitleValue(faq.title)
+    setInputNewDescriptionValue(faq.description)
+
+    const checkbox = document.getElementById(index.toString()) as HTMLInputElement;
+    if (checkbox && checkbox.checked) {
+      checkbox.checked = false;
+    }
+    
+  }
+
+  const saveEditingFaq = (index: number) => {
+
+    const updatedFaqs = [ ...faqsClone ];
+    const updatedFaq = { ...updatedFaqs[index] };
+
+    updatedFaq.title = inputNewTitleValue
+    updatedFaq.description = inputNewDescriptionValue
+
+    updatedFaqs[index] = updatedFaq;
+
+    setFaqClone(updatedFaqs)
+
+    setTitleButtons(true)
+    setDescriptionButtons(false)
+    setIsContentIsEditing(false)
+
+    // Y AHORA HACER LA LLAMADA A API
+    // putApiFaqs(faqsClone[index].id, updatedFaqs, acces_token, dispatch) // NOT WORK! -> pero valores correctos
+  }
 
   return (
 
-    <div className="w-3/4 m-auto">
+    <div className="w-3/4 m-auto ">
       <div className="grid grid-cols-6 grid-rows-2">
-        <h2 className="font-black text-2xl font-poppins text-center col-span-6">
-          Preguntas frecuentes
-        </h2>
+        <h2 className="font-black text-2xl font-poppins  text-center col-span-6"> Preguntas frecuentes </h2>
       </div>
 
-      { window.location.pathname =='/backoffice'&&(<FaqsModified/>) }
+      { window.location.pathname =='/backoffice'&&( <FaqsModified/> ) }
 
-      {faqsState.map((faq:Faq, index:number) => (
-        <div className={`collapse rounded-md ${'mb-5'  // Agrega mb-5 si no es el último elemento
+      {faqsClone.map((faq:Faq, index:number) => (
+        <div className={`collapse rounded-md ${ 'mb-5'  // Agrega mb-5 si no es el último elemento
           } shadow-xl`} key={index}>
+
+          <input type="checkbox" className="peer" id={index.toString()}/>
+          <div className="collapse-title relative flex rounded-b-md bg-white text-left text-black text-4 font-poppins font-bold text-4 font-poppins peer-checked:bg-[#BA007C] peer-checked:rounded-b-[0px] peer-checked:text-secondary-content">
+
+            {isContentEditing && index.toString() === positionId ? (<input type="text" className="z-10 text-black input input-bordered w-full max-w-xs" placeholder={faqsClone[index].title} value={inputNewTitleValue} onChange={(e) => setInputNewTitleValue(e.target.value)}/>) : (faqsClone[index].title)}
             
-          <div className="alert collapse bg-pink-it">
-
-            <input type="radio" name="my-accordion-1" />
-            <div className="collapse-title bg-green-500">
-              <p>{faqsState[index].title}</p>
-            </div>
-
-            <div id={index.toString()} className="collapse-content w-full col-span-2"> 
-              <p id="description">{faqsState[index].description}</p>
-
-              {showSaveButtons === index.toString() &&
-                <div className="flex justify-end mt-6 mb-2 mr-4" contentEditable="false">
-                  <button className="mx-4 py-2 px-6 border-gray-500" onClick={() => cancelEditContent(index, faqsState[index].description)}>Cancelar</button>
-                  <button className="py-2 px-6 bg-pink-it text-white" onClick={() => saveEditContent(index, faqsState[index])}>Guardar</button>
-                </div>
-              }
-
-            </div>
-
-            {showEditButtons &&
-              <div className="flex justify-self-end items-center bg-orange-500">
-                <button className="mx-2 px-4 border-gray-500 h-[30px]" onClick={() => {
-                  editableContent(index.toString())
-                  }}
-                  >Editar</button>
-                  
-                <img src={deleteFaqIcon} className='h-[30px] cursor-pointer' onClick={() => {setOpenModal(true)}} alt="locker"/>
-                {openModal && <DeleteFaqModal closeModal={setOpenModal} faqId={faq.id} acces_token={acces_token} dispatch={dispatch}/>}
-
+            {titleButtons &&
+              <div className="flex relative z-10 ml-auto">
+                <button className="mx-4 px-4 border-gray-500 h-[30px]" onClick={() => displayInput(index, faqsClone[index])}>Editar</button>
+                <img src={deleteFaqIcon} className='h-[30px] cursor-pointer self-center' onClick={() => {setDeleteModal(true)}} alt="locker" />
+                {deleteModal && <DeleteFaqModal deleteModal={setDeleteModal} faqId={faq.id} acces_token={acces_token} dispatch={dispatch} />}
               </div>
             }
 
-
           </div>
 
+          <div className="collapse-content rounded-b-md bg-white">
+            <p className="text-left text-black  text-4 font-poppins font-medium ml-9 mr-24 mt-9 mb-6">
+              {isContentEditing && index.toString() === positionId ? (<input type="text" className="z-10 text-black input input-bordered w-full" placeholder={faqsClone[index].description} value={inputNewDescriptionValue} onChange={(e) => setInputNewDescriptionValue(e.target.value)}/>) : (faqsClone[index].description)}
+            </p>
+        
+            {window.location.pathname == '/backoffice' && (
+              <div className="flex justify-end mr-20 pb-7">
+                
+                {descriptionButtons && index.toString() === positionId &&
+                  <div>
+                    <button className="mr-5 xl:px-7 btn btn-outline-primary border-gray-600 bg-transparent text-gray-600" onClick={() => cancelEditing(index, faqsClone[index])}>Cancelar</button>
+                    <button className="btn xl:px-9  bg-pink-it text-white" onClick={() => saveEditingFaq(index)}>Guardar</button>
+                  </div>
+                }
+
+              </div>
+            )}
+          </div>
         </div>
       ))}
     </div>
