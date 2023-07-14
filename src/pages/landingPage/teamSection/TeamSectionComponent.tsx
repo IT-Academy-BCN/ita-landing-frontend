@@ -5,7 +5,7 @@ import pythonLogo from '../../../img/python.png';
 import reactLogo from '../../../img/react.png';
 import nodejsLogo from '../../../img/nodejs.png';
 import CardComponent from './CardComponent';
-import ImgVector from '../../../images/Vector.png'
+import ImgVector from '../../../img/curved-arrow.png'
 
 const TeamsectionComponent = () => (
     <div>

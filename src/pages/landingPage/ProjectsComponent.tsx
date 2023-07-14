@@ -34,7 +34,7 @@ export const ProjectsComponent = () => {
   );
 
   const handleSendApiInfo= (id:any)=>{
-    setCurrentID(id);
+    
     apiCallAppsInfo(dispatch,id,acces_token)
 
   }
@@ -49,7 +49,7 @@ export const ProjectsComponent = () => {
 
   const dispatch = useDispatch();
 
-  const [currentID, setCurrentID] = useState(null);
+  //const [currentID, setCurrentID] = useState(null);
   useEffect(()=>{
     apiCallApps(dispatch);
   },[]);

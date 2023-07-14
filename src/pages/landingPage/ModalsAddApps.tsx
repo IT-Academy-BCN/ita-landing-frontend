@@ -5,7 +5,7 @@ export default function ModalsAddApps({newInfoApps, setNewInfoApps,sendInfo}:{ne
     <>
       <dialog id="my_modal_2"  className="modal ">
   
-  <form  method="dialog" className="modal-box text-start flex flex-col h-3/4  ">  
+  <form  method="dialog"  className="modal-box text-start flex flex-col h-3/4  ">  
   <button className="cursor-pointer bg-transparent ml-auto border-0 focus:outline-none hover:bg-transparent">
       <img src={Cross} alt="Cross button" />
     </button>
