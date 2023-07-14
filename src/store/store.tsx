@@ -2,11 +2,12 @@ import { configureStore } from '@reduxjs/toolkit'
 // ...
  import apiPostRegister from './reducers/apiCall/apiPostRegisterLogin'
  import faqsReducer from './reducers/faqsCall/faqsReducer'
-
+import appsCallApiFunctionality from './reducers/appsCall/appsCallApiFunctionality'
 export const store = configureStore({
   reducer: {
     apiPostRegister: apiPostRegister,
-    faqsReducer:faqsReducer
+    faqsReducer:faqsReducer,
+    appsCallApiFunctionality:appsCallApiFunctionality
   },
 })
 
