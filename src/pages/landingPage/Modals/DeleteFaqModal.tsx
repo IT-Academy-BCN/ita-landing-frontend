@@ -10,12 +10,12 @@ function DeleteFaqModal({deleteModal, faqId, acces_token, dispatch}) {
 
                 <img src={locker} className='h-[118px]' alt="locker"/>
 
-                <h1 className='text-2xl font-semibold'>¿Estás segur@?</h1>
-                <p className='max-w-[70%] text-center my-4'>Esta acción eliminará el elemento seleccionado</p>
+                <h1 className='text-2xl font-semibold text-black'>¿Estás segur@?</h1>
+                <p className='max-w-[70%] text-center my-4 text-black'>Esta acción eliminará el elemento seleccionado</p>
 
                 <button className="bg-pink-it min-w-[60%] py-2 mb-4 text-white" onClick={()=> deleteApiFaqs(faqId, acces_token, dispatch)}> Eliminar </button>
 
-                <button className="min-w-[60%] py-2 mb-4 border-gray-500" onClick={() => deleteModal(false)}> Cancelar </button>
+                <button className="min-w-[60%] py-2 mb-4 border-gray-500 text-black" onClick={() => deleteModal(false)}> Cancelar </button>
 
             </div>
         </div>

@@ -112,14 +112,15 @@ const FAQs = () => {
     setIsContentIsEditing(false)
 
     // Y AHORA HACER LA LLAMADA A API
-    // putApiFaqs(faqsClone[index].id, updatedFaqs, acces_token, dispatch) // NOT WORK! -> pero valores correctos
+    putApiFaqs(faqsClone[index].id, updatedFaq, acces_token, dispatch) // NOT WORK! -> pero valores correctos
+    // console.log(faqsClone[index].id, updatedFaq, acces_token, dispatch)
   }
 
   return (
 
     <div className="w-3/4 m-auto ">
       <div className="grid grid-cols-6 grid-rows-2">
-        <h2 className="font-black text-2xl font-poppins  text-center col-span-6"> Preguntas frecuentes </h2>
+        <h2 className="font-black text-2xl font-poppins text-center col-span-6"> Preguntas frecuentes </h2>
       </div>
 
       { window.location.pathname =='/backoffice'&&( <FaqsModified/> ) }
@@ -129,7 +130,7 @@ const FAQs = () => {
           } shadow-xl`} key={index}>
 
           <input type="checkbox" className="peer" id={index.toString()}/>
-          <div className="collapse-title relative flex rounded-b-md bg-white text-left text-black text-4 font-poppins font-bold text-4 font-poppins peer-checked:bg-[#BA007C] peer-checked:rounded-b-[0px] peer-checked:text-secondary-content">
+          <div className="collapse-title relative flex rounded-b-md bg-white text-justify text-black text-4 font-poppins font-bold font-poppins peer-checked:bg-[#BA007C] peer-checked:rounded-b-[0px] peer-checked:text-secondary-content">
 
             {isContentEditing && index.toString() === positionId ? (<input type="text" className="z-10 text-black input input-bordered w-full max-w-xs" placeholder={faqsClone[index].title} value={inputNewTitleValue} onChange={(e) => setInputNewTitleValue(e.target.value)}/>) : (faqsClone[index].title)}
             
@@ -144,12 +145,12 @@ const FAQs = () => {
           </div>
 
           <div className="collapse-content rounded-b-md bg-white">
-            <p className="text-left text-black  text-4 font-poppins font-medium ml-9 mr-24 mt-9 mb-6">
-              {isContentEditing && index.toString() === positionId ? (<input type="text" className="z-10 text-black input input-bordered w-full" placeholder={faqsClone[index].description} value={inputNewDescriptionValue} onChange={(e) => setInputNewDescriptionValue(e.target.value)}/>) : (faqsClone[index].description)}
+            <p className="text-justify text-black leading-relaxed text-4 font-poppins pl-2 py-4 mx-8 my-6">
+              {isContentEditing && index.toString() === positionId ? (<textarea className="z-10 text-black textarea textarea-bordered w-full" placeholder={faqsClone[index].description} value={inputNewDescriptionValue} onChange={(e) => setInputNewDescriptionValue(e.target.value)}/>) : (faqsClone[index].description)}
             </p>
         
             {window.location.pathname == '/backoffice' && (
-              <div className="flex justify-end mr-20 pb-7">
+              <div className="flex justify-end mx-8">
                 
                 {descriptionButtons && index.toString() === positionId &&
                   <div>
