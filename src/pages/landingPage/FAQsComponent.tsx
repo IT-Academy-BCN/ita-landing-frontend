@@ -53,8 +53,8 @@ const FAQs = () => {
 
   const [isContentEditing, setIsContentIsEditing] = useState(false); // Title & Description editable
 
-  const [inputNewTitleValue, setInputNewTitleValue] = useState('');
-  const [inputNewDescriptionValue, setInputNewDescriptionValue] = useState('');
+  const [inputNewTitleValue, setInputNewTitleValue] = useState(''); // New Title input
+  const [inputNewDescriptionValue, setInputNewDescriptionValue] = useState(''); // New Description input
 
   const [positionId, setPositionId] = useState('')
 
@@ -76,7 +76,6 @@ const FAQs = () => {
 
     setIsContentIsEditing(true)
   }
-
 
   const cancelEditing = (index: number, faq: any) => {
     
@@ -111,9 +110,7 @@ const FAQs = () => {
     setDescriptionButtons(false)
     setIsContentIsEditing(false)
 
-    // Y AHORA HACER LA LLAMADA A API
-    putApiFaqs(faqsClone[index].id, updatedFaq, acces_token, dispatch) // NOT WORK! -> pero valores correctos
-    // console.log(faqsClone[index].id, updatedFaq, acces_token, dispatch)
+    putApiFaqs(faqsClone[index].id, updatedFaq, acces_token, dispatch)
   }
 
   return (
@@ -132,21 +129,20 @@ const FAQs = () => {
           <input type="checkbox" className="peer" id={index.toString()}/>
           <div className="collapse-title relative flex rounded-b-md bg-white text-justify text-black text-4 font-poppins font-bold font-poppins peer-checked:bg-[#BA007C] peer-checked:rounded-b-[0px] peer-checked:text-secondary-content">
 
-            {isContentEditing && index.toString() === positionId ? (<input type="text" className="z-10 text-black input input-bordered w-full max-w-xs" placeholder={faqsClone[index].title} value={inputNewTitleValue} onChange={(e) => setInputNewTitleValue(e.target.value)}/>) : (faqsClone[index].title)}
+            {window.location.pathname == '/backoffice' && isContentEditing && index.toString() === positionId ? (<input type="text" className="z-10 text-black input input-bordered w-full max-w-xs" placeholder={faqsClone[index].title} value={inputNewTitleValue} onChange={(e) => setInputNewTitleValue(e.target.value)}/>) : (faqsClone[index].title)}
             
-            {titleButtons &&
+            {window.location.pathname == '/backoffice' && titleButtons && (
               <div className="flex relative z-10 ml-auto">
                 <button className="mx-4 px-4 border-gray-500 h-[30px]" onClick={() => displayInput(index, faqsClone[index])}>Editar</button>
                 <img src={deleteFaqIcon} className='h-[30px] cursor-pointer self-center' onClick={() => {setDeleteModal(true)}} alt="locker" />
                 {deleteModal && <DeleteFaqModal deleteModal={setDeleteModal} faqId={faq.id} acces_token={acces_token} dispatch={dispatch} />}
               </div>
-            }
-
+            )}
           </div>
 
           <div className="collapse-content rounded-b-md bg-white">
             <p className="text-justify text-black leading-relaxed text-4 font-poppins pl-2 py-4 mx-8 my-6">
-              {isContentEditing && index.toString() === positionId ? (<textarea className="z-10 text-black textarea textarea-bordered w-full" placeholder={faqsClone[index].description} value={inputNewDescriptionValue} onChange={(e) => setInputNewDescriptionValue(e.target.value)}/>) : (faqsClone[index].description)}
+              {window.location.pathname == '/backoffice' && isContentEditing && index.toString() === positionId ? (<textarea className="z-10 text-black textarea textarea-bordered w-full" placeholder={faqsClone[index].description} value={inputNewDescriptionValue} onChange={(e) => setInputNewDescriptionValue(e.target.value)}/>) : (faqsClone[index].description)}
             </p>
         
             {window.location.pathname == '/backoffice' && (
