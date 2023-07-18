@@ -1,5 +1,5 @@
 import ellipse from '../../../img/Ellipse.png';
-import vector from '../../../img/Vector.png';
+import vector from '../../../images/Vector.png';
 
 type CardTwoLogosProps = {
     pos: string,
