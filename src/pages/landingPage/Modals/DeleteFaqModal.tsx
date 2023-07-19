@@ -1,7 +1,15 @@
 import { deleteApiFaqs } from "../../../store/reducers/faqsCall/faqsReducer";
 import locker from '../../../images/locker.png';
 
-function DeleteFaqModal({deleteModal, faqId, acces_token, dispatch}) {
+interface DeleteFaqModalProps{
+    deleteModal: (flag: boolean) => void;
+    faqId: number;
+    acces_token: string;
+    dispatch: any;
+  }
+
+function DeleteFaqModal({ deleteModal, faqId, acces_token, dispatch }: DeleteFaqModalProps) {
+    console.log(faqId)
     return (
         <div className="modal modal-open">
             <div className="modal-box flex flex-col items-center justify-center">
