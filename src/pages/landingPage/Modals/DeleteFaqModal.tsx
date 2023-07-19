@@ -1,4 +1,4 @@
-import { apiCall,deleteApiFaqs } from "../../../store/reducers/faqsCall/faqsReducer";
+import { deleteApiFaqs } from "../../../store/reducers/faqsCall/faqsReducer";
 import locker from '../../../images/locker.png';
 
 function DeleteFaqModal({deleteModal, faqId, acces_token, dispatch}) {
