@@ -1,14 +1,7 @@
-import ellipse from '../../../../../img/Ellipse.png';
-import vector from '../../../../../images/Vector.png';
+import ellipse from '../img/Ellipse.png';
+import vector from '../images/Vector.png';
 
-type CardTwoLogosProps = {
-    pos: string,
-    imgSrc1: string;
-    imgSrc2?: string;
-    title: string;
-    description: string;
-    buttonText: string;
-}
+import { CardTwoLogosProps } from '../interfaces/interfaces';
 
 const CardComponent = ({ pos, imgSrc1, imgSrc2, title, description, buttonText }: CardTwoLogosProps) => {
     const paragraphs = description.split('\n');

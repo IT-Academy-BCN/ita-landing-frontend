@@ -1,7 +1,7 @@
 
-import cross from '../../../../../img/cross.png'
+import cross from '../img/cross.png'
 import { useNavigate } from 'react-router-dom';
-import { handleSubmit,eraseMessageError } from '../../../../../store/reducers/apiCall/apiPostRegisterLogin';
+import { handleSubmit,eraseMessageError } from '../store/reducers/apiCall/apiPostRegisterLogin';
 import { useDispatch, useSelector } from 'react-redux';
 import { ChildComponentProps,RootState, ApiPostRegisterState } from '../interfaces/interfaces';
 

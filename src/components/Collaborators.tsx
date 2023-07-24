@@ -1,6 +1,6 @@
 import { useState } from "react"
-import Card from "./components/CollaboratorsCard";
-import CollaboratorsModal from "./components/CollaboratorsModal";
+import Card from "./CollaboratorsCard";
+import CollaboratorsModal from "./CollaboratorsModal";
 
 
 function Collaborators() {

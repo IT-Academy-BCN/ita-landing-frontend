@@ -1,22 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
-
-
-
-interface faqsData {
-faqs:any[],
-title:string,
-description:string
-}
-
-
-const initialState: faqsData = {
+ 
+const initialState =  {
   faqs:[],
   title:'',
   description:''
   
-}
-
+} 
 export const apiSlice = createSlice({
   name: 'apiPostRegister',
   initialState,
@@ -43,7 +33,7 @@ export const { setFaqs } = apiSlice.actions;
   }
 
   //Post //
- export const postApiFaqs =async(faqContent:any,acces_token:String, dispatch:any)=>{
+ export const postApiFaqs =async(faqContent:any,acces_token:string, dispatch:any)=>{
     try{
        const newFaq= {
       title:faqContent.title,
@@ -62,7 +52,7 @@ export const { setFaqs } = apiSlice.actions;
   };
   //delete //
 
-  export const deleteApiFaqs = async (faqId:number, acces_token:String,dispatch:any) => {
+  export const deleteApiFaqs = async (faqId:number, acces_token:string,dispatch:any) => {
     try {
       const url = `http://87.106.229.119/api/faqs/${faqId}`;
       await axios.delete(url,{

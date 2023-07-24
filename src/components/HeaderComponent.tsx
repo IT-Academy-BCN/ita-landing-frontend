@@ -1,12 +1,12 @@
 import { useState } from "react";
-import logo from "../../../../images/ITA_header_logo.png";
-import castellano from "../../../../images/castellano.png";
-import catala from "../../../../images/catala.png";
-import english from "../../../../images/english.png";
-import selector from "../../../../images/sel_right.png";
-import menu from "../../../../images/menu.png";
-import LoginComponent from "./headerComponents/LoginComponent";
-import RegisterComponent from './headerComponents/Registercomponent';
+import logo from "../images/ITA_header_logo.png";
+import castellano from "../images/castellano.png";
+import catala from "../images/catala.png";
+import english from "../images/english.png";
+import selector from "../images/sel_right.png";
+import menu from "../images/menu.png";
+import LoginComponent from "./LoginComponent";
+import RegisterComponent from './Registercomponent';
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean> (false);

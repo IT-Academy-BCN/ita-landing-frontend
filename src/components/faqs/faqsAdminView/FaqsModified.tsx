@@ -1,21 +1,19 @@
 
-import { RootState } from '../../../../store/store';
+import { RootState } from '../../../store/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { postApiFaqs } from '../../../../store/reducers/faqsCall/faqsReducer';
+import { postApiFaqs } from '../../../store/reducers/faqsCall/faqsReducer';
+import { createToken } from '../../../interfaces/interfaces';
 export default function FaqsModified() {
 
-    //Interfaces//
-    interface createToken {
-        acces_token: String;  
-      } 
+    
       const { acces_token }: createToken = useSelector(
         (state: RootState) => state.apiPostRegister
       );
         //constantes para el set //
       const dispatch = useDispatch();
 
-      let [booleanFaqs, setBooleanFaqs] = useState<boolean>(false);
+      const [booleanFaqs, setBooleanFaqs] = useState<boolean>(false);
       
       const [faqsContent, setFaqsContent] = useState<{ title: string, description: string }>({
         title: '',
@@ -25,7 +23,7 @@ export default function FaqsModified() {
   return (
     <>
       <div className={"collapse rounded-xl mb-5 border-4 border-dashed"}>
-      <input onClick={()=> setBooleanFaqs(booleanFaqs = !booleanFaqs)} type="checkbox" className="peer" />
+      <input onClick={()=> setBooleanFaqs(!booleanFaqs)} type="checkbox" className="peer" />
       <div className=" p-5 absolute rounded-b-md bg-white text-left text-gray-500 text-4 font-poppins font-bold   peer-checked:rounded-b-[0px]   text-4 font-poppins">
           Crear nueva pregunta
       </div>

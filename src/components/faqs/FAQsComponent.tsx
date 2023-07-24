@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useSelector,useDispatch } from "react-redux";
-import { RootState } from "../../../../store/store";
-import FaqsModified from "../../../backOffice/components/faqsAdminView/FaqsModified";
-import { apiCall,deleteApiFaqs } from "../../../../store/reducers/faqsCall/faqsReducer";
-
+import { RootState } from "../../store/store";
+import FaqsModified from "./faqsAdminView/FaqsModified";
+import { apiCall,deleteApiFaqs } from "../../store/reducers/faqsCall/faqsReducer";
+import { createToken } from "../../interfaces/interfaces";
 
 const FAQs = () => {
   //Interfaces//
@@ -13,9 +13,6 @@ const FAQs = () => {
     id:number;
   }
 
-  interface createToken {
-    acces_token: string;  
-  }
 
   interface createFaqs {
     faqs: any;  

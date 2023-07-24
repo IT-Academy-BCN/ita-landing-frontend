@@ -1,5 +1,5 @@
 
-import Cross from '../../../../img/cross.png'
+import Cross from '../../../img/cross.png'
 export default function ModalsAddApps({newInfoApps, setNewInfoApps,sendInfo}:{newInfoApps:any, setNewInfoApps:any,sendInfo:any}) {
   return (
     <>
