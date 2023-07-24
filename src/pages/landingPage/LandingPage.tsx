@@ -1,9 +1,9 @@
-import TeamsectionComponent from "./teamSection/TeamSectionComponent";
-import SloganComponent from "./SloganComponent";
-import Footer from "./FooterComponent";
-import ProjectsComponent from "./ProjectsComponent";
-import Collaborators from "./CollaboratorsSection/Collaborators";
-import FAQs from "./FAQsComponent";
+import TeamsectionComponent from "./components/teamSection/TeamSectionComponent";
+import SloganComponent from "./components/slogan/SloganComponent";
+import Footer from "./components/footer/FooterComponent";
+import ProjectsComponent from "./components/apps/ProjectsComponent";
+import Collaborators from "./components/colaborator/Collaborators";
+import FAQs from "./components/faqs/FAQsComponent";
 
 function LandingPage() {
   return (

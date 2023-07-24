@@ -1,4 +1,4 @@
-import NormativaModal from "./Modals/NormativaModal";
+//import NormativaModal from "../../pages/landingPage/Modals/NormativaModal";
 
 
 const Footer = () => (
@@ -19,7 +19,7 @@ const Footer = () => (
         <a className="link link-hover mx-5 text-white hover:text-white" href="https://www.barcelonactiva.cat/es/itacademy">IT Academy</a>
         <a className="link link-hover mx-5 text-white hover:text-white" href="">¿Cómo colaborar?</a>
         <label htmlFor="NormativaModal" className="mx-5 text-white hover:text-purple-600 hover:cursor-pointer hover:underline">Normativa</label>
-        <NormativaModal />
+        {/*<NormativaModal />*/}
       </div>
       <div className="flex justify-center mt-20 font-medium pb-3">
         <a className="link link-hover mx-5 text-white hover:text-white" href="">Términos</a>

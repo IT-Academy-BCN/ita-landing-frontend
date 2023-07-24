@@ -2,8 +2,8 @@ import itImage from '../../../images/ITA_Logo.png'
 import LogoOut from '../../../images/Sign-out.png'
 
 import { useEffect, useState } from "react";
-import FAQs from "../../landingPage/FAQsComponent";
-import ProjectsComponent from "../../landingPage/ProjectsComponent";
+import FAQs from "../../landingPage/components/faqs/FAQsComponent";
+import ProjectsComponent from "../../landingPage/components/apps/ProjectsComponent";
 
 function ViewBackOffice({setIsLogged,dispatch}:{setIsLogged:any,dispatch:any}) {
 

@@ -1,13 +1,13 @@
-import curvedArrow from "../../img/curvedArrow.svg"
+import curvedArrow from "../../../../img/curved-arrow.png"
 import { FaRegCircle, FaArrowRight } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { useEffect,useState } from "react";
-import { apiCallApps, apiCallAppsInfo,postApiApps } from "../../store/reducers/appsCall/appsCallApiFunctionality";
+import { apiCallApps, apiCallAppsInfo,postApiApps } from "../../../../store/reducers/appsCall/appsCallApiFunctionality";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../store/store";
-import Pencil from '../../img/vector-10.png'
-import ModalApps from "./modalApps";
-import ModalsAddApps from './ModalsAddApps'
+import { RootState } from "../../../../store/store";
+import Pencil from '../../../../img/vector-10.png'
+import ModalApps from "../../../backOffice/components/appsAdminView/modalApps";
+import ModalsAddApps from '../../../backOffice/components/appsAdminView/ModalsAddApps'
 
 declare global {
   interface Window {
@@ -27,20 +27,19 @@ declare global {
 export const ProjectsComponent = () => {
 
   interface createToken {
-    acces_token: String;  
-  } 
+    acces_token: string;  
+  }
+
   const { acces_token }: createToken = useSelector(
     (state: RootState) => state.apiPostRegister
   );
 
-  const handleSendApiInfo= (id:any)=>{
-    
+  const handleSendApiInfo= (id:any)=>{ 
     apiCallAppsInfo(dispatch,id,acces_token)
+  };
 
-  }
   interface ApiPostRegisterState {
-    apps: any[];
-    
+    apps: any[]; 
   }
   
   const { apps }: ApiPostRegisterState = useSelector(
@@ -49,7 +48,6 @@ export const ProjectsComponent = () => {
 
   const dispatch = useDispatch();
 
-  //const [currentID, setCurrentID] = useState(null);
   useEffect(()=>{
     apiCallApps(dispatch);
   },[]);
@@ -64,9 +62,7 @@ export const ProjectsComponent = () => {
 )
 
 const sendInfo=()=>{
-
- postApiApps(newInfoApps, acces_token, dispatch);
-console.log(newInfoApps)
+postApiApps(newInfoApps, acces_token, dispatch);
  
 }
 
@@ -155,7 +151,7 @@ console.log(newInfoApps)
           
           }
          <ModalApps  newInfoApps={newInfoApps} setNewInfoApps={setNewInfoApps}  />
-          <ModalsAddApps newInfoApps={newInfoApps} setNewInfoApps={setNewInfoApps} sendInfo={sendInfo} />
+         <ModalsAddApps newInfoApps={newInfoApps} setNewInfoApps={setNewInfoApps} sendInfo={sendInfo} />
         </div>
       </section>
     </div>

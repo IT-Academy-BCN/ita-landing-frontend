@@ -1,11 +1,11 @@
-import angularLogo from '../../../img/angular.png';
-import phpLogo from '../../../img/php.png';
-import javaLogo from '../../../img/java.png';
-import pythonLogo from '../../../img/python.png';
-import reactLogo from '../../../img/react.png';
-import nodejsLogo from '../../../img/nodejs.png';
-import CardComponent from './CardComponent';
-import ImgVector from '../../../img/curved-arrow.png'
+import angularLogo from '../../../../img/angular.png';
+import phpLogo from '../../../../img/php.png';
+import javaLogo from '../../../../img/java.png';
+import pythonLogo from '../../../../img/python.png';
+import reactLogo from '../../../../img/react.png';
+import nodejsLogo from '../../../../img/nodejs.png';
+import CardComponent from './components/CardComponent';
+import ImgVector from '../../../../img/curved-arrow.png'
 
 const TeamsectionComponent = () => (
     <div>

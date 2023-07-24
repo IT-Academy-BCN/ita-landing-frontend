@@ -1,5 +1,5 @@
-import ellipse from '../../../img/Ellipse.png';
-import vector from '../../../images/Vector.png';
+import ellipse from '../../../../../img/Ellipse.png';
+import vector from '../../../../../images/Vector.png';
 
 type CardTwoLogosProps = {
     pos: string,
@@ -11,7 +11,7 @@ type CardTwoLogosProps = {
 }
 
 const CardComponent = ({ pos, imgSrc1, imgSrc2, title, description, buttonText }: CardTwoLogosProps) => {
-    let paragraphs = description.split('\n');
+    const paragraphs = description.split('\n');
     return (
       
         <div className="relative  sm:w-1/2 lg:w-1/4 p-3">

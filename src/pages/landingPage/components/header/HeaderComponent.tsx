@@ -1,19 +1,14 @@
 import { useState } from "react";
-import logo from "../../images/ITA_header_logo.png";
-import castellano from "../../images/castellano.png";
-import catala from "../../images/catala.png";
-import english from "../../images/english.png";
-import selector from "../../images/sel_right.png";
-import menu from "../../images/menu.png";
-import LoginComponent from "../../components/headerComponents/LoginComponent";
-import RegisterComponent from '../../components/headerComponents/Registercomponent';
- /*import LoginModal from "./LoginRegisterSection/LoginModal";
-import RegistrationModal from "./LoginRegisterSection/RegistrationModal";*/
-  
+import logo from "../../../../images/ITA_header_logo.png";
+import castellano from "../../../../images/castellano.png";
+import catala from "../../../../images/catala.png";
+import english from "../../../../images/english.png";
+import selector from "../../../../images/sel_right.png";
+import menu from "../../../../images/menu.png";
+import LoginComponent from "./headerComponents/LoginComponent";
+import RegisterComponent from './headerComponents/Registercomponent';
+
 const Header = () => {
- 
-
-
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean> (false);
   const [IsDropdownEnterButton, setIsDropdownEnterButton] = useState<boolean> (false);
   const [isDropdownCuenta, setisDropdownCuenta] = useState<boolean> (false);

@@ -1,8 +1,8 @@
 
-import { RootState } from '../../store/store';
+import { RootState } from '../../../../store/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { postApiFaqs } from '../../store/reducers/faqsCall/faqsReducer';
+import { postApiFaqs } from '../../../../store/reducers/faqsCall/faqsReducer';
 export default function FaqsModified() {
 
     //Interfaces//

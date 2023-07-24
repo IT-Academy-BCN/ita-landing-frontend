@@ -1,10 +1,10 @@
  
 import {useEffect} from 'react'
 import { useDispatch,useSelector } from 'react-redux'
-import { RootState } from '../../store/store';
-import { deleteApiApps } from '../../store/reducers/appsCall/appsCallApiFunctionality';
-import { putApiApps } from '../../store/reducers/appsCall/appsCallApiFunctionality';
-import Cross from '../../img/cross.png'
+import { RootState } from '../../../../store/store';
+import { deleteApiApps } from '../../../../store/reducers/appsCall/appsCallApiFunctionality';
+import { putApiApps } from '../../../../store/reducers/appsCall/appsCallApiFunctionality';
+import Cross from '../../../../img/cross.png';
 export default function modalApps({newInfoApps, setNewInfoApps}:{newInfoApps:any, setNewInfoApps:any}) {
 
     

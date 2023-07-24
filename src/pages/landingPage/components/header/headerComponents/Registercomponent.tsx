@@ -1,24 +1,19 @@
-import cross from '../../img/cross.png';
-import { handleSubmit,eraseMessageError } from '../../store/reducers/apiCall/apiPostRegisterLogin';
+import cross from '../../../../../img/cross.png';
+import { handleSubmit,eraseMessageError } from '../../../../../store/reducers/apiCall/apiPostRegisterLogin';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
-export default function LoginComponent({ setIsDropdownEnterButton, setisDropdownCuenta }: { setIsDropdownEnterButton: any, setisDropdownCuenta: any }) {
-
+import { ChildComponentProps,RootState, ApiPostRegisterState } from '../interfaces/interfaces';
+ //Interfaces//
  
 
-//Api Posting REDUX
+
+//componente//
+export default function RegisterComponent ({ setIsDropdownEnterButton, setisDropdownCuenta }:ChildComponentProps) {
   const dispatch = useDispatch();
 
-  
-  interface ApiPostRegisterState {
-    messageError: String;
-    isLoadingMessageError: Boolean;
-  }
-  
   const { messageError, isLoadingMessageError }: ApiPostRegisterState = useSelector(
     (state: RootState) => state.apiPostRegister
   );
-  const submitInformation = (e: React.FormEvent) => {
+  const submitInformation = (e: React.FormEvent) :void => {
     handleSubmit(dispatch, e, 1, null);
   };
   

@@ -1,20 +1,17 @@
 
-import cross from '../../img/cross.png'
+import cross from '../../../../../img/cross.png'
 import { useNavigate } from 'react-router-dom';
-import { handleSubmit,eraseMessageError } from '../../store/reducers/apiCall/apiPostRegisterLogin';
+import { handleSubmit,eraseMessageError } from '../../../../../store/reducers/apiCall/apiPostRegisterLogin';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+import { ChildComponentProps,RootState, ApiPostRegisterState } from '../interfaces/interfaces';
 
 
-export default function loginComponent({setIsDropdownEnterButton, setisDropdownCuenta }: {setIsDropdownEnterButton:any, setisDropdownCuenta:any}) {
-  //Redux Login logic//
+export default function LoginComponent({setIsDropdownEnterButton, setisDropdownCuenta }:ChildComponentProps) {
+
   const navegador = useNavigate();
   const dispatch = useDispatch();
 
-  interface ApiPostRegisterState {
-    messageError: String;
-    isLoadingMessageError: Boolean;
-  }
+  
   
   const { messageError, isLoadingMessageError }: ApiPostRegisterState = useSelector(
     (state: RootState) => state.apiPostRegister
