@@ -23,18 +23,15 @@ export interface AppData {
 }
  export interface RootState {
     apiPostRegister: ApiPostRegisterState;   
-  }
-  
+  } 
   export interface ApiPostRegisterState {
     messageError: string;
     isLoadingMessageError: boolean;
   }
-  
   export interface createToken {
     acces_token: string;  
   }
-
- 
   export interface ApiStateApps {
     apps: AppData[]; 
   }
+

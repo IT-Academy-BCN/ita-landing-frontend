@@ -1,10 +1,10 @@
 import { useState } from "react";
-import logo from "../images/ITA_header_logo.png";
-import castellano from "../images/castellano.png";
-import catala from "../images/catala.png";
-import english from "../images/english.png";
-import selector from "../images/sel_right.png";
-import menu from "../images/menu.png";
+import logo from "../img/ITA_header_logo.png";
+import castellano from "../img/castellano.png";
+import catala from "../img/catala.png";
+import english from "../img/english.png";
+import selector from "../img/sel_right.png";
+import menu from "../img/menu.png";
 import LoginComponent from "./LoginComponent";
 import RegisterComponent from './Registercomponent';
 
