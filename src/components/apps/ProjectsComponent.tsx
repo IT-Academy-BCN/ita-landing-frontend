@@ -1,4 +1,4 @@
-import curvedArrow from "../../img/curved-arrow.png"
+import curvedArrow from "../../assets/img/curved-arrow.png"
 import { FaRegCircle, FaArrowRight } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { useEffect,useState } from "react";
@@ -6,7 +6,7 @@ import { apiCallApps, apiCallAppsInfo,postApiApps } from "../../store/reducers/a
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { createToken, ApiStateApps} from "../../interfaces/interfaces";
-import Pencil from '../../img/vector-10.png'
+import Pencil from '../../assets/img/vector-10.png'
 import ModalApps from "./appsAdminView/modalApps";
 import ModalsAddApps from './appsAdminView/ModalsAddApps'
 

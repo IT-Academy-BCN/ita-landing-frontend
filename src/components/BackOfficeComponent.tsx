@@ -1,5 +1,5 @@
-import itImage from '../img/ITA_Logo.png'
-import LogoOut from '../img/Sign-out.png'
+import itImage from '../assets/img/ITA_Logo.png'
+import LogoOut from '../assets/img/Sign-out.png'
 import { useEffect, useState } from "react";
 import FAQs from "./faqs/FAQsComponent";
 import ProjectsComponent from "./apps/ProjectsComponent";

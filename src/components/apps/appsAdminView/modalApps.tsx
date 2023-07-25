@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../../store/store';
 import { deleteApiApps } from '../../../store/reducers/appsCall/appsCallApiFunctionality';
 import { putApiApps } from '../../../store/reducers/appsCall/appsCallApiFunctionality';
-import Cross from '../../../img/cross.png';
+import Cross from '../../../assets/img/cross.png';
 import { AppData, createToken , apps} from '../../../interfaces/interfaces';
  
 

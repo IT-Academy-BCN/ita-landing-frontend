@@ -1,5 +1,5 @@
-import ellipse from '../img/Ellipse.png';
-import vector from '../images/Vector.png';
+import ellipse from '../assets/img/Ellipse.png';
+import vector from '../assets/img/Vector.png';
 
 import { CardTwoLogosProps } from '../interfaces/interfaces';
 
