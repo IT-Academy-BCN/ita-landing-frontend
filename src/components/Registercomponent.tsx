@@ -20,7 +20,7 @@ export default function RegisterComponent({
   const dispatch = useDispatch();
   const { messageError, isLoadingMessageError }: ApiPostRegisterState =
     useSelector((state: RootState) => state.apiPostRegister);
-  const submitInformation = (e: React.FormEvent): void => {
+  const submitInformation = (e: any): void => {
     handleSubmit(dispatch, e, 1, Navegador);
   };
   const Navegador = useNavigate();
