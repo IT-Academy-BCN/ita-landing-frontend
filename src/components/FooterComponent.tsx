@@ -1,12 +1,12 @@
 //import NormativaModal from "../../pages/landingPage/Modals/NormativaModal";
-
+import ImgLogoFooter from '../assets/img/ITA_Logo.png'
 const Footer = () => (
   <footer className="bg-pink-it w-screen absolute left-0 mt-5 ">
     <div className="mx-auto w-full py-6 text-white text-sm">
       <div>
         <div className="flex justify-center items-center">
           <img
-            src="../../src/images/ITA_Logo.png"
+            src={ImgLogoFooter}
             className="h-10"
             alt="IT Academy Footer Logo"
           />
