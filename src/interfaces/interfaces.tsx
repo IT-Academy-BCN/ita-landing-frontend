@@ -10,8 +10,8 @@ export interface ChildComponentProps {
   description: string;
   buttonText: string;
 }
-export interface apps {
-  appsInfo:  any
+export interface appsLoad {
+  appsInfo:  AppData
   loadingApps: boolean
 }
 export interface AppData {
@@ -19,7 +19,12 @@ export interface AppData {
   description: string;
   url: string;
   state: string;
-  id:number
+  id:number;
+}
+
+export interface faqContent{
+  title:string;
+  description:string;
 }
  export interface RootState {
     apiPostRegister: ApiPostRegisterState;   
@@ -35,3 +40,19 @@ export interface AppData {
     apps: AppData[]; 
   }
 
+  export interface Faq {
+    id: number;
+    title: string;
+    description: string;
+  }
+
+  export interface loginRegisterParams {
+    messageError:string,
+    isLogged:boolean,
+    isLoadingMessageError:boolean,
+    acces_token:string
+    }
+
+   export interface FormDataEvent extends React.FormEvent<HTMLFormElement> {
+      target: HTMLFormElement;
+    }
