@@ -1,17 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { PayloadAction } from '@reduxjs/toolkit'
 import axios from 'axios'
-
-
- 
-interface loginRegisterParams {
-messageError:String,
-isLogged:boolean,
-isLoadingMessageError:boolean,
-acces_token:string
-}
-
-
+import { Dispatch } from '@reduxjs/toolkit'
+import { loginRegisterParams,FormDataEvent } from '../../../interfaces/interfaces'
+import { NavigateFunction } from 'react-router-dom'
 const initialState: loginRegisterParams = {
   messageError:'',
   isLogged:false,
@@ -46,7 +38,7 @@ export const { setMessageError,eraseMessageError,setIsLogged,setToken } = apiSli
 //Api call for login and register.
 
 
- export const handleSubmit = async(dispatch:any, e:any, number:number, navegador:any) => {
+ export const handleSubmit = async(dispatch:Dispatch, e:FormDataEvent, number:number, navegador:NavigateFunction) => {
   e.preventDefault();
   dispatch(setMessageError({errorMessage:'',loadingBoolean:true}));
 

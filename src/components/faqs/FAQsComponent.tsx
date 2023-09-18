@@ -1,10 +1,9 @@
 import { useEffect , useState } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { RootState } from "../../store/store";
-import FaqsModified from "./FaqsModified";
+import FaqsModified from "./faqsAdminView/FaqsModified";
 import { apiCall,putApiFaqs } from "../../store/reducers/faqsCall/faqsReducer";
-
-import deleteFaqIcon from '../../images/icon-delete-faq-backoffice.png';
+import deleteFaqIcon from '../../assets/img/icon-delete-faq-backoffice.png';
 import DeleteFaqModal from "./Modals/DeleteFaqModal";
 
 

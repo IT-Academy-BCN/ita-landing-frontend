@@ -1,11 +1,11 @@
 import { deleteApiFaqs } from "../../../store/reducers/faqsCall/faqsReducer";
-import locker from '../../../images/locker.png';
-
+import locker from '../../../assets/img/locker.png';
+import { Dispatch } from "@reduxjs/toolkit";
 interface DeleteFaqModalProps{
     deleteModal: (flag: boolean) => void;
     faqId: number;
     acces_token: string;
-    dispatch: any;
+    dispatch: Dispatch;
   }
 
 function DeleteFaqModal({ deleteModal, faqId, acces_token, dispatch }: DeleteFaqModalProps) {

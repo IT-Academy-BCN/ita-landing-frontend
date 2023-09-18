@@ -1,28 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
-import axios from 'axios'
-
-
-
-interface faqsData {
-apps:any[],
-appsInfo:[]
-gitURL:string,
-repoURL:string,
-stateProject:string
-loadingApps:boolean
-}
-
-
-const initialState: faqsData = {
+import axios from 'axios' 
+import { Dispatch } from '@reduxjs/toolkit'
+import { faqContent } from '../../../interfaces/interfaces'
+const initialState = {
   apps:[],
   appsInfo:[],
   gitURL:'',
   repoURL:'',
   stateProject:'',
-  loadingApps:false
-  
-}
-
+  loadingApps:false 
+} 
 export const apiSlice = createSlice({
   name: 'appsCallApiFunctionality',
   initialState,
@@ -41,7 +28,7 @@ export const { setApps,setAppsInfo,setLoadingApps } = apiSlice.actions;
 
   //llamada api a apps//
 
- export const apiCallApps =async(dispatch:any)=>{
+ export const apiCallApps =async(dispatch:Dispatch)=>{
     try {
         const faqsCalled = await axios.get('http://87.106.229.119/api/apps');
     dispatch(setApps(faqsCalled.data))
@@ -52,7 +39,7 @@ export const { setApps,setAppsInfo,setLoadingApps } = apiSlice.actions;
     
   }
   //llamada api Apps ID//
-  export const apiCallAppsInfo =async(dispatch:any,id:number,acces_token:String)=>{
+  export const apiCallAppsInfo =async(dispatch:Dispatch,id:number,acces_token:string)=>{
     try {
       dispatch(setLoadingApps(true));
 
@@ -72,10 +59,10 @@ export const { setApps,setAppsInfo,setLoadingApps } = apiSlice.actions;
     
   }
   //Post //
- export const postApiApps =async(faqContent:any,acces_token:String, dispatch:any)=>{
+ export const postApiApps =async(appsContent:faqContent,acces_token:string, dispatch:Dispatch)=>{
     try{
         
-     await axios.post('http://87.106.229.119/api/apps',faqContent,{
+     await axios.post('http://87.106.229.119/api/apps',appsContent,{
       headers:{
         Authorization:`Bearer ${acces_token}`
       }
@@ -88,7 +75,7 @@ export const { setApps,setAppsInfo,setLoadingApps } = apiSlice.actions;
   };
   //delete //
 
-  export const deleteApiApps = async (appsID:number, acces_token:String,dispatch:any) => {
+  export const deleteApiApps = async (appsID:number, acces_token:string,dispatch:Dispatch) => {
     try {
       const url = `http://87.106.229.119/api/apps/${appsID}`;
       await axios.delete(url,{
@@ -106,7 +93,7 @@ export const { setApps,setAppsInfo,setLoadingApps } = apiSlice.actions;
   };
 //put//
 
-export const putApiApps =async(faqContent:any,acces_token:String, dispatch:any, id:number)=>{
+export const putApiApps =async(faqContent:any,acces_token:string, dispatch:any, id:number)=>{
   try{
      
    await axios.put('http://87.106.229.119/api/apps/'+id,faqContent,{
