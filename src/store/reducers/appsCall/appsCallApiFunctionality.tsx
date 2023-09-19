@@ -28,17 +28,9 @@ export const apiSlice = createSlice({
 export const { setApps, setAppsInfo, setLoadingApps } = apiSlice.actions;
 
 //llamada api a apps//
-
 export const apiCallApps = async (dispatch: Dispatch) => {
   try {
-    const config = {
-      url: "http://87.106.229.119/api/apps",
-      method: "GET",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
-    };
-    const faqsCalled = await axios(config);
+    const faqsCalled = await axios.get("http://87.106.229.119/api/apps");
     dispatch(setApps(faqsCalled.data));
   } catch (error) {
     console.log(error);
