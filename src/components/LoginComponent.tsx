@@ -71,9 +71,7 @@ export default function LoginComponent({
                 {!isLoadingMessageError ? (
                   <p className="mt-0">{messageError}</p>
                 ) : (
-                  <div className="flex justify-end">
-                    <span className=" loading loading-spinner loading-md"></span>
-                  </div>
+                  <span className="loading loading-spinner loading-md"></span>
                 )}
                 {!isLoadingMessageError && <p>Login</p>}
               </button>
