@@ -9,7 +9,7 @@ import {
   ChildComponentProps,
   RootState,
   ApiPostRegisterState,
-  FormDataEvent
+  FormDataEvent,
 } from "../interfaces/interfaces";
 
 export default function LoginComponent({
@@ -22,7 +22,7 @@ export default function LoginComponent({
   const { messageError, isLoadingMessageError }: ApiPostRegisterState =
     useSelector((state: RootState) => state.apiPostRegister);
 
-  const submitInformation = (e:FormDataEvent ) => {
+  const submitInformation = (e: FormDataEvent) => {
     handleSubmit(dispatch, e, 2, navegador);
   };
 
@@ -67,18 +67,17 @@ export default function LoginComponent({
                 type="submit"
                 className="mt-5 btn btn-block bg-pink-it text-white"
               >
-                Login
+                {/* Icono de carga */}
+                {!isLoadingMessageError ? (
+                  <p className="mt-0">{messageError}</p>
+                ) : (
+                  <div className="flex justify-end">
+                    <span className=" loading loading-spinner loading-md"></span>
+                  </div>
+                )}
+                {!isLoadingMessageError && <p>Login</p>}
               </button>
             </form>
-
-            {/* Icono de carga */}
-            {!isLoadingMessageError ? (
-              <p className="mt-0">{messageError}</p>
-            ) : (
-              <div className="flex justify-center">
-                <span className=" loading loading-spinner loading-lg "></span>
-              </div>
-            )}
             <a className="text-xs mt-5 ">
               <span
                 onClick={() => {
