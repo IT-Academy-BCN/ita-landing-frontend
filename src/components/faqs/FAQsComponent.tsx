@@ -121,7 +121,7 @@ const FAQs = () => {
 
     <div className="w-3/4 m-auto ">
       <div className="grid grid-cols-6 grid-rows-2">
-        <h2 className="font-black text-2xl font-poppins text-center col-span-6"> Preguntas frecuentes </h2>
+        <h2 className="font-black text-2xl font-poppins text-center col-span-6 sm:text-left lg:text-center"> FAQs </h2>
       </div>
 
       { window.location.pathname =='/backoffice'&&( <FaqsModified/> ) }
@@ -131,13 +131,13 @@ const FAQs = () => {
           } shadow-xl`} key={index}>
 
           <input type="checkbox" className="peer" id={index.toString()}/>
-          <div className="collapse-title relative flex rounded-b-md bg-white text-justify text-black text-4 font-poppins font-bold font-poppins peer-checked:bg-[#BA007C] peer-checked:rounded-b-[0px] peer-checked:text-secondary-content">
+          <div className="collapse-title relative lg:flex rounded-b-md bg-white text-justify text-black text-4 font-poppins font-bold font-poppins peer-checked:bg-[#BA007C] peer-checked:rounded-b-[0px] peer-checked:text-secondary-content">
 
-            {window.location.pathname == '/backoffice' && isContentEditing && index.toString() === positionIndex ? (<input type="text" className="z-10 text-black input input-bordered w-full max-w-xs" placeholder={faqsClone[index].title} value={inputNewTitleValue} onChange={(e) => setInputNewTitleValue(e.target.value)}/>) : (faqsClone[index].title)}
+            {window.location.pathname == '/backoffice' && isContentEditing && index.toString() === positionIndex ? (<input type="text" className="z-10 text-black input input-bordered w-full max-w-xs" placeholder={faqsClone[index].title} value={inputNewTitleValue} onChange={(e) => setInputNewTitleValue(e.target.value)}/>) : (<p className="lg:text-justify sm:text-center max-w-[75%]">{faqsClone[index].title}</p>)}
             
             {window.location.pathname == '/backoffice' && titleButtons && (
-              <div className="flex relative z-10 ml-auto">
-                <button className="mx-4 px-4 border-gray-500 h-[30px]" onClick={() => displayInput(index, faqsClone[index])}>Editar</button>
+              <div className="flex relative z-10 ml-auto justify-end mt-2 lg:mt-0">
+                <button className="mx-4 px-4 border-gray-500 h-[30px] self-center" onClick={() => displayInput(index, faqsClone[index])}>Editar</button>
                 <img src={deleteFaqIcon} className='h-[30px] cursor-pointer self-center' onClick={() => {setDeleteModal(true); setSelectedFaqId(faq.id)}} alt="locker" />
               </div>
             )}
