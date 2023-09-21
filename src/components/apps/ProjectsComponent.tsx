@@ -1,4 +1,5 @@
 import curvedArrow from "../../assets/img/curvedArrow.svg";
+import gitLogo from "../../assets/img/gitLogo.svg";
 import { FaRegCircle, FaArrowRight } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { useEffect, useState } from "react";
@@ -130,6 +131,12 @@ export const ProjectsComponent = () => {
          ${cards.state === "SOON" ? "bg-soon" : "bg-building"}
          card md:w-80 m-5 md:m-0 p-0   text-grey-it`}
                 >
+                  <div className="flex justify-between mt-4 pe-4">
+                    <h2 className="card-title mt-5 ms-5">{cards.title}</h2>{" "}
+                    <a href="https://github.com/it-academy-BCN/ita-landing-frontend">
+                      <img src={gitLogo} />
+                    </a>
+                  </div>
                   <div className="card-body">
                     {window.location.pathname == "/backoffice" && (
                       <div>
@@ -141,10 +148,10 @@ export const ProjectsComponent = () => {
                           className="w-4 ms-auto cursor-pointer hover:scale-110 "
                           src={Pencil}
                           alt=""
-                        />{" "}
+                        />
                       </div>
                     )}
-                    <h2 className="card-title">{cards.title}</h2>
+
                     <p>{cards.description}</p>
                     <div className="card-actions justify-center">
                       <button className="btn btn-block btn-outline bg-base-100 border-none normal-case gap-2">
