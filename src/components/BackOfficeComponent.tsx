@@ -40,7 +40,7 @@ function ViewBackOffice({
   }
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [windowHeight, windowWidth] = useWindowSize();
+  const [windowWidth] = useWindowSize();
 
   const toggleDropdown = ():void=> {
       setIsDropdownOpen(!isDropdownOpen);
@@ -131,7 +131,6 @@ return (
                   </>
               )}
           </div>
-          {/* <p>Width: {windowWidth} , Height: {windowHeight}</p> */}
       </main>
   </>
 )
