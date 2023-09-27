@@ -3,7 +3,8 @@ import { getCollaboratorsData } from './getCollaboratorsData'
 
 const initialState =  {
   
-  collaborators:[]
+  collaborators:[],
+  maxWidth:750
   
 } 
 export const apiSlice = createSlice({

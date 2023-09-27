@@ -7,9 +7,9 @@ function Collaborators() {
   // Aconsejo quitarlo, debajo está el resultado solo con el useState de arriba const [selectedItem, setSelectedItem] = useState(1);
   const VT = "Ver Todos >";
   const btnActive =
-    " px-6 lg:mb-0 mb-5 ml-2 btn btn-ghost text-sm normal-case rounded-3xl bg-[#025E7E] text-white  ";
+    " px-6 lg:mb-0 mb-5 ml-2 btn btn-ghost text-sm normal-case rounded-3xl bg-pink-it text-white  ";
   const btnInactive =
-    "px-6 lg:mb-0 mb-5 ml-2 btn btn-ghost text-sm normal-case rounded-3xl active:bg-[#025E7E] active:text-white border-solid lg:border-transparent border-2 border-indigo-900 min-w-10  ";
+    "px-6 lg:mb-0 mb-5 ml-2 btn btn-ghost text-sm normal-case rounded-3xl active:bg-pink-it active:text-white border-solid lg:border-transparent border-2 border-indigo-900 min-w-10  ";
 
   return (
     <section className="my-10  ">
@@ -27,7 +27,8 @@ function Collaborators() {
                 setActive("AngularCard");
               }}
             >
-              Angular
+              
+              Wiki
             </a>
             <a
               className={active === "ReactCard" ? btnActive : btnInactive}
@@ -35,7 +36,7 @@ function Collaborators() {
                 setActive("ReactCard");
               }}
             >
-              React
+              Challenges
             </a>
             <a
               className={active === "PHPCard" ? btnActive : btnInactive}
@@ -43,7 +44,7 @@ function Collaborators() {
                 setActive("PHPCard");
               }}
             >
-              PHP
+              Landing
             </a>
             <a
               className={active === "NodeCard" ? btnActive : btnInactive}
@@ -51,26 +52,8 @@ function Collaborators() {
                 setActive("NodeCard");
               }}
             >
-              Node
-            </a>
-            <a
-              className={active === "JavaCard" ? btnActive : btnInactive}
-              onClick={() => {
-                setActive("JavaCard");
-              }}
-            >
-              Java
-            </a>
-            <a
-              className={active === "DataScienceCard" ? btnActive : btnInactive}
-              onClick={() => {
-                setActive("DataScienceCard");
-              }}
-            >
-              Data Science
-            </a>
-
-            
+              Profile
+            </a> 
           </div>
         </div>
       </div>
