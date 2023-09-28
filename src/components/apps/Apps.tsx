@@ -2,10 +2,9 @@ import { RootState } from "../../store/store";
 import { createToken, ApiStateApps } from "../../interfaces/interfaces";
 import { FaArrowRight } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import { apiCallApps, apiCallAppsInfo, postApiApps } from "../../store/reducers/appsCall/appsCallApiFunctionality";
+import { apiCallApps, apiCallAppsInfo } from "../../store/reducers/appsCall/appsCallApiFunctionality";
 import { useDispatch, useSelector } from "react-redux";
 import ModalApps from "./appsAdminView/modalApps";
-import ModalsAddApps from "./appsAdminView/ModalsAddApps";
 import { deleteApiApps } from "../../store/reducers/appsCall/appsCallApiFunctionality";
 import trashIcon from "../../assets/img/icon-delete-faq-backoffice.png"
 import githubLogo from "../../assets/img/githubLogo.svg"
@@ -44,10 +43,6 @@ const Apps = () => {
       state: "",
       github: "",
     });
-  
-    const sendInfo = () => {
-      postApiApps(newInfoApps, acces_token, dispatch);
-    };
 
   return (
     <>
@@ -58,7 +53,7 @@ const Apps = () => {
                   app.state === "COMPLETED" && "bg-completed"
                 } 
                 ${app.state === "SOON" ? "bg-soon" : "bg-building"}
-                flex flex-col rounded-xl mx-5 my-3`}
+                flex flex-col rounded-xl mx-5 my-3 min-h-[296px]`}
               >
                     {window.location.pathname === "/backoffice" && (
                         <div className="flex place-content-end gap-2">
@@ -69,7 +64,7 @@ const Apps = () => {
                         </div>
                     )}
                     {window.location.pathname === "/" && (
-                        <a href={"https://www.youtube.es"} className="flex place-content-end px-4 py-1 mt-4" target="_blank">
+                        <a href={app.github} className="flex place-content-end px-4 py-1 mt-4" target="_blank">
                             <img src={githubLogo} alt="github_link" />
                         </a>
                     )}
@@ -84,11 +79,6 @@ const Apps = () => {
         <ModalApps
         newInfoApps={newInfoApps}
         setNewInfoApps={setNewInfoApps}
-        />
-        <ModalsAddApps
-        newInfoApps={newInfoApps}
-        setNewInfoApps={setNewInfoApps}
-        sendInfo={sendInfo}
         />
     </>
   )

@@ -31,52 +31,52 @@ export default function ModalsAddApps({
             onChange={(e) =>
               setNewInfoApps({ ...newInfoApps, description: e.target.value })
             }
-            className="focus:outline-none mt-2 mb-4 w-full text-[#7e7e7e] "
+            className="focus:outline-none mt-2 mb-4 w-full text-[#7e7e7e]"
           />
 
           <div className="my-2">
             <h3 className="font-bold mb-1">Url del proyecto</h3>
             <input
+              placeholder="URL"
               onChange={(e) =>
                 setNewInfoApps({ ...newInfoApps, url: e.target.value })
               }
               type="text"
-              placeholder="URL"
-              className="input input-bordered w-full  py-2   "
+              className="input input-bordered w-full py-2"
             />
           </div>
 
           <div className="my-4">
             <h3 className="font-bold mb-1">Url del repositorio de GitHub</h3>
             <input
+              placeholder="GitHub"
               onChange={(e) =>
                 setNewInfoApps({ ...newInfoApps, github: e.target.value })
               }
               type="text"
-              placeholder="URL"
-              className="input input-bordered w-full py-2   "
+              className="input input-bordered w-full py-2"
             />
           </div>
 
           <h3 className="font-bold mt-2 mb-3">Estado</h3>
-          <div className="flex rounded-full">
+          <div className="flex w-fit rounded-full p-1 border border-[#7e7e7e]">
             <p
               onClick={() => { setNewInfoApps({ ...newInfoApps, state: "COMPLETED" })}}
               className={`
                 ${newInfoApps.state == "COMPLETED"
-                  ? " font-bold bg-completed rounded-full p-3 cursor-pointer  "
+                  ? "font-bold bg-completed rounded-full p-3 cursor-pointer"
                   : "cursor-pointer p-3"
                 } text-sm`}
             >
-              Completado
+              Completada
             </p>
             <p
               onClick={() => {setNewInfoApps({ ...newInfoApps, state: "IN PROGRESS" })}}
               className={`
                 ${newInfoApps.state == "IN PROGRESS"
-                  ? "font-bold bg-building ml-2 rounded-full p-3 cursor-pointer "
+                  ? "font-bold bg-building ml-2 rounded-full p-3 cursor-pointer"
                   : "cursor-pointer p-3 ml-2"
-              } text-sm`}
+                } text-sm`}
             >
               En progreso
             </p>
@@ -86,7 +86,7 @@ export default function ModalsAddApps({
                 ${newInfoApps.state == "SOON"
                   ? "font-bold bg-soon ml-2 rounded-full p-3 cursor-pointer"
                   : "cursor-pointer p-3 ml-2"
-              } text-sm`}
+                } text-sm`}
             >
               Próximamente
             </p>

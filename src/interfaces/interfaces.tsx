@@ -20,6 +20,7 @@ export interface AppData {
   url: string;
   state: string;
   id:number;
+  github: string;
 }
 
 export interface faqContent{

@@ -118,7 +118,7 @@ const FAQs = () => {
   }
 
   return (
-    <div className="bg-white rounded-md mx-6 px-10">
+    <div className="bg-white rounded-md mx-6 px-10 pb-5">
       <div className="w-full">
         
         { window.location.pathname === '/' &&(
@@ -133,8 +133,7 @@ const FAQs = () => {
         )}
 
         {faqsClone.map((faq:Faq, index:number) => (
-          <div className={`collapse rounded-md ${ 'mb-5'  // Agrega mb-5 si no es el último elemento
-            } shadow-xl`} key={index}>
+          <div className={`collapse rounded-md mb-5 shadow-xl`} key={index}>
 
             <input type="checkbox" className="peer" id={index.toString()}/>
             <div className="collapse-title relative lg:flex rounded-b-md bg-white text-justify text-black text-4 font-poppins font-bold font-poppins peer-checked:bg-[#BA007C] peer-checked:rounded-b-[0px] peer-checked:text-secondary-content">
