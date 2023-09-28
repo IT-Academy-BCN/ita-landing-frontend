@@ -58,7 +58,7 @@ const Apps = () => {
                   app.state === "COMPLETED" && "bg-completed"
                 } 
                 ${app.state === "SOON" ? "bg-soon" : "bg-building"}
-                flex flex-col rounded-2xl mx-5 my-3`}
+                flex flex-col rounded-xl mx-5 my-3`}
               >
                     {window.location.pathname === "/backoffice" && (
                         <div className="flex place-content-end gap-2">
