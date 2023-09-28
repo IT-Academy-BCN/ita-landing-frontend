@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../store/store";
-import { deleteApiApps } from "../../../store/reducers/appsCall/appsCallApiFunctionality";
 import { putApiApps } from "../../../store/reducers/appsCall/appsCallApiFunctionality";
 import Cross from "../../../assets/img/cross.png";
 import { createToken } from "../../../interfaces/interfaces";
@@ -113,11 +112,8 @@ export default function ModalApps({
             <div className="flex justify-center  mt-5">
               <button
                 className="mr-5 xl:px-7 btn btn-outline-primary border-gray-600 bg-transparent text-gray-600"
-                onClick={() =>
-                  deleteApiApps(appsInfo.id, acces_token, dispatch)
-                }
               >
-                Eliminar
+                Cancelar
               </button>
               <button
                 className="btn xl:px-9  bg-pink-it text-white"
