@@ -8,12 +8,12 @@ declare global {
 
 const CreateApp = () => {
   return (
-    <div className="bg-blue-400">
+    <div className="mx-5 my-3">
         <button
         onClick={() => {
             window.my_modal_2?.showModal();
         }}
-        className="w-full h-full rounded-3xl"
+        className="w-full h-full rounded-3xl bg-blue-400"
         >
         Añadir nuevo
         </button>
