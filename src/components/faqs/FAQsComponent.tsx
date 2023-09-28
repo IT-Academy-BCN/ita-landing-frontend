@@ -121,9 +121,16 @@ const FAQs = () => {
     <div className="bg-white rounded-md mx-6 px-10">
       <div className="w-full">
         
-        <h2 className="font-black py-12 ml-10 text-3xl font-poppins sm:text-center lg:text-left"> FAQs </h2>
+        { window.location.pathname === '/' &&(
+          <h2 className="font-black text-3xl text-center font-poppins mb-6">Preguntas frecuentes</h2>
+        )}
 
-        { window.location.pathname =='/backoffice'&&( <FaqsModified/> ) }
+        { window.location.pathname ==='/backoffice'&&(
+          <>
+            <h2 className="font-black py-12 ml-10 text-3xl font-poppins sm:text-center lg:text-left"> FAQs </h2>
+            <FaqsModified/>
+          </>
+        )}
 
         {faqsClone.map((faq:Faq, index:number) => (
           <div className={`collapse rounded-md ${ 'mb-5'  // Agrega mb-5 si no es el último elemento

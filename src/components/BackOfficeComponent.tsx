@@ -41,17 +41,21 @@ function ViewBackOffice({
   }
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [windowWidth] = useWindowSize();
+  const size = useWindowSize();
+  const [hiddenAdminButtons, sethiddenAdminButtons] = useState(false);
 
   const toggleDropdown = ():void=> {
       setIsDropdownOpen(!isDropdownOpen);
     };
 
   useEffect(() => {
-    if(windowWidth>=1024){
+    if(size[1]>=1024){
       setIsDropdownOpen(false)
+      sethiddenAdminButtons(false)
+    }else{
+      sethiddenAdminButtons(true)
     }
-  }, [windowWidth]);
+  }, [size[1]]);
 
 
 return (
@@ -93,6 +97,7 @@ return (
               {/* Mobile */}
               <div className='lg:hidden'>
                   <div className="flex justify-end mt-4 mr-4 cursor-pointer">
+                      <AdminButtons />
                       <img src={menu} className="h-8 w-8" onClick={toggleDropdown}/>
                   </div>
               </div>
@@ -121,12 +126,12 @@ return (
               {!isDropdownOpen && (
                   <>
                       <div className={`${state.faqs ? 'component hidden' : 'component'}`}>
-                          <AdminButtons />
+                          {!hiddenAdminButtons && <AdminButtons />}
                           <FAQs />    
                       </div>
 
                       <div className={state.projectsComponent ? 'component hidden' : 'component'}>
-                          <AdminButtons />
+                          {!hiddenAdminButtons && <AdminButtons />}
                           <ProjectsComponent />
                       </div>
                   </>

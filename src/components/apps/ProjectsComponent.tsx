@@ -14,10 +14,10 @@ export const ProjectsComponent = () => {
         {window.location.pathname !== "/backoffice" && (<> <TitleApps /> <TasksProcess /> </>)}
         
         {/*Cards*/}
-        <div className="grid grid-cols-3 w-full">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 w-full">
           {window.location.pathname == "/backoffice" && (
             <>
-              <h2 className="col-span-3 ml-10 font-black py-12 text-3xl font-poppins sm:text-center lg:text-left"> Apps </h2>
+              <h2 className="md:col-span-2 lg:col-span-3 ml-10 font-black py-12 text-3xl font-poppins sm:text-center lg:text-left"> Apps </h2>
               <CreateApp />
             </>
           )}
