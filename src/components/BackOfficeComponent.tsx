@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import FAQs from "./faqs/FAQsComponent";
 import ProjectsComponent from "./apps/ProjectsComponent";
 import menu from "../assets/img/menu.png";
+import { AdminButtons } from "./faqs/faqsAdminView/AdminButtons";
 
 function ViewBackOffice({
   setIsLogged,
@@ -87,7 +88,7 @@ return (
 
 
 
-          <div className="lg:col-span-5 col-span-6 m-5 bg-white rounded-md">
+          <div className="lg:col-span-5 col-span-6 m-5">
 
               {/* Mobile */}
               <div className='lg:hidden'>
@@ -115,14 +116,13 @@ return (
                       <div>
                           <button className="py-2 my-4 ml-2">Instrucciones</button>
                       </div>
-
-                      {/* <div onClick={()=>{ setIsDropdownOpen(false)}} className="opacity-25 fixed inset-0 z-40 bg-black"></div> */}
                   </div>                    
               )}
               {!isDropdownOpen && (
                   <>
-                      <div className={`mt-20 ${state.faqs ? 'component hidden' : 'component'}`}>
-                          <FAQs />
+                      <div className={`${state.faqs ? 'component hidden' : 'component'}`}>
+                          <AdminButtons />
+                          <FAQs />    
                       </div>
 
                       <div className={state.projectsComponent ? 'component hidden' : 'component'}>
