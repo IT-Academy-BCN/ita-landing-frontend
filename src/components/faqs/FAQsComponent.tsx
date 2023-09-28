@@ -126,7 +126,7 @@ const FAQs = () => {
         { window.location.pathname =='/backoffice'&&( <FaqsModified/> ) }
 
         {faqsClone.map((faq:Faq, index:number) => (
-          <div className={`collapse rounded-md ml-5 ${ 'mb-5'  // Agrega mb-5 si no es el último elemento
+          <div className={`collapse rounded-md ${ 'mb-5'  // Agrega mb-5 si no es el último elemento
             } shadow-xl`} key={index}>
 
             <input type="checkbox" className="peer" id={index.toString()}/>
