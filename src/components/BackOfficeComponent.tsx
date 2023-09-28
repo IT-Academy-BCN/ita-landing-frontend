@@ -126,6 +126,7 @@ return (
                       </div>
 
                       <div className={state.projectsComponent ? 'component hidden' : 'component'}>
+                          <AdminButtons />
                           <ProjectsComponent />
                       </div>
                   </>

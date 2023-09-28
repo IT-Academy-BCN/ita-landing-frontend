@@ -8,14 +8,19 @@ export const ProjectsComponent = () => {
   return (
     <>
       {/*Projects section*/}
-      <section className="flex flex-col mx-auto container justify-center">
+      <section className="flex flex-col bg-white rounded-md mx-6 px-10">
 
         {/* HomePage exclusive components */}
         {window.location.pathname !== "/backoffice" && (<> <TitleApps /> <TasksProcess /> </>)}
+        
         {/*Cards*/}
-
         <div className="grid grid-cols-3 w-full">
-          {window.location.pathname == "/backoffice" && ( <CreateApp />)}
+          {window.location.pathname == "/backoffice" && (
+            <>
+              <h2 className="col-span-3 ml-6 font-black py-12 text-3xl font-poppins sm:text-center lg:text-left"> Apps </h2>
+              <CreateApp />
+            </>
+          )}
           <Apps />
         </div>
       </section>
