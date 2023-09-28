@@ -31,7 +31,7 @@ export default function FaqsModified() {
 
   return (
     <>
-      <div className={`collapse collapse-arrow border-2 border-dashed mb-6 ${isOpen ? 'collapse-open' : 'collapse-close'}`}>
+      <div className={`collapse collapse-arrow border-2 border-dashed mb-6 ml-5 ${isOpen ? 'collapse-open' : 'collapse-close'}`}>
         <input type="checkbox" className={`${isOpen ? 'z-0' : ''}`} onClick={() => setIsOpen(true)} /> 
         <div className={`collapse-title relative text-start font-bold text-[#7e7e7e] ${isOpen ? 'text-white bg-[#BA007C] z-10' : ''}`}>
           {isOpen ? <input type="text" className="z-20 text-black input input-bordered" onChange={(e) => setFaqsContent({ ...faqsContent, title: e.target.value })} value={faqsContent.title}/> : <p className="z-10 lg:text-justify sm:text-center max-w-[75%]">Crear nueva pregunta</p>}

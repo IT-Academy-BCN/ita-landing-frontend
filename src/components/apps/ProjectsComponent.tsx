@@ -17,7 +17,7 @@ export const ProjectsComponent = () => {
         <div className="grid grid-cols-3 w-full">
           {window.location.pathname == "/backoffice" && (
             <>
-              <h2 className="col-span-3 ml-6 font-black py-12 text-3xl font-poppins sm:text-center lg:text-left"> Apps </h2>
+              <h2 className="col-span-3 ml-10 font-black py-12 text-3xl font-poppins sm:text-center lg:text-left"> Apps </h2>
               <CreateApp />
             </>
           )}
