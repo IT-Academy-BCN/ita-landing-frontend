@@ -6,6 +6,7 @@ import Collaborators from "../components/Collaborators";
 import FAQs from "../components/faqs/FAQsComponent";
 
 function LandingPage() {
+
   return (
     <>
      
