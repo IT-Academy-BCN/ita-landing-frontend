@@ -133,7 +133,7 @@ const FAQs = () => {
         )}
 
         {faqsClone.map((faq:Faq, index:number) => (
-          <div className={`collapse rounded-md mb-5 shadow-xl`} key={index}>
+          <div className={`collapse rounded-md mb-5 shadow-xl`} key={faq.id}>
 
             <input type="checkbox" className="peer" id={index.toString()}/>
             <div className="collapse-title relative lg:flex rounded-b-md bg-white text-justify text-black text-4 font-poppins font-bold font-poppins peer-checked:bg-[#BA007C] peer-checked:rounded-b-[0px] peer-checked:text-secondary-content">

@@ -3,11 +3,13 @@ import { configureStore } from '@reduxjs/toolkit'
  import apiPostRegister from './reducers/apiCall/apiPostRegisterLogin'
  import faqsReducer from './reducers/faqsCall/faqsReducer'
 import appsCallApiFunctionality from './reducers/appsCall/appsCallApiFunctionality'
+import getCollaboratorsFunctionality from './reducers/CollaboratorsCall/getCollaboratorsFunctionality'
 export const store = configureStore({
   reducer: {
     apiPostRegister: apiPostRegister,
     faqsReducer:faqsReducer,
-    appsCallApiFunctionality:appsCallApiFunctionality
+    appsCallApiFunctionality:appsCallApiFunctionality,
+    getCollaboratorsFunctionality:getCollaboratorsFunctionality
   },
 })
 

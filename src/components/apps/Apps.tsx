@@ -2,10 +2,9 @@ import { RootState } from "../../store/store";
 import { createToken, ApiStateApps } from "../../interfaces/interfaces";
 import { FaArrowRight } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import { apiCallApps, apiCallAppsInfo } from "../../store/reducers/appsCall/appsCallApiFunctionality";
+import { apiCallApps, apiCallAppsInfo, deleteApiApps } from "../../store/reducers/appsCall/appsCallApiFunctionality";
 import { useDispatch, useSelector } from "react-redux";
 import ModalApps from "./appsAdminView/modalApps";
-import { deleteApiApps } from "../../store/reducers/appsCall/appsCallApiFunctionality";
 import trashIcon from "../../assets/img/icon-delete-faq-backoffice.png"
 import githubLogo from "../../assets/img/githubLogo.svg"
 
@@ -49,6 +48,7 @@ const Apps = () => {
         {apps.map((app) => {
             return (
               <div
+                key={app.id}
                 className={`cards ${
                   app.state === "COMPLETED" && "bg-completed"
                 } 
