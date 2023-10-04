@@ -59,3 +59,9 @@ export interface loginRegisterParams {
 export interface FormDataEvent extends React.FormEvent<HTMLFormElement> {
   target: HTMLFormElement;
 }
+
+export interface collaborator {
+  name: string;
+  url: string;
+  photo: string;
+}
