@@ -28,6 +28,7 @@ const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 //collaborators function
 
 const collaboratorsDataSlice =()=>{
+    if(!collaborators) return [];
 
     //Colocar el 750 centralizado en redux en una variable//
     if(windowWidth>maxWidth && title !='modal'){
