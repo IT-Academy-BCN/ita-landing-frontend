@@ -8,7 +8,7 @@ export const ProjectsComponent = () => {
   return (
     <>
       {/*Projects section*/}
-      <section className="flex flex-col bg-white rounded-md mx-6 px-10 pb-5">
+      <section className="flex flex-col bg-white rounded-md mx-6 lg:px-10 pb-5 pt-16">
 
         {/* HomePage exclusive components */}
         {window.location.pathname !== "/backoffice" && (<> <TitleApps /> <TasksProcess /> </>)}

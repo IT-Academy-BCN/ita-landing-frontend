@@ -6,15 +6,15 @@ import Collaborators from "../components/Collaborators";
 import FAQs from "../components/faqs/FAQsComponent";
 
 function LandingPage() {
-
   return (
     <>
-     
-      <SloganComponent />
-      <ProjectsComponent />
-      <TeamsectionComponent />
-      <Collaborators />
-      <FAQs />
+      <div className="max-w-7xl">
+        <SloganComponent />
+        <ProjectsComponent />
+        <TeamsectionComponent />
+        <Collaborators />
+        <FAQs />
+      </div>
       <Footer />
     </>
   );
