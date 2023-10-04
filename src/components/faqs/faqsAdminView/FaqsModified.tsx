@@ -10,8 +10,6 @@ export default function FaqsModified() {
   //constantes para el set //
   const dispatch = useDispatch();
 
-  const [booleanFaqs, setBooleanFaqs] = useState<boolean>(false);
-
   const [faqsContent, setFaqsContent] = useState<{
     title: string;
     description: string;
@@ -19,69 +17,33 @@ export default function FaqsModified() {
     title: "",
     description: "",
   });
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClosed = () => {
+    setIsOpen(false)
+    setFaqsContent({ title: "", description: "" })
+  }
+  const handleCreated = () => {
+    postApiFaqs(faqsContent, acces_token, dispatch)
+    setIsOpen(false)
+    setFaqsContent({ title: "", description: "" })
+  }
 
   return (
     <>
-      <div className={"collapse rounded-xl mb-5 border-4 border-dashed"}>
-        <input
-          onClick={() => setBooleanFaqs(!booleanFaqs)}
-          type="checkbox"
-          className="peer"
-        />
-        <div className=" p-5 absolute rounded-b-md bg-white text-left text-gray-500 text-4 font-poppins font-bold   peer-checked:rounded-b-[0px]   text-4 font-poppins">
-          Crear nueva pregunta
+      <div className={`collapse collapse-plus border-2 border-dashed mb-6 ${isOpen ? 'collapse-open' : 'collapse-close'}`}>
+        <input type="checkbox" className={`${isOpen ? 'z-0' : ''} hover:cursor-pointer`} onClick={() => setIsOpen(true)} /> 
+        <div className={`collapse-title relative text-start font-bold text-[#7e7e7e] ${isOpen ? 'text-white bg-[#BA007C] z-10' : ''}`}>
+          {isOpen ? <input type="text" className="z-20 text-black input input-bordered" onChange={(e) => setFaqsContent({ ...faqsContent, title: e.target.value })} value={faqsContent.title}/> : <p className="z-10 lg:text-justify sm:text-center max-w-[75%]">Crear nueva pregunta</p>}
+        </div>
+        <div className="collapse-content">
+          <textarea className="outline-none resize-none pt-4 w-full" placeholder="Respuesta" onChange={(e) => setFaqsContent({ ...faqsContent, description: e.target.value })} value={faqsContent.description}></textarea>
+          <div className="flex justify-end items-center">
+            <button className="py-2 px-8 mr-4 mb-2 text-sm text-[#7e7e7e] border border-[#7e7e7e]" onClick={handleClosed}>Cancelar</button>
+            <button className="py-2 px-8 mr-4 mb-2 text-sm text-white bg-[#BA007C]" onClick={handleCreated}>Crear</button>
+          </div>
         </div>
       </div>
-
-      {booleanFaqs == true && (
-        <div
-          className={`  rounded-md ${
-            "mb-5" // Agrega mb-5 si no es el último elemento
-          } shadow-xl`}
-        >
-          <div className=" rounded-b-md  text-left    font-poppins font-bold  bg-[#BA007C]  rounded-b-[0px]    text-4 font-poppins font-bold w-100">
-            <input
-              onChange={(e) =>
-                setFaqsContent({ ...faqsContent, title: e.target.value })
-              }
-              value={faqsContent.title}
-              type="text"
-              placeholder="Crea tu pregunta"
-              className="placeholder-white bg-transparent text-white  p-4 w-full focus:border-0 focus:outline-none"
-            />
-          </div>
-          <div className=" rounded-b-md bg-white border-dashed active:border-0">
-            <textarea
-              placeholder="Respuesta"
-              onChange={(e) =>
-                setFaqsContent({ ...faqsContent, description: e.target.value })
-              }
-              value={faqsContent.description}
-              className="resize-none p-5 focus:border-0 focus:outline-none text-black  text-4 font-poppins font-medium    w-full"
-            />
-          </div>
-          <div className="flex justify-end mr-20 pb-7">
-            <button
-              className="mr-5 xl:px-7 btn btn-outline-primary border-gray-600 bg-transparent text-gray-600"
-              onClick={() => {
-                setBooleanFaqs(false);
-              }}
-            >
-              Cancelar
-            </button>
-            <button
-              className="btn xl:px-9  bg-pink-it text-white"
-              onClick={() => {
-                postApiFaqs(faqsContent, acces_token, dispatch);
-                setFaqsContent({ title: "", description: "" });
-                setBooleanFaqs(false);
-              }}
-            >
-              Crear
-            </button>
-          </div>
-        </div>
-      )}
     </>
   );
 }

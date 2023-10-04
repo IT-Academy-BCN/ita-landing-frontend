@@ -21,7 +21,8 @@ export interface AppData {
   description: string;
   url: string;
   state: string;
-  id: number;
+  id:number;
+  github: string;
 }
 
 export interface faqContent {
