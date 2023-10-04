@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import {
   handleSubmit,
   eraseMessageError,
+  passwordReminderReducer,
 } from "../store/reducers/apiCall/apiPostRegisterLogin";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -15,6 +16,7 @@ import {
 export default function LoginComponent({
   setIsDropdownEnterButton,
   setisDropdownCuenta,
+  setIsPasswordReminder,
 }: ChildComponentProps) {
   const navegador = useNavigate();
   const dispatch = useDispatch();
@@ -58,7 +60,20 @@ export default function LoginComponent({
               />
 
               <a className="text-xs text-end">
-                <span className="border-b-2 border-black">
+                <span
+                  className="border-b-2 border-black"
+                  onClick={() => {
+                    dispatch(
+                      passwordReminderReducer({
+                        type: "SHOW_PASSWORD_REMINDER",
+                      })
+                    );
+                    dispatch(eraseMessageError());
+                    setIsDropdownEnterButton(false);
+                    setisDropdownCuenta(false);
+                    setIsPasswordReminder(true);
+                  }}
+                >
                   Recordar/Cambiar contraseña
                 </span>
               </a>
