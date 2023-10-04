@@ -1,179 +1,29 @@
-import curvedArrow from "../../assets/img/curvedArrow.svg";
-import gitLogo from "../../assets/img/gitLogo.svg";
-import { FaRegCircle, FaArrowRight } from "react-icons/fa";
-import { IconContext } from "react-icons";
-import { useEffect, useState } from "react";
-import {
-  apiCallApps,
-  apiCallAppsInfo,
-  postApiApps,
-} from "../../store/reducers/appsCall/appsCallApiFunctionality";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../store/store";
-import { createToken, ApiStateApps } from "../../interfaces/interfaces";
-import Pencil from "../../assets/img/vector-10.png";
-import ModalApps from "./appsAdminView/modalApps";
-import ModalsAddApps from "./appsAdminView/ModalsAddApps";
-
-declare global {
-  interface Window {
-    my_modal_1: {
-      showModal: () => void;
-    };
-    my_modal_2: {
-      showModal: () => void;
-    };
-  }
-}
+import Apps from "./Apps";
+import CreateApp from "./appsAdminView/CreateApp";
+import TasksProcess from "./appsHomepageView/TasksProcess";
+import TitleApps from "./appsHomepageView/TitleApps";
 
 export const ProjectsComponent = () => {
-  const { acces_token }: createToken = useSelector(
-    (state: RootState) => state.apiPostRegister
-  );
-
-  const handleSendApiInfo = (id: number) => {
-    apiCallAppsInfo(dispatch, id, acces_token);
-  };
-
-  const { apps }: ApiStateApps = useSelector(
-    (state: RootState) => state.appsCallApiFunctionality
-  );
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    apiCallApps(dispatch);
-  }, []);
-
-  const [newInfoApps, setNewInfoApps] = useState({
-    title: "",
-    description: "",
-    url: "",
-    state: "",
-  });
-
-  const sendInfo = () => {
-    postApiApps(newInfoApps, acces_token, dispatch);
-  };
 
   return (
     <>
-      <div className=" relative container min-h-screen  mx-auto mt-10 flex ">
-        {/*Projects section*/}
-        <section className="flex  flex-col justify-center">
-          {/*Projects title area*/}
-          {window.location.pathname != "/backoffice" && (
-            <div className="grid grid-cols-4 grid-rows-1  ">
-              {window.location.pathname !== "/backoffice" && (
-                <img
-                  className="h-[44px] mr-10 place-self-end md:p-0 pl-14"
-                  src={curvedArrow}
-                ></img>
-              )}
+      {/*Projects section*/}
+      <section className="flex flex-col bg-white rounded-md mx-6 px-10 pb-5">
 
-              <h2 className="font-black text-3xl text-center col-span-6">
-                Directorio de aplicaciones IT Academy
-              </h2>
-            </div>
-          )}
-          {/* Projects legend*/}
-          {window.location.pathname !== "/backoffice" && (
-            <div className="flex flex-col md:flex-row lg:w-3/4  lg:justify-end justify-center mx-auto my-6  gap-4">
-              <div className="flex justify-center items-center gap-2">
-                <IconContext.Provider
-                  value={{ color: "#bedfc8", className: "global-class-name" }}
-                >
-                  <FaRegCircle />
-                  Terminadas
-                </IconContext.Provider>
-              </div>
-              <div className="flex justify-center items-center gap-2">
-                <IconContext.Provider
-                  value={{ color: "#f8e9b9", className: "global-class-name" }}
-                >
-                  <FaRegCircle /> En construcción
-                </IconContext.Provider>
-              </div>
-              <div className="flex justify-center items-center gap-2">
-                <IconContext.Provider
-                  value={{ color: "#f7cbc4", className: "global-class-name" }}
-                >
-                  <FaRegCircle />
-                  Próximamente
-                </IconContext.Provider>
-              </div>
-            </div>
-          )}
-          {/*Cards*/}
-
+        {/* HomePage exclusive components */}
+        {window.location.pathname !== "/backoffice" && (<> <TitleApps /> <TasksProcess /> </>)}
+        
+        {/*Cards*/}
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 w-full">
           {window.location.pathname == "/backoffice" && (
-            <div>
-              <button
-                onClick={() => {
-                  window.my_modal_2?.showModal();
-                }}
-                className="btn btn-success mb-4"
-              >
-                Añadir nuevo
-              </button>
-            </div>
+            <>
+              <h2 className="md:col-span-2 lg:col-span-3 ml-10 font-black py-12 text-3xl font-poppins sm:text-center lg:text-left"> Apps </h2>
+              <CreateApp />
+            </>
           )}
-
-          <div className=" flex flex-wrap gap-7 justify-center ">
-            {/*Card 1*/}
-
-            {apps.map((cards) => {
-              return (
-                <div
-                  className={`cards ${
-                    cards.state === "COMPLETED" && "bg-completed"
-                  } 
-         ${cards.state === "SOON" ? "bg-soon" : "bg-building"}
-         card md:w-80 m-5 md:m-0 p-0   text-grey-it`}
-                >
-                  <div className="flex justify-between mt-4 pe-4">
-                    <h2 className="card-title mt-5 ms-5">{cards.title}</h2>{" "}
-                    <a href="https://github.com/it-academy-BCN/ita-landing-frontend">
-                      <img src={gitLogo} />
-                    </a>
-                  </div>
-                  <div className="card-body">
-                    {window.location.pathname == "/backoffice" && (
-                      <div>
-                        <img
-                          onClick={() => {
-                            window.my_modal_1?.showModal();
-                            handleSendApiInfo(cards.id);
-                          }}
-                          className="w-4 ms-auto cursor-pointer hover:scale-110 "
-                          src={Pencil}
-                          alt=""
-                        />
-                      </div>
-                    )}
-
-                    <p>{cards.description}</p>
-                    <div className="card-actions justify-center">
-                      <button className="btn btn-block btn-outline bg-base-100 border-none normal-case gap-2">
-                        Ir a app <FaArrowRight />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-            <ModalApps
-              newInfoApps={newInfoApps}
-              setNewInfoApps={setNewInfoApps}
-            />
-            <ModalsAddApps
-              newInfoApps={newInfoApps}
-              setNewInfoApps={setNewInfoApps}
-              sendInfo={sendInfo}
-            />
-          </div>
-        </section>
-      </div>
+          <Apps />
+        </div>
+      </section>
     </>
   );
 };
