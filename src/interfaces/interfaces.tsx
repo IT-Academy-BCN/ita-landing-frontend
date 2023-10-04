@@ -10,7 +10,6 @@ export interface CardTwoLogosProps {
   imgSrc2?: string;
   title: string;
   description: string;
-  buttonText: string;
 }
 export interface appsLoad {
   appsInfo: AppData;
