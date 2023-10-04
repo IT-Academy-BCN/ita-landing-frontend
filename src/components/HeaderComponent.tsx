@@ -7,12 +7,14 @@ import selector from "../assets/img/sel_right.png";
 import menu from "../assets/img/menu.png";
 import LoginComponent from "./LoginComponent";
 import RegisterComponent from "./Registercomponent";
+import PasswordReminderComponent from "./PasswordReminderComponent";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const [IsDropdownEnterButton, setIsDropdownEnterButton] =
     useState<boolean>(false);
   const [isDropdownCuenta, setisDropdownCuenta] = useState<boolean>(false);
+  const [isPasswordReminder, setIsPasswordReminder] = useState<boolean>(false);
 
   const toggleDropdown = (): void => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -115,10 +117,20 @@ const Header = () => {
           <LoginComponent
             setIsDropdownEnterButton={setIsDropdownEnterButton}
             setisDropdownCuenta={setisDropdownCuenta}
+            setIsPasswordReminder={setIsPasswordReminder}
           />
         ) : null}
         {isDropdownCuenta ? (
           <RegisterComponent
+            setIsDropdownEnterButton={setIsDropdownEnterButton}
+            setisDropdownCuenta={setisDropdownCuenta}
+            setIsPasswordReminder={setIsPasswordReminder}
+          />
+        ) : null}
+
+        {isPasswordReminder ? (
+          <PasswordReminderComponent
+            setIsPasswordReminder={setIsPasswordReminder}
             setIsDropdownEnterButton={setIsDropdownEnterButton}
             setisDropdownCuenta={setisDropdownCuenta}
           />
