@@ -9,15 +9,15 @@ import ImgVector from "../assets/img/curved-arrow.png";
 
 const TeamsectionComponent = () => (
   <div>
-    <div className="  flex flex-col items-center justify-center my-12 mb-20 ">
+    <div className="flex flex-col items-center justify-center mb-12 mb-20 ">
       <div className="grid grid-cols-5 ">
         <img style={{ gridColumn: "5" }} src={ImgVector}></img>
       </div>
 
-      <h1 className="font-poppins font-bold text-5xl  leading-58  ">
+      <h1 className="font-poppins font-bold text-4xl leading-58  ">
         Equipos de trabajo
       </h1>
-      <h3 className="font-poppins font-medium text-base text-gray-500 mt-5">
+      <h3 className="font-poppins font-medium text-base text-gray-600 mt-5">
         Los proyectos son realizados por equipos que combinan las siguientes
         tecnologías
       </h3>
@@ -32,7 +32,6 @@ const TeamsectionComponent = () => (
         description={
           "Lorem ipsum dolor sit amet consectetur adipiscing elit nullam pellentesque dignissim interdum feugiat tortor ut.\nVelitbus vulputate neque lacinia faucibus blandit diam parturient luctus."
         }
-        buttonText={"Ver más"}
       />
       <CardComponent
         pos={"02"}
@@ -42,7 +41,6 @@ const TeamsectionComponent = () => (
         description={
           "Lorem ipsum dolor sit amet consectetur adipiscing elit nullam pellentesque dignissim interdum feugiat tortor ut.\nVelitbus vulputate neque lacinia faucibus blandit diam parturient luctus."
         }
-        buttonText={"Ver más"}
       />
       <CardComponent
         pos={"03"}
@@ -51,7 +49,6 @@ const TeamsectionComponent = () => (
         description={
           "Lorem ipsum dolor sit amet consectetur adipiscing elit nullam pellentesque dignissim interdum feugiat tortor ut.\nVelitbus vulputate neque lacinia faucibus blandit diam parturient luctus."
         }
-        buttonText={"Ver más"}
       />
       <CardComponent
         pos={"04"}
@@ -60,7 +57,6 @@ const TeamsectionComponent = () => (
         description={
           "Lorem ipsum dolor sit amet consectetur adipiscing elit nullam pellentesque dignissim interdum feugiat tortor ut.\nVelitbus vulputate neque lacinia faucibus blandit diam parturient luctus."
         }
-        buttonText={"Ver más"}
       />
     </div>
   </div>
