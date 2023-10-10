@@ -35,7 +35,7 @@ const Header = () => {
             className="relative btn btn-outline btn-neutral h-full hover:bg-transparent  "
             onClick={toggleDropdown}
           >
-            <div className="flex  items-center justify-between text-sm text-neutral font-bold   ">
+            <div className="flex  items-center justify-between text-sm text-neutral font-bold capitalize ">
               <span>Castellano</span>
               <div>
                 <svg
@@ -58,9 +58,9 @@ const Header = () => {
                 isDropdownOpen ? "" : "hidden"
               }`}
             >
-              <li className="flex items-center px-8 py-8 hover:bg-gray-100 hover:rounded-xl flex-row">
+              <li className="flex items-center px-4 py-4 hover:bg-gray-100 hover:rounded-xl flex-row">
                 <div className="text-left flex-grow">
-                  <div className="rounded-full h-53 w-53 flex items-left text-[#4F4F4F] font-bold text-xl">
+                  <div className="rounded-full h-53 w-53 flex items-left text-[#4F4F4F] font-bold text-sm capitalize">
                     Català
                   </div>
                 </div>
@@ -70,9 +70,9 @@ const Header = () => {
                   className="h-53 w-53 scale-90 ml-4 flex-none"
                 />
               </li>
-              <li className="flex items-center px-8 py-8 hover:bg-gray-200 border-t border-[#BDBDBD] flex-row">
+              <li className="flex items-center px-4 py-4 hover:bg-gray-200 border-t border-[#BDBDBD] flex-row">
                 <div className="text-left flex-grow">
-                  <div className="rounded-full h-53 w-53 flex items-left text-[#4F4F4F] font-bold text-xl">
+                  <div className="rounded-full h-53 w-53 flex items-left text-[#4F4F4F] font-bold text-sm capitalize">
                     Castellano
                   </div>
                 </div>
@@ -82,9 +82,9 @@ const Header = () => {
                   className="h-53 w-53 scale-90 ml-4 flex-none"
                 />
               </li>
-              <li className=" hover:rounded-b-xl flex items-center px-8 py-8 hover:bg-gray-200 border-t-2  border-[#BDBDBD] flex-row">
+              <li className=" hover:rounded-b-xl flex items-center px-4 py-4 hover:bg-gray-200 border-t-2  border-[#BDBDBD] flex-row">
                 <div className="text-left flex-grow">
-                  <div className="rounded-full h-53 w-53 flex items-left text-[#4F4F4F] font-bold text-xl">
+                  <div className="rounded-full h-53 w-53 flex items-left text-[#4F4F4F] font-bold text-sm capitalize">
                     English
                   </div>
                 </div>
