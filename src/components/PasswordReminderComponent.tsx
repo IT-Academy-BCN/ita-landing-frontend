@@ -1,9 +1,56 @@
 import cross from "../assets/img/cross.png";
+import { connect } from "react-redux";
 import { ChildComponentProps } from "../interfaces/interfaces";
+import { RootState } from "../store/store";
+import {
+  setEmail,
+  setEmailMessage,
+} from "../store/reducers/apiCall/apiPostRegisterLogin";
+import { useSelector, useDispatch } from "react-redux";
 
 const PasswordReminderComponent = ({
   setIsPasswordReminder,
-}: ChildComponentProps) => {
+}: ChildComponentProps & {
+  setEmail: (email: string) => void;
+  email: string;
+}) => {
+  const email = useSelector((state: RootState) => state.apiPostRegister.email);
+  const emailMessage = useSelector(
+    (state: RootState) => state.apiPostRegister.emailMessage
+  );
+
+  const dispatch = useDispatch();
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setEmail(e.target.value));
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        dispatch(setEmailMessage("Password reminder email sent successfully."));
+        console.log(emailMessage);
+      } else {
+        dispatch(
+          setEmailMessage("Failed to send the email. Please try again later.")
+        );
+        console.log(emailMessage);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      dispatch(setEmailMessage("An error occurred. Please try again later."));
+    }
+  };
+
   return (
     <>
       <div>
@@ -22,12 +69,14 @@ const PasswordReminderComponent = ({
             <h1 className="text-center font-bold text-xl">
               Recordar contraseña
             </h1>
-            <form>
+            <form onSubmit={handleFormSubmit}>
               <input
                 type="email"
                 name="email"
                 className="input input-bordered placeholder-black w-full max-w-xs"
                 placeholder="Dirección de email"
+                value={email}
+                onChange={handleEmailChange}
               />
 
               <button
@@ -46,4 +95,10 @@ const PasswordReminderComponent = ({
   );
 };
 
-export default PasswordReminderComponent;
+const mapStateToProps = (state: RootState) => ({
+  showPasswordReminder: state.apiPostRegister.showPasswordReminder,
+});
+
+export default connect(mapStateToProps, { setEmail })(
+  PasswordReminderComponent
+);

@@ -13,6 +13,8 @@ const initialState: loginRegisterParams = {
   isLoadingMessageError: false,
   acces_token: "",
   showPasswordReminder: false,
+  email: "",
+  emailMessage: "",
 };
 
 export const apiSlice = createSlice({
@@ -52,6 +54,12 @@ export const apiSlice = createSlice({
       const handler = actionHandlers[action.type] || (() => state);
       return handler();
     },
+    setEmail: (state, action: PayloadAction<string>) => {
+      state.email = action.payload;
+    },
+    setEmailMessage: (state, action: PayloadAction<string>) => {
+      state.emailMessage = action.payload;
+    },
   },
 });
 
@@ -61,6 +69,8 @@ export const {
   setIsLogged,
   setToken,
   passwordReminderReducer,
+  setEmail,
+  setEmailMessage,
 } = apiSlice.actions;
 
 //Api call for login and register.

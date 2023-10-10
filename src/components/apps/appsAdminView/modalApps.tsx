@@ -37,13 +37,16 @@ export default function ModalApps({
     <>
       <dialog id="my_modal_1" className="modal ">
         {!loadingApps ? (
-          <form method="dialog" className="modal-box text-start flex flex-col h-4/5">
+          <form
+            method="dialog"
+            className="modal-box text-start flex flex-col h-4/5"
+          >
             <button className="cursor-pointer bg-transparent ml-auto border-0 focus:outline-none hover:bg-transparent">
               <img src={Cross} alt="Cross button" />
             </button>
 
             <input
-              value={newInfoApps.title}
+              value={newInfoApps.title || " "}
               onChange={(e) =>
                 setNewInfoApps({ ...newInfoApps, title: e.target.value })
               }
@@ -63,7 +66,7 @@ export default function ModalApps({
               <h3 className="font-bold mb-1">Url del proyecto</h3>
               <input
                 placeholder="Type here"
-                value={newInfoApps.url}
+                value={newInfoApps.url || " "}
                 onChange={(e) =>
                   setNewInfoApps({ ...newInfoApps, url: e.target.value })
                 }
@@ -76,7 +79,7 @@ export default function ModalApps({
               <h3 className="font-bold mb-1">Url del repositorio de GitHub</h3>
               <input
                 placeholder="Type here"
-                value={newInfoApps.github}
+                value={newInfoApps.github || " "}
                 onChange={(e) =>
                   setNewInfoApps({ ...newInfoApps, github: e.target.value })
                 }
@@ -92,10 +95,11 @@ export default function ModalApps({
                   setNewInfoApps({ ...newInfoApps, state: "COMPLETED" });
                 }}
                 className={`
-                  ${newInfoApps.state == "COMPLETED"
-                    ? "font-bold bg-completed rounded-full p-3 cursor-pointer"
-                    : "cursor-pointer p-3"
-                } text-sm`}
+                  ${
+                    newInfoApps.state == "COMPLETED"
+                      ? "font-bold bg-completed rounded-full p-3 cursor-pointer"
+                      : "cursor-pointer p-3"
+                  } text-sm`}
               >
                 Completada
               </p>
@@ -104,10 +108,11 @@ export default function ModalApps({
                   setNewInfoApps({ ...newInfoApps, state: "IN PROGRESS" });
                 }}
                 className={`
-                  ${newInfoApps.state == "IN PROGRESS"
-                    ? "font-bold bg-building ml-2 rounded-full p-3 cursor-pointer"
-                    : "cursor-pointer p-3 ml-2"
-                } text-sm`}
+                  ${
+                    newInfoApps.state == "IN PROGRESS"
+                      ? "font-bold bg-building ml-2 rounded-full p-3 cursor-pointer"
+                      : "cursor-pointer p-3 ml-2"
+                  } text-sm`}
               >
                 En progreso
               </p>
@@ -116,18 +121,22 @@ export default function ModalApps({
                   setNewInfoApps({ ...newInfoApps, state: "SOON" });
                 }}
                 className={`
-                  ${newInfoApps.state == "SOON"
-                    ? "font-bold bg-soon ml-2 rounded-full p-3 cursor-pointer"
-                    : "cursor-pointer p-3 ml-2"
-                } text-sm`}
+                  ${
+                    newInfoApps.state == "SOON"
+                      ? "font-bold bg-soon ml-2 rounded-full p-3 cursor-pointer"
+                      : "cursor-pointer p-3 ml-2"
+                  } text-sm`}
               >
                 Próximamente
               </p>
             </div>
 
             <div className="flex place-content-center mt-6 gap-12">
-              <button className="btn normal-case xl:px-12 text-[#7e7e7e] border border-[#7e7e7e] bg-white">Cancelar</button>
-              <button className="btn normal-case xl:px-12 text-white bg-pink-it"
+              <button className="btn normal-case xl:px-12 text-[#7e7e7e] border border-[#7e7e7e] bg-white">
+                Cancelar
+              </button>
+              <button
+                className="btn normal-case xl:px-12 text-white bg-pink-it"
                 onClick={() =>
                   putApiApps(newInfoApps, acces_token, dispatch, appsInfo.id)
                 }

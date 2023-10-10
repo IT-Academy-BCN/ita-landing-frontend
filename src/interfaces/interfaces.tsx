@@ -20,7 +20,7 @@ export interface AppData {
   description: string;
   url: string;
   state: string;
-  id:number;
+  id: number;
   github: string;
 }
 
@@ -54,6 +54,8 @@ export interface loginRegisterParams {
   isLoadingMessageError: boolean;
   acces_token: string;
   showPasswordReminder: boolean;
+  email: string;
+  emailMessage: string;
 }
 
 export interface FormDataEvent extends React.FormEvent<HTMLFormElement> {
