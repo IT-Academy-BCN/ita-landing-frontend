@@ -1,19 +1,15 @@
 import cross from "../assets/img/cross.png";
-import { connect } from "react-redux";
 import { ChildComponentProps } from "../interfaces/interfaces";
 import { RootState } from "../store/store";
 import {
   setEmail,
   setEmailMessage,
 } from "../store/reducers/apiCall/apiPostRegisterLogin";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch, connect } from "react-redux";
 
 const PasswordReminderComponent = ({
   setIsPasswordReminder,
-}: ChildComponentProps & {
-  setEmail: (email: string) => void;
-  email: string;
-}) => {
+}: ChildComponentProps) => {
   const email = useSelector((state: RootState) => state.apiPostRegister.email);
   const emailMessage = useSelector(
     (state: RootState) => state.apiPostRegister.emailMessage
@@ -28,13 +24,16 @@ const PasswordReminderComponent = ({
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch("", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
+      const response = await fetch(
+        "http://127.0.0.1:8000/api/forget-password",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
 
       if (response.ok) {
         dispatch(setEmailMessage("Password reminder email sent successfully."));
