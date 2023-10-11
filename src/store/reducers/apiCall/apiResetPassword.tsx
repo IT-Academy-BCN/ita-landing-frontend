@@ -11,8 +11,9 @@ export const apiSliceResetPassword = createSlice({
     name: 'apiSliceResetPassword',
     initialState, 
     reducers: {
-        sendEmailSuccess: (state) => {
+        sendEmailSuccess: (state, action) => {
             state.emailSendIt = true
+            state.email = action.payload
         },
         sendEmailFailure: (state) => {
             state.emailSendIt = false
@@ -23,15 +24,25 @@ export const {sendEmailSuccess, sendEmailFailure} = apiSliceResetPassword.action
 
 
 export const handleSubmit = (dispatch: Dispatch , email: string) => {
-
-    console.log(email)
-
     axios.post('http://127.0.0.1:8000/api/forget-password', {email})
     .then(() => {
-        dispatch(sendEmailSuccess())
+        dispatch(sendEmailSuccess(email))
     })
     .catch(() => {
         dispatch(sendEmailFailure())
     })
-
 }
+
+export const handleReset = (dispatch: Dispatch , e: FormDataEvent, newPassword:string , newConfirmationPassword:string , resetToken:string) => {
+    e.preventDefault()
+    try{
+        axios.post(`http://127.0.0.1:8000/api/reset-password/${resetToken}`, {password: newPassword, password_confirmation: newConfirmationPassword})
+             .then(() => {
+                 dispatch(sendEmailFailure())
+             })        
+    }catch(error){
+        console.error(error)
+    }
+}
+
+export default apiSliceResetPassword.reducer;
