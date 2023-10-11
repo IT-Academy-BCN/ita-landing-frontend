@@ -56,6 +56,11 @@ export interface loginRegisterParams {
   showPasswordReminder: boolean;
 }
 
+export interface resetPasswordParams {
+  email: string;
+  emailSendIt: boolean
+}
+
 export interface FormDataEvent extends React.FormEvent<HTMLFormElement> {
   target: HTMLFormElement;
 }

@@ -1,9 +1,24 @@
+import { useState } from 'react'
+import { useDispatch, useSelector } from "react-redux";
 import cross from "../assets/img/cross.png";
-import { ChildComponentProps } from "../interfaces/interfaces";
+import { ChildComponentProps, FormDataEvent } from "../interfaces/interfaces";
+import { handleSubmit } from "../store/reducers/apiCall/apiResetPassword";
 
 const PasswordReminderComponent = ({
   setIsPasswordReminder,
 }: ChildComponentProps) => {
+
+  const dispatch = useDispatch()
+
+  const [email, setEmail] = useState("");
+
+  const submitInformation = (e: FormDataEvent) => {
+    e.preventDefault()
+    handleSubmit(dispatch, email)
+  }
+
+  // const emailSendIt = useSelector((state) => state.apiSliceResetPassword.emailSendIt)
+
   return (
     <>
       <div>
@@ -22,12 +37,14 @@ const PasswordReminderComponent = ({
             <h1 className="text-center font-bold text-xl">
               Recordar contraseña
             </h1>
-            <form>
+            <form onSubmit={submitInformation}>
               <input
                 type="email"
                 name="email"
                 className="input input-bordered placeholder-black w-full max-w-xs"
                 placeholder="Dirección de email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)} // Actualiza el estado con el valor del campo de entrada
               />
 
               <button
