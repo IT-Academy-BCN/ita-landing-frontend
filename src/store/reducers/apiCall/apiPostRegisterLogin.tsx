@@ -79,7 +79,7 @@ export const handleSubmit = async (
   //RESGISTER
   if (number === 1) {
     axios
-      .post("http://127.0.0.1:8000/api/register", formData)
+      .post("http://87.106.229.119//api/register", formData)
       .then((resp) => {
         console.log(resp);
         dispatch(
@@ -94,7 +94,7 @@ export const handleSubmit = async (
     //LOGIN
   } else if (number === 2) {
     axios
-      .post("http://127.0.0.1:8000/api/login", formData)
+      .post("http://87.106.229.119//api/login", formData)
       .then((resp) => {
         dispatch(setToken(resp.data.result.access_token));
         dispatch(setIsLogged(true));
