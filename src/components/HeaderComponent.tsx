@@ -58,7 +58,7 @@ const Header = () => {
                 isDropdownOpen ? "" : "hidden"
               }`}
             >
-              <li className="flex items-center px-4 py-4 hover:bg-gray-100 hover:rounded-xl flex-row">
+              <li className="flex items-center px-4 py-2 hover:bg-gray-100 hover:rounded-xl flex-row">
                 <div className="text-left flex-grow">
                   <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
                     Català
@@ -70,7 +70,7 @@ const Header = () => {
                   className="h-53 w-53 scale-90 ml-4 flex-none"
                 />
               </li>
-              <li className="flex items-center px-4 py-4 hover:bg-gray-200 border-t border-gray-400 flex-row">
+              <li className="flex items-center px-4 py-2 hover:bg-gray-200 border-t border-gray-400 flex-row">
                 <div className="text-left flex-grow">
                   <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
                     Castellano
@@ -82,7 +82,7 @@ const Header = () => {
                   className="h-53 w-53 scale-90 ml-4 flex-none"
                 />
               </li>
-              <li className=" hover:rounded-b-xl flex items-center px-4 py-4 hover:bg-gray-200 border-t-2 border-gray-400 flex-row">
+              <li className=" hover:rounded-b-xl flex items-center px-4 py-2 hover:bg-gray-200 border-t-2 border-gray-400 flex-row">
                 <div className="text-left flex-grow">
                   <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
                     English
