@@ -58,7 +58,7 @@ export interface loginRegisterParams {
 
 export interface resetPasswordParams {
   email: string;
-  emailSendIt: boolean
+  requestStatus: string;
 }
 
 export interface FormDataEvent extends React.FormEvent<HTMLFormElement> {
