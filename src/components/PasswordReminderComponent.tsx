@@ -14,6 +14,10 @@ const PasswordReminderComponent = ({
   const [tryRequest, setTryRequest] = useState(false);
   const [email, setEmail] = useState("");
 
+  const handleCloseModal = () => {
+    setTryRequest(false)
+    setIsPasswordReminder(false)
+  }
 
   const submitInformation = (e: FormDataEvent) => {
     e.preventDefault()
@@ -31,7 +35,7 @@ const PasswordReminderComponent = ({
           >
             <div className="p-3 flex ">
               <img
-                onClick={() => setIsPasswordReminder(false)}
+                onClick={handleCloseModal}
                 src={cross}
                 className=" cursor-pointer w-3 ml-auto "
                 alt=""
@@ -71,7 +75,7 @@ const PasswordReminderComponent = ({
           >
             <div className="p-3 flex ">
               <img
-                onClick={() => setIsPasswordReminder(false)}
+                onClick={handleCloseModal}
                 src={cross}
                 className=" cursor-pointer w-3 ml-auto "
                 alt=""
@@ -81,8 +85,8 @@ const PasswordReminderComponent = ({
               <h1 className="text-center font-bold text-xl">
                 Recordar contraseña
               </h1>
-              <p>ERROR 404</p>
-              <button onClick={() => setIsPasswordReminder(false)}>Volver a intentar</button>
+              <p className="text-sm">Esta dirección de correo no está vinculada a ninguna cuenta</p>
+              <button className="btn btn-error" onClick={handleCloseModal}>Volver a intentar</button>
             </div>
           </div>
           <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
@@ -108,8 +112,8 @@ const PasswordReminderComponent = ({
               <h1 className="text-center font-bold text-xl">
                 Recordar contraseña
               </h1>
-              <p>CORRECTO 200!</p>
-              <button onClick={() => setIsPasswordReminder(false)}>De acuerdo</button>
+              <p className="text-sm">Un link ha sido enviado a tu correo para crear una nueva contraseña</p>
+              <button className="btn btn-success" onClick={() => setIsPasswordReminder(false)}>De acuerdo</button>
             </div>
           </div>
           <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
