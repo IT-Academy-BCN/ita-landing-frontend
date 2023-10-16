@@ -30,12 +30,12 @@ const Header = () => {
       {/* Idiomas + Botón Entrar (solo visibles en pantallas grandes) */}
       <div className=" flex  ">
         {/* Botón Desplegable Idiomas (solo visible en pantallas grandes) */}
-        <div className="hidden lg:block relative mr-10 cursor-pointer  ">
+        <div className="hidden lg:block relative mr-5 cursor-pointer">
           <div
-            className="relative btn btn-outline btn-neutral h-full hover:bg-transparent  "
+            className="relative btn btn-outline btn-neutral h-full hover:bg-transparent border-gray-400 "
             onClick={toggleDropdown}
           >
-            <div className="flex  items-center justify-between text-sm text-neutral font-bold   ">
+            <div className="flex  items-center justify-between text-sm text-neutral font-bold text-gray-700 capitalize ">
               <span>Castellano</span>
               <div>
                 <svg
@@ -54,13 +54,13 @@ const Header = () => {
 
             {/* Tabla Idiomas (links) (solo visible en pantallas grandes) */}
             <ul
-              className={`absolute   right-0 top-full mt-6 w-80 rounded-xl bg-white border-2  ${
+              className={`absolute   right-0 top-full mt-4 w-60 rounded-xl bg-white border-2  ${
                 isDropdownOpen ? "" : "hidden"
               }`}
             >
-              <li className="flex items-center px-8 py-8 hover:bg-gray-100 hover:rounded-xl flex-row">
+              <li className="flex items-center px-4 py-2 hover:bg-gray-100 hover:rounded-xl flex-row">
                 <div className="text-left flex-grow">
-                  <div className="rounded-full h-53 w-53 flex items-left text-[#4F4F4F] font-bold text-xl">
+                  <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
                     Català
                   </div>
                 </div>
@@ -70,9 +70,9 @@ const Header = () => {
                   className="h-53 w-53 scale-90 ml-4 flex-none"
                 />
               </li>
-              <li className="flex items-center px-8 py-8 hover:bg-gray-200 border-t border-[#BDBDBD] flex-row">
+              <li className="flex items-center px-4 py-2 hover:bg-gray-200 border-t border-gray-400 flex-row">
                 <div className="text-left flex-grow">
-                  <div className="rounded-full h-53 w-53 flex items-left text-[#4F4F4F] font-bold text-xl">
+                  <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
                     Castellano
                   </div>
                 </div>
@@ -82,9 +82,9 @@ const Header = () => {
                   className="h-53 w-53 scale-90 ml-4 flex-none"
                 />
               </li>
-              <li className=" hover:rounded-b-xl flex items-center px-8 py-8 hover:bg-gray-200 border-t-2  border-[#BDBDBD] flex-row">
+              <li className=" hover:rounded-b-xl flex items-center px-4 py-2 hover:bg-gray-200 border-t-2 border-gray-400 flex-row">
                 <div className="text-left flex-grow">
-                  <div className="rounded-full h-53 w-53 flex items-left text-[#4F4F4F] font-bold text-xl">
+                  <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
                     English
                   </div>
                 </div>
@@ -109,7 +109,7 @@ const Header = () => {
             <div>
               <img src={selector} className="h-5 w-5 mr-2" />
             </div>
-            <span className="  font-bold   text-sm">Entrar</span>
+            <span className="  font-bold capitalize  text-sm">Entrar</span>
           </button>
         </div>
 
