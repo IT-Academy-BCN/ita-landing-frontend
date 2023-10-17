@@ -27,7 +27,7 @@ export const {sendEmailSuccess, sendEmailFailure} = apiSliceResetPassword.action
 
 export const handleSubmit = async (dispatch: Dispatch , email: string) => {
     try{
-        await axios.post('http://127.0.0.1:8000/api/forget-password', { email });
+        await axios.post('http://87.106.229.119/api/forget-password', { email });
         dispatch(sendEmailSuccess(email));
     }catch(error){
         dispatch(sendEmailFailure());
@@ -37,10 +37,10 @@ export const handleSubmit = async (dispatch: Dispatch , email: string) => {
 export const handleReset = (dispatch: Dispatch , e:React.FormEvent<HTMLFormElement> , navegador: NavigateFunction , newPassword:string , newConfirmationPassword:string , resetToken:string|undefined) => {
     e.preventDefault()
     try{
-        axios.post(`http://127.0.0.1:8000/api/reset-password/${resetToken}`, {password: newPassword, password_confirmation: newConfirmationPassword})
+        axios.post(`http://87.106.229.119/api/reset-password/${resetToken}`, {password: newPassword, password_confirmation: newConfirmationPassword})
              .then(() => {
                  dispatch(sendEmailFailure())
-                 navegador("/backoffice");
+                 navegador("/");
              })        
     }catch(error){
         console.error(error)
