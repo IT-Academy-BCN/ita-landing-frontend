@@ -13,16 +13,28 @@ const PasswordReminderComponent = ({
 
   const [tryRequest, setTryRequest] = useState(false);
   const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleReopenModal = () => {
+    setEmail("")
+    setTryRequest(false)
+  }
 
   const handleCloseModal = () => {
     setTryRequest(false)
     setIsPasswordReminder(false)
   }
 
-  const submitInformation = (e: FormDataEvent) => {
+  const submitInformation = async (e: FormDataEvent) => {
     e.preventDefault()
-    setTryRequest(true);
-    handleSubmit(dispatch, email)
+    setIsLoading(true)
+    try{
+      await handleSubmit(dispatch, email)
+      setIsLoading(false)
+      setTryRequest(true)
+    }catch(error){
+      console.error(error)
+    }
   }
   const requestStatus = useSelector((state: RootState) => state.apiSliceResetPassword.requestStatus)
 
@@ -59,7 +71,7 @@ const PasswordReminderComponent = ({
                   type="submit"
                   className="mt-5 btn btn-block normal-case bg-pink-it text-white"
                 >
-                  <p>Recordar contraseña</p>
+                  {isLoading===false ? "Recordar contraseña" : <span className="loading loading-spinner loading-md"></span> }
                 </button>
               </form>
             </div>
@@ -86,7 +98,7 @@ const PasswordReminderComponent = ({
                 Recordar contraseña
               </h1>
               <p className="text-sm">Esta dirección de correo no está vinculada a ninguna cuenta</p>
-              <button className="btn btn-error" onClick={handleCloseModal}>Volver a intentar</button>
+              <button className="btn btn-error" onClick={handleReopenModal}>Volver a intentar</button>
             </div>
           </div>
           <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>

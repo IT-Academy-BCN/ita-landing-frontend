@@ -1,5 +1,5 @@
 import { createSlice, Dispatch } from "@reduxjs/toolkit"
-import { resetPasswordParams, FormDataEvent } from "../../../interfaces/interfaces"
+import { resetPasswordParams } from "../../../interfaces/interfaces"
 import { NavigateFunction } from "react-router-dom";
 
 import axios from "axios"
@@ -25,14 +25,13 @@ export const apiSliceResetPassword = createSlice({
 export const {sendEmailSuccess, sendEmailFailure} = apiSliceResetPassword.actions
 
 
-export const handleSubmit = (dispatch: Dispatch , email: string) => {
-    axios.post('http://127.0.0.1:8000/api/forget-password', {email})
-    .then(() => {
-        dispatch(sendEmailSuccess(email))
-    })
-    .catch(() => {
-        dispatch(sendEmailFailure())
-    })
+export const handleSubmit = async (dispatch: Dispatch , email: string) => {
+    try{
+        await axios.post('http://127.0.0.1:8000/api/forget-password', { email });
+        dispatch(sendEmailSuccess(email));
+    }catch(error){
+        dispatch(sendEmailFailure());
+    }
 }
 
 export const handleReset = (dispatch: Dispatch , e:React.FormEvent<HTMLFormElement> , navegador: NavigateFunction , newPassword:string , newConfirmationPassword:string , resetToken:string|undefined) => {
