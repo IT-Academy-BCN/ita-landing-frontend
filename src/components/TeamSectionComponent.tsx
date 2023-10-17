@@ -14,7 +14,7 @@ const TeamsectionComponent = () => (
         <img style={{ gridColumn: "5" }} src={ImgVector}></img>
       </div>
 
-      <h1 className="font-poppins font-bold text-4xl leading-58  ">
+      <h1 className="font-bold text-4xl leading-58  ">
         Equipos de trabajo
       </h1>
       <h3 className="font-poppins font-medium text-base text-gray-600 mt-5">

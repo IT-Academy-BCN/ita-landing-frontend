@@ -8,7 +8,7 @@ const TitleApps = () => {
         src={curvedArrow}
       ></img>
 
-      <h2 className="font-black text-4xl text-center col-span-6">
+      <h2 className="font-bold text-4xl text-center col-span-6">
         Directorio de aplicaciones IT Academy
       </h2>
     </div>

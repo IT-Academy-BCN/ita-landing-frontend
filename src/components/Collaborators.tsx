@@ -14,7 +14,7 @@ function Collaborators() {
   return (
     <section className="mt-14 mb-10">
       <div className="flex justify-center">
-        <p className="text-4xl font-extrabold my-5">
+        <p className="font-bold text-4xl my-5">
           Colaboradores de proyectos
         </p>
       </div>
