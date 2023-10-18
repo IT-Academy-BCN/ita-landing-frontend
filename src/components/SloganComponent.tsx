@@ -8,6 +8,7 @@ import nodejsLogo from "../assets/img/nodejs.png";
 import gitLogo from "../assets/img/git.png";
 import itacademyLogo from "../assets/img/itacademylogo.png";
 import HeaderComponent from "./HeaderComponent";
+import selector from "../assets/img/sel_right.png";
 
 const SloganComponent = () => (
   <>
@@ -40,9 +41,14 @@ const SloganComponent = () => (
               <div className="text-start ">
                 {/*<img className="absolute mr-[18px]" src="{{ asset('img/Ellipse.png') }}" alt=""></img>
                             <img className="absolute  ml-2 mr-[18px]" src="{{ asset('img/Vector.png') }}" alt=""></img>*/}
-                <div className=" font-black">
-                  <p>¿Cómo colaborar?</p>
-                </div>
+                <div className="font-black">
+                  <p className="flex items-center justify-start">
+                  <span className="inline-flex items-center cursor-pointer space-x-6">
+                 <img src={selector} className="h-6 w-6 mr-2" alt="Icono de selector" />
+                 </span>
+                  ¿Cómo colaborar?
+                </p>
+              </div>
               </div>
               <div className="mt-7">
                 <div className="relative py-4">
