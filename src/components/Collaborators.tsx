@@ -12,7 +12,7 @@ function Collaborators() {
     "px-6 lg:mb-0 mb-5 ml-2 btn btn-ghost text-sm normal-case rounded-3xl active:bg-pink-it active:text-white border-solid lg:border-transparent border-2 border-indigo-900 min-w-10  ";
 
   return (
-    <section className="my-10  ">
+    <section className="mt-14 mb-10">
       <div className="flex justify-center">
         <p className="text-4xl font-extrabold my-5">
           Colaboradores de proyectos
@@ -27,7 +27,6 @@ function Collaborators() {
                 setActive("AngularCard");
               }}
             >
-              
               Wiki
             </a>
             <a
@@ -53,7 +52,7 @@ function Collaborators() {
               }}
             >
               Profile
-            </a> 
+            </a>
           </div>
         </div>
       </div>

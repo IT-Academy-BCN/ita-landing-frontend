@@ -1,6 +1,3 @@
-import ellipse from "../assets/img/Ellipse.png";
-import vector from "../assets/img/Vector.png";
-
 import { CardTwoLogosProps } from "../interfaces/interfaces";
 
 const CardComponent = ({
@@ -9,7 +6,6 @@ const CardComponent = ({
   imgSrc2,
   title,
   description,
-  buttonText,
 }: CardTwoLogosProps) => {
   const paragraphs = description.split("\n");
   return (
@@ -65,15 +61,6 @@ const CardComponent = ({
                 {paragraphs}
               </p>
             ))}
-          </div>
-          <div className="flex items-center h-1/6">
-            <div className="relative">
-              <img className="" src={ellipse} alt=""></img>
-              <img className="absolute top-1 left-1.5" src={vector} alt="" />
-            </div>
-            <div className="ml-3 text-black text-sm font-bold text-xl">
-              <p className="align-center">{buttonText}</p>
-            </div>
           </div>
         </a>
       </div>

@@ -14,12 +14,8 @@ const SloganComponent = () => (
     <div className="relative flex justify-center m-auto background-image-style mt-5 ">
       <HeaderComponent />
 
-      {/* <svg className="lg:invisible visible lg:w-0 " width="15000" height="842" viewBox="0 0 366 842" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M36.5687 94.8929C8.57015 95.8103 -0.929365 108.195 0.0705838 127V809.485C0.0705838 835.63 21.0695 841.593 36.5687 841.593H126H151.5C172 841.593 178.5 826 178.5 812.5C178.5 799 190 787 204.5 787H367.5V762.5C367.5 744.5 365.516 252.105 365.516 179.5V79.8929V39.5292V0.500232H265C249.36 0.500232 236.061 0.5 236.061 0.5V65.0002C236.061 82.8887 228.5 94.8929 204.5 94.8929C171.502 94.8929 64.5673 93.9756 36.5687 94.8929Z" fill="#F0F0F0" />
-            </svg> */}
-
-      <div className="overlay   flex justify-center ml-8 lg:ml-0 lg:flex lg:mt-24">
-        <div className="lg:w-1/2  text-center justify-center pt-36 lg:pt-16  lg:pl-32">
+      <div className="overlay flex justify-center ml-8 lg:ml-0 lg:flex lg:mt-32">
+        <div className="lg:w-1/2  text-center justify-center pt-36 lg:pt-16  lg:pl-16">
           <div className="font-black text-4xl lg:text-5xl text-left mr-8 lg:mr-16 leading-tight">
             <p>Gana y valida experiencia como programador</p>
           </div>

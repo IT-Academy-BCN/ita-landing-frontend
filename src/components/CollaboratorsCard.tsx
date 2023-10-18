@@ -26,8 +26,8 @@ const CollaboratorsCard = ({ title }: { title: string }) => {
     window.addEventListener("resize", handleResize);
   }, [dispatch]);
 
-  //collaborators function
 
+//collaborators function
   const collaboratorsDataSlice = () => {
     // TODO: improve this workaround
     if (!collaborators) return [];
