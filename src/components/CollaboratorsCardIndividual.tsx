@@ -7,7 +7,7 @@ export  const CollaboratorsCardIndividual: React.FC<CollaboratorsCardIndividualP
     <>
        
             {
-                collaboratorsDataSlice().map((a:collaborator, index:number)=>{
+                 collaboratorsDataSlice().map((a:collaborator, index:number)=>{
 
                     {/**Colocar en un componente card */}
                     return  <div className="w-2/3 m-auto"   key={index} > <a  className="flex items-center justify-center "href={a.url} target="_blank"  >  <img className="w-32 md:w-20 rounded-full" src={a.photo} alt={a.name+ ' photo'} /> <p className="ms-5  w-full text-start">{a.name}</p> </a> </div>
