@@ -115,7 +115,7 @@ const FAQs = () => {
   };
 
   return (
-    <div className="bg-white rounded-md mx-6 lg:px-10 pb-5 mt-32">
+    <div className="bg-white rounded-md mx-6 lg:px-10 pb-5">
       <div className="w-full">
         {window.location.pathname === "/" && (
           <h2 className="font-bold text-4xl text-center mb-6">
