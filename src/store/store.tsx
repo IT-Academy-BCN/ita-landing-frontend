@@ -4,12 +4,14 @@ import apiPostRegister from "./reducers/apiCall/apiPostRegisterLogin";
 import faqsReducer from "./reducers/faqsCall/faqsReducer";
 import appsCallApiFunctionality from "./reducers/appsCall/appsCallApiFunctionality";
 import getCollaboratorsFunctionality from "./reducers/CollaboratorsCall/getCollaboratorsFunctionality";
+import apiSendCodeByEmail from "./reducers/apiCall/apiSendCodeByEmail";
 export const store = configureStore({
   reducer: {
     apiPostRegister: apiPostRegister,
     faqsReducer: faqsReducer,
     appsCallApiFunctionality: appsCallApiFunctionality,
     getCollaboratorsFunctionality: getCollaboratorsFunctionality,
+    apiSendCodeByEmail: apiSendCodeByEmail
   },
 });
 

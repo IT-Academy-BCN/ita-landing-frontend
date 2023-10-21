@@ -65,3 +65,9 @@ export interface collaborator {
   url: string;
   photo: string;
 }
+
+export interface sendCodeByEmailParams {
+  email: string;
+  requestStatus: string;
+  acces_token: string;
+}
