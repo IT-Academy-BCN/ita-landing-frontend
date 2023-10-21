@@ -9,31 +9,6 @@ import BackOfficeUserSendCode from "./BackOfficeUserSendCode";
 
 function ViewBackOffice({ setIsLogged, dispatch }: { setIsLogged: any; dispatch: any }) {
   
-    // function useWindowSize() {
-  //   const [size, setSize] = useState([window.innerHeight, window.innerWidth]);
-  //   useEffect(() => {
-  //     const handleResize = () => {
-  //       setSize([window.innerHeight, window.innerWidth]);
-  //     };
-  //     window.addEventListener('resize', handleResize);
-  //   }, [size]);
-  //   return size;
-  // }
-
-  // useEffect(() => {
-  //   if (size[1] >= 1024) {
-  //     setIsDropdownOpen(false)
-  //     sethiddenAdminButtons(false)
-  //   } else {
-  //     sethiddenAdminButtons(true)
-  //   }
-  // },[]);
-
-  useEffect(() => {
-    setState({ ...state, faqs: true });
-    setBoldFont({ ...boldFont, boldFaqs: true });
-  }, []);
-
   const [state, setState] = useState({
     faqs: false,
     projectsComponent: false,
@@ -46,8 +21,6 @@ function ViewBackOffice({ setIsLogged, dispatch }: { setIsLogged: any; dispatch:
     boldUsersComponent: false
   });
 
-  // const size = useWindowSize();
-  const [hiddenAdminButtons, sethiddenAdminButtons] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const toggleDropdown = (): void => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -67,9 +40,14 @@ function ViewBackOffice({ setIsLogged, dispatch }: { setIsLogged: any; dispatch:
     }
   }
 
+  useEffect(() => {
+    setState({ ...state, faqs: true });
+    setBoldFont({ ...boldFont, boldFaqs: true });
+  }, []);
+
   return (
     <>
-      <main className="grid grid-cols-6 w-screen min-h-screen bg-backOffice-main">
+      <main className="grid grid-cols-6 w-screen min-h-screen lg:bg-backOffice-main h-full">
 
         <nav className="hidden lg:block">
           <img src={itImage} alt="img-logo" className="mt-5 mx-auto" />
@@ -94,13 +72,11 @@ function ViewBackOffice({ setIsLogged, dispatch }: { setIsLogged: any; dispatch:
           </button>
         </nav>
 
-
-
         <div className="lg:col-span-5 col-span-6 m-5">
 
           {/* Mobile */}
           <div className='lg:hidden'>
-            <div className="flex justify-end mt-4 mr-4 cursor-pointer">
+            <div className="flex justify-end my-4 mr-4 cursor-pointer">
               <AdminButtons />
               <img src={menu} className="h-8 w-8" onClick={toggleDropdown} />
             </div>
@@ -125,18 +101,21 @@ function ViewBackOffice({ setIsLogged, dispatch }: { setIsLogged: any; dispatch:
           )}
           {!isDropdownOpen && (
             <>
-              <div className={`${state.faqs ? 'component' : 'component hidden'}`}>
-                {!hiddenAdminButtons && <AdminButtons />}
+              <div className={`${state.faqs ? 'component h-full' : 'component hidden'}`}>
+                {/* <div className="hidden lg:block">
+                  <AdminButtons />
+                </div> */}
                 <FAQs />
               </div>
 
-              <div className={`${state.projectsComponent ? 'component' : 'component hidden'}`}>
-                {!hiddenAdminButtons && <AdminButtons />}
+              <div className={`${state.projectsComponent ? 'component h-full' : 'component hidden'}`}>
+                {/* <div className="hidden lg:block">
+                  <AdminButtons />
+                </div> */}
                 <ProjectsComponent />
               </div>
 
-              <div className={`${state.usersComponent ? 'component' : 'component hidden'}`}>
-                {!hiddenAdminButtons && <AdminButtons />}
+              <div className={`${state.usersComponent ? 'component h-full' : 'component hidden'}`}>
                 <BackOfficeUserSendCode />
               </div>
             </>

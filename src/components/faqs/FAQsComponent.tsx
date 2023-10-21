@@ -5,6 +5,7 @@ import FaqsModified from "./faqsAdminView/FaqsModified";
 import { apiCall, putApiFaqs } from "../../store/reducers/faqsCall/faqsReducer";
 import deleteFaqIcon from "../../assets/img/icon-delete-faq-backoffice.png";
 import DeleteFaqModal from "./Modals/DeleteFaqModal";
+import { AdminButtons } from "./faqsAdminView/AdminButtons";
 
 const FAQs = () => {
   //Interfaces//
@@ -115,8 +116,15 @@ const FAQs = () => {
   };
 
   return (
-    <div className="bg-white rounded-md mx-6 lg:px-10 pb-5">
-      <div className="w-full">
+    <section className="lg:px-10 h-full flex flex-col">
+
+      {window.location.pathname === "/backoffice" && (
+        <div className="w-full hidden lg:block">
+          <AdminButtons />
+        </div>
+      )}
+
+      <div className="w-full bg-white rounded-md h-full mb-10">
         {window.location.pathname === "/" && (
           <h2 className="font-bold text-4xl text-center mb-6">
             Preguntas frecuentes
@@ -126,93 +134,95 @@ const FAQs = () => {
         {window.location.pathname === "/backoffice" && (
           <>
             <h2 className="font-black py-12 ml-10 text-3xl font-poppins sm:text-center lg:text-left">
-              {" "}
-              FAQs{" "}
+              FAQs
             </h2>
             <FaqsModified />
           </>
         )}
 
         {faqsClone.map((faq: Faq, index: number) => (
-          <div className={`collapse rounded-md mb-5 shadow-xl`} key={faq.id}>
-            <input type="checkbox" className="peer" id={index.toString()} />
-            <div className="collapse-title relative lg:flex rounded-b-md bg-white text-justify text-black text-4 font-poppins font-bold font-poppins peer-checked:bg-[#BA007C] peer-checked:rounded-b-[0px] peer-checked:text-secondary-content">
-              {window.location.pathname == "/backoffice" &&
-              isContentEditing &&
-              index.toString() === positionIndex ? (
-                <input
-                  type="text"
-                  className="z-10 text-black input input-bordered w-full max-w-xs"
-                  placeholder={faqsClone[index].title}
-                  value={inputNewTitleValue}
-                  onChange={(e) => setInputNewTitleValue(e.target.value)}
-                />
-              ) : (
-                <p className="lg:text-justify sm:text-center max-w-[75%]">
-                  {faqsClone[index].title}
-                </p>
-              )}
-
-              {window.location.pathname == "/backoffice" && titleButtons && (
-                <div className="flex relative z-10 ml-auto justify-end mt-2 lg:mt-0">
-                  <button
-                    className="mx-4 px-4 border-gray-500 h-[30px] self-center"
-                    onClick={() => displayInput(index, faqsClone[index])}
-                  >
-                    Editar
-                  </button>
-                  <img
-                    src={deleteFaqIcon}
-                    className="h-[30px] cursor-pointer self-center"
-                    onClick={() => {
-                      setDeleteModal(true);
-                      setSelectedFaqId(faq.id);
-                    }}
-                    alt="locker"
-                  />
-                </div>
-              )}
-            </div>
-
-            <div className="collapse-content rounded-b-md bg-white">
-              <p className="text-justify text-black leading-relaxed text-4 font-poppins pl-2 py-4 mx-8 my-6">
+          <div className="mx-5">
+            <div className={`collapse rounded-md mb-5 shadow-xl`} key={faq.id}>
+              <input type="checkbox" className="peer" id={index.toString()} />
+              <div className="collapse-title relative lg:flex rounded-b-md bg-white text-justify text-black text-4 font-poppins font-bold font-poppins peer-checked:bg-[#BA007C] peer-checked:rounded-b-[0px] peer-checked:text-secondary-content">
                 {window.location.pathname == "/backoffice" &&
                 isContentEditing &&
                 index.toString() === positionIndex ? (
-                  <textarea
-                    className="z-10 text-black textarea textarea-bordered w-full"
-                    placeholder={faqsClone[index].description}
-                    value={inputNewDescriptionValue}
-                    onChange={(e) =>
-                      setInputNewDescriptionValue(e.target.value)
-                    }
+                  <input
+                    type="text"
+                    className="z-10 text-black input input-bordered w-full max-w-xs"
+                    placeholder={faqsClone[index].title}
+                    value={inputNewTitleValue}
+                    onChange={(e) => setInputNewTitleValue(e.target.value)}
                   />
                 ) : (
-                  faqsClone[index].description
+                  <p className="lg:text-justify sm:text-center max-w-[75%]">
+                    {faqsClone[index].title}
+                  </p>
                 )}
-              </p>
 
-              {window.location.pathname == "/backoffice" && (
-                <div className="flex justify-end mx-8">
-                  {descriptionButtons && index.toString() === positionIndex && (
-                    <div>
-                      <button
-                        className="mr-5 xl:px-7 btn btn-outline-primary border-gray-600 bg-transparent text-gray-600"
-                        onClick={() => cancelEditing(index, faqsClone[index])}
-                      >
-                        Cancelar
-                      </button>
-                      <button
-                        className="btn xl:px-9 bg-pink-it text-white"
-                        onClick={() => saveEditingFaq(index)}
-                      >
-                        Guardar
-                      </button>
-                    </div>
+                {window.location.pathname == "/backoffice" && titleButtons && (
+                  <div className="flex relative z-10 ml-auto justify-end mt-2 lg:mt-0">
+                    <button
+                      className="mx-4 px-4 border-gray-500 h-[30px] self-center"
+                      onClick={() => displayInput(index, faqsClone[index])}
+                    >
+                      Editar
+                    </button>
+                    <img
+                      src={deleteFaqIcon}
+                      className="h-[30px] cursor-pointer self-center"
+                      onClick={() => {
+                        setDeleteModal(true);
+                        setSelectedFaqId(faq.id);
+                      }}
+                      alt="locker"
+                    />
+                  </div>
+                )}
+              </div>
+
+              <div className="collapse-content rounded-b-md bg-white">
+                <p className="text-justify text-black leading-relaxed text-4 font-poppins pl-2 py-4 mx-8 my-6">
+                  {window.location.pathname == "/backoffice" &&
+                  isContentEditing &&
+                  index.toString() === positionIndex ? (
+                    <textarea
+                      className="z-10 text-black textarea textarea-bordered w-full"
+                      placeholder={faqsClone[index].description}
+                      value={inputNewDescriptionValue}
+                      onChange={(e) =>
+                        setInputNewDescriptionValue(e.target.value)
+                      }
+                    />
+                  ) : (
+                    faqsClone[index].description
                   )}
-                </div>
-              )}
+                </p>
+
+                {window.location.pathname == "/backoffice" && (
+                  <div className="flex justify-end mx-8">
+                    {descriptionButtons && index.toString() === positionIndex && (
+                      <div>
+                        <button
+                          className="mr-5 xl:px-7 btn btn-outline-primary border-gray-600 bg-transparent text-gray-600"
+                          onClick={() => cancelEditing(index, faqsClone[index])}
+                        >
+                          Cancelar
+                        </button>
+                        <button
+                          className="btn xl:px-9 bg-pink-it text-white"
+                          onClick={() => saveEditingFaq(index)}
+                        >
+                          Guardar
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
+
           </div>
         ))}
 
@@ -227,7 +237,7 @@ const FAQs = () => {
             />
           )}
       </div>
-    </div>
+    </section>
   );
 };
 export default FAQs;
