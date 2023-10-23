@@ -20,7 +20,6 @@ export const ProjectsComponent = () => {
         {window.location.pathname !== "/backoffice" && (<> <TitleApps /> <TasksProcess /> </>)}
         
         {/*Cards*/}
-        <>
           {window.location.pathname == "/backoffice" && (
             <div className="lg:col-span-3 w-full hidden lg:block">
               <AdminButtons />
@@ -36,7 +35,6 @@ export const ProjectsComponent = () => {
             )}
             <Apps />
           </div>
-        </>
       </section>
     </>
   );

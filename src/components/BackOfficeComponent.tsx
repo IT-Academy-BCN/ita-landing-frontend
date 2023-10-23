@@ -7,7 +7,7 @@ import menu from "../assets/img/menu.png";
 import { AdminButtons } from "./faqs/faqsAdminView/AdminButtons";
 import BackOfficeUserSendCode from "./BackOfficeUserSendCode";
 
-function ViewBackOffice({ setIsLogged, dispatch }: { setIsLogged: any; dispatch: any }) {
+function ViewBackOffice({ setIsLogged, dispatch }: { readonly setIsLogged: any; readonly dispatch: any }) {
   
   const [state, setState] = useState({
     faqs: false,
