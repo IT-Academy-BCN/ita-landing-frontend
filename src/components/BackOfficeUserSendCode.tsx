@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react"
 import resetIcon from "../assets/img/reset.svg"
 import checkIcon from "../assets/img/confirmationIcon.svg"
+import errorIcon from "../assets/img/error.svg"
 import { handleSubmit } from "../store/reducers/apiCall/apiSendCodeByEmail";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
@@ -30,7 +31,7 @@ const BackOfficeUserSendCode = () => {
     return emailPattern.test(email)
   }
 
-  const handleSendEmail = async (e: FormDataEvent) => {
+  const handleSendEmail = async (e: React.MouseEvent<HTMLButtonElement>) => {
     if (validateEmail(email)) {
       setDesactivateInputElements(true)
       setError("none-error");
@@ -44,7 +45,7 @@ const BackOfficeUserSendCode = () => {
         setTimeout(() => {
           handleResetEmail("reset-email")
           setShowAlert(false);
-        }, 200000);
+        }, 2000);
 
       }catch(error){
         handleResetEmail("reset-email")
@@ -65,7 +66,7 @@ const BackOfficeUserSendCode = () => {
     setColorInput('input-secondary')
     setColorButton('bg-[#BA007C]')
     setShowAlert(false)
-    inputRef.current.focus();
+    inputRef.current?.focus();
   }
 
   useEffect(() => {
@@ -106,10 +107,15 @@ const BackOfficeUserSendCode = () => {
           ) : error === "ERROR" ? (
             <span>Email inválido</span>
           ) : showAlert === true && requestStatus==='200' ? (
-            <img src={checkIcon} className="w-8" alt="OK" />
+            <div className="flex items-center justify-items-center">
+              <img src={checkIcon} className="w-6" alt="OK" />
+              <p className="ml-2 font-bold normal-case"> Email enviado </p>
+            </div>
           ) : showAlert === true && requestStatus!=='200' ? (
-            <p className="font-bold text-lg">Error http</p>
-          ) :
+            <div className="flex items-center justify-items-center">
+              <img src={errorIcon} className="w-6" alt="Error" />
+              <p className="ml-2 font-bold normal-case"> Email no enviado </p>
+            </div>) :
           (
             <span className="loading loading-spinner"></span>
           )}
@@ -122,25 +128,8 @@ const BackOfficeUserSendCode = () => {
           )}
         </div>
         {showAlert===true && requestStatus!=='200' &&
-          <p className="text-xs w-1/3 mt-4 text-red-600">No se ha podido realizar la operación. Por favor, inténtelo más tarde</p>
+          <p className="text-xs lg:w-1/3 w-1/2 mt-4 text-red-600">No se ha podido realizar la operación. Por favor, inténtelo más tarde</p>
         }
-
-        {showAlert && requestStatus==='200' && (
-          <>
-            <button className="alert alert-success absolute right-20 w-fit mt-6 p-4" onClick={() => handleResetEmail("reset-email")}>
-              <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              <span>¡Email enviado!</span>
-            </button>
-          </>
-        )}
-        {showAlert && requestStatus!=='200' && (
-          <div className="flex place-items-end justify-center">
-            <button className="alert alert-error absolute w-fit lg:right-20 lg:mt-6 lg:p-4" onClick={() => handleResetEmail("reset-email")}>
-              <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              <span>¡Email no enviado!</span>
-            </button>
-          </div>
-        )}
       </div>
     </section>
   )
