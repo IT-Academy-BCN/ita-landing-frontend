@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 // ...
 import apiPostRegister from "./reducers/apiCall/apiPostRegisterLogin";
+import apiSliceResetPassword from "./reducers/apiCall/apiResetPassword";
 import faqsReducer from "./reducers/faqsCall/faqsReducer";
 import appsCallApiFunctionality from "./reducers/appsCall/appsCallApiFunctionality";
 import getCollaboratorsFunctionality from "./reducers/CollaboratorsCall/getCollaboratorsFunctionality";
 export const store = configureStore({
   reducer: {
     apiPostRegister: apiPostRegister,
+    apiSliceResetPassword: apiSliceResetPassword,
     faqsReducer: faqsReducer,
     appsCallApiFunctionality: appsCallApiFunctionality,
     getCollaboratorsFunctionality: getCollaboratorsFunctionality,
