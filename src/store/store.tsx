@@ -5,6 +5,7 @@ import apiSliceResetPassword from "./reducers/apiCall/apiResetPassword";
 import faqsReducer from "./reducers/faqsCall/faqsReducer";
 import appsCallApiFunctionality from "./reducers/appsCall/appsCallApiFunctionality";
 import getCollaboratorsFunctionality from "./reducers/CollaboratorsCall/getCollaboratorsFunctionality";
+import apiSendCodeByEmail from "./reducers/apiCall/apiSendCodeByEmail";
 export const store = configureStore({
   reducer: {
     apiPostRegister: apiPostRegister,
@@ -12,6 +13,7 @@ export const store = configureStore({
     faqsReducer: faqsReducer,
     appsCallApiFunctionality: appsCallApiFunctionality,
     getCollaboratorsFunctionality: getCollaboratorsFunctionality,
+    apiSendCodeByEmail: apiSendCodeByEmail
   },
 });
 
