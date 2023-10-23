@@ -5,7 +5,7 @@ export const getCollaboratorsData = createAsyncThunk(
     'getinitialdataCollaborators',
     async () => {
         try {
-            const { data } = await axios.get('http://http://87.106.229.119/api/collaborators/landing');
+            const { data } = await axios.get('http://87.106.229.119/api/collaborators/landing');
            
                                const dataTotal = data.sort(() => Math.random() - 0.5);
                                return dataTotal;
