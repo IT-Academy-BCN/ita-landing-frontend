@@ -34,7 +34,7 @@ export const handleSubmit = async (dispatch: Dispatch , email: string, acces_tok
               Authorization: `Bearer ${acces_token}`
             }
         };
-        await axios.post('http://127.0.0.1:8000/api/send-code-by-email', { email }, config);
+        await axios.post('http://http://87.106.229.119/api/send-code-by-email', { email }, config);
         dispatch(sendEmailSuccess(email));
     }catch(error){
         dispatch(sendEmailFailure());

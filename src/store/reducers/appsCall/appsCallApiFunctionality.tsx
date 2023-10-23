@@ -30,7 +30,7 @@ export const { setApps, setAppsInfo, setLoadingApps } = apiSlice.actions;
 //llamada api a apps//
 export const apiCallApps = async (dispatch: Dispatch) => {
   try {
-    const faqsCalled = await axios.get("http://127.0.0.1:8000/api/apps");
+    const faqsCalled = await axios.get("http://http://87.106.229.119/api/apps");
     dispatch(setApps(faqsCalled.data));
   } catch (error) {
     console.log(error);
@@ -45,17 +45,17 @@ export const apiCallAppsInfo = async (
   try {
     dispatch(setLoadingApps(true));
 
-    const faqsCalled = await axios.get(`http://127.0.0.1:8000/api/apps/${id}`, {
+    const faqsCalled = await axios.get(`http://http://87.106.229.119/api/apps/${id}`, {
       headers: {
         Authorization: `Bearer ${acces_token}`,
       },
     });
     await dispatch(setAppsInfo(faqsCalled.data));
-    console.log(faqsCalled.data, `http://127.0.0.1:8000/api/apps/${id}`);
+    console.log(faqsCalled.data, `http://http://87.106.229.119/api/apps/${id}`);
 
     dispatch(setLoadingApps(false));
   } catch (error) {
-    console.log(error, `http://127.0.0.1:8000/api/apps/${id}`);
+    console.log(error, `http://http://87.106.229.119/api/apps/${id}`);
   }
 };
 //Post //
@@ -65,7 +65,7 @@ export const postApiApps = async (
   dispatch: Dispatch
 ) => {
   try {
-    await axios.post("http://127.0.0.1:8000/api/apps", appsContent, {
+    await axios.post("http://http://87.106.229.119/api/apps", appsContent, {
       headers: {
         Authorization: `Bearer ${acces_token}`,
       },
@@ -83,7 +83,7 @@ export const deleteApiApps = async (
   dispatch: Dispatch
 ) => {
   try {
-    const url = `http://127.0.0.1:8000/api/apps/${appsID}`;
+    const url = `http://http://87.106.229.119/api/apps/${appsID}`;
     await axios.delete(url, {
       headers: {
         Authorization: `Bearer ${acces_token}`,
@@ -104,7 +104,7 @@ export const putApiApps = async (
   id: number
 ) => {
   try {
-    await axios.put("http://127.0.0.1:8000/api/apps/" + id, faqContent, {
+    await axios.put("http://http://87.106.229.119/api/apps/" + id, faqContent, {
       headers: {
         Authorization: `Bearer ${acces_token}`,
       },
