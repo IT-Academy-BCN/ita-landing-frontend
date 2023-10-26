@@ -8,14 +8,16 @@ import menu from "../assets/img/menu.png";
 import LoginComponent from "./LoginComponent";
 import RegisterComponent from "./Registercomponent";
 import PasswordReminderComponent from "./PasswordReminderComponent";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const {t} = useTranslation();
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const [IsDropdownEnterButton, setIsDropdownEnterButton] =
     useState<boolean>(false);
   const [isDropdownCuenta, setisDropdownCuenta] = useState<boolean>(false);
   const [isPasswordReminder, setIsPasswordReminder] = useState<boolean>(false);
-
+  // console.log(i18n.language)
   const toggleDropdown = (): void => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -36,7 +38,7 @@ const Header = () => {
             onClick={toggleDropdown}
           >
             <div className="flex  items-center justify-between text-sm text-neutral font-bold text-gray-700 capitalize ">
-              <span>Castellano</span>
+              <span>{t('landingPage.languagesSwitcher.spanish')}</span>
               <div>
                 <svg
                   viewBox="0 0 20 20"
@@ -61,7 +63,7 @@ const Header = () => {
               <li className="flex items-center px-4 py-2 hover:bg-gray-100 hover:rounded-xl flex-row">
                 <div className="text-left flex-grow">
                   <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
-                    Català
+                    {t('landingPage.languagesSwitcher.catalan')}
                   </div>
                 </div>
                 <img
@@ -73,7 +75,7 @@ const Header = () => {
               <li className="flex items-center px-4 py-2 hover:bg-gray-200 border-t border-gray-400 flex-row">
                 <div className="text-left flex-grow">
                   <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
-                    Castellano
+                   {t('landingPage.languagesSwitcher.spanish')}
                   </div>
                 </div>
                 <img
@@ -85,7 +87,7 @@ const Header = () => {
               <li className=" hover:rounded-b-xl flex items-center px-4 py-2 hover:bg-gray-200 border-t-2 border-gray-400 flex-row">
                 <div className="text-left flex-grow">
                   <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
-                    English
+                    {t('landingPage.languagesSwitcher.english')}
                   </div>
                 </div>
                 <img
