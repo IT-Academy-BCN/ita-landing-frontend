@@ -17,7 +17,8 @@ const Header = () => {
     useState<boolean>(false);
   const [isDropdownCuenta, setisDropdownCuenta] = useState<boolean>(false);
   const [isPasswordReminder, setIsPasswordReminder] = useState<boolean>(false);
-  // console.log(i18n.language)
+  const [languageSelected, setLanguageSelected] = useState('catalan');
+
   const toggleDropdown = (): void => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -38,7 +39,7 @@ const Header = () => {
             onClick={toggleDropdown}
           >
             <div className="flex  items-center justify-between text-sm text-neutral font-bold text-gray-700 capitalize ">
-              <span>{t('landingPage.languagesSwitcher.spanish')}</span>
+              <span>{t(`landingPage.languagesSwitcher.${languageSelected}`)}</span>
               <div>
                 <svg
                   viewBox="0 0 20 20"
@@ -60,7 +61,7 @@ const Header = () => {
                 isDropdownOpen ? "" : "hidden"
               }`}
             >
-              <li className="flex items-center px-4 py-2 hover:bg-gray-100 hover:rounded-xl flex-row">
+              <li className="flex items-center px-4 py-2 hover:bg-gray-100 hover:rounded-xl flex-row" onClick={() => setLanguageSelected('catalan')}>
                 <div className="text-left flex-grow">
                   <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
                     {t('landingPage.languagesSwitcher.catalan')}
@@ -72,7 +73,7 @@ const Header = () => {
                   className="h-53 w-53 scale-90 ml-4 flex-none"
                 />
               </li>
-              <li className="flex items-center px-4 py-2 hover:bg-gray-200 border-t border-gray-400 flex-row">
+              <li className="flex items-center px-4 py-2 hover:bg-gray-200 border-t border-gray-400 flex-row" onClick={() => setLanguageSelected('spanish')}>
                 <div className="text-left flex-grow">
                   <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
                    {t('landingPage.languagesSwitcher.spanish')}
@@ -84,7 +85,7 @@ const Header = () => {
                   className="h-53 w-53 scale-90 ml-4 flex-none"
                 />
               </li>
-              <li className=" hover:rounded-b-xl flex items-center px-4 py-2 hover:bg-gray-200 border-t-2 border-gray-400 flex-row">
+              <li className=" hover:rounded-b-xl flex items-center px-4 py-2 hover:bg-gray-200 border-t-2 border-gray-400 flex-row" onClick={() => setLanguageSelected('english')}>
                 <div className="text-left flex-grow">
                   <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
                     {t('landingPage.languagesSwitcher.english')}
@@ -186,8 +187,7 @@ const Header = () => {
                   />
                   <div className="text-left flex-grow ml-2 text-gray-600 text-2xl text-[#7E7E7E]">
                     <h3 className=" hover:border-b-4 hover:border-blue-800">
-                      {" "}
-                      Castellano{" "}
+                      Castellano
                     </h3>
                   </div>
                 </li>
@@ -199,7 +199,6 @@ const Header = () => {
                   />
                   <div className="text-left flex-grow ml-2 text-gray-600 text-2xl text-[#7E7E7E]">
                     <h3 className=" hover:border-b-4 hover:border-blue-800">
-                      {" "}
                       English
                     </h3>
                   </div>
