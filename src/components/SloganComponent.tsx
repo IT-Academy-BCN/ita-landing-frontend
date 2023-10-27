@@ -15,6 +15,9 @@ import HeaderComponent from "./HeaderComponent";
 const SloganComponent = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false); 
 
+  const closePopup = () => {
+    setIsPopupOpen(false); // Cierra el popup al cambiar el estado a false
+  };
   return (
     <>
     <div className="relative flex justify-center m-auto background-image-style mt-5 ">

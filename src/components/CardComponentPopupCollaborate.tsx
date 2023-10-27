@@ -2,14 +2,15 @@ import React from 'react';
 
 interface CardComponentPopupCollaborateProps {
   pos: string;
-  imgSrc1: string; // Aquí está la imagen
+  imgSrc1: string; 
   title: string;
   description: string;
+  className?: string;
 }
 
 const CardComponentPopupCollaborate: React.FC<CardComponentPopupCollaborateProps> = ({
   pos,
-  imgSrc1, // Utiliza imgSrc1 para la imagen
+  imgSrc1, 
   title,
   description,
 }) => {
