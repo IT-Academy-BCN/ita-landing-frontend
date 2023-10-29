@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import Popup from "./PopupHowToCollaborate";
-import ButtonColloborate from './ButtonCollaborate';
+import { useState } from 'react';
+import PopupHowToCollaborate from "./PopupHowToCollaborate";
+import ButtonCollaborate from './ButtonCollaborate';
 import angularLogo from "../assets/img/angular.png";
 import phpLogo from "../assets/img/php.png";
 import javaLogo from "../assets/img/java.png";
@@ -15,9 +15,13 @@ import HeaderComponent from "./HeaderComponent";
 const SloganComponent = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false); 
 
-  const closePopup = () => {
-    setIsPopupOpen(false); // Cierra el popup al cambiar el estado a false
+  const openPopup = () => {
+    setIsPopupOpen(true);
   };
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
+
   return (
     <>
     <div className="relative flex justify-center m-auto background-image-style mt-5 ">
@@ -52,8 +56,8 @@ const SloganComponent = () => {
                 <div className="font-black">
                   <p className="cursor-pointer flex items-center justify-start"
                   onClick={() => setIsPopupOpen(true)}>
-                  <ButtonColloborate onClick={() => setIsPopupOpen(true)} />
-                </p>
+                  <ButtonCollaborate onClick={openPopup} />
+                  </p>
               </div>
               </div>
               <div className="mt-7">
@@ -127,7 +131,7 @@ const SloganComponent = () => {
         </div>
       </div>
     </div>
-    {isPopupOpen && <Popup />} 
+    {isPopupOpen && <PopupHowToCollaborate onClose={closePopup} />} 
   </>
 );
 };
