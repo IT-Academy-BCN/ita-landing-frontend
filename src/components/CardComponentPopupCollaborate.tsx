@@ -5,7 +5,6 @@ interface CardComponentPopupCollaborateProps {
   imgSrc1: string; 
   title: string;
   description: string;
-  className?: string;
 }
 
 const CardComponentPopupCollaborate: React.FC<CardComponentPopupCollaborateProps> = ({
