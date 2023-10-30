@@ -6,7 +6,7 @@ const ButtonColloborate: React.FC<{ onClick: () => void }> = ({ onClick }) => (
     className="inline-flex items-center cursor-pointer"
     onClick={onClick}
   >
-    <img src={selector} className="h-6 w-6 mr-4" alt="Icono de selector" />
+    <img src={selector}  alt="Icono de selector" style={{width: "20px", height: "20px", marginRight: "0.5rem" }} />
     ¿Cómo colaborar?
   </button>
 );
