@@ -29,7 +29,6 @@ const PopupHowToCollaborate: React.FC<{ onClose: () => void }> = ({ onClose }) =
                     imgSrc1={folder}
                     title="Pregunta a tu mentor"
                     description="Resolvera todas tus dudas y te ayudara con setup del proyecto"
-                    className="border-2 bg-white rounded-xl p-4"
                 />
 
                 <CardComponentPopupCollaborate
