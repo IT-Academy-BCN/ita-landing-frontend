@@ -1,81 +1,127 @@
 {
     "landingPage": {
-        "title": "Guanya i valida experiència com a programador",
-        "buttonCollaborate": "Com col·laborar?",
-        "descriptionHeader": "La falta d'experiència et dificulta conseguir treball? Treballa en equip i posat a prova amb els nostre projectes",
+        "title": "Gain and validate experience as a programmer",
+        "buttonCollaborate": "How to collaborate?",
+        "descriptionHeader": "Does lack of experience make it difficult for you to find a job? Work as a team and challenge yourself with our projects.",
         "languagesSwitcher": {
-            "catalan": "Català",
-            "spanish": "Castellà",
-            "english": "Anglès"
+            "catala": "Catalan",
+            "espanol": "Spanish",
+            "english": "English"
         },
         "loginModal": {
-            "login": "Inicia sessió",
-            "dniInput": "DNI o NIE",
-            "passwordInput": "Constrasenya",
-            "changePassword": "Recordar/Canviar contrasenya",
-            "registerMessage": "No tens ningún compte? Crea'n un!"
+            "login": "Log In",
+            "dniInput": "DNI or NIE",
+            "passwordInput": "Password",
+            "changePassword": "Remember/Change password",
+            "registerMessage": "Don't have an account? Create one!"
+        },
+        "registerModal": {
+            "title": "Registration",
+            "dniInput": "DNI or NIE",
+            "emailInput": "Email",
+            "passwordInput": "Password",
+            "passwordRepeatInput": "Repeat password",
+            "nameInput": "Name",
+            "codeInput": "Confirmation code",
+            "titleButton": "Register",
+            "messageLogin": "Do you have an account? Log in"
         },
         "appsComponent": {
-            "title": "Directori d'aplicacions IT Academy",
+            "title": "IT Academy Applications Directory",
             "status": {
-                "finished": "Acabades",
-                "construction": "En construcció",
-                "soon": "Pròximament"
+                "finished": "Finished",
+                "construction": "Under construction",
+                "soon": "Coming soon"
             }
         },
         "teamComponent": {
-            "title": "Equips de treball",
-            "description": "Els projectes son realitzats per equips que combinen les següents tecnologies"
+            "title": "Work teams",
+            "description": "The projects are carried out by teams that combine the following technologies"
         },
         "collaboratorsComponent": {
-            "title": "Col·laboradors de projectes",
-            "buttonViewAll": "Veure tots"
+            "title": "Project collaborators",
+            "buttonViewAll": "View all"
         },
         "faqsComponent": {
-            "title": "Preguntes freqüents"
+            "title": "Frequently questions"
         },
         "footer": {
             "institution": "Barcelona Activa",
             "academy": "IT Academy",
-            "buttonCollaborate": "Com col·laborar?",
-            "normative": "Normativa",
-            "terms": "Termes",
-            "privacity": "Privacitat",
-            "cookies": "Galetes"
+            "buttonCollaborate": "How to collaborate?",
+            "normative": "Regulations",
+            "terms": "Terms",
+            "privacity": "Privacity",
+            "cookies": "Cookies"
         }
     },
     "backofficePage": {
         "navbarComponent": {
             "faqs": "FAQs",
             "apps": "Apps",
-            "users": "Usuaris",
-            "logoutButton": "Sortir"
+            "users": "Users",
+            "logoutButton": "Log out"
         },
         "faqsComponent": {
             "title": "FAQs",
-            "createNewQuestion": "Crear nova pregunta"
+            "createNewQuestion": {
+                "createNewQuestionTitle": "Create new question",
+                "textareaInput": "Response",
+                "closeButton": "Cancel",
+                "saveButton": "Save"
+            },
+            "editButton": {
+                "editButtonTitle": "Edit",
+                "closeButton": "Cancel",
+                "saveButton": "Save"
+            },
+            "deleteButton": {
+                "deleteButtonTitle": "Are you sure?",
+                "text": "This action will delete the selected item",
+                "closeButton": "Cancel",
+                "saveButton": "Save"
+            }
         },
         "appsComponent": {
             "title": "Apps",
-            "createNewApp": "Crear nova aplicació",
+            "appLink": "Go to the app",
             "editButton": {
-                "editButtonTitle": "Editar",
-                "urlProjectTitle": "Url del projecte",
-                "urlGitHubTitle": "Url del repositori de GitHub",
+                "editButtonTitle": "Edit",
+                "urlProjectTitle": "Project url",
+                "urlGitHubTitle": "GitHub repository url",
+                "inputText": "Write here",
+                "state": "Status",
                 "status": {
-                    "finished": "Acabada",
-                    "construction": "En construcció",
-                    "soon": "Pròximament"
+                    "finished": "Finished",
+                    "construction": "Under construction",
+                    "soon": "Coming soon"
                 },
-                "closeButton": "Cancel·lar",
-                "saveButton": "Guardar"
+                "closeButton": "Cancel",
+                "saveButton": "Save"
+            },
+            "createButton": {
+                "createButtonTitle": "Create new app",
+                "titleInput": "Write the title here",
+                "urlProjectTitle": "Project url",
+                "urlGitHubTitle": "GitHub repository url",
+                "inputText": "Write here",
+                "state": "Status",
+                "status": {
+                    "finished": "Finished",
+                    "construction": "Under construction",
+                    "soon": "Coming soon"
+                },
+                "closeButton": "Cancel",
+                "saveButton": "Create"
             }
         },
         "usersComponent": {
-            "title": "Invitar nou/nova admin",
-            "emailInput": "Direcció d'email",
-            "emailIncorrect": "Email invàlid",
-            "emailCorrect": "Email enviat"
+            "title": "Invite new admin",
+            "emailInput": "Email adress",
+            "emailIncorrect": "Invalid email",
+            "emailSendIt": "Email send",
+            "emailNotSendIt": "Email not send",
+            "buttonTitle": "Invite"
         }
     }
 }

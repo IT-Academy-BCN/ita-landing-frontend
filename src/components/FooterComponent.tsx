@@ -1,7 +1,11 @@
 //import NormativaModal from "../../pages/landingPage/Modals/NormativaModal";
 import ImgLogoFooter from '../assets/img/ITA_Logo.png'
-const Footer = () => (
-  <footer className="bg-pink-it w-screen absolute left-0 mt-5 ">
+import { useTranslation } from "react-i18next";
+
+const Footer = () => {
+  const [t] = useTranslation();
+  return (
+    <footer className="bg-pink-it w-screen absolute left-0 mt-5 ">
     <div className="mx-auto w-full py-6 text-white text-sm">
       <div>
         <div className="flex justify-center items-center">
@@ -16,25 +20,25 @@ const Footer = () => (
             className="link link-hover mx-5 text-white hover:text-white"
             href="https://www.barcelonactiva.cat/es/inicio"
           >
-            Barcelona Activa
+            {t("landingPage.footer.institution")}
           </a>
           <a
             className="link link-hover mx-5 text-white hover:text-white"
             href="https://www.barcelonactiva.cat/es/itacademy"
           >
-            IT Academy
+            {t("landingPage.footer.academy")}
           </a>
           <a
             className="link link-hover mx-5 text-white hover:text-white"
             href=""
           >
-            ¿Cómo colaborar?
+            {t("landingPage.footer.buttonCollaborate")}
           </a>
           <label
             htmlFor="NormativaModal"
             className="mx-5 text-white hover:text-purple-600 hover:cursor-pointer hover:underline"
           >
-            Normativa
+            {t("landingPage.footer.normative")}
           </label>
           {/*<NormativaModal />*/}
         </div>
@@ -43,24 +47,25 @@ const Footer = () => (
             className="link link-hover mx-5 text-white hover:text-white"
             href=""
           >
-            Términos
+            {t("landingPage.footer.terms")}
           </a>
           <a
             className="link link-hover mx-5 text-white hover:text-white"
             href=""
           >
-            Privacidad
+            {t("landingPage.footer.privacity")}
           </a>
           <a
             className="link link-hover mx-5 text-white hover:text-white"
             href=""
           >
-            Cookies
+            {t("landingPage.footer.cookies")}
           </a>
         </div>
       </div>
     </div>
   </footer>
-);
+  )
+}
 
-export default Footer;
+export default Footer

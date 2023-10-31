@@ -9,16 +9,21 @@ import gitLogo from "../assets/img/git.png";
 import itacademyLogo from "../assets/img/itacademylogo.png";
 import HeaderComponent from "./HeaderComponent";
 import selector from "../assets/img/sel_right.png";
+import { useTranslation } from "react-i18next";
 
-const SloganComponent = () => (
-  <>
+
+const SloganComponent = () => {
+  const [t] = useTranslation();
+
+  return (
+    <>
     <div className="relative flex justify-center m-auto background-image-style mt-5 ">
       <HeaderComponent />
 
       <div className="overlay flex justify-center ml-8 lg:ml-0 lg:flex lg:mt-32">
         <div className="lg:w-1/2  text-center justify-center pt-36 lg:pt-16  lg:pl-16">
           <div className="font-black text-4xl lg:text-5xl text-left mr-8 lg:mr-16 leading-tight">
-            <p>Gana y valida experiencia como programador</p>
+            <p>{t("landingPage.title")}</p>
           </div>
 
           <div className="lg:invisible  lg:h-0  mt-[45px]">
@@ -46,7 +51,7 @@ const SloganComponent = () => (
                   <span className="inline-flex items-center cursor-pointer space-x-6">
                  <img src={selector} className="h-6 w-6 mr-2" alt="Icono de selector" />
                  </span>
-                  ¿Cómo colaborar?
+                 {t("landingPage.buttonCollaborate")}
                 </p>
               </div>
               </div>
@@ -59,8 +64,7 @@ const SloganComponent = () => (
               </div>
               <div className="mt-6 mr-8 w-full lg:w-96 text-left">
                 <p>
-                  La falta de experiencia te dificulta conseguir trabajo?
-                  Trabaja en equipo y ponte a prueba con nuestros proyectos
+                  {t("landingPage.descriptionHeader")}
                 </p>
               </div>
             </div>
@@ -122,6 +126,7 @@ const SloganComponent = () => (
       </div>
     </div>
   </>
-);
+  )
+}
 
-export default SloganComponent;
+export default SloganComponent

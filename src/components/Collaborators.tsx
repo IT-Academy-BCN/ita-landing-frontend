@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Card from "./CollaboratorsCard";
 import CollaboratorsModal from "./CollaboratorsModal";
+import { useTranslation } from "react-i18next";
 
 function Collaborators() {
+  const [t] = useTranslation();
   const [active, setActive] = useState("AngularCard");
   // Aconsejo quitarlo, debajo está el resultado solo con el useState de arriba const [selectedItem, setSelectedItem] = useState(1);
   const VT = "Ver Todos >";
@@ -15,7 +17,7 @@ function Collaborators() {
     <section className="mt-14 mb-10">
       <div className="flex justify-center">
         <p className="font-bold text-4xl my-5">
-          Colaboradores de proyectos
+          {t("landingPage.collaboratorsComponent.title")}
         </p>
       </div>
       <div className="flex  justify-center  my-5  w-11/12 m-auto  ">

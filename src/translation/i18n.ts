@@ -7,17 +7,17 @@ export const fallbackNS = 'fallback';
 
 i18next.init({
   debug: true,
-  fallbackLng: 'ca',
+  fallbackLng: 'catala',
   defaultNS,
   fallbackNS,
   resources: {
-    ca: {
+    catala: {
       ns1: catala
     },
-    es: {
+    espanol: {
       ns1: espanol
     },
-    en: {
+    english: {
       ns1: english
     }
   },
