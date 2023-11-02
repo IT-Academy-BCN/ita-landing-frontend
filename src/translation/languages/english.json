@@ -40,7 +40,7 @@
         },
         "collaboratorsComponent": {
             "title": "Project collaborators",
-            "buttonViewAll": "View all"
+            "buttonViewAll": "View all >"
         },
         "faqsComponent": {
             "title": "Frequently questions"

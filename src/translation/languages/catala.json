@@ -40,7 +40,7 @@
         },
         "collaboratorsComponent": {
             "title": "Col·laboradors de projectes",
-            "buttonViewAll": "Veure tots"
+            "buttonViewAll": "Veure tots >"
         },
         "faqsComponent": {
             "title": "Preguntes freqüents"

@@ -7,7 +7,7 @@ function Collaborators() {
   const [t] = useTranslation();
   const [active, setActive] = useState("AngularCard");
   // Aconsejo quitarlo, debajo está el resultado solo con el useState de arriba const [selectedItem, setSelectedItem] = useState(1);
-  const VT = "Ver Todos >";
+  const VT = t("landingPage.collaboratorsComponent.buttonViewAll");
   const btnActive =
     " px-6 lg:mb-0 mb-5 ml-2 btn btn-ghost text-sm normal-case rounded-3xl bg-pink-it text-white  ";
   const btnInactive =
