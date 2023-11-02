@@ -26,13 +26,9 @@ const data = [
 
 const JsonToCsvConverter = () => {
   return (
-    <>
-
         <CSVLink data={data} headers={headers} filename="data.csv">
             <button className='btn btn-secondary'></button>
         </CSVLink>
-
-    </>
   )
 }
 
