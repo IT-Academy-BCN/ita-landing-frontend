@@ -1,5 +1,4 @@
 import itImage from "../assets/img/ITA_Logo.png";
-import LogoOut from "../assets/img/Sign-out.png";
 import { useEffect, useState } from "react";
 import FAQs from "./faqs/FAQsComponent";
 import ProjectsComponent from "./apps/ProjectsComponent";
@@ -7,7 +6,8 @@ import menu from "../assets/img/menu.png";
 import { AdminButtons } from "./faqs/faqsAdminView/AdminButtons";
 import BackOfficeUserSendCode from "./BackOfficeUserSendCode";
 
-function ViewBackOffice({ setIsLogged, dispatch }: { readonly setIsLogged: any; readonly dispatch: any }) {
+
+function ViewBackOffice() {
   
   const [state, setState] = useState({
     faqs: false,
@@ -67,9 +67,6 @@ function ViewBackOffice({ setIsLogged, dispatch }: { readonly setIsLogged: any; 
               Usuari@s
             </button>
           </div>
-          <button onClick={() => dispatch(setIsLogged(false))} className="flex py-2 px-3 my-4 ml-2"> <img src={LogoOut} alt="" />
-            Logout
-          </button>
         </nav>
 
         <div className="lg:col-span-5 col-span-6 m-5">
