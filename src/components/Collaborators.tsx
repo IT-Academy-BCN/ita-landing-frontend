@@ -22,7 +22,7 @@ function Collaborators() {
       </div>
       <div className="flex  justify-center  my-5  w-11/12 m-auto  ">
         <div className="flex justify-center">
-          <div className="flex flex-wrap navbar lg:bg-base-100  drop-shadow-md lg:justify-between justify-start rounded-full shadow-md">
+          <div className="flex flex-wrap navbar lg:bg-base-100  drop-shadow-md lg:justify-between justify-start rounded-full md:shadow-md">
             <a
               className={active === "AngularCard" ? btnActive : btnInactive}
               onClick={() => {
