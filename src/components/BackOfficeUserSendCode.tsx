@@ -73,7 +73,7 @@ const BackOfficeUserSendCode = () => {
   useEffect(() => {
     if(requestStatus === '200' && showAlert===true) {
       setColorButton('btn-success')
-      setColorInput('input-succes')
+      setColorInput('input-success')
     }else if(requestStatus === '404' && showAlert===true){
       setColorButton('btn-error')
       setColorInput('input-error')
