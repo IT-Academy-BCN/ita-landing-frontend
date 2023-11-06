@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import PopupHowToCollaborate from "./PopupHowToCollaborate";
+import ButtonCollaborate from './ButtonCollaborate';
 import angularLogo from "../assets/img/angular.png";
 import phpLogo from "../assets/img/php.png";
 import javaLogo from "../assets/img/java.png";
@@ -12,8 +15,18 @@ import selector from "../assets/img/sel_right.png";
 import { useTranslation } from "react-i18next";
 
 
+
+
 const SloganComponent = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false); 
   const [t] = useTranslation();
+  
+  const openPopup = () => {
+    setIsPopupOpen(true);
+  };
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
 
   return (
     <>
@@ -41,18 +54,16 @@ const SloganComponent = () => {
             </div>
           </div>
 
-          <div className="mt-16      ">
+          <div className="mt-16">
             <div className="w-96 md:w-full lg:w-3/4">
               <div className="text-start ">
                 {/*<img className="absolute mr-[18px]" src="{{ asset('img/Ellipse.png') }}" alt=""></img>
                             <img className="absolute  ml-2 mr-[18px]" src="{{ asset('img/Vector.png') }}" alt=""></img>*/}
                 <div className="font-black">
-                  <p className="flex items-center justify-start">
-                  <span className="inline-flex items-center cursor-pointer space-x-6">
-                 <img src={selector} className="h-6 w-6 mr-2" alt="Icono de selector" />
-                 </span>
-                 {t("landingPage.buttonCollaborate")}
-                </p>
+                  <p className="cursor-pointer flex items-center justify-start"
+                  onClick={() => setIsPopupOpen(true)}>
+                  <ButtonCollaborate onClick={openPopup} />
+                  </p>
               </div>
               </div>
               <div className="mt-7">
@@ -125,8 +136,10 @@ const SloganComponent = () => {
         </div>
       </div>
     </div>
+    {isPopupOpen && <PopupHowToCollaborate onClose={closePopup} />} 
   </>
   )
 }
 
 export default SloganComponent
+
