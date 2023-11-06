@@ -1,11 +1,13 @@
 import { useState } from "react";
 import Card from "./CollaboratorsCard";
 import CollaboratorsModal from "./CollaboratorsModal";
+import { useTranslation } from "react-i18next";
 
 function Collaborators() {
+  const [t] = useTranslation();
   const [active, setActive] = useState("AngularCard");
   // Aconsejo quitarlo, debajo está el resultado solo con el useState de arriba const [selectedItem, setSelectedItem] = useState(1);
-  const VT = "Ver Todos >";
+  const VT = t("landingPage.collaboratorsComponent.buttonViewAll");
   const btnActive =
     " px-6 lg:mb-0 mb-5 ml-2 btn btn-ghost text-sm normal-case rounded-3xl bg-pink-it text-white  ";
   const btnInactive =
@@ -15,7 +17,7 @@ function Collaborators() {
     <section className="mt-14 mb-10">
       <div className="flex justify-center">
         <p className="font-bold text-4xl my-5">
-          Colaboradores de proyectos
+          {t("landingPage.collaboratorsComponent.title")}
         </p>
       </div>
       <div className="flex  justify-center  my-5  w-11/12 m-auto  ">

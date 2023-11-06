@@ -6,6 +6,7 @@ import { apiCall, putApiFaqs } from "../../store/reducers/faqsCall/faqsReducer";
 import deleteFaqIcon from "../../assets/img/icon-delete-faq-backoffice.png";
 import DeleteFaqModal from "./Modals/DeleteFaqModal";
 import { AdminButtons } from "./faqsAdminView/AdminButtons";
+import { useTranslation } from "react-i18next";
 
 const FAQs = () => {
   //Interfaces//
@@ -45,20 +46,15 @@ const FAQs = () => {
     setFaqClone(faqs);
   }, [faqs]);
 
+  const [t] = useTranslation();
   const [faqsClone, setFaqClone] = useState(faqs); // Clone Faqs
-
   const [selectedFaqId, setSelectedFaqId] = useState<number | null>(null); // FaqId selected
-
   const [deleteModal, setDeleteModal] = useState(false); // DeleteModal
-
   const [titleButtons, setTitleButtons] = useState(true); // Editar & Eliminar buttons
   const [descriptionButtons, setDescriptionButtons] = useState(false); // Cancelar & Guardar buttons
-
   const [isContentEditing, setIsContentIsEditing] = useState(false); // Title & Description editable
-
   const [inputNewTitleValue, setInputNewTitleValue] = useState(""); // New Title input
   const [inputNewDescriptionValue, setInputNewDescriptionValue] = useState(""); // New Description input
-
   const [positionIndex, setPositionIndex] = useState("");
 
   const displayInput = (index: number, faq: any) => {
@@ -127,7 +123,7 @@ const FAQs = () => {
       <div className="w-full bg-white rounded-md h-full mb-10">
         {window.location.pathname === "/" && (
           <h2 className="font-bold text-4xl text-center mb-6">
-            Preguntas frecuentes
+            {t("landingPage.faqsComponent.title")}
           </h2>
         )}
 
@@ -167,7 +163,7 @@ const FAQs = () => {
                       className="mx-4 px-4 border-gray-500 h-[30px] self-center"
                       onClick={() => displayInput(index, faqsClone[index])}
                     >
-                      Editar
+                      {t("backofficePage.faqsComponent.editButton.editButtonTitle")}
                     </button>
                     <img
                       src={deleteFaqIcon}
@@ -208,13 +204,13 @@ const FAQs = () => {
                           className="mr-5 xl:px-7 btn btn-outline-primary border-gray-600 bg-transparent text-gray-600"
                           onClick={() => cancelEditing(index, faqsClone[index])}
                         >
-                          Cancelar
+                          {t("backofficePage.faqsComponent.editButton.closeButton")}
                         </button>
                         <button
                           className="btn xl:px-9 bg-pink-it text-white"
                           onClick={() => saveEditingFaq(index)}
                         >
-                          Guardar
+                          {t("backofficePage.faqsComponent.editButton.saveButton")}
                         </button>
                       </div>
                     )}

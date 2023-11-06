@@ -5,8 +5,11 @@ import { createToken } from "../../../interfaces/interfaces";
 import { useState } from "react";
 import ModalsAddApps from "./ModalsAddApps";
 import plusIcon from "../../../assets/img/plus.svg"
+import { useTranslation } from "react-i18next";
+
+
 declare global {
-    interface Window {
+  interface Window {
       my_modal_2: {
         showModal: () => void;
       };
@@ -14,6 +17,7 @@ declare global {
 }
 
 const CreateApp = () => {
+  const [t] = useTranslation();
   
   const dispatch = useDispatch();
   
@@ -44,7 +48,7 @@ const CreateApp = () => {
         className="flex w-full h-56 md:h-full justify-center items-center rounded-xl border-dashed border-2 border-[#7e7e7e]"
         >
         <img src={plusIcon} alt="+" className="w-6" />
-        <p className="ml-2 font-bold text-[#7e7e7e]">Crear nueva app</p>
+        <p className="ml-2 font-bold text-[#7e7e7e]">{t("backofficePage.appsComponent.createButton.createButtonTitle")}</p>
         </button>
       </div>
     

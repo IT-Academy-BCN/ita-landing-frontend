@@ -1,4 +1,6 @@
 import Cross from "../../../assets/img/cross.png";
+import { useTranslation } from "react-i18next";
+
 export default function ModalsAddApps({
   newInfoApps,
   setNewInfoApps,
@@ -8,7 +10,7 @@ export default function ModalsAddApps({
   setNewInfoApps: any;
   sendInfo: any;
 }) {
-  
+  const [t] = useTranslation();
   return (
     <>
       <dialog id="my_modal_2" className="modal">
@@ -18,7 +20,7 @@ export default function ModalsAddApps({
           </button>
 
           <input
-            placeholder="Titulo"
+            placeholder={t("backofficePage.appsComponent.createButton.titleInput")}
             onChange={(e) =>
               setNewInfoApps({ ...newInfoApps, title: e.target.value })
             }
@@ -35,9 +37,9 @@ export default function ModalsAddApps({
           />
 
           <div className="my-2">
-            <h3 className="font-bold mb-1">Url del proyecto</h3>
+            <h3 className="font-bold mb-1">{t("backofficePage.appsComponent.createButton.urlProjectTitle")}</h3>
             <input
-              placeholder="URL"
+              placeholder={t("backofficePage.appsComponent.createButton.inputText")}
               onChange={(e) =>
                 setNewInfoApps({ ...newInfoApps, url: e.target.value })
               }
@@ -47,9 +49,9 @@ export default function ModalsAddApps({
           </div>
 
           <div className="my-4">
-            <h3 className="font-bold mb-1">Url del repositorio de GitHub</h3>
+            <h3 className="font-bold mb-1">{t("backofficePage.appsComponent.createButton.urlGitHubTitle")}</h3>
             <input
-              placeholder="GitHub"
+              placeholder={t("backofficePage.appsComponent.createButton.inputText")}
               onChange={(e) =>
                 setNewInfoApps({ ...newInfoApps, github: e.target.value })
               }
@@ -58,7 +60,7 @@ export default function ModalsAddApps({
             />
           </div>
 
-          <h3 className="font-bold mt-2 mb-3">Estado</h3>
+          <h3 className="font-bold mt-2 mb-3">{t("backofficePage.appsComponent.createButton.state")}</h3>
           <div className="flex w-fit rounded-full p-1 border border-[#7e7e7e]">
             <p
               onClick={() => { setNewInfoApps({ ...newInfoApps, state: "COMPLETED" })}}
@@ -68,7 +70,7 @@ export default function ModalsAddApps({
                   : "cursor-pointer p-3"
                 } text-sm`}
             >
-              Completada
+              {t("backofficePage.appsComponent.createButton.status.finished")}
             </p>
             <p
               onClick={() => {setNewInfoApps({ ...newInfoApps, state: "IN PROGRESS" })}}
@@ -78,7 +80,7 @@ export default function ModalsAddApps({
                   : "cursor-pointer p-3 ml-2"
                 } text-sm`}
             >
-              En progreso
+              {t("backofficePage.appsComponent.createButton.status.construction")}
             </p>
             <p
               onClick={() => {setNewInfoApps({ ...newInfoApps, state: "SOON" })}}
@@ -88,13 +90,13 @@ export default function ModalsAddApps({
                   : "cursor-pointer p-3 ml-2"
                 } text-sm`}
             >
-              Próximamente
+              {t("backofficePage.appsComponent.createButton.status.soon")}
             </p>
           </div>
 
           <div className="flex place-content-center mt-6 gap-12">
-            <button className="btn normal-case xl:px-12 text-[#7e7e7e] border border-[#7e7e7e] bg-white">Cancelar</button>
-            <button className="btn normal-case xl:px-12 text-white bg-pink-it" onClick={sendInfo}>Crear</button>
+            <button className="btn normal-case xl:px-12 text-[#7e7e7e] border border-[#7e7e7e] bg-white">{t("backofficePage.appsComponent.createButton.closeButton")}</button>
+            <button className="btn normal-case xl:px-12 text-white bg-pink-it" onClick={sendInfo}>{t("backofficePage.appsComponent.createButton.saveButton")}</button>
           </div>
         </form>
       </dialog>

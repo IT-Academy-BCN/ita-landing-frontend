@@ -12,12 +12,15 @@ import {
   ApiPostRegisterState,
   FormDataEvent,
 } from "../interfaces/interfaces";
+import { useTranslation } from "react-i18next";
+
 
 export default function LoginComponent({
   setIsDropdownEnterButton,
   setisDropdownCuenta,
   setIsPasswordReminder,
 }: ChildComponentProps) {
+  const [t] = useTranslation();
   const navegador = useNavigate();
   const dispatch = useDispatch();
 
@@ -43,20 +46,20 @@ export default function LoginComponent({
             />
           </div>
           <div className="flex flex-col  justify-evenly h-80 px-5 py-0  ">
-            <h1 className="text-start">Login</h1>
+            <h1 className="text-start">{t('landingPage.loginModal.login')}</h1>
             <form onSubmit={submitInformation}>
               <input
                 type="text"
                 name="dni"
                 className="input input-bordered w-full max-w-xs"
-                placeholder="DNI o NIE"
+                placeholder={t('landingPage.loginModal.dniInput')}
               />
 
               <input
                 type="password"
                 name="password"
                 className="input input-bordered w-full max-w-xs mt-4"
-                placeholder="Contraseña"
+                placeholder={t('landingPage.loginModal.passwordInput')}
               />
 
               <a className="text-xs text-end">
@@ -74,7 +77,7 @@ export default function LoginComponent({
                     setIsPasswordReminder(true);
                   }}
                 >
-                  Recordar/Cambiar contraseña
+                  {t('landingPage.loginModal.changePassword')}
                 </span>
               </a>
 
@@ -88,7 +91,7 @@ export default function LoginComponent({
                 ) : (
                   <span className="loading loading-spinner loading-md"></span>
                 )}
-                {!isLoadingMessageError && <p>Login</p>}
+                {!isLoadingMessageError && <p>{t('landingPage.loginModal.login')}</p>}
               </button>
             </form>
             <a className="text-xs mt-5 ">
@@ -99,7 +102,7 @@ export default function LoginComponent({
                 }}
                 className="border-b-2 border-black"
               >
-                ¿No tienes ninguna cuenta?, crear una
+                {t('landingPage.loginModal.registerMessage')}
               </span>
             </a>
           </div>
