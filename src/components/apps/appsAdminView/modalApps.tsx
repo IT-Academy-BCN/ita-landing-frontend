@@ -40,7 +40,7 @@ export default function ModalApps({
     <>
       <dialog id="my_modal_1" className="modal ">
         {!loadingApps ? (
-          <form method="dialog" className="modal-box text-start flex flex-col h-4/5">
+          <form method="dialog" className="modal-box bg-white text-start flex flex-col h-4/5">
             <button className="cursor-pointer bg-transparent ml-auto border-0 focus:outline-none hover:bg-transparent">
               <img src={Cross} alt="Cross button" />
             </button>
@@ -130,7 +130,7 @@ export default function ModalApps({
 
             <div className="flex place-content-center mt-6 gap-12">
               <button className="btn normal-case xl:px-12 text-[#7e7e7e] border border-[#7e7e7e] bg-white">{t("backofficePage.appsComponent.editButton.closeButton")}</button>
-              <button className="btn normal-case xl:px-12 text-white bg-pink-it"
+              <button className="btn normal-case xl:px-12 text-white bg-pink-it hover:bg-pink-hover"
                 onClick={() =>
                   putApiApps(newInfoApps, acces_token, dispatch, appsInfo.id)
                 }

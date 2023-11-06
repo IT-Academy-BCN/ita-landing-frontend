@@ -65,7 +65,7 @@ const BackOfficeUserSendCode = () => {
     setDesactivateInputElements(false)
     setError("");
     setColorInput('input-secondary')
-    setColorButton('bg-[#BA007C]')
+    setColorButton('bg-pink-it')
     setShowAlert(false)
     inputRef.current?.focus();
   }
@@ -73,7 +73,7 @@ const BackOfficeUserSendCode = () => {
   useEffect(() => {
     if(requestStatus === '200' && showAlert===true) {
       setColorButton('btn-success')
-      setColorInput('input-success')
+      setColorInput('input-succes')
     }else if(requestStatus === '404' && showAlert===true){
       setColorButton('btn-error')
       setColorInput('input-error')
@@ -97,7 +97,7 @@ const BackOfficeUserSendCode = () => {
           disabled={desactivateInputElements}
           onFocus={() => handleResetEmail('no-reset-email')}
           placeholder={t("backofficePage.usersComponent.emailInput")}
-          className={`flex my-8 input input-bordered ${colorInput} w-2/3 max-w-xs`}
+          className={`flex my-8 input input-bordered ${colorInput} focus:outline-none w-2/3 max-w-xs`}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
