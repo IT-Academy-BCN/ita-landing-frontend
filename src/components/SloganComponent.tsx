@@ -13,9 +13,6 @@ import itacademyLogo from "../assets/img/itacademylogo.png";
 import HeaderComponent from "./HeaderComponent";
 import { useTranslation } from "react-i18next";
 
-
-
-
 const SloganComponent = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false); 
   const [t] = useTranslation();
