@@ -73,7 +73,7 @@ const Apps = () => {
                     )}
                     <h2 className="text-start ml-6 text-xl font-bold">{app.title}</h2>
                     <p className="flex-grow text-left ml-4 mr-8 my-4 line-clamp-4 leading-7 text-[#7e7e7e]">{app.description}</p>
-                    <a href={app.url} className="flex mb-4 mx-4 btn btn-outline bg-base-100 border-none normal-case" target="_blank">
+                    <a href={app.url} className="flex mb-4 mx-4 btn  bg-white border-none normal-case hover:text-black" target="_blank">
                     {t("backofficePage.appsComponent.appLink")} <FaArrowRight />
                     </a>
               </div>

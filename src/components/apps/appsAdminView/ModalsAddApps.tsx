@@ -14,7 +14,7 @@ export default function ModalsAddApps({
   return (
     <>
       <dialog id="my_modal_2" className="modal">
-        <form method="dialog" className="modal-box flex flex-col text-start h-4/5">
+        <form method="dialog" className="modal-box bg-white flex flex-col text-start h-4/5">
           <button className="cursor-pointer bg-transparent ml-auto border-0 focus:outline-none hover:bg-transparent">
             <img src={Cross} alt="Cross button" />
           </button>
@@ -44,7 +44,7 @@ export default function ModalsAddApps({
                 setNewInfoApps({ ...newInfoApps, url: e.target.value })
               }
               type="text"
-              className="input input-bordered w-full py-2"
+              className="input input-bordered focus:outline-none w-full py-2"
             />
           </div>
 
@@ -56,7 +56,7 @@ export default function ModalsAddApps({
                 setNewInfoApps({ ...newInfoApps, github: e.target.value })
               }
               type="text"
-              className="input input-bordered w-full py-2"
+              className="input input-bordered focus:outline-none w-full py-2"
             />
           </div>
 
@@ -96,7 +96,7 @@ export default function ModalsAddApps({
 
           <div className="flex place-content-center mt-6 gap-12">
             <button className="btn normal-case xl:px-12 text-[#7e7e7e] border border-[#7e7e7e] bg-white">{t("backofficePage.appsComponent.createButton.closeButton")}</button>
-            <button className="btn normal-case xl:px-12 text-white bg-pink-it" onClick={sendInfo}>{t("backofficePage.appsComponent.createButton.saveButton")}</button>
+            <button className="btn normal-case xl:px-12 text-white bg-pink-it hover:bg-pink-hover" onClick={sendInfo}>{t("backofficePage.appsComponent.createButton.saveButton")}</button>
           </div>
         </form>
       </dialog>

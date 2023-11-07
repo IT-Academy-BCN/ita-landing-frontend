@@ -22,7 +22,7 @@ function Collaborators() {
       </div>
       <div className="flex  justify-center  my-5  w-11/12 m-auto  ">
         <div className="flex justify-center">
-          <div className="flex flex-wrap navbar lg:bg-base-100  drop-shadow-md lg:justify-between justify-start rounded-full">
+          <div className="flex flex-wrap navbar lg:bg-base-100  drop-shadow-md lg:justify-between justify-start rounded-full md:shadow-md">
             <a
               className={active === "AngularCard" ? btnActive : btnInactive}
               onClick={() => {
@@ -62,7 +62,7 @@ function Collaborators() {
         {/* <a className="font-bold text-[#025E7E] active:underline " href="">{VT}</a> */}
         <label
           htmlFor="CollaboratorsModal"
-          className="lg:mr-20 mr-0 font-bold  text-base-content active:underline hover:text-purple-600 hover:cursor-pointer"
+          className="lg:mr-20 mr-0 font-bold  text-pink-it hover:text-pink-hover active:underline  hover:cursor-pointer"
         >
           {VT}
         </label>

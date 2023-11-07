@@ -11,11 +11,7 @@ import nodejsLogo from "../assets/img/nodejs.png";
 import gitLogo from "../assets/img/git.png";
 import itacademyLogo from "../assets/img/itacademylogo.png";
 import HeaderComponent from "./HeaderComponent";
-import selector from "../assets/img/sel_right.png";
 import { useTranslation } from "react-i18next";
-
-
-
 
 const SloganComponent = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false); 
