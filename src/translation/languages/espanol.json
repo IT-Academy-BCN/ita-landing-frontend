@@ -1,4 +1,127 @@
-{
-    "landingPage": "{\"title\":\"Gana y valida experiencia como programador\",\"buttonCollaborate\":\"¿Cómo colaborar?\",\"descriptionHeader\":\"¿La falta de experiencia te dificulta conseguir trabajo? Trabaja en equipo y ponte a prueba con nuestros proyectos\",\"languagesSwitcher\":{\"catala\":\"Catalán\",\"espanol\":\"Castellano\",\"english\":\"Inglés\"},\"loginModal\":{\"login\":\"Iniciar sessión\",\"dniInput\":\"DNI o NIE\",\"passwordInput\":\"Contraseña\",\"changePassword\":\"Recordar/Cambiar contraseña\",\"registerMessage\":\"No tienes ninguna cuenta? Crea una!\"},\"registerModal\":{\"title\":\"Registro\",\"dniInput\":\"DNI o NIE\",\"emailInput\":\"Email\",\"passwordInput\":\"Constraseña\",\"passwordRepeatInput\":\"Repite contraseña\",\"nameInput\":\"Nombre\",\"codeInput\":\"Código de confirmación\",\"titleButton\":\"Registrate\",\"messageLogin\":\"¿Tienes cuenta? Inicia sessión\"},\"appsComponent\":{\"title\":\"Directorio de aplicaciones IT Academy\",\"status\":{\"finished\":\"Finalizadas\",\"construction\":\"En construcción\",\"soon\":\"Próximamente\"}},\"teamComponent\":{\"title\":\"Equipos de trabajo\",\"description\":\"Los proyectos son realizados por equipos que combinan las siguientes tecnologías\"},\"collaboratorsComponent\":{\"title\":\"Colaboradores de proyectos\",\"buttonViewAll\":\"Ver todos >\"},\"faqsComponent\":{\"title\":\"Preguntas frecuentes\"},\"footer\":{\"institution\":\"Barcelona Activa\",\"academy\":\"IT Academy\",\"buttonCollaborate\":\"¿Cómo colaborar?\",\"normative\":\"Normativa\",\"terms\":\"Términos\",\"privacity\":\"Privacidad\",\"cookies\":\"Galletas\"}}",
-    "backofficePage": "{\"navbarComponent\":{\"faqs\":\"FAQs\",\"apps\":\"Apps\",\"users\":\"Usuarios\",\"logoutButton\":\"Salir\"},\"faqsComponent\":{\"title\":\"FAQs\",\"createNewQuestion\":{\"createNewQuestionTitle\":\"Crear nueva pregunta\",\"textareaInput\":\"Respuesta\",\"closeButton\":\"Cancelar\",\"saveButton\":\"Guardar\"},\"editButton\":{\"editButtonTitle\":\"Editar\",\"closeButton\":\"Cancelar\",\"saveButton\":\"Guardar\"},\"deleteButton\":{\"deleteButtonTitle\":\"¿Estás seguro?\",\"text\":\"Esta acción eliminará el elemento seleccionado\",\"closeButton\":\"Cancelar\",\"saveButton\":\"Guardar\"}},\"appsComponent\":{\"title\":\"Apps\",\"appLink\":\"Ir a la app\",\"editButton\":{\"editButtonTitle\":\"Editar\",\"urlProjectTitle\":\"Url del proyecto\",\"urlGitHubTitle\":\"Url del repositorio de GitHub\",\"inputText\":\"Escribe aquí\",\"state\":\"Estado\",\"status\":{\"finished\":\"Acabada\",\"construction\":\"En construcción\",\"soon\":\"Próximamente\"},\"closeButton\":\"Cancelar\",\"saveButton\":\"Guardar\"},\"createButton\":{\"createButtonTitle\":\"Crear nueva aplicación\",\"titleInput\":\"Escribe aquí el título\",\"urlProjectTitle\":\"Url del proyecto\",\"urlGitHubTitle\":\"Url del repositorio de GitHub\",\"inputText\":\"Escribe aquí\",\"state\":\"Estado\",\"status\":{\"finished\":\"Acabada\",\"construction\":\"En construcción\",\"soon\":\"Próximamente\"},\"closeButton\":\"Cancelar\",\"saveButton\":\"Crear\"}},\"usersComponent\":{\"title\":\"Invitar nuevo/nueva admin\",\"emailInput\":\"Dirección de email\",\"emailIncorrect\":\"Email inválido\",\"emailSendIt\":\"Email enviado\",\"emailNotSendIt\":\"Email no enviado\",\"buttonTitle\":\"Invitar\"}}"
+﻿{
+    "landingPage": {
+        "title": "Gana y valida experiencia como programador",
+        "buttonCollaborate": "¿Cómo colaborar?",
+        "descriptionHeader": "¿La falta de experiencia te dificulta conseguir trabajo? Trabaja en equipo y ponte a prueba con nuestros proyectos",
+        "languagesSwitcher": {
+            "catala": "Catalán",
+            "espanol": "Castellano",
+            "english": "Inglés"
+        },
+        "loginModal": {
+            "login": "Iniciar sessión",
+            "dniInput": "DNI o NIE",
+            "passwordInput": "Contraseña",
+            "changePassword": "Recordar/Cambiar contraseña",
+            "registerMessage": "No tienes ninguna cuenta? Crea una!"
+        },
+        "registerModal": {
+            "title": "Registro",
+            "dniInput": "DNI o NIE",
+            "emailInput": "Email",
+            "passwordInput": "Constraseña",
+            "passwordRepeatInput": "Repite contraseña",
+            "nameInput": "Nombre",
+            "codeInput": "Código de confirmación",
+            "titleButton": "Registrate",
+            "messageLogin": "¿Tienes cuenta? Inicia sessión"
+        },
+        "appsComponent": {
+            "title": "Directorio de aplicaciones IT Academy",
+            "status": {
+                "finished": "Finalizadas",
+                "construction": "En construcción",
+                "soon": "Próximamente"
+            }
+        },
+        "teamComponent": {
+            "title": "Equipos de trabajo",
+            "description": "Los proyectos son realizados por equipos que combinan las siguientes tecnologías"
+        },
+        "collaboratorsComponent": {
+            "title": "Colaboradores de proyectos",
+            "buttonViewAll": "Ver todos >"
+        },
+        "faqsComponent": {
+            "title": "Preguntas frecuentes"
+        },
+        "footer": {
+            "institution": "Barcelona Activa",
+            "academy": "IT Academy",
+            "buttonCollaborate": "¿Cómo colaborar?",
+            "normative": "Normativa",
+            "terms": "Términos",
+            "privacity": "Privacidad",
+            "cookies": "Galletas"
+        }
+    },
+    "backofficePage": {
+        "navbarComponent": {
+            "faqs": "FAQs",
+            "apps": "Apps",
+            "users": "Usuarios",
+            "logoutButton": "Salir"
+        },
+        "faqsComponent": {
+            "title": "FAQs",
+            "createNewQuestion": {
+                "createNewQuestionTitle": "Crear nueva pregunta",
+                "textareaInput": "Respuesta",
+                "closeButton": "Cancelar",
+                "saveButton": "Guardar"
+            },
+            "editButton": {
+                "editButtonTitle": "Editar",
+                "closeButton": "Cancelar",
+                "saveButton": "Guardar"
+            },
+            "deleteButton": {
+                "deleteButtonTitle": "¿Estás seguro?",
+                "text": "Esta acción eliminará el elemento seleccionado",
+                "closeButton": "Cancelar",
+                "saveButton": "Guardar"
+            }
+        },
+        "appsComponent": {
+            "title": "Apps",
+            "appLink": "Ir a la app",
+            "editButton": {
+                "editButtonTitle": "Editar",
+                "urlProjectTitle": "Url del proyecto",
+                "urlGitHubTitle": "Url del repositorio de GitHub",
+                "inputText": "Escribe aquí",
+                "state": "Estado",
+                "status": {
+                    "finished": "Acabada",
+                    "construction": "En construcción",
+                    "soon": "Próximamente"
+                },
+                "closeButton": "Cancelar",
+                "saveButton": "Guardar"
+            },
+            "createButton": {
+                "createButtonTitle": "Crear nueva aplicación",
+                "titleInput": "Escribe aquí el título",
+                "urlProjectTitle": "Url del proyecto",
+                "urlGitHubTitle": "Url del repositorio de GitHub",
+                "inputText": "Escribe aquí",
+                "state": "Estado",
+                "status": {
+                    "finished": "Acabada",
+                    "construction": "En construcción",
+                    "soon": "Próximamente"
+                },
+                "closeButton": "Cancelar",
+                "saveButton": "Crear"
+            }
+        },
+        "usersComponent": {
+            "title": "Invitar nuevo/nueva admin",
+            "emailInput": "Dirección de email",
+            "emailIncorrect": "Email inválido",
+            "emailSendIt": "Email enviado",
+            "emailNotSendIt": "Email no enviado",
+            "buttonTitle": "Invitar"
+        }
+    }
 }
