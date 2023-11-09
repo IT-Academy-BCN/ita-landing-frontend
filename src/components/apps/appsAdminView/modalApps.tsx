@@ -4,6 +4,8 @@ import { RootState } from "../../../store/store";
 import { putApiApps } from "../../../store/reducers/appsCall/appsCallApiFunctionality";
 import Cross from "../../../assets/img/cross.png";
 import { createToken } from "../../../interfaces/interfaces";
+import { useTranslation } from "react-i18next";
+
 export default function ModalApps({
   newInfoApps,
   setNewInfoApps,
@@ -11,6 +13,7 @@ export default function ModalApps({
   newInfoApps: any;
   setNewInfoApps: React.Dispatch<React.SetStateAction<any>>;
 }) {
+  const [t] = useTranslation();
   const dispatch = useDispatch();
   const { acces_token }: createToken = useSelector(
     (state: RootState) => state.apiPostRegister
@@ -37,7 +40,7 @@ export default function ModalApps({
     <>
       <dialog id="my_modal_1" className="modal ">
         {!loadingApps ? (
-          <form method="dialog" className="modal-box text-start flex flex-col h-4/5">
+          <form method="dialog" className="modal-box bg-white text-start flex flex-col h-4/5">
             <button className="cursor-pointer bg-transparent ml-auto border-0 focus:outline-none hover:bg-transparent">
               <img src={Cross} alt="Cross button" />
             </button>
@@ -60,9 +63,9 @@ export default function ModalApps({
             />
 
             <div className="my-2">
-              <h3 className="font-bold mb-1">Url del proyecto</h3>
+              <h3 className="font-bold mb-1">{t("backofficePage.appsComponent.editButton.urlProjectTitle")}</h3>
               <input
-                placeholder="Type here"
+                placeholder={t("backofficePage.appsComponent.editButton.inputText")}
                 value={newInfoApps.url}
                 onChange={(e) =>
                   setNewInfoApps({ ...newInfoApps, url: e.target.value })
@@ -73,9 +76,9 @@ export default function ModalApps({
             </div>
 
             <div className="my-4">
-              <h3 className="font-bold mb-1">Url del repositorio de GitHub</h3>
+              <h3 className="font-bold mb-1">{t("backofficePage.appsComponent.editButton.urlGitHubTitle")}</h3>
               <input
-                placeholder="Type here"
+                placeholder={t("backofficePage.appsComponent.editButton.inputText")}
                 value={newInfoApps.github}
                 onChange={(e) =>
                   setNewInfoApps({ ...newInfoApps, github: e.target.value })
@@ -85,7 +88,7 @@ export default function ModalApps({
               />
             </div>
 
-            <h3 className="font-bold mt-2 mb-3">Estado</h3>
+            <h3 className="font-bold mt-2 mb-3">{t("backofficePage.appsComponent.editButton.state")}</h3>
             <div className="flex w-fit rounded-full p-1 border border-[#7e7e7e]">
               <p
                 onClick={() => {
@@ -97,7 +100,7 @@ export default function ModalApps({
                     : "cursor-pointer p-3"
                 } text-sm`}
               >
-                Completada
+                {t("backofficePage.appsComponent.editButton.status.finished")}
               </p>
               <p
                 onClick={() => {
@@ -109,7 +112,7 @@ export default function ModalApps({
                     : "cursor-pointer p-3 ml-2"
                 } text-sm`}
               >
-                En progreso
+                {t("backofficePage.appsComponent.editButton.status.construction")}
               </p>
               <p
                 onClick={() => {
@@ -121,18 +124,18 @@ export default function ModalApps({
                     : "cursor-pointer p-3 ml-2"
                 } text-sm`}
               >
-                Próximamente
+                {t("backofficePage.appsComponent.editButton.status.soon")}
               </p>
             </div>
 
             <div className="flex place-content-center mt-6 gap-12">
-              <button className="btn normal-case xl:px-12 text-[#7e7e7e] border border-[#7e7e7e] bg-white">Cancelar</button>
-              <button className="btn normal-case xl:px-12 text-white bg-pink-it"
+              <button className="btn normal-case xl:px-12 text-[#7e7e7e] border border-[#7e7e7e] bg-white">{t("backofficePage.appsComponent.editButton.closeButton")}</button>
+              <button className="btn normal-case xl:px-12 text-white bg-pink-it hover:bg-pink-hover"
                 onClick={() =>
                   putApiApps(newInfoApps, acces_token, dispatch, appsInfo.id)
                 }
               >
-                Guardar
+                {t("backofficePage.appsComponent.editButton.saveButton")}
               </button>
             </div>
           </form>

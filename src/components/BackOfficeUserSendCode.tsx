@@ -7,9 +7,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { createToken } from "../interfaces/interfaces";
 import { AdminButtons } from "./faqs/faqsAdminView/AdminButtons";
+import { useTranslation } from "react-i18next";
 
 const BackOfficeUserSendCode = () => {
-
+  const [t] = useTranslation();
   const dispatch = useDispatch()
 
   const { acces_token }: createToken = useSelector(
@@ -64,7 +65,7 @@ const BackOfficeUserSendCode = () => {
     setDesactivateInputElements(false)
     setError("");
     setColorInput('input-secondary')
-    setColorButton('bg-[#BA007C]')
+    setColorButton('bg-pink-it')
     setShowAlert(false)
     inputRef.current?.focus();
   }
@@ -89,32 +90,32 @@ const BackOfficeUserSendCode = () => {
       </div>
 
       <div className="flex flex-col place-items-center bg-white rounded-md h-full mb-10">
-        <h1 className="md:col-span-2 lg:col-span-3 font-black py-12 text-3xl font-poppins sm:text-center lg:text-left">Invitar nuev@ admin</h1>
+        <h1 className="md:col-span-2 lg:col-span-3 font-black py-12 text-3xl font-poppins sm:text-center lg:text-left">{t("backofficePage.usersComponent.title")}</h1>
         <input
           type="email"
           ref={inputRef}
           disabled={desactivateInputElements}
           onFocus={() => handleResetEmail('no-reset-email')}
-          placeholder="Dirección de email"
-          className={`flex my-8 input input-bordered ${colorInput} w-2/3 max-w-xs`}
+          placeholder={t("backofficePage.usersComponent.emailInput")}
+          className={`flex my-8 input input-bordered ${colorInput} focus:outline-none w-2/3 max-w-xs`}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <div className="flex w-1/3">
           <button   className={`btn w-full ${colorButton} text-white ${colorButton === 'btn-success' || colorButton === 'btn-error' ? 'pointer-events-none' : ''}`} onClick={handleSendEmail}>
           {error === '' ? (
-            <span>Invitar</span>
+            <span>{t("backofficePage.usersComponent.buttonTitle")}</span>
           ) : error === "ERROR" ? (
-            <span>Email inválido</span>
+            <span>{t("backofficePage.usersComponent.emailIncorrect")}</span>
           ) : showAlert === true && requestStatus==='200' ? (
             <div className="flex items-center justify-items-center">
               <img src={checkIcon} className="w-6" alt="OK" />
-              <p className="ml-2 font-bold normal-case"> Email enviado </p>
+              <p className="ml-2 font-bold normal-case"> {t("backofficePage.usersComponent.emailSendIt")} </p>
             </div>
           ) : showAlert === true && requestStatus!=='200' ? (
             <div className="flex items-center justify-items-center">
               <img src={errorIcon} className="w-6" alt="Error" />
-              <p className="ml-2 font-bold normal-case"> Email no enviado </p>
+              <p className="ml-2 font-bold normal-case"> {t("backofficePage.usersComponent.emailNotSendIt")} </p>
             </div>) :
           (
             <span className="loading loading-spinner"></span>

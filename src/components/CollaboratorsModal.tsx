@@ -6,7 +6,7 @@ function CollaboratorsModal() {
     <>
       <input type="checkbox" id="CollaboratorsModal" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box w-11/12 max-w-5xl">
+        <div className="modal-box bg-white  w-11/12 max-w-5xl">
           <label
             htmlFor="CollaboratorsModal"
             className="absolute right-5 top-5 hover:text-purple-600 hover:cursor-pointer"

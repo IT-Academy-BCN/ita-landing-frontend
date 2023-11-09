@@ -10,6 +10,7 @@ import {
   RootState,
   ApiPostRegisterState,
 } from "../interfaces/interfaces";
+import { useTranslation } from "react-i18next";
 
 //componente//
 
@@ -17,6 +18,7 @@ export default function RegisterComponent({
   setIsDropdownEnterButton,
   setisDropdownCuenta,
 }: ChildComponentProps) {
+  const [t] = useTranslation();
   const dispatch = useDispatch();
   const { messageError, isLoadingMessageError }: ApiPostRegisterState =
     useSelector((state: RootState) => state.apiPostRegister);
@@ -39,50 +41,50 @@ export default function RegisterComponent({
             />
           </div>
           <div className="flex flex-col justify-evenly h-[500px] px-5 py-0 ">
-            <h1 className="text-start">Registro</h1>
+            <h1 className="text-start">{t("landingPage.registerModal.title")}</h1>
 
             <form onSubmit={submitInformation}>
               <input
                 name="dni"
                 type="text"
                 className="input input-bordered w-full max-w-xs"
-                placeholder="DNI o NIE"
+                placeholder={t("landingPage.registerModal.dniInput")}
               />
               <input
                 name="email"
                 type="email"
                 className="mt-2 input input-bordered w-full max-w-xs"
-                placeholder="Email"
+                placeholder={t("landingPage.registerModal.emailInput")}
               />
               <input
                 name="password"
                 type="password"
                 className="mt-2 input input-bordered w-full max-w-xs"
-                placeholder="Contraseña"
+                placeholder={t("landingPage.registerModal.passwordInput")}
               />
               <input
                 name="password_confirmation"
                 type="password"
                 className="mt-2 input input-bordered w-full max-w-xs"
-                placeholder="Repite Contraseña"
+                placeholder={t("landingPage.registerModal.passwordRepeatInput")}
               />
               <input
                 name="name"
                 type="text"
                 className="mt-2 input input-bordered w-full max-w-xs"
-                placeholder="Nombre"
+                placeholder={t("landingPage.registerModal.nameInput")}
               />
               <input
                 name="Code"
                 type="text"
                 className="mt-2 input input-bordered w-full max-w-xs"
-                placeholder="Codigo de confirmación"
+                placeholder={t("landingPage.registerModal.codeInput")}
               />
               <button
                 type="submit"
                 className="mt-5 btn btn-wide bg-pink-it text-white"
               >
-                Registro
+                {t("landingPage.registerModal.titleButton")}
               </button>
             </form>
 
@@ -103,7 +105,7 @@ export default function RegisterComponent({
                 }}
                 className="border-b-2 border-black"
               >
-                ¿Tienes cuenta? acceder
+                {t("landingPage.registerModal.messageLogin")}
               </span>
             </a>
           </div>

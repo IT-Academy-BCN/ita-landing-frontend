@@ -8,17 +8,28 @@ import menu from "../assets/img/menu.png";
 import LoginComponent from "./LoginComponent";
 import RegisterComponent from "./Registercomponent";
 import PasswordReminderComponent from "./PasswordReminderComponent";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const [t, i18n] = useTranslation();
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const [IsDropdownEnterButton, setIsDropdownEnterButton] =
     useState<boolean>(false);
   const [isDropdownCuenta, setisDropdownCuenta] = useState<boolean>(false);
   const [isPasswordReminder, setIsPasswordReminder] = useState<boolean>(false);
+  const [languageSelected, setLanguageSelected] = useState('catala');
+
+  const handleChangeLanguageOfTheWebsite = (lang:string):void => {
+    setLanguageSelected(lang)
+    i18n.changeLanguage(lang)
+  }
 
   const toggleDropdown = (): void => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  console.log(i18n.language)
+
   return (
     <header className="w-full z-10 absolute flex  justify-between  ">
       {/* Logo */}
@@ -36,7 +47,7 @@ const Header = () => {
             onClick={toggleDropdown}
           >
             <div className="flex  items-center justify-between text-sm text-neutral font-bold text-gray-700 capitalize ">
-              <span>Castellano</span>
+              <span>{t(`landingPage.languagesSwitcher.${languageSelected}`)}</span>
               <div>
                 <svg
                   viewBox="0 0 20 20"
@@ -58,10 +69,10 @@ const Header = () => {
                 isDropdownOpen ? "" : "hidden"
               }`}
             >
-              <li className="flex items-center px-4 py-2 hover:bg-gray-100 hover:rounded-xl flex-row">
+              <li className="flex items-center px-4 py-2 hover:bg-gray-100 hover:rounded-xl flex-row" onClick={() => handleChangeLanguageOfTheWebsite('catala')}>
                 <div className="text-left flex-grow">
                   <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
-                    Català
+                    {t('landingPage.languagesSwitcher.catala')}
                   </div>
                 </div>
                 <img
@@ -70,10 +81,10 @@ const Header = () => {
                   className="h-53 w-53 scale-90 ml-4 flex-none"
                 />
               </li>
-              <li className="flex items-center px-4 py-2 hover:bg-gray-200 border-t border-gray-400 flex-row">
+              <li className="flex items-center px-4 py-2 hover:bg-gray-200 border-t border-gray-400 flex-row" onClick={() => handleChangeLanguageOfTheWebsite('espanol')}>
                 <div className="text-left flex-grow">
                   <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
-                    Castellano
+                   {t('landingPage.languagesSwitcher.espanol')}
                   </div>
                 </div>
                 <img
@@ -82,10 +93,10 @@ const Header = () => {
                   className="h-53 w-53 scale-90 ml-4 flex-none"
                 />
               </li>
-              <li className=" hover:rounded-b-xl flex items-center px-4 py-2 hover:bg-gray-200 border-t-2 border-gray-400 flex-row">
+              <li className=" hover:rounded-b-xl flex items-center px-4 py-2 hover:bg-gray-200 border-t-2 border-gray-400 flex-row" onClick={() => handleChangeLanguageOfTheWebsite('english')}>
                 <div className="text-left flex-grow">
                   <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
-                    English
+                    {t('landingPage.languagesSwitcher.english')}
                   </div>
                 </div>
                 <img
@@ -109,7 +120,7 @@ const Header = () => {
             <div>
               <img src={selector} className="h-5 w-5 mr-2" />
             </div>
-            <span className="  font-bold capitalize  text-sm">Entrar</span>
+            <span className="  font-bold capitalize  text-sm">{t('landingPage.loginModal.login')}</span>
           </button>
         </div>
 
@@ -184,8 +195,7 @@ const Header = () => {
                   />
                   <div className="text-left flex-grow ml-2 text-gray-600 text-2xl text-[#7E7E7E]">
                     <h3 className=" hover:border-b-4 hover:border-blue-800">
-                      {" "}
-                      Castellano{" "}
+                      Castellano
                     </h3>
                   </div>
                 </li>
@@ -197,7 +207,6 @@ const Header = () => {
                   />
                   <div className="text-left flex-grow ml-2 text-gray-600 text-2xl text-[#7E7E7E]">
                     <h3 className=" hover:border-b-4 hover:border-blue-800">
-                      {" "}
                       English
                     </h3>
                   </div>

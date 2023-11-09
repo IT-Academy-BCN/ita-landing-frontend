@@ -5,9 +5,10 @@ import ProjectsComponent from "./apps/ProjectsComponent";
 import menu from "../assets/img/menu.png";
 import { AdminButtons } from "./faqs/faqsAdminView/AdminButtons";
 import BackOfficeUserSendCode from "./BackOfficeUserSendCode";
+import { useTranslation } from "react-i18next";
 
-
-function ViewBackOffice() {
+function ViewBackOffice({ setIsLogged, dispatch }: { readonly setIsLogged: any; readonly dispatch: any }) {
+  const [t] = useTranslation();
   
   const [state, setState] = useState({
     faqs: false,
@@ -54,19 +55,24 @@ function ViewBackOffice() {
           <div className="grid grid-rows-3 my-10">
             <button className={`flex justify-center items-center py-2 my-4 ml-2 ${boldFont.boldFaqs ? 'font-bold' : 'font-normal'}`} onClick={() => handleClickNav('faqs')}>
               <div className={`w-2 h-2 rounded-full mr-2 bg-[#BA007C] ${boldFont.boldFaqs ? '' : 'hidden'}`}></div>
-              FAQs
+              {t("backofficePage.navbarComponent.faqs")}
             </button>
 
             <button className={`flex justify-center items-center py-2 my-4 ml-2 ${boldFont.boldProjectsComponent ? 'font-bold' : 'font-normal'}`} onClick={() => handleClickNav('apps')}>
               <div className={`w-2 h-2 rounded-full mr-2 bg-[#BA007C] ${boldFont.boldProjectsComponent ? '' : 'hidden'}`}></div>
-              Apps
+              {t("backofficePage.navbarComponent.apps")}
             </button>
 
             <button className={`flex justify-center items-center py-2 my-4 ml-2 ${boldFont.boldUsersComponent ? 'font-bold' : 'font-normal'}`} onClick={() => handleClickNav('users')}>
               <div className={`w-2 h-2 rounded-full mr-2 bg-[#BA007C] ${boldFont.boldUsersComponent ? '' : 'hidden'}`}></div>
-              Usuari@s
+              {t("backofficePage.navbarComponent.users")}
             </button>
           </div>
+
+          <button onClick={() => dispatch(setIsLogged(false))} className="flex py-2 px-3 my-4 ml-2"> <img src={LogoOut} alt="" />
+            {t("backofficePage.navbarComponent.logoutButton")}
+          </button>
+          
         </nav>
 
         <div className="lg:col-span-5 col-span-6 m-5">
