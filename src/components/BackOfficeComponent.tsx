@@ -1,5 +1,4 @@
 import itImage from "../assets/img/ITA_Logo.png";
-import LogoOut from "../assets/img/Sign-out.png";
 import { useEffect, useState } from "react";
 import FAQs from "./faqs/FAQsComponent";
 import ProjectsComponent from "./apps/ProjectsComponent";
@@ -10,7 +9,7 @@ import { useTranslation } from "react-i18next";
 
 function ViewBackOffice({ setIsLogged, dispatch }: { readonly setIsLogged: any; readonly dispatch: any }) {
   const [t] = useTranslation();
-
+  
   const [state, setState] = useState({
     faqs: false,
     projectsComponent: false,
@@ -69,9 +68,11 @@ function ViewBackOffice({ setIsLogged, dispatch }: { readonly setIsLogged: any; 
               {t("backofficePage.navbarComponent.users")}
             </button>
           </div>
+
           <button onClick={() => dispatch(setIsLogged(false))} className="flex py-2 px-3 my-4 ml-2"> <img src={LogoOut} alt="" />
             {t("backofficePage.navbarComponent.logoutButton")}
           </button>
+          
         </nav>
 
         <div className="lg:col-span-5 col-span-6 m-5">
