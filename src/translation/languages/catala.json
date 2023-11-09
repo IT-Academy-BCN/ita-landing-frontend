@@ -1,7 +1,22 @@
 ﻿{
     "landingPage": {
         "title": "Guanya i valida experiència com a programador",
-        "buttonCollaborate": "Com col·laborar?",
+        "buttonCollaborate": {
+            "buttonTitle": "Com col·laborar?",
+            "title": "Com col·laborar en projectes IT Academy?",
+            "firstCard": {
+                "title": "Pregunta al teu mentor",
+                "description": "Resoldrà tots els teus dubtes i t'ajudarà amb el setup del projecte"
+            },
+            "secondCard": {
+                "title": "Uneix-te a l'equip",
+                "description": "El teu mentor de projecte t'ajudarà"
+            },
+            "thirdCard": {
+                "title": "Entrega les teves funcionalitats",
+                "description": "Una vegada hagis finalizat les teves tasques"
+            }
+        },
         "descriptionHeader": "La falta d'experiència et dificulta conseguir treball? Treballa en equip i posat a prova amb els nostre projectes",
         "languagesSwitcher": {
             "catala": "Català",

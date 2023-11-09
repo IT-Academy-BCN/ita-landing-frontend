@@ -1,7 +1,22 @@
 ﻿{
     "landingPage": {
         "title": "Gain and validate experience as a programmer",
-        "buttonCollaborate": "How to collaborate?",
+        "buttonCollaborate": {
+            "buttonTitle": "How to collaborate?",
+            "title": "How to collaborate on IT Academy projects?",
+            "firstCard": {
+                "title": "Ask your mentor",
+                "description": "They will solve all your doubts and help you with the project setup"
+            },
+            "secondCard": {
+                "title": "Join the team",
+                "description": "Your project mentor will help you"
+            },
+            "thirdCard": {
+                "title": "Submit your features",
+                "description": "Once you complete your tasks"
+            }
+        },
         "descriptionHeader": "Does lack of experience make it difficult for you to find a job? Work as a team and challenge yourself with our projects.",
         "languagesSwitcher": {
             "catala": "Catalan",

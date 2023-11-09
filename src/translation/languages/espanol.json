@@ -1,7 +1,22 @@
 ﻿{
     "landingPage": {
         "title": "Gana y valida experiencia como programador",
-        "buttonCollaborate": "¿Cómo colaborar?",
+        "buttonCollaborate": {
+            "buttonTitle": "¿Cómo colaborar?",
+            "title": "¿Cómo colaborar en proyectos IT Academy?",
+            "firstCard": {
+                "title": "Pregunta a tu mentor",
+                "description": "Resolvera todas tus dudas y te ayudará con setup del proyecto"
+            },
+            "secondCard": {
+                "title": "Únete al equipo",
+                "description": "Tú mentor de proyecto te ayudará"
+            },
+            "thirdCard": {
+                "title": "Entrega tu funcionalidades",
+                "description": "Una vez realices tu tareas"
+            }
+        },
         "descriptionHeader": "¿La falta de experiencia te dificulta conseguir trabajo? Trabaja en equipo y ponte a prueba con nuestros proyectos",
         "languagesSwitcher": {
             "catala": "Catalán",
