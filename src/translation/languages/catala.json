@@ -66,6 +66,7 @@
             "title": "FAQs",
             "createNewQuestion": {
                 "createNewQuestionTitle": "Crear nova pregunta",
+                "createNewQuestionTitleOnClick": "Pregunta",
                 "textareaInput": "Resposta",
                 "closeButton": "Cancel·lar",
                 "saveButton": "Guardar"

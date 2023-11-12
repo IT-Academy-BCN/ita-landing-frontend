@@ -112,24 +112,24 @@ const FAQs = () => {
   };
 
   return (
-    <section className="lg:px-10 h-full flex flex-col">
+    <section className="flex flex-col h-full lg:px-10">
 
       {window.location.pathname === "/backoffice" && (
-        <div className="w-full hidden lg:block">
+        <div className="hidden w-full lg:block">
           <AdminButtons />
         </div>
       )}
 
-      <div className="w-full bg-white rounded-md h-full mb-10">
+      <div className="w-full h-full mb-10 bg-white rounded-md">
         {window.location.pathname === "/" && (
-          <h2 className="font-bold text-4xl text-center mb-6">
+          <h2 className="mb-6 text-4xl font-bold text-center">
             {t("landingPage.faqsComponent.title")}
           </h2>
         )}
-
+       {/*Título grande  */}
         {window.location.pathname === "/backoffice" && (
           <>
-            <h2 className="font-black py-12 ml-10 text-3xl font-poppins sm:text-center lg:text-left">
+            <h2 className="py-12 ml-10 text-3xl font-black font-poppins sm:text-center lg:text-left">
               FAQs
             </h2>
             <FaqsModified />
@@ -146,25 +146,27 @@ const FAQs = () => {
                 index.toString() === positionIndex ? (
                   <input
                     type="text"
-                    className="z-10 text-black input input-bordered w-full max-w-xs"
+                    className="z-10 w-full text-white bg-blue-300 input input-ghost"
                     placeholder={faqsClone[index].title}
                     value={inputNewTitleValue}
                     onChange={(e) => setInputNewTitleValue(e.target.value)}
                   />
                 ) : (
-                  <p className="lg:text-justify sm:text-center max-w-[75%]">
+                  <p className="lg:text-justify sm:text-center max-w-[75%] bg-grey-it">
                     {faqsClone[index].title}
                   </p>
                 )}
-
+                
+      {/*Buttons editar/eliminar sin desplegar */}
+       
                 {window.location.pathname == "/backoffice" && titleButtons && (
-                  <div className="flex relative z-10 ml-auto justify-end mt-2 lg:mt-0">
+                  <div className="relative z-10 flex justify-end mt-2 ml-auto lg:mt-0">
                     <button
                       className="mx-4 px-4 border-gray-500 h-[30px] self-center"
                       onClick={() => displayInput(index, faqsClone[index])}
                     >
                       {t("backofficePage.faqsComponent.editButton.editButtonTitle")}
-                    </button>
+                    adeu</button>
                     <img
                       src={deleteFaqIcon}
                       className="h-[30px] cursor-pointer self-center"
@@ -177,14 +179,17 @@ const FAQs = () => {
                   </div>
                 )}
               </div>
-
-              <div className="collapse-content rounded-b-md bg-white">
-                <p className="text-justify text-black leading-relaxed text-4 font-poppins pl-2 py-4 mx-8 my-6">
+              
+        {/*Edit: area texto  */} 
+        
+              <div className="bg-yellow-300 collapse-content rounded-b-md">
+                
+                <p className="py-4 pl-2 mx-8 my-6 leading-relaxed text-justify text-black text-4 font-poppins bg-primary">
                   {window.location.pathname == "/backoffice" &&
                   isContentEditing &&
                   index.toString() === positionIndex ? (
                     <textarea
-                      className="z-10 text-black textarea textarea-bordered w-full"
+                      className="z-10 w-full text-black bg-green-300 textarea textarea-bordered"
                       placeholder={faqsClone[index].description}
                       value={inputNewDescriptionValue}
                       onChange={(e) =>
@@ -195,19 +200,21 @@ const FAQs = () => {
                     faqsClone[index].description
                   )}
                 </p>
-
+                
+    {/*Buttons editar/eliminar desplegado */}
+    
                 {window.location.pathname == "/backoffice" && (
                   <div className="flex justify-end mx-8">
                     {descriptionButtons && index.toString() === positionIndex && (
                       <div>
                         <button
-                          className="mr-5 xl:px-7 btn btn-outline-primary border-gray-600 bg-transparent text-gray-600"
+                          className="mr-5 text-gray-600 bg-transparent border-gray-600 xl:px-7 btn btn-outline-primary"
                           onClick={() => cancelEditing(index, faqsClone[index])}
                         >
                           {t("backofficePage.faqsComponent.editButton.closeButton")}
-                        </button>
+                        hola</button>
                         <button
-                          className="btn xl:px-9 bg-pink-it text-white"
+                          className="text-white btn xl:px-9 bg-pink-it"
                           onClick={() => saveEditingFaq(index)}
                         >
                           {t("backofficePage.faqsComponent.editButton.saveButton")}
