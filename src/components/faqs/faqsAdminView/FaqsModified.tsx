@@ -60,15 +60,30 @@ export default function FaqsModified() {
           />
           ) : (
           <p className="z-10 py-1 lg:text-justify sm:text-center max-w-[75%]" >{t("backofficePage.faqsComponent.createNewQuestion.createNewQuestionTitle")}</p>)}
+          
         </div>
 
         
         <div className="collapse-content">
-          <textarea className="w-full pt-6 pl-1 outline-none resize-none" placeholder={t("backofficePage.faqsComponent.createNewQuestion.textareaInput")} onChange={(e) => setFaqsContent({ ...faqsContent, description: e.target.value })} value={faqsContent.description}></textarea>
+          
+          <textarea 
+          className="w-full pt-6 pl-1 outline-none resize-none" 
+          placeholder={t("backofficePage.faqsComponent.createNewQuestion.textareaInput")} 
+          onChange={(e) => setFaqsContent({ ...faqsContent, description: e.target.value })} 
+          value={faqsContent.description}>
+          </textarea>
           
           <div className="flex items-center justify-end">
-            <button className="py-2 px-8 mr-4 mb-2 text-sm text-[#7e7e7e] border border-[#7e7e7e]" onClick={handleClosed}>{t("backofficePage.faqsComponent.createNewQuestion.closeButton")}</button>
-            <button className="py-2 px-8 mr-4 mb-2 text-sm text-white bg-[#BA007C]" onClick={handleCreated}>{t("backofficePage.faqsComponent.createNewQuestion.saveButton")}</button>
+            <button 
+            className="py-3.5 px-9 p-3.5 mr-4 mb-2 text-sm text-[#7e7e7e] border border-[#7e7e7e] rounded-lg" 
+            onClick={handleClosed}>{t("backofficePage.faqsComponent.createNewQuestion.closeButton")}
+            </button>
+            
+            <button 
+            className="py-3.5 px-10 p-3.5 mr-4 mb-2 text-sm text-white border border-[#BA007C] bg-[#BA007C] rounded-lg" 
+            onClick={handleCreated}>{t("backofficePage.faqsComponent.createNewQuestion.saveButton")}
+            </button>
+            
           </div>
           
         </div>
