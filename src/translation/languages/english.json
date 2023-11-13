@@ -69,7 +69,7 @@
                 "createNewQuestionTitleOnClick": "Question",
                 "textareaInput": "Response",
                 "closeButton": "Cancel",
-                "saveButton": "Save"
+                "saveButton": "Create"
             },
             "editButton": {
                 "editButtonTitle": "Edit",
