@@ -204,19 +204,18 @@ const FAQs = () => {
     {/*Buttons editar/eliminar desplegado */}
     
                 {window.location.pathname == "/backoffice" && (
-                  <div className="flex justify-end mx-8">
+                  <div className="flex items-center justify-end">
                     {descriptionButtons && index.toString() === positionIndex && (
                       <div>
                         <button
-                          className="mr-5 text-gray-600 bg-transparent border-gray-600 xl:px-7 btn btn-outline-primary"
-                          onClick={() => cancelEditing(index, faqsClone[index])}
-                        >
+                          className="py-4 px-10 mr-4 mb-2 text-sm text-[#7e7e7e] border border-[#7e7e7e] rounded-lg"
+                          onClick={() => cancelEditing(index, faqsClone[index])}>
                           {t("backofficePage.faqsComponent.editButton.closeButton")}
-                        hola</button>
+                        </button>
+                        
                         <button
-                          className="text-white btn xl:px-9 bg-pink-it"
-                          onClick={() => saveEditingFaq(index)}
-                        >
+                          className="py-4 px-12 mr-4 mb-2 text-sm text-white border border-[#BA007C] bg-[#BA007C] rounded-lg"
+                          onClick={() => saveEditingFaq(index)}>
                           {t("backofficePage.faqsComponent.editButton.saveButton")}
                         </button>
                       </div>
@@ -225,7 +224,6 @@ const FAQs = () => {
                 )}
               </div>
             </div>
-
           </div>
         ))}
 
