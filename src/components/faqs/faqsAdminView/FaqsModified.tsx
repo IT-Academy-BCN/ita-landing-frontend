@@ -75,12 +75,12 @@ export default function FaqsModified() {
           
           <div className="flex items-center justify-end">
             <button 
-            className="py-3.5 px-9 p-3.5 mr-4 mb-2 text-sm text-[#7e7e7e] border border-[#7e7e7e] rounded-lg" 
+            className="py-4 px-10 mr-4 mb-2 text-sm text-[#7e7e7e] border border-[#7e7e7e] rounded-lg" 
             onClick={handleClosed}>{t("backofficePage.faqsComponent.createNewQuestion.closeButton")}
             </button>
             
             <button 
-            className="py-3.5 px-10 p-3.5 mr-4 mb-2 text-sm text-white border border-[#BA007C] bg-[#BA007C] rounded-lg" 
+            className="py-4 px-14 mr-4 mb-2 text-sm text-white border border-[#BA007C] bg-[#BA007C] rounded-lg" 
             onClick={handleCreated}>{t("backofficePage.faqsComponent.createNewQuestion.saveButton")}
             </button>
             
