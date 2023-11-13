@@ -146,7 +146,7 @@ const FAQs = () => {
                 index.toString() === positionIndex ? (
                   <input
                     type="text"
-                    className="z-10 w-full text-white bg-blue-300 input input-ghost"
+                    className="z-10 w-full pl-2 text-white bg-blue-300 input input-ghost"
                     placeholder={faqsClone[index].title}
                     value={inputNewTitleValue}
                     onChange={(e) => setInputNewTitleValue(e.target.value)}
@@ -184,12 +184,12 @@ const FAQs = () => {
         
               <div className="bg-yellow-300 collapse-content rounded-b-md">
                 
-                <p className="py-4 pl-2 mx-8 my-6 leading-relaxed text-justify text-black text-4 font-poppins bg-primary">
+                <p className="py-4 mx-0 my-6 leading-relaxed text-justify text-black text-4 font-poppins bg-primary">
                   {window.location.pathname == "/backoffice" &&
                   isContentEditing &&
                   index.toString() === positionIndex ? (
                     <textarea
-                      className="z-10 w-full text-black bg-green-300 textarea textarea-bordered"
+                      className="z-10 w-full px-2 text-black bg-green-300 textarea textarea-bordered"
                       placeholder={faqsClone[index].description}
                       value={inputNewDescriptionValue}
                       onChange={(e) =>
