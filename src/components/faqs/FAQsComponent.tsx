@@ -122,7 +122,7 @@ const FAQs = () => {
 
       <div className="w-full h-full mb-10 bg-white rounded-md">
         {window.location.pathname === "/" && (
-          <h2 className="mb-6 text-4xl font-bold text-center">
+          <h2 className="mb-6 text-4xl text-center">
             {t("landingPage.faqsComponent.title")}
           </h2>
         )}
@@ -135,38 +135,41 @@ const FAQs = () => {
             <FaqsModified />
           </>
         )}
-
+      {/*Titulo de la pregunta  */}
         {faqsClone.map((faq: Faq, index: number) => (
           <div className="mx-5" key={faq.id}>
-            <div className={`collapse rounded-md mb-5 shadow-[0_2px_6px_rgba(70,70,70,0.2)] border-[1px] `}>
+            <div className={`collapse rounded-lg mb-5 shadow-[0_2px_6px_rgba(70,70,70,0.2)] border-[1px] `}>
               <input type="checkbox" className="peer" id={index.toString()} />
-              <div className="collapse-title relative lg:flex rounded-b-md bg-white text-justify text-black text-4 font-poppins font-bold font-poppins peer-checked:bg-[#BA007C] peer-checked:rounded-b-[0px] peer-checked:text-[#fff]">
+              <div className="collapse-title relative lg:flex items-center rounded-b-md bg-white text-justify text-[#092C4C] text-4 font-poppins font-bold peer-checked:bg-[#BA007C] peer-checked:rounded-b-[0px] peer-checked:text-[#fff] h-[62px]">
                 {window.location.pathname == "/backoffice" &&
                 isContentEditing &&
                 index.toString() === positionIndex ? (
+                  <div className="flex items-center w-full">
                   <input
                     type="text"
-                    className="z-10 w-full pl-2 text-white bg-blue-300 input input-ghost"
+                    className="z-10 content-center pl-2 text-white input input-ghost flex-grow"
                     placeholder={faqsClone[index].title}
                     value={inputNewTitleValue}
                     onChange={(e) => setInputNewTitleValue(e.target.value)}
                   />
+                  </div>
                 ) : (
-                  <p className="lg:text-justify sm:text-center max-w-[75%] bg-grey-it">
+                  <p className="lg:text-justify sm:text-center max-w-[75%] ">
                     {faqsClone[index].title}
                   </p>
+                  
                 )}
                 
-      {/*Buttons editar/eliminar sin desplegar */}
+      {/*Buttons editar/eliminar sin desplegar   */}
        
                 {window.location.pathname == "/backoffice" && titleButtons && (
-                  <div className="relative z-10 flex justify-end mt-2 ml-auto lg:mt-0">
+                  <div className="relative z-10 flex justify-end mt-8 ml-auto lg:mt-0">
                     <button
-                      className="mx-4 px-4 border-gray-500 h-[30px] self-center"
-                      onClick={() => displayInput(index, faqsClone[index])}
-                    >
+                      className="mx-4 px-4 text-[#808080] font-semibold border bg-white border-[#D9D9D9] rounded-lg h-[30px] self-center"
+                      onClick={() => displayInput(index, faqsClone[index])}>
                       {t("backofficePage.faqsComponent.editButton.editButtonTitle")}
-                    adeu</button>
+                    </button>
+                    
                     <img
                       src={deleteFaqIcon}
                       className="h-[30px] cursor-pointer self-center"
@@ -182,14 +185,14 @@ const FAQs = () => {
               
         {/*Edit: area texto  */} 
         
-              <div className="bg-yellow-300 collapse-content rounded-b-md">
+              <div className="collapse-content rounded-b-md">
                 
-                <p className="py-4 mx-0 my-6 leading-relaxed text-justify text-black text-4 font-poppins bg-primary">
+                <p className="py-4 mx-0 my-6 leading-relaxed text-justify text-[#092C4C] text-4 font-poppins">
                   {window.location.pathname == "/backoffice" &&
                   isContentEditing &&
                   index.toString() === positionIndex ? (
                     <textarea
-                      className="z-10 w-full px-2 text-black bg-green-300 textarea textarea-bordered"
+                      className="z-10 w-full px-2 text-black textarea textarea-bordered"
                       placeholder={faqsClone[index].description}
                       value={inputNewDescriptionValue}
                       onChange={(e) =>
