@@ -44,11 +44,11 @@ export default function FaqsModified() {
 
   return (
     <div className="mx-5">
-      <div className={`collapse collapse-plus border-2 border-dashed border-[#7e7e7e] mb-6 ${isOpen ? 'collapse-open' : 'collapse-close'}`}>
+      <div className={`collapse collapse-plus  border-2 border-dashed border-[#7e7e7e] mb-6 ${isOpen ? 'collapse-open' : 'collapse-close'}`}>
         
         <input type="checkbox" className={`${isOpen ? 'z-0' : ''} hover:cursor-pointer`} onClick={() => setIsOpen(true)} /> 
         
-        <div className={`collapse-title relative text-justify font-bold text-[#7e7e7e]
+        <div className={`collapse-title relative text-justify font-bold text-[#7e7e7e] h-[62px]
           ${isOpen ? "bg-[#BA007C] z-10 py-2" : ''}`}>
           {isOpen ? (
             <input type="text" 
