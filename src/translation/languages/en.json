@@ -1,0 +1,107 @@
+{
+    "title": "Gain and validate experience as a programmer",
+    "buttonCollaborate": {
+        "buttonTitle": "How to collaborate?",
+        "title": "How to collaborate on IT Academy projects?",
+        "firstCardTitle": "Ask your mentor",
+        "firstCardDescription": "They will solve all your doubts and help you with the project setup",
+        "secondCard_title": "Join the team",
+        "secondCardDescription": "Your project mentor will help you",
+        "thirdCardTitle": "Submit your feature",
+        "thirdCardDescription": "Once you complete your tasks"
+    },
+    "descriptionHeader": "Does lack of experience make it difficult for you to find a job? Work as a team and challenge yourself with our projects.",
+    "languagesSwitcher": {
+        "catala": "Catalan",
+        "espanol": "Spanish",
+        "english": "English"
+    },
+    "loginModal": {
+        "login": "Log In",
+        "dniInput": "DNI or NIE",
+        "passwordInput": "Password",
+        "changePassword": "Remember/Change password",
+        "registerMessage": "Don't have an account? Create one!"
+    },
+    "registerModal": {
+        "title": "Registration",
+        "dniInput": "DNI or NIE",
+        "emailInput": "Email",
+        "passwordInput": "Password",
+        "passwordRepeatInput": "Repeat password",
+        "nameInput": "Name",
+        "codeInput": "Confirmation code",
+        "titleButton": "Register",
+        "messageLogin": "Do you have an account? Log in"
+    },
+    "appsComponent": {
+        "title": "IT Academy Applications Directory",
+        "statusFinished": "Finished",
+        "statusConstruction": "Under constructio",
+        "statusSoon": "Coming soon"
+    },
+    "teamComponent": {
+        "title": "Work teams",
+        "description": "The projects are carried out by teams that combine the following technologies"
+    },
+    "collaboratorsComponent": {
+        "title": "Project collaborators",
+        "buttonViewAll": "View all >"
+    },
+    "faqsComponent": {
+        "title": "FAQs"
+    },
+    "footer": {
+        "institution": "Barcelona Activa",
+        "academy": "IT Academy",
+        "buttonCollaborate": "How to collaborate?",
+        "normative": "Regulations",
+        "terms": "Terms",
+        "privacity": "Privacity",
+        "cookies": "Cookies"
+    },
+    "navbarComponent": {
+        "faqs": "FAQs",
+        "apps": "Apps",
+        "users": "Users",
+        "logoutButton": "Log out"
+    },
+    "createNewQuestion": {
+        "createNewQuestionTitle": "Create new question",
+        "textareaInput": "Answer",
+        "closeButton": "Cancel",
+        "saveButton": "Save"
+    },
+    "editButton": {
+        "editButtonTitle": "Edit",
+        "closeButton": "Cancel",
+        "saveButton": "Save"
+    },
+    "deleteButton": {
+        "deleteButtonTitle": "Are you sure?",
+        "text": "This action will delete the selected item",
+        "closeButton": "Cancel",
+        "saveButton": "Save"
+    },
+    "appsComponentBackoffice": {
+        "title": "Apps",
+        "appLink": "Go to the app",
+        "editButtonTitle": "Edit",
+        "urlProjectTitle": "Project URL",
+        "urlGitHubTitle": "GitHub repository URL",
+        "inputText": "Write here",
+        "state": "State",
+        "closeButton": "Cancel",
+        "saveButton": "Save",
+        "createButtonTitle": "Create new app",
+        "titleInput": "Write the title here"
+    },
+    "usersComponent": {
+        "title": "Invite new admin",
+        "emailInput": "Email adress",
+        "emailIncorrect": "Invalid email",
+        "emailSendIt": "Email sent",
+        "emailNotSendIt": "Email not sent",
+        "buttonTitle": "Invite"
+    }
+}
