@@ -7,7 +7,7 @@ import { AdminButtons } from "./faqs/faqsAdminView/AdminButtons";
 import BackOfficeUserSendCode from "./BackOfficeUserSendCode";
 import { useTranslation } from "react-i18next";
 
-function ViewBackOffice() {
+function ViewBackOffice(){
   const [t] = useTranslation();
   
   const [state, setState] = useState({

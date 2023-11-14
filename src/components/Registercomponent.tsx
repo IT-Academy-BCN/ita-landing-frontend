@@ -75,7 +75,7 @@ export default function RegisterComponent({
                 placeholder={t("landingPage.registerModal.nameInput")}
               />
               <input
-                name="Code"
+                name="code"
                 type="text"
                 className="mt-2 input input-bordered w-full max-w-xs"
                 placeholder={t("landingPage.registerModal.codeInput")}

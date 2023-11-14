@@ -17,6 +17,7 @@
     "i18next": "^23.6.0",
     "i18next-browser-languagedetector": "^7.1.0",
     "jquery": "^3.7.0",
+    "json2csv": "^6.0.0-alpha.2",
     "postcss": "^8.4.23",
     "react": "^18.2.0",
     "react-csv": "^2.2.2",
