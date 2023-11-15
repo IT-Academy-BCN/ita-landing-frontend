@@ -44,6 +44,13 @@ function Collaborators() {
               onClick={
                 () => handleButtonClick("AngularCard")
               }
+              onKeyDown={
+                (e) => {
+                  if (e.key === "Enter") {
+                    handleButtonClick("AngularCard");
+                  }
+                }
+              }
             >
               Wiki
             </a>
@@ -52,6 +59,13 @@ function Collaborators() {
               onClick={() => {
                 handleButtonClick("ReactCard");
               }}
+              onKeyDown={
+                (e) => {
+                  if (e.key === "Enter") {
+                    handleButtonClick("ReactCard");
+                  }
+                }
+              }
             >
               Challenges
             </a>
@@ -62,6 +76,13 @@ function Collaborators() {
               onClick={() => {
                 handleButtonClick("PHPCard");
               }}
+              onKeyDown={
+                (e) => {
+                  if (e.key === "Enter") {
+                    handleButtonClick("PHPCard");
+                  }
+                }
+              }
             >
               Landing
             </a>
@@ -72,6 +93,13 @@ function Collaborators() {
               onClick={() => {
                 handleButtonClick("NodeCard");
               }}
+              onKeyDown={
+                (e) => {
+                  if (e.key === "Enter") {
+                    handleButtonClick("NodeCard");
+                  }
+                }
+              }
             >
               Profile
             </a>
