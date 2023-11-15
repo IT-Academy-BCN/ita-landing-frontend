@@ -27,6 +27,8 @@ function Collaborators() {
       setActive(buttonName);
       dispatch(setLastClickedButton(buttonName));
     };
+
+ 
   
   return (
     <section className="mt-14 mb-10">
@@ -56,7 +58,7 @@ function Collaborators() {
                 }
               }
             >
-              Wiki
+              {loading && active === "AngularCard" ? "" : "Wiki"}
             </a>
             
             <a className={
@@ -77,7 +79,7 @@ function Collaborators() {
                 }
               }
             >
-              Challenges
+              {loading && active === "ReactCard" ? "" : "Challenges"}
             </a>
             <a
               className={
@@ -98,7 +100,7 @@ function Collaborators() {
                 }
               }
             >
-              Landing
+             {loading && active === "PHPCard" ? "" : "Landing"}
             </a>
             <a
               className={
@@ -119,7 +121,7 @@ function Collaborators() {
                 }
               }
             >
-              Profile
+              {loading && active === "NodeCard" ? "" : "Profiles"}
             </a>
           </div>
         </div>
