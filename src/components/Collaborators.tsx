@@ -39,7 +39,11 @@ function Collaborators() {
         <div className="flex justify-center">
           <div className="flex flex-wrap navbar lg:bg-base-100  drop-shadow-md lg:justify-between justify-start rounded-full md:shadow-md">
             <a className={
-                loading && active === "AngularCard" ? `${btnActive} loading loading-spinner` : btnInactive
+                loading && active === "AngularCard"
+                ? `${btnActive} loading loading-spinner`
+                : active === "AngularCard"
+                ? `${btnActive}`
+                : btnInactive
               }
               onClick={
                 () => handleButtonClick("AngularCard")
@@ -55,7 +59,13 @@ function Collaborators() {
               Wiki
             </a>
             
-            <a className={loading && active === "ReactCard" ? `${btnActive} loading loading-spinner` : btnInactive}
+            <a className={
+              loading && active === "ReactCard"
+              ? `${btnActive} loading loading-spinner`
+              : active === "ReactCard"
+              ? `${btnActive}`
+              : btnInactive
+            }
               onClick={() => {
                 handleButtonClick("ReactCard");
               }}
@@ -71,7 +81,11 @@ function Collaborators() {
             </a>
             <a
               className={
-                loading && active === "PHPCard" ? `${btnActive} loading loading-spinner` : btnInactive
+                loading && active === "PHPCard"
+                ? `${btnActive} loading loading-spinner`
+                : active === "PHPCard"
+                ? `${btnActive}`
+                : btnInactive
               }
               onClick={() => {
                 handleButtonClick("PHPCard");
@@ -88,7 +102,11 @@ function Collaborators() {
             </a>
             <a
               className={
-                loading && active === "NodeCard" ? `${btnActive} loading loading-spinner` : btnInactive
+                loading && active === "NodeCard"
+                ? `${btnActive}  loading loading-spinner`
+                : active === "NodeCard"
+                ? `${btnActive}`
+                : btnInactive
               }
               onClick={() => {
                 handleButtonClick("NodeCard");
