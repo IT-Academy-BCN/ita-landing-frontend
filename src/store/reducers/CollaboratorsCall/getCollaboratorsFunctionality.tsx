@@ -4,28 +4,32 @@ import { getCollaboratorsData } from './getCollaboratorsData'
 const initialState =  {
   
   collaborators:[],
-  maxWidth:750
+  maxWidth:750,
+  loading: false,
+  lastClickedButton: null,
   
 } 
 export const apiSlice = createSlice({
   name: 'CollaboratorsCard',
   initialState,
   reducers: {
-    
-  },extraReducers:(builder)=>{
+    setLastClickedButton: (state, action) => {
+      state.lastClickedButton = action.payload;
+      },
+    },
+  extraReducers:(builder)=>{
+      builder.addCase(getCollaboratorsData.pending,(state)=>{
+        state.loading = true;
+    }),
+      builder.addCase(getCollaboratorsData.fulfilled,(state,action)=>{
+        state.loading = false;
+        state.collaborators = action.payload;
 
-    builder.addCase(getCollaboratorsData.fulfilled,(state,action)=>{
-      state.collaborators = action.payload;
-        
-  })
+    }),
+      builder.addCase(getCollaboratorsData.rejected, (state) => {
+        state.loading = false;
+    });
   }
 })
-
-//export const {} = apiSlice.actions;
-
-
-  
-
-
-
+export const { setLastClickedButton } = apiSlice.actions;
 export default apiSlice.reducer
