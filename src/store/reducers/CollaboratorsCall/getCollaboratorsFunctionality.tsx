@@ -18,15 +18,17 @@ export const apiSlice = createSlice({
       },
     },
   extraReducers:(builder)=>{
-      builder.addCase(getCollaboratorsData.pending,(state)=>{
+    builder
+    
+    .addCase(getCollaboratorsData.pending,(state)=>{
         state.loading = true;
-    }),
-      builder.addCase(getCollaboratorsData.fulfilled,(state,action)=>{
+    })
+    .addCase(getCollaboratorsData.fulfilled,(state,action)=>{
         state.loading = false;
         state.collaborators = action.payload;
 
-    }),
-      builder.addCase(getCollaboratorsData.rejected, (state) => {
+    })
+    .addCase(getCollaboratorsData.rejected, (state) => {
         state.loading = false;
     });
   }

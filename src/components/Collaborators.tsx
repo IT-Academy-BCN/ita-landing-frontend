@@ -38,9 +38,9 @@ function Collaborators() {
       <div className="flex  justify-center  my-5  w-11/12 m-auto  ">
         <div className="flex justify-center">
           <div className="flex flex-wrap navbar lg:bg-base-100  drop-shadow-md lg:justify-between justify-start rounded-full md:shadow-md">
-            <a className={`${
+            <a className={
                 loading && active === "AngularCard" ? `${btnActive} loading loading-spinner` : btnInactive
-              }`}
+              }
               onClick={
                 () => handleButtonClick("AngularCard")
               }
@@ -48,7 +48,7 @@ function Collaborators() {
               Wiki
             </a>
             
-            <a className={`${loading && active === "ReactCard" ? `${btnActive} loading loading-spinner` : btnInactive}`}
+            <a className={loading && active === "ReactCard" ? `${btnActive} loading loading-spinner` : btnInactive}
               onClick={() => {
                 handleButtonClick("ReactCard");
               }}
@@ -56,9 +56,9 @@ function Collaborators() {
               Challenges
             </a>
             <a
-              className={`${
+              className={
                 loading && active === "PHPCard" ? `${btnActive} loading loading-spinner` : btnInactive
-              }`}
+              }
               onClick={() => {
                 handleButtonClick("PHPCard");
               }}
@@ -66,9 +66,9 @@ function Collaborators() {
               Landing
             </a>
             <a
-              className={`${
+              className={
                 loading && active === "NodeCard" ? `${btnActive} loading loading-spinner` : btnInactive
-              }`}
+              }
               onClick={() => {
                 handleButtonClick("NodeCard");
               }}
