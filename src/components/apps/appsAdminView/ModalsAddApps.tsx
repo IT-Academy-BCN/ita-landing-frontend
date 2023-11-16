@@ -14,7 +14,7 @@ export default function ModalsAddApps({
   return (
     <>
       <dialog id="my_modal_2" className="modal">
-        <form method="dialog" className="modal-box bg-white flex flex-col text-start h-4/5">
+        <form method="dialog" className="modal-box bg-white flex flex-col text-start h-5/6">
           <button className="cursor-pointer bg-transparent ml-auto border-0 focus:outline-none hover:bg-transparent">
             <img src={Cross} alt="Cross button" />
           </button>
@@ -29,7 +29,7 @@ export default function ModalsAddApps({
           />
 
           <textarea
-            placeholder="Descripción"
+            placeholder={t("backofficePage.appsComponent.createButton.textDescription")}
             onChange={(e) =>
               setNewInfoApps({ ...newInfoApps, description: e.target.value })
             }

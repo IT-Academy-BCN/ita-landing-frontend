@@ -63,7 +63,7 @@ export default function ModalApps({
             />
 
             <div className="my-2">
-              <h3 className="font-bold mb-1">{t("backofficePage.appsComponent.editButton.urlProjectTitle")}</h3>
+              <h3 className="font-bold text-base text-[#4F4F4F] mb-1">{t("backofficePage.appsComponent.editButton.urlProjectTitle")}</h3>
               <input
                 placeholder={t("backofficePage.appsComponent.editButton.inputText")}
                 value={newInfoApps.url}
@@ -76,7 +76,7 @@ export default function ModalApps({
             </div>
 
             <div className="my-4">
-              <h3 className="font-bold mb-1">{t("backofficePage.appsComponent.editButton.urlGitHubTitle")}</h3>
+              <h3 className="font-bold text-base mb-1">{t("backofficePage.appsComponent.editButton.urlGitHubTitle")}</h3>
               <input
                 placeholder={t("backofficePage.appsComponent.editButton.inputText")}
                 value={newInfoApps.github}
