@@ -136,7 +136,7 @@ export default function ModalApps({
                 }
               >
                 {t("backofficePage.appsComponent.editButton.saveButton")}
-              </button>
+              CLOSED</button>
             </div>
           </form>
         ) : (

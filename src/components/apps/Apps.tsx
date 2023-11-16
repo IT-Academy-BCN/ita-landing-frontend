@@ -72,8 +72,8 @@ const Apps = () => {
                             <img src={githubLogo} alt="github_link" />
                         </a>
                     )}
-                    <h2 className="text-start mt-3 mx-6 text-lg font-bold text-[#1C1C1E]">{app.title}HOLA</h2>
-                    <p className="flex-grow text-left ml-6 mr-6 mt-1 mb-3 line-clamp-4 leading-relaxed text-base text-[#7e7e7e] overflow-y-auto pr-4">TEXTO{app.description}</p>
+                    <h2 className="text-start mt-3 mx-6 text-lg font-bold text-[#1C1C1E]">{app.title}</h2>
+                    <p className="flex-grow text-left ml-6 mr-6 mt-1 mb-3 line-clamp-4 leading-relaxed text-base text-[#7e7e7e] overflow-y-auto pr-4">{app.description}</p>
                     <a href={app.url} className="flex mb-5 mx-5 my-1 btn text-[#1C1C1E] font-bold bg-white border-none normal-case rounded-lg hover:text-black" target="_blank">
                     {t("backofficePage.appsComponent.appLink")} <FaArrowRight />
                     </a>
