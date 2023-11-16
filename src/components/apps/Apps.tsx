@@ -56,11 +56,11 @@ const Apps = () => {
                   app.state === "COMPLETED" && "bg-completed"
                 } 
                 ${app.state === "SOON" ? "bg-soon" : "bg-building"}
-                flex flex-col rounded-xl mx-5 my-3 min-h-[320px] bg-pink-it`}
+                flex flex-col rounded-xl mx-3 my-3 min-h-[309px]`}
               >
                 {/* Botones editar/eliminar superior */}
                     {window.location.pathname === "/backoffice" && (
-                        <div className="flex place-content-end gap-2 h-[44px]">
+                        <div className="flex place-content-end gap-2 h-[42px]">
                             <button className="bg-white px-4 mt-3 text-sm text-[#808080] rounded-lg font-semibold" onClick={() => {window.my_modal_1?.showModal(); handleSendApiInfo(app.id); }}>{t("backofficePage.appsComponent.editButton.editButtonTitle")}</button>
                             <a className="flex mt-3 mr-4" onClick={() => deleteApiApps(app.id, acces_token, dispatch)}>
                                 <img src={trashIcon} alt="eliminar" className="w-10" />
@@ -72,8 +72,8 @@ const Apps = () => {
                             <img src={githubLogo} alt="github_link" />
                         </a>
                     )}
-                    <h2 className="text-start ml-6 text-lg font-bold text-[#1C1C1E]">{app.title}HOLA</h2>
-                    <p className="flex-grow text-justify ml-6 mr-6 my-4 line-clamp-4 leading-7 text-base text-[#7e7e7e] overflow-y-auto pr-4">TEXTO{app.description}</p>
+                    <h2 className="text-start mt-3 mx-6 text-lg font-bold text-[#1C1C1E]">{app.title}HOLA</h2>
+                    <p className="flex-grow text-left ml-6 mr-6 my-4 line-clamp-4 leading-relaxed text-base text-[#7e7e7e] overflow-y-auto pr-4">TEXTO{app.description}</p>
                     <a href={app.url} className="flex mb-4 mx-4 btn  bg-white border-none normal-case hover:text-black" target="_blank">
                     {t("backofficePage.appsComponent.appLink")} <FaArrowRight />
                     </a>
