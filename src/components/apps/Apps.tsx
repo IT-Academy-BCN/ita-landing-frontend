@@ -56,12 +56,13 @@ const Apps = () => {
                   app.state === "COMPLETED" && "bg-completed"
                 } 
                 ${app.state === "SOON" ? "bg-soon" : "bg-building"}
-                flex flex-col rounded-xl mx-5 my-3 min-h-[296px]`}
+                flex flex-col rounded-xl mx-5 my-3 min-h-[320px] bg-pink-it`}
               >
+                {/* Botones editar/eliminar superior */}
                     {window.location.pathname === "/backoffice" && (
-                        <div className="flex place-content-end gap-2">
-                            <button className="bg-white px-4 py-1 mt-4" onClick={() => {window.my_modal_1?.showModal(); handleSendApiInfo(app.id); }}>{t("backofficePage.appsComponent.editButton.editButtonTitle")}</button>
-                            <a className="flex mt-4 mr-4" onClick={() => deleteApiApps(app.id, acces_token, dispatch)}>
+                        <div className="flex place-content-end gap-2 h-[44px]">
+                            <button className="bg-white px-4 mt-3 text-sm text-[#808080] rounded-lg font-semibold" onClick={() => {window.my_modal_1?.showModal(); handleSendApiInfo(app.id); }}>{t("backofficePage.appsComponent.editButton.editButtonTitle")}</button>
+                            <a className="flex mt-3 mr-4" onClick={() => deleteApiApps(app.id, acces_token, dispatch)}>
                                 <img src={trashIcon} alt="eliminar" className="w-10" />
                             </a>
                         </div>
@@ -71,8 +72,8 @@ const Apps = () => {
                             <img src={githubLogo} alt="github_link" />
                         </a>
                     )}
-                    <h2 className="text-start ml-6 text-xl font-bold">{app.title}</h2>
-                    <p className="flex-grow text-left ml-4 mr-8 my-4 line-clamp-4 leading-7 text-[#7e7e7e]">{app.description}</p>
+                    <h2 className="text-start ml-6 text-xl font-bold">{app.title}HOLA</h2>
+                    <p className="flex-grow text-left ml-4 mr-8 my-4 line-clamp-4 leading-7 text-[#7e7e7e] overflow-y-auto">TEXTO{app.description}</p>
                     <a href={app.url} className="flex mb-4 mx-4 btn  bg-white border-none normal-case hover:text-black" target="_blank">
                     {t("backofficePage.appsComponent.appLink")} <FaArrowRight />
                     </a>
