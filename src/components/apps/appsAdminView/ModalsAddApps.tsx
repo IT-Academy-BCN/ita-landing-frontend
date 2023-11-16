@@ -14,7 +14,7 @@ export default function ModalsAddApps({
   return (
     <>
       <dialog id="my_modal_2" className="modal">
-        <form method="dialog" className="modal-box bg-white flex flex-col text-start min-h-5/6">
+        <form method="dialog" className="modal-box bg-white flex flex-col text-start min-h-5/6 pt-5 px-8 pb-6">
           <button className="cursor-pointer bg-transparent ml-auto border-0 focus:outline-none hover:bg-transparent">
             <img src={Cross} alt="Cross button" />
           </button>
@@ -29,39 +29,40 @@ export default function ModalsAddApps({
           />
 
           <textarea
+            rows={5}
             placeholder={t("backofficePage.appsComponent.createButton.textDescription")}
             onChange={(e) =>
               setNewInfoApps({ ...newInfoApps, description: e.target.value })
             }
-            className="overflow-y-auto pr-4 focus:outline-none mt-2 mb-4 w-full text-[#7e7e7e]"
+            className="overflow-y-auto pr-4 focus:outline-none mt-2 mb-2 w-full text-[#7e7e7e]"
           />
 
-          <div className="my-3">
-            <h3 className="font-bold text-base text-[#4F4F4F] mb-2">{t("backofficePage.appsComponent.createButton.urlProjectTitle")}</h3>
+          <div className="my-2">
+            <h3 className="font-bold text-base text-[#4F4F4F] mb-1.5">{t("backofficePage.appsComponent.createButton.urlProjectTitle")}</h3>
             <input
               placeholder={t("backofficePage.appsComponent.createButton.inputText")}
               onChange={(e) =>
                 setNewInfoApps({ ...newInfoApps, url: e.target.value })
               }
               type="text"
-              className="input border-[#BDBDBD] focus:outline-none w-full py-2"
+              className="input border-[#BDBDBD] focus:outline-none w-full py-1"
             />
           </div>
 
-          <div className="my-3">
-            <h3 className="font-bold text-base text-[#4F4F4F] mb-2">{t("backofficePage.appsComponent.createButton.urlGitHubTitle")}</h3>
+          <div className="my-2">
+            <h3 className="font-bold text-base text-[#4F4F4F] mb-1.5">{t("backofficePage.appsComponent.createButton.urlGitHubTitle")}</h3>
             <input
               placeholder={t("backofficePage.appsComponent.createButton.inputText")}
               onChange={(e) =>
                 setNewInfoApps({ ...newInfoApps, github: e.target.value })
               }
               type="text"
-              className="input border-[#BDBDBD] focus:outline-none w-full py-2"
+              className="input border-[#BDBDBD] focus:outline-none w-full py-1"
             />
           </div>
 
-          <h3 className="font-bold text-base text-[#4F4F4F] mt-2 mb-3">{t("backofficePage.appsComponent.createButton.state")}</h3>
-          <div className="flex w-fit rounded-full p-1 mb-4 border  border-[#BDBDBD]">
+          <h3 className="font-bold text-base text-[#4F4F4F] mt-2 mb-1.5">{t("backofficePage.appsComponent.createButton.state")}</h3>
+          <div className="flex w-fit rounded-full p-1 mb-4 border border-[#BDBDBD]">
             <p
               onClick={() => { setNewInfoApps({ ...newInfoApps, state: "COMPLETED" })}}
               className={`
@@ -94,9 +95,9 @@ export default function ModalsAddApps({
             </p>
           </div>
 
-          <div className="flex place-content-center mt-5 mb-2 gap-5">
-            <button className="text-base rounded-xl xl:px-7 text-[#7e7e7e] border border-[#808080] bg-white">{t("backofficePage.appsComponent.createButton.closeButton")}</button>
-            <button className="btn normal-case rounded-xl xl:px-12 text-white bg-pink-it hover:bg-pink-hover" onClick={sendInfo}>{t("backofficePage.appsComponent.createButton.saveButton")}</button>
+          <div className="flex place-content-center mt-4 mb-0 gap-5">
+            <button className="text-sm font-bold rounded-xl xl:px-5 text-[#7e7e7e] border border-[#808080] bg-white">{t("backofficePage.appsComponent.createButton.closeButton")}</button>
+            <button className="btn text-sm normal-case rounded-xl xl:px-10 text-white bg-pink-it hover:bg-pink-hover" onClick={sendInfo}>{t("backofficePage.appsComponent.createButton.saveButton")}</button>
           </div>
         </form>
       </dialog>
