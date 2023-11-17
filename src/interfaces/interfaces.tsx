@@ -20,7 +20,7 @@ export interface AppData {
   description: string;
   url: string;
   state: string;
-  id:number;
+  id: number;
   github: string;
 }
 
@@ -46,6 +46,7 @@ export interface Faq {
   id: number;
   title: string;
   description: string;
+  statusMessage: string;
 }
 
 export interface loginRegisterParams {

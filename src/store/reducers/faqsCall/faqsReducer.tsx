@@ -6,7 +6,7 @@ const initialState = {
   faqs: [],
   title: "",
   description: "",
-  statusMessage: null,
+  statusMessage: "",
 };
 export const apiSlice = createSlice({
   name: "apiPostRegister",
@@ -14,7 +14,6 @@ export const apiSlice = createSlice({
   reducers: {
     setFaqs: (state, action) => {
       state.faqs = action.payload;
-      state.statusMessage = null;
     },
     setStatusMessage: (state, action) => {
       state.statusMessage = action.payload;
