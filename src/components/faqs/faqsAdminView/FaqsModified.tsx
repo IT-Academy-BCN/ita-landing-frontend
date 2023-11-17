@@ -1,6 +1,6 @@
 import { RootState } from "../../../store/store";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { postApiFaqs } from "../../../store/reducers/faqsCall/faqsReducer";
 import { createToken } from "../../../interfaces/interfaces";
 import { useTranslation } from "react-i18next";
@@ -33,7 +33,6 @@ export default function FaqsModified() {
     setFaqsContent({ title: "", description: "" });
     setLocalStatusMessage("");
   };
-
   const handleCreated = () => {
     postApiFaqs(faqsContent, acces_token, dispatch);
     setFaqsContent({ title: "", description: "" });
@@ -46,9 +45,9 @@ export default function FaqsModified() {
   }, [statusMessage]);
 
   return (
-    <>
+    <div className="mx-5">
       <div
-        className={`collapse collapse-plus border-2 border-dashed mb-6 ${
+        className={`collapse collapse-plus border-2 border-dashed border-[#7e7e7e] mb-6 ${
           isOpen ? "collapse-open" : "collapse-close"
         }`}
       >
@@ -65,7 +64,6 @@ export default function FaqsModified() {
           {isOpen ? (
             <input
               type="text"
-              placeholder="FAQ Title"
               className="z-20 text-black input input-bordered"
               onChange={(e) =>
                 setFaqsContent({ ...faqsContent, title: e.target.value })
@@ -74,14 +72,18 @@ export default function FaqsModified() {
             />
           ) : (
             <p className="z-10 lg:text-justify sm:text-center max-w-[75%]">
-              Crear nueva pregunta
+              {t(
+                "backofficePage.faqsComponent.createNewQuestion.createNewQuestionTitle"
+              )}
             </p>
           )}
         </div>
         <div className="collapse-content">
           <textarea
             className="outline-none resize-none pt-4 w-full"
-            placeholder="Respuesta"
+            placeholder={t(
+              "backofficePage.faqsComponent.createNewQuestion.textareaInput"
+            )}
             onChange={(e) =>
               setFaqsContent({ ...faqsContent, description: e.target.value })
             }
@@ -92,23 +94,23 @@ export default function FaqsModified() {
               className="py-2 px-8 mr-4 mb-2 text-sm text-[#7e7e7e] border border-[#7e7e7e]"
               onClick={handleClosed}
             >
-              Cancelar
+              {t("backofficePage.faqsComponent.createNewQuestion.closeButton")}
             </button>
             <button
               className="py-2 px-8 mr-4 mb-2 text-sm text-white bg-[#BA007C]"
               onClick={handleCreated}
             >
-              Crear
+              {t("backofficePage.faqsComponent.createNewQuestion.saveButton")}
             </button>
           </div>
         </div>
       </div>
       {localStatusMessage === "FAQ created successfully!" ? (
-        <div className="text-green-700">{localStatusMessage}</div>
+        <div className="text-green-700 mb-5">{localStatusMessage}</div>
       ) : localStatusMessage ===
         "Failed to create new FAQ. Please try again." ? (
-        <div className="text-red-400">{localStatusMessage}</div>
+        <div className="text-red-400 mb-5">{localStatusMessage}</div>
       ) : null}
-    </>
+    </div>
   );
 }
