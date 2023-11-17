@@ -29,12 +29,12 @@ export default function FaqsModified() {
   const handleClosed = () => {
     setIsOpen(false);
     setFaqsContent({ title: "", description: "" });
+    setLocalStatusMessage("");
   };
 
   const handleCreated = () => {
     postApiFaqs(faqsContent, acces_token, dispatch);
     setFaqsContent({ title: "", description: "" });
-    console.log("after handle created", localStatusMessage);
   };
 
   useEffect(() => {
@@ -101,7 +101,12 @@ export default function FaqsModified() {
           </div>
         </div>
       </div>
-      {localStatusMessage ? <div>{localStatusMessage}</div> : null}
+      {localStatusMessage === "FAQ created successfully!" ? (
+        <div className="text-green-700">{localStatusMessage}</div>
+      ) : localStatusMessage ===
+        "Failed to create new FAQ. Please try again." ? (
+        <div className="text-red-400">{localStatusMessage}</div>
+      ) : null}
     </>
   );
 }
