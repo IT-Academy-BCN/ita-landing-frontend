@@ -62,7 +62,7 @@ const Apps = () => {
                     {window.location.pathname === "/backoffice" && (
                         <div className="flex place-content-end gap-2 h-[42px]">
                             <button className="bg-white px-4 mt-3 text-sm text-[#808080] rounded-lg font-semibold" onClick={() => {window.my_modal_1?.showModal(); handleSendApiInfo(app.id); }}>{t("backofficePage.appsComponent.editButton.editButtonTitle")}</button>
-                            <a className="flex mt-3 mr-4" onClick={() => deleteApiApps(app.id, acces_token, dispatch)}>
+                            <a className="flex mt-3 mr-4" onClick={() => deleteApiApps(app.id, acces_token, dispatch)} onKeyDown={(event) => { if (event.key === 'Enter') deleteApiApps(app.id, acces_token, dispatch); }}>
                                 <img src={trashIcon} alt="eliminar" className="w-10" />
                             </a>
                         </div>
@@ -89,3 +89,4 @@ const Apps = () => {
 }
 
 export default Apps
+
