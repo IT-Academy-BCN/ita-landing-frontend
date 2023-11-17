@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { postApiFaqs } from "../../../store/reducers/faqsCall/faqsReducer";
 import { createToken } from "../../../interfaces/interfaces";
+import { useTranslation } from "react-i18next";
 
 export default function FaqsModified() {
   const { acces_token }: createToken = useSelector(
@@ -16,6 +17,7 @@ export default function FaqsModified() {
   //constantes para el set //
   const dispatch = useDispatch();
 
+  const [t] = useTranslation();
   const [faqsContent, setFaqsContent] = useState<{
     title: string;
     description: string;

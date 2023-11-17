@@ -6,20 +6,22 @@ import reactLogo from "../assets/img/react.png";
 import nodejsLogo from "../assets/img/nodejs.png";
 import CardComponent from "./CardComponent";
 import ImgVector from "../assets/img/curved-arrow.png";
+import { useTranslation } from "react-i18next";
 
-const TeamsectionComponent = () => (
-  <div>
+const TeamSectionComponent = () => {
+  const [t] = useTranslation();
+  return (
+    <div>
     <div className="flex flex-col items-center justify-center mb-12 mb-20 ">
       <div className="grid grid-cols-5 ">
         <img style={{ gridColumn: "5" }} src={ImgVector}></img>
       </div>
 
-      <h1 className="font-poppins font-bold text-4xl leading-58  ">
-        Equipos de trabajo
+      <h1 className="font-bold text-4xl leading-58  ">
+        {t("landingPage.teamComponent.title")}
       </h1>
       <h3 className="font-poppins font-medium text-base text-gray-600 mt-5">
-        Los proyectos son realizados por equipos que combinan las siguientes
-        tecnologías
+        {t("landingPage.teamComponent.description")}
       </h3>
     </div>
 
@@ -60,6 +62,7 @@ const TeamsectionComponent = () => (
       />
     </div>
   </div>
-);
+  )
+}
 
-export default TeamsectionComponent;
+export default TeamSectionComponent

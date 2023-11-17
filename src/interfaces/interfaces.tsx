@@ -57,6 +57,11 @@ export interface loginRegisterParams {
   showPasswordReminder: boolean;
 }
 
+export interface resetPasswordParams {
+  email: string;
+  requestStatus: string;
+}
+
 export interface FormDataEvent extends React.FormEvent<HTMLFormElement> {
   target: HTMLFormElement;
 }
@@ -65,4 +70,10 @@ export interface collaborator {
   name: string;
   url: string;
   photo: string;
+}
+
+export interface sendCodeByEmailParams {
+  email: string;
+  requestStatus: string;
+  acces_token: string;
 }

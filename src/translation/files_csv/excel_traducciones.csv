@@ -1,0 +1,77 @@
+section,key,ca,es,en
+,title,Guanya i valida experiència com a programador,Gana y valida experiencia como programador,Gain and validate experience as a programmer
+buttonCollaborate,buttonTitle,Com col·laborar?,¿Cómo colaborar?,How to collaborate?
+buttonCollaborate,title,Com col·laborar en projectes IT Academy?,¿Cómo colaborar en proyectos IT Academy?,How to collaborate on IT Academy projects?
+buttonCollaborate,firstCardTitle,Pregunta al teu mentor,Pregunta a tu mentor,Ask your mentor
+buttonCollaborate,firstCardDescription,Resoldrà tots els teus dubtes i t'ajudarà amb el setup del projecte,Resolvera todas tus dudas y te ayudará con setup del proyecto,They will solve all your doubts and help you with the project setup
+buttonCollaborate,secondCard_title,"""Uneix-te a l'equi",Únete al equipo,Join the team
+buttonCollaborate,secondCardDescription,El teu mentor de projecte t'ajudarà,Tú mentor de proyecto te ayudará,Your project mentor will help you
+buttonCollaborate,thirdCardTitle,Entrega les teves funcionalitats,Entrega tu funcionalidades,Submit your feature
+buttonCollaborate,thirdCardDescription,Una vegada hagis finalizat les teves tasques,Una vez realices tu tareas,Once you complete your tasks
+,descriptionHeader,La falta d'experiència et dificulta conseguir treball? Treballa en equip i posat a prova amb els nostre projectes,¿La falta de experiencia te dificulta conseguir trabajo? Trabaja en equipo y ponte a prueba con nuestros proyectos,Does lack of experience make it difficult for you to find a job? Work as a team and challenge yourself with our projects.
+languagesSwitcher,catala,Català,Catalán,Catalan
+languagesSwitcher,espanol,Castellà,Castellano,Spanish
+languagesSwitcher,english,Anglès,Inglés,English
+loginModal,login,Iniciar sessió,Iniciar sessión,Log In
+loginModal,dniInput,DNI o NIE,DNI o NIE,DNI or NIE
+loginModal,passwordInput,Constrasenya,Contraseña,Password
+loginModal,changePassword,Recordar/Canviar contrasenya,Recordar/Cambiar contraseña,Remember/Change password
+loginModal,registerMessage,No tens ningún compte? Crea'n un!,No tienes ninguna cuenta? Crea una!,Don't have an account? Create one!
+registerModal,title,Registre,Registro,Registration
+registerModal,dniInput,DNI o NIE,DNI o NIE,DNI or NIE
+registerModal,emailInput,Email,Email,Email
+registerModal,passwordInput,Constrasenya,Constraseña,Password
+registerModal,passwordRepeatInput,Repeteix contrasenya,Repite contraseña,Repeat password
+registerModal,nameInput,Nom,Nombre,Name
+registerModal,codeInput,Codi de confirmació,Código de confirmación,Confirmation code
+registerModal,titleButton,Registrat,Registrate,Register
+registerModal,messageLogin,Tens compte? Inicia sessió,¿Tienes cuenta? Inicia sessión,Do you have an account? Log in
+appsComponent,title,Directori d'aplicacions IT Academy,Directorio de aplicaciones IT Academy,IT Academy Applications Directory
+appsComponent,statusFinished,Acabades,Finalizadas,Finished
+appsComponent,statusConstruction,En construcció,En construcción,Under constructio
+appsComponent,statusSoon,Pròximament,Próximamente,Coming soon
+teamComponent,title,Equips de treball,Equipos de trabajo,Work teams
+teamComponent,description,Els projectes son realitzats per equips que combinen les següents tecnologies,Los proyectos son realizados por equipos que combinan las siguientes tecnologías,The projects are carried out by teams that combine the following technologies
+collaboratorsComponent,title,Col·laboradors de projectes,Colaboradores de proyectos,Project collaborators
+collaboratorsComponent,buttonViewAll,Veure tots >,Ver todos >,View all >
+faqsComponent,title,Preguntes freqüents,Preguntas frecuentes,Frequently questions
+footer,institution,Barcelona Activa,Barcelona Activa,Barcelona Activa
+footer,academy,IT Academy,IT Academy,IT Academy
+footer,buttonCollaborate,Com col·laborar?,¿Cómo colaborar?,How to collaborate?
+footer,normative,Normativa,Normativa,Regulations
+footer,terms,Termes,Términos,Terms
+footer,privacity,Privacitat,Privacidad,Privacity
+footer,cookies,Galetes,Cookies,Cookies
+navbarComponent,faqs,FAQs,FAQs,FAQs
+navbarComponent,apps,Apps,Apps,Apps
+navbarComponent,users,Usuaris,Usuarios,Users
+navbarComponent,logoutButton,Sortir,Salir,Log out
+faqsComponent,title,FAQs,FAQs,FAQs
+createNewQuestion,createNewQuestionTitle,Crear nova pregunta,Crear nueva pregunta,Create new question
+createNewQuestion,textareaInput,Resposta,Respuesta,Answer
+createNewQuestion,closeButton,Cancel·lar,Cancelar,Cancel
+createNewQuestion,saveButton,Guardar,Guardar,Save
+editButton,editButtonTitle,Editar,Editar,Edit
+editButton,closeButton,Cancel·lar,Cancelar,Cancel
+editButton,saveButton,Guardar,Guardar,Save
+deleteButton,deleteButtonTitle,Estàs segur?,¿Estás seguro?,Are you sure?
+deleteButton,text,Aquesta acció eliminarà l'element seleccionat,Esta acción eliminará el elemento seleccionado,This action will delete the selected item
+deleteButton,closeButton,Cancel·lar,Cancelar,Cancel
+deleteButton,saveButton,Guardar,Guardar,Save
+appsComponentBackoffice,title,Apps,Apps,Apps
+appsComponentBackoffice,appLink,Anar a l'app,Ir a la app,Go to the app
+appsComponentBackoffice,editButtonTitle,Editar,Editar,Edit
+appsComponentBackoffice,urlProjectTitle,Url del projecte,Url del proyecto,Project URL
+appsComponentBackoffice,urlGitHubTitle,Url del repositori de GitHub,Url del repositorio de GitHub,GitHub repository URL
+appsComponentBackoffice,inputText,Escriu aquí,Escribe aquí,Write here
+appsComponentBackoffice,state,Estat,Estado,State
+appsComponentBackoffice,closeButton,Cancel·lar,Cancelar,Cancel
+appsComponentBackoffice,saveButton,Guardar,Guardar,Save
+appsComponentBackoffice,createButtonTitle,Crear nova aplicació,Crear nueva aplicación,Create new app
+appsComponentBackoffice,titleInput,Escriu aquí el títol,Escribe aquí el título,Write the title here
+usersComponent,title,Invitar nou/nova admin,Invitar nuevo/nueva admin,Invite new admin
+usersComponent,emailInput,Direcció d'email,Dirección de email,Email adress
+usersComponent,emailIncorrect,Email invàlid,Email no válido,Invalid email
+usersComponent,emailSendIt,Email enviat,Email enviado,Email sent
+usersComponent,emailNotSendIt,Email no enviat,Email no enviado,Email not sent
+usersComponent,buttonTitle,Invitar,Invitar,Invite
