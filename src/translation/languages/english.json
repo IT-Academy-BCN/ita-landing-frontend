@@ -81,9 +81,10 @@
             "title": "FAQs",
             "createNewQuestion": {
                 "createNewQuestionTitle": "Create new question",
+                "createNewQuestionTitleOnClick": "Question",
                 "textareaInput": "Response",
                 "closeButton": "Cancel",
-                "saveButton": "Save"
+                "saveButton": "Create"
             },
             "editButton": {
                 "editButtonTitle": "Edit",
