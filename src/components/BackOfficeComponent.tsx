@@ -52,7 +52,7 @@ function ViewBackOffice(){
 
         <nav className="hidden lg:block">
           <img src={itImage} alt="img-logo" className="mx-auto mt-5" />
-          <div className="grid grid-rows-3 my-40">
+          <div className="grid grid-rows-3 my-36">
             <button className={`flex justify-center items-center py-2 my-4 ml-2 ${boldFont.boldFaqs ? 'font-bold' : 'font-normal'}`} onClick={() => handleClickNav('faqs')}>
               <div className={`w-2 h-2 rounded-full mr-2 bg-[#BA007C] ${boldFont.boldFaqs ? '' : 'hidden'}`}></div>
               {t("backofficePage.navbarComponent.faqs")}
