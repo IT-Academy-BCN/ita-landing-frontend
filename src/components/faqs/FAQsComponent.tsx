@@ -147,7 +147,7 @@ const FAQs = () => {
                   <div className="flex items-center w-full">
                   <input
                     type="text"
-                    className="z-10 content-center pl-2 text-white input input-ghost flex-grow"
+                    className="z-10 content-center flex-grow pl-2 text-white input input-ghost"
                     placeholder={faqsClone[index].title}
                     value={inputNewTitleValue}
                     onChange={(e) => setInputNewTitleValue(e.target.value)}
