@@ -1,40 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet');
- 
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-.btn.btn-neutral{
+.btn.btn-neutral {
   color: #7e7e7e;
 }
- 
 
-body{
+body {
   overflow-x: hidden;
 }
 #root {
-max-width: 100%;
-margin: 0 auto;
-text-align: center;  
-font-family: 'Poppins', sans-serif;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
 
- 
-}
-.background-image-style{
-background-image: none;
-}
 @media only screen and (min-width: 768px) {
-
-.background-image-style {
-  max-width: 1376px;
-  height: 772px;
-  background-size: cover;
-  background-image: url(./img/background-Image.png);
+  .bg-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+  }
 }
 
- }
+@media only screen and (max-width: 768px) {
+  .bg-svg {
+    display: none;
+  }
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -71,18 +69,16 @@ background-image: none;
   color: #888;
 }
 
-
 /*Customize DaisyUI card style*/
 .card-title {
   @apply text-projects-title;
-
-} 
+}
 
 .card-body {
   padding: 0px;
   text-align: left;
 }
 
-.faqs-shadow{
+.faqs-shadow {
   box-shadow: 0px 5px 20px 4px lightgrey;
 }
