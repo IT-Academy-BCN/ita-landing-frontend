@@ -50,7 +50,7 @@ const BackOfficeUserSendCode = () => {
           handleResetEmail("reset-email");
           setIsLoading(false);
           setShowAlert(false);
-        }, 2000);
+        }, 1000);
       } catch (error) {
         handleResetEmail("reset-email");
         console.error(error);
@@ -63,7 +63,9 @@ const BackOfficeUserSendCode = () => {
 
   // when we focus on the input this happens
   const handleResetEmail = (resetEmail: string) => {
-    resetEmail === "reset-email" ? setEmail("") : "";
+    if (resetEmail === "reset-email") {
+      setEmail("");
+    }
     setDesactivateInputElements(false);
     setError("");
     setColorButton("bg-pink-it");
