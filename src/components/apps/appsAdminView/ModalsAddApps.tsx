@@ -14,8 +14,8 @@ export default function ModalsAddApps({
   return (
     <>
       <dialog id="my_modal_2" className="modal">
-        <form method="dialog" className="modal-box bg-white flex flex-col text-start min-h-5/6 pt-5 px-8 pb-6">
-          <button className="cursor-pointer bg-transparent ml-auto border-0 focus:outline-none hover:bg-transparent">
+        <form method="dialog" className="flex flex-col px-8 pt-5 pb-6 bg-white modal-box text-start min-h-5/6">
+          <button className="ml-auto bg-transparent border-0 cursor-pointer focus:outline-none hover:bg-transparent">
             <img src={Cross} alt="Cross button" />
           </button>
 
@@ -24,7 +24,7 @@ export default function ModalsAddApps({
             onChange={(e) =>
               setNewInfoApps({ ...newInfoApps, title: e.target.value })
             }
-            className="focus:outline-none mb-2 text-black font-poppins font-bold"
+            className="mb-2 font-bold text-black focus:outline-none font-poppins"
             type="text"
           />
 
@@ -45,7 +45,7 @@ export default function ModalsAddApps({
                 setNewInfoApps({ ...newInfoApps, url: e.target.value })
               }
               type="text"
-              className="input border-[#BDBDBD] focus:outline-none w-full py-1"
+              className="w-full py-1 input input-bordered focus:outline-none"
             />
           </div>
 
@@ -57,7 +57,7 @@ export default function ModalsAddApps({
                 setNewInfoApps({ ...newInfoApps, github: e.target.value })
               }
               type="text"
-              className="input border-[#BDBDBD] focus:outline-none w-full py-1"
+              className="w-full py-1 input input-bordered focus:outline-none"
             />
           </div>
 
@@ -95,9 +95,9 @@ export default function ModalsAddApps({
             </p>
           </div>
 
-          <div className="flex place-content-center mt-4 mb-0 gap-5">
+          <div className="flex gap-5 mt-4 mb-0 place-content-center">
             <button className="text-sm font-bold rounded-xl xl:px-5 text-[#7e7e7e] border border-[#808080] bg-white">{t("backofficePage.appsComponent.createButton.closeButton")}</button>
-            <button className="btn text-sm normal-case rounded-xl xl:px-10 text-white bg-pink-it hover:bg-pink-hover" onClick={sendInfo}>{t("backofficePage.appsComponent.createButton.saveButton")}</button>
+            <button className="text-sm text-white normal-case btn rounded-xl xl:px-10 bg-pink-it hover:bg-pink-hover" onClick={sendInfo}>{t("backofficePage.appsComponent.createButton.saveButton")}</button>
           </div>
         </form>
       </dialog>

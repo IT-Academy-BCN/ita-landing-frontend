@@ -41,8 +41,8 @@ export default function ModalApps({
     <>
       <dialog id="my_modal_1" className="modal ">
         {!loadingApps ? (
-          <form method="dialog" className="modal-box bg-white text-start flex flex-col min-h-5/6 pt-5 px-8 pb-6">
-            <button className="cursor-pointer bg-transparent ml-auto border-0 focus:outline-none hover:bg-transparent">
+          <form method="dialog" className="flex flex-col px-8 pt-5 pb-6 bg-white modal-box text-start min-h-5/6">
+            <button className="ml-auto bg-transparent border-0 cursor-pointer focus:outline-none hover:bg-transparent">
               <img src={Cross} alt="Cross button" />
             </button>
 
@@ -51,7 +51,7 @@ export default function ModalApps({
               onChange={(e) =>
                 setNewInfoApps({ ...newInfoApps, title: e.target.value })
               }
-              className="focus:outline-none mb-2 text-black font-poppins font-bold"
+              className="mb-2 font-bold text-black focus:outline-none font-poppins"
               type="text"
             />
 
@@ -65,7 +65,7 @@ export default function ModalApps({
             />
 
             <div className="my-2">
-              <h3 className="font-bold text-base text-[#4F4F4F] mb-1.5">{t("backofficePage.appsComponent.editButton.urlProjectTitle")}</h3>
+              <h3 className="font-bold text-base mb-1.5">{t("backofficePage.appsComponent.editButton.urlProjectTitle")}</h3>
               <input
                 placeholder={t("backofficePage.appsComponent.editButton.inputText")}
                 value={newInfoApps.url}
@@ -73,12 +73,12 @@ export default function ModalApps({
                   setNewInfoApps({ ...newInfoApps, url: e.target.value })
                 }
                 type="text"
-                className="input border-[#BDBDBD] focus:outline-none w-full py-1"
+                className="w-full py-1 input input-bordered focus:outline-none"
               />
             </div>
 
             <div className="my-2">
-              <h3 className="font-bold text-base text-[#4F4F4F] mb-1.5">{t("backofficePage.appsComponent.editButton.urlGitHubTitle")}</h3>
+              <h3 className="font-bold text-base mb-1.5">{t("backofficePage.appsComponent.editButton.urlGitHubTitle")}</h3>
               <input
                 placeholder={t("backofficePage.appsComponent.editButton.inputText")}
                 value={newInfoApps.github}
@@ -86,12 +86,12 @@ export default function ModalApps({
                   setNewInfoApps({ ...newInfoApps, github: e.target.value })
                 }
                 type="text"
-                className="input border-[#BDBDBD] focus:outline-none w-full py-1"
+                className="w-full py-1 input input-bordered focus:outline-none"
               />
             </div>
 
-            <h3 className="font-bold text-[#4F4F4F] mt-1 mb-1.5">{t("backofficePage.appsComponent.editButton.state")}</h3>
-            <div className="flex w-fit rounded-full p-1 mb-2 border border-[#BDBDBD]">
+            <h3 className="font-bold mt-1 mb-1.5">{t("backofficePage.appsComponent.editButton.state")}</h3>
+            <div className="flex p-1 mb-2 border rounded-full w-fit">
               <p
                 onClick={() => {
                   setNewInfoApps({ ...newInfoApps, state: "COMPLETED" });
@@ -130,9 +130,9 @@ export default function ModalApps({
               </p>
             </div>
 
-            <div className="flex place-content-center mt-4 mb-0 gap-5">
+            <div className="flex gap-5 mt-4 mb-0 place-content-center">
               <button className="text-sm font-bold rounded-xl xl:px-5 text-[#7e7e7e] border border-[#808080] bg-white">{t("backofficePage.appsComponent.editButton.closeButton")}</button>
-              <button className="btn text-sm normal-case rounded-xl xl:px-7 text-white bg-pink-it hover:bg-pink-hover"
+              <button className="text-sm text-white normal-case btn rounded-xl xl:px-7 bg-pink-it hover:bg-pink-hover"
                 onClick={() =>
                   putApiApps(newInfoApps, acces_token, dispatch, appsInfo.id)
                 }
@@ -142,7 +142,7 @@ export default function ModalApps({
             </div>
           </form>
         ) : (
-          <span className=" loading loading-spinner loading-lg "></span>
+          <span className=" loading loading-spinner loading-lg"></span>
         )}
       </dialog>
     </>
