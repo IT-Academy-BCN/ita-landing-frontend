@@ -12,20 +12,20 @@ const TeamSectionComponent = () => {
   const [t] = useTranslation();
   return (
     <div>
-    <div className="flex flex-col items-center justify-center mb-12 mb-20 ">
+    <div className="flex flex-col items-center justify-center mb-20 ">
       <div className="grid grid-cols-5 ">
         <img style={{ gridColumn: "5" }} src={ImgVector}></img>
       </div>
 
-      <h1 className="font-bold text-4xl leading-58  ">
+      <h1 className="text-4xl font-bold leading-58 ">
         {t("landingPage.teamComponent.title")}
       </h1>
-      <h3 className="font-poppins font-medium text-base text-gray-600 mt-5">
+      <h3 className="mt-5 text-base font-medium text-gray-600 font-poppins">
         {t("landingPage.teamComponent.description")}
       </h3>
     </div>
 
-    <div className="flex flex-wrap items-center justify-center container mx-auto">
+    <div className="container flex flex-wrap items-center justify-center mx-auto">
       <CardComponent
         pos={"01"}
         imgSrc1={reactLogo}
