@@ -6,16 +6,13 @@ const initialState =  {
   collaborators:[],
   maxWidth:750,
   loading: false,
-  lastClickedButton: null,
   
 } 
 export const apiSlice = createSlice({
   name: 'CollaboratorsCard',
   initialState,
   reducers: {
-    setLastClickedButton: (state, action) => {
-      state.lastClickedButton = action.payload;
-      },
+  
     },
   extraReducers:(builder)=>{
     builder
@@ -33,5 +30,4 @@ export const apiSlice = createSlice({
     });
   }
 })
-export const { setLastClickedButton } = apiSlice.actions;
 export default apiSlice.reducer

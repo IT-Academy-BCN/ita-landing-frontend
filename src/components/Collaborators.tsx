@@ -2,13 +2,11 @@ import { useState } from "react";
 import Card from "./CollaboratorsCard";
 import CollaboratorsModal from "./CollaboratorsModal";
 import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
-import { setLastClickedButton } from "../store/reducers/CollaboratorsCall/getCollaboratorsFunctionality";
 
 function Collaborators() {
-  const dispatch = useDispatch();
- const {loading, lastClickedButton} = useSelector((state:RootState)=> state.getCollaboratorsFunctionality);
+ const {loading } = useSelector((state:RootState)=> state.getCollaboratorsFunctionality);
 
   const [t] = useTranslation();
   const [active, setActive] = useState("AngularCard");
@@ -20,12 +18,10 @@ function Collaborators() {
     "px-6 lg:mb-0 mb-5 ml-2 btn btn-ghost text-sm normal-case rounded-3xl active:bg-pink-it active:text-white border-solid lg:border-transparent border-2 border-indigo-900 min-w-10  ";
 
     const handleButtonClick = (buttonName: string) => {
-      if (loading || buttonName === lastClickedButton) {
+      if (loading ) {
         return;
       }
-  
       setActive(buttonName);
-      dispatch(setLastClickedButton(buttonName));
     };
 
  
