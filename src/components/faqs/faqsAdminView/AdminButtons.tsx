@@ -32,7 +32,7 @@ export const AdminButtons = () => {
         {/* The modal in question */}
         <dialog id="my_modal_1" className="modal">
           <button
-            className="modal-box absolute top-20 right-20 w-48 py-3 font-bold shadow text-center hover:bg-backOffice-main focus:outline-none"
+            className="modal-box absolute top-20 right-20 lg:right-16 w-48 py-3 font-bold shadow text-center hover:bg-backOffice-main focus:outline-none"
             onClick={handleLogout}
           >
             Logout
