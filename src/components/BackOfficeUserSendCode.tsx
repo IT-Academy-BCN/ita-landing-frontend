@@ -85,12 +85,9 @@ const BackOfficeUserSendCode = () => {
 
   return (
     <section className="lg:px-10 h-full flex flex-col">
-      <div className="w-full hidden lg:block">
-        <AdminButtons />
-      </div>
 
-      <div className="flex flex-col place-items-center bg-white rounded-xl h-full mb-10">
-        <h1 className="font-black py-12 text-3xl mt-28">
+      <div className="flex flex-col place-items-center bg-white rounded-xl min-h-[90vh] mb-10">
+        <h1 className="font-black py-12 text-3xl mt-20">
           {t("backofficePage.usersComponent.title")}
         </h1>
         <input
