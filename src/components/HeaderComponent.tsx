@@ -4,7 +4,7 @@ import castellano from "../assets/img/castellano.png";
 import catala from "../assets/img/catala.png";
 import english from "../assets/img/english.png";
 import selector from "../assets/img/sel_right.png";
-import menu from "../assets/img/menu.png";
+import menu from "../assets/img/menu.svg";
 import LoginComponent from "./LoginComponent";
 import RegisterComponent from "./Registercomponent";
 import PasswordReminderComponent from "./PasswordReminderComponent";

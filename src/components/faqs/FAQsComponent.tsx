@@ -5,7 +5,6 @@ import FaqsModified from "./faqsAdminView/FaqsModified";
 import { apiCall, putApiFaqs } from "../../store/reducers/faqsCall/faqsReducer";
 import deleteFaqIcon from "../../assets/img/icon-delete-faq-backoffice.png";
 import DeleteFaqModal from "./Modals/DeleteFaqModal";
-import { AdminButtons } from "./faqsAdminView/AdminButtons";
 import { useTranslation } from "react-i18next";
 
 const FAQs = () => {
@@ -113,12 +112,6 @@ const FAQs = () => {
 
   return (
     <section className="flex flex-col h-full lg:px-10">
-
-      {window.location.pathname === "/backoffice" && (
-        <div className="hidden w-full lg:block">
-          <AdminButtons />
-        </div>
-      )}
 
       <div className="w-full h-full mb-10 bg-white rounded-md">
         {window.location.pathname === "/" && (

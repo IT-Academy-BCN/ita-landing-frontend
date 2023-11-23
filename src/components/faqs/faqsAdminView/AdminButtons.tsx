@@ -13,12 +13,12 @@ export const AdminButtons = () => {
   return (
     <>
       <div className="flex w-full justify-end items-center lg:bg-backOffice-main py-2 relative">
-        <a className="flex items-center justify-center mr-1 w-12 h-10 rounded-lg bg-white">
+        <a className="flex items-center justify-center mr-1 w-12 h-10 rounded-lg bg-backOffice-main lg:bg-white">
           <img src={plusIcon} alt="plusIcon" className="w-5" />
         </a>
 
         <button
-          className="flex items-center justify-center ml-1 w-12 h-10 rounded-lg bg-white cursor-pointer"
+          className="flex items-center justify-center ml-1 w-12 h-10 rounded-lg bg-backOffice-main lg:bg-white  cursor-pointer"
           onClick={() => {
             if (document) {
               (
@@ -32,7 +32,7 @@ export const AdminButtons = () => {
         {/* The modal in question */}
         <dialog id="my_modal_1" className="modal">
           <button
-            className="modal-box absolute top-20 right-20 w-40 py-4 font-bold shadow text-center hover:bg-backOffice-main"
+            className="modal-box absolute top-20 right-20 w-48 py-3 font-bold shadow text-center hover:bg-backOffice-main focus:outline-none"
             onClick={handleLogout}
           >
             Logout

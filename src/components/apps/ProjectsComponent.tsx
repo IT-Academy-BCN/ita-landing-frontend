@@ -2,7 +2,6 @@ import Apps from "./Apps";
 import CreateApp from "./appsAdminView/CreateApp";
 import TasksProcess from "./appsHomepageView/TasksProcess";
 import TitleApps from "./appsHomepageView/TitleApps";
-import { AdminButtons } from "../faqs/faqsAdminView/AdminButtons";
 import { useLocation } from 'react-router-dom';
 
 export const ProjectsComponent = () => {
@@ -20,11 +19,6 @@ export const ProjectsComponent = () => {
         {window.location.pathname !== "/backoffice" && (<> <TitleApps /> <TasksProcess /> </>)}
         
         {/*Cards*/}
-          {window.location.pathname == "/backoffice" && (
-            <div className="lg:col-span-3 w-full hidden lg:block">
-              <AdminButtons />
-            </div>
-          )}
           <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 w-full bg-white rounded-md mb-10">
             {window.location.pathname == "/backoffice" && (
               <>
