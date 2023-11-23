@@ -4,28 +4,30 @@ import { getCollaboratorsData } from './getCollaboratorsData'
 const initialState =  {
   
   collaborators:[],
-  maxWidth:750
+  maxWidth:750,
+  loading: false,
   
 } 
 export const apiSlice = createSlice({
   name: 'CollaboratorsCard',
   initialState,
   reducers: {
+  
+    },
+  extraReducers:(builder)=>{
+    builder
     
-  },extraReducers:(builder)=>{
+    .addCase(getCollaboratorsData.pending,(state)=>{
+        state.loading = true;
+    })
+    .addCase(getCollaboratorsData.fulfilled,(state,action)=>{
+        state.loading = false;
+        state.collaborators = action.payload;
 
-    builder.addCase(getCollaboratorsData.fulfilled,(state,action)=>{
-      state.collaborators = action.payload;
-        
-  })
+    })
+    .addCase(getCollaboratorsData.rejected, (state) => {
+        state.loading = false;
+    });
   }
 })
-
-//export const {} = apiSlice.actions;
-
-
-  
-
-
-
 export default apiSlice.reducer
