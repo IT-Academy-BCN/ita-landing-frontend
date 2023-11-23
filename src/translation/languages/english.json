@@ -118,6 +118,7 @@
             "createButton": {
                 "createButtonTitle": "Create new app",
                 "titleInput": "Write the title here",
+                "textDescription": "Description",
                 "urlProjectTitle": "Project url",
                 "urlGitHubTitle": "GitHub repository url",
                 "inputText": "Write here",
