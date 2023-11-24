@@ -47,7 +47,7 @@ export const handleReset = (
   e.preventDefault();
   try {
     axios
-      .post(apiUrl + `forget-password/${resetToken}`, {
+      .post(apiUrl + `reset-password/${resetToken}`, {
         password: newPassword,
         password_confirmation: newConfirmationPassword,
       })
