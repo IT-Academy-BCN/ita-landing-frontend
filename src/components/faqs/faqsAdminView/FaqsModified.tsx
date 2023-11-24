@@ -27,9 +27,9 @@ export default function FaqsModified() {
   });
 
   //initial placeholder
-  const [placeholderText, setPlaceholderText] = useState(
-    t("backofficePage.faqsComponent.createNewQuestion.createNewQuestionTitle")
-  );
+  // const [placeholderText, setPlaceholderText] = useState(
+  //   t("backofficePage.faqsComponent.createNewQuestion.createNewQuestionTitle")
+  // );
 
   const [isOpen, setIsOpen] = useState(false);
   const [localStatusMessage, setLocalStatusMessage] = useState("");
