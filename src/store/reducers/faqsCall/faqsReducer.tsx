@@ -36,7 +36,7 @@ export const apiCall = async (dispatch: Dispatch) => {
 //Post //
 export const postApiFaqs = async (
   faqContent: faqContent,
-  acces_token: string,
+  access_token: string,
   dispatch: Dispatch
 ) => {
   try {
@@ -46,7 +46,7 @@ export const postApiFaqs = async (
     };
     await axios.post(apiUrl + "faqs", newFaq, {
       headers: {
-        Authorization: `Bearer ${acces_token}`,
+        Authorization: `Bearer ${access_token}`,
       },
     });
     await apiCall(dispatch);
@@ -58,14 +58,14 @@ export const postApiFaqs = async (
 
 export const deleteApiFaqs = async (
   faqId: number,
-  acces_token: string,
+  access_token: string,
   dispatch: Dispatch
 ) => {
   try {
     const url = apiUrl + `faqs/${faqId}`;
     await axios.delete(url, {
       headers: {
-        Authorization: `Bearer ${acces_token}`,
+        Authorization: `Bearer ${access_token}`,
       },
     });
 
