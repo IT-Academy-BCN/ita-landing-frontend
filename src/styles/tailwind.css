@@ -11888,8 +11888,21 @@
     overflow-x: auto;
   }
   
-  .overflow-y-auto {
+  .overflow-y-auto::-webkit-scrollbar {
     overflow-y: auto;
+    width: 4px;
+  }
+
+  .overflow-y-auto::-webkit-scrollbar-track {
+    overflow-y: auto;
+    background: #a1a1aa;
+    
+    
+  }
+
+  .overflow-y-auto::-webkit-scrollbar-thumb {
+    overflow-y: auto;
+    background: #71717a;
   }
   
   .overflow-x-hidden {
@@ -11906,6 +11919,8 @@
   
   .overflow-y-visible {
     overflow-y: visible;
+   
+    
   }
   
   .overflow-x-scroll {
