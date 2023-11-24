@@ -81,9 +81,10 @@
             "title": "FAQs",
             "createNewQuestion": {
                 "createNewQuestionTitle": "Crear nova pregunta",
+                "createNewQuestionTitleOnClick": "Pregunta",
                 "textareaInput": "Resposta",
                 "closeButton": "Cancel·lar",
-                "saveButton": "Guardar"
+                "saveButton": "Crear"
             },
             "editButton": {
                 "editButtonTitle": "Editar",
@@ -102,8 +103,8 @@
             "appLink": "Anar a l'app",
             "editButton": {
                 "editButtonTitle": "Editar",
-                "urlProjectTitle": "Url del projecte",
-                "urlGitHubTitle": "Url del repositori de GitHub",
+                "urlProjectTitle": "URL del projecte",
+                "urlGitHubTitle": "URL del repositori de GitHub",
                 "inputText": "Escriu aquí",
                 "state": "Estat",
                 "status": {
@@ -116,9 +117,10 @@
             },
             "createButton": {
                 "createButtonTitle": "Crear nova aplicació",
-                "titleInput": "Escriu aquí el título",
-                "urlProjectTitle": "Url del projecte",
-                "urlGitHubTitle": "Url del repositori de GitHub",
+                "titleInput": "Escriu aquí el títol",
+                "textDescription": "Descripció",
+                "urlProjectTitle": "URL del projecte",
+                "urlGitHubTitle": "URL del repositori de GitHub",
                 "inputText": "Escriu aquí",
                 "state": "Estat",
                 "status": {

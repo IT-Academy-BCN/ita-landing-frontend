@@ -25,6 +25,12 @@ export default function FaqsModified() {
     title: "",
     description: "",
   });
+
+  //initial placeholder
+  const [placeholderText, setPlaceholderText] = useState(
+    t("backofficePage.faqsComponent.createNewQuestion.createNewQuestionTitle")
+  );
+
   const [isOpen, setIsOpen] = useState(false);
   const [localStatusMessage, setLocalStatusMessage] = useState("");
 
@@ -78,6 +84,7 @@ export default function FaqsModified() {
             </p>
           )}
         </div>
+
         <div className="collapse-content">
           <textarea
             className="outline-none resize-none pt-4 w-full"

@@ -1,9 +1,7 @@
 import ViewBackOffice from "../components/BackOfficeComponent";
 function BackOffice() {
   return (
-    <>
       <ViewBackOffice /> 
-    </>
   );
 }
 
