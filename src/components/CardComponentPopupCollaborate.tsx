@@ -28,7 +28,7 @@ const CardComponentPopupCollaborate: React.FC<CardComponentPopupCollaborateProps
       </svg>
       <div className="absolute inset-0 flex flex-col w-full h-full justify-between p-3">
         <div className="flex items-center h-1/6 pl-1.5">
-          <p className="font-medium text-base text-sm text-gray-600 text-left">
+          <p className="font-medium text-sm text-gray-600 text-left">
             {pos}
           </p>
         </div>

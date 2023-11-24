@@ -56,24 +56,25 @@ const Apps = () => {
                   app.state === "COMPLETED" && "bg-completed"
                 } 
                 ${app.state === "SOON" ? "bg-soon" : "bg-building"}
-                flex flex-col rounded-xl mx-5 my-3 min-h-[296px]`}
+                flex flex-col rounded-xl mx-3 my-3 min-h-[309px]`}
               >
+                {/* Botones editar/eliminar superior */}
                     {window.location.pathname === "/backoffice" && (
-                        <div className="flex place-content-end gap-2">
-                            <button className="bg-white px-4 py-1 mt-4" onClick={() => {window.my_modal_1?.showModal(); handleSendApiInfo(app.id); }}>{t("backofficePage.appsComponent.editButton.editButtonTitle")}</button>
-                            <a className="flex mt-4 mr-4" onClick={() => deleteApiApps(app.id, acces_token, dispatch)}>
+                        <div className="flex gap-2 place-content-end h-11">
+                            <button className="px-4 mt-3 text-sm font-semibold bg-white rounded-lg base-content" onClick={() => {window.my_modal_1?.showModal(); handleSendApiInfo(app.id); }}>{t("backofficePage.appsComponent.editButton.editButtonTitle")}</button>
+                            <a className="flex mt-3 mr-4" onClick={() => deleteApiApps(app.id, acces_token, dispatch)} onKeyDown={(event) => { if (event.key === 'Enter') deleteApiApps(app.id, acces_token, dispatch); }}>
                                 <img src={trashIcon} alt="eliminar" className="w-10" />
                             </a>
                         </div>
                     )}
                     {window.location.pathname === "/" && (
-                        <a href={app.github} className="flex place-content-end px-4 py-1 mt-4" target="_blank">
+                        <a href={app.github} className="flex px-4 py-1 mt-4 place-content-end" target="_blank">
                             <img src={githubLogo} alt="github_link" />
                         </a>
                     )}
-                    <h2 className="text-start ml-6 text-xl font-bold">{app.title}</h2>
-                    <p className="flex-grow text-left ml-4 mr-8 my-4 line-clamp-4 leading-7 text-[#7e7e7e]">{app.description}</p>
-                    <a href={app.url} className="flex mb-4 mx-4 btn  bg-white border-none normal-case hover:text-black" target="_blank">
+                    <h2 className="text-start mt-3 mx-6 text-lg font-bold text-[#1C1C1E]">{app.title}</h2>
+                    <p className="flex-grow text-left ml-6 mr-6 mt-1 mb-3 line-clamp-4 leading-relaxed text-base text-[#7e7e7e] overflow-y-auto pr-4">{app.description}</p>
+                    <a href={app.url} className="flex mb-5 mx-5 my-1 btn text-[#1C1C1E] font-bold bg-white border-none normal-case rounded-lg hover:text-black" target="_blank">
                     {t("backofficePage.appsComponent.appLink")} <FaArrowRight />
                     </a>
               </div>
@@ -88,3 +89,4 @@ const Apps = () => {
 }
 
 export default Apps
+
