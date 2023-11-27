@@ -47,30 +47,40 @@ function ViewBackOffice(){
   }, []);
 
   return (
-    <>
       <main className="grid w-screen h-full min-h-screen grid-cols-6 lg:bg-backOffice-main">
 
         <nav className="hidden lg:block">
-          <img src={itImage} alt="img-logo" className="mx-auto mt-5" />
-          <div className="grid grid-rows-3 my-10">
-            <button className={`flex justify-center items-center py-2 my-4 ml-2 ${boldFont.boldFaqs ? 'font-bold' : 'font-normal'}`} onClick={() => handleClickNav('faqs')}>
-              <div className={`w-2 h-2 rounded-full mr-2 bg-[#BA007C] ${boldFont.boldFaqs ? '' : 'hidden'}`}></div>
-              {t("backofficePage.navbarComponent.faqs")}
+          <img src={itImage} alt="img-logo" className="ml-20 mt-5" />
+          <div className="grid grid-rows-3 my-36">
+              <button className={`flex justify-start items-center py-2 my-4 ml-20  
+              ${boldFont.boldFaqs ? 'font-bold hover:divide-y-8' : 'font-normal'} focus:outline-none`}
+              onClick={() => handleClickNav('faqs')}>
+                <div className={`w-2.5 h-2.5 rounded-full mr-2 bg-[#BA007C] ${boldFont.boldFaqs ? '' : 'hidden'}`}></div>
+                {t("backofficePage.navbarComponent.faqs")}
             </button>
 
-            <button className={`flex justify-center items-center py-2 my-4 ml-2 ${boldFont.boldProjectsComponent ? 'font-bold' : 'font-normal'}`} onClick={() => handleClickNav('apps')}>
-              <div className={`w-2 h-2 rounded-full mr-2 bg-[#BA007C] ${boldFont.boldProjectsComponent ? '' : 'hidden'}`}></div>
-              {t("backofficePage.navbarComponent.apps")}
+            <button className={`flex justify-start items-center py-2 my-4 ml-20 
+              ${boldFont.boldProjectsComponent ? 'font-bold' : 'font-normal'} focus:outline-none`} 
+              onClick={() => handleClickNav('apps')}>
+                <div className={`w-2.5 h-2.5 rounded-full mr-2 bg-[#BA007C] 
+                ${boldFont.boldProjectsComponent ? '' : 'hidden'}`}>
+                </div>
+                {t("backofficePage.navbarComponent.apps")}
             </button>
 
-            <button className={`flex justify-center items-center py-2 my-4 ml-2 ${boldFont.boldUsersComponent ? 'font-bold' : 'font-normal'}`} onClick={() => handleClickNav('users')}>
-              <div className={`w-2 h-2 rounded-full mr-2 bg-[#BA007C] ${boldFont.boldUsersComponent ? '' : 'hidden'}`}></div>
-              {t("backofficePage.navbarComponent.users")}
+            <button className={`flex justify-start items-center py-2 my-4 ml-20  
+              ${boldFont.boldUsersComponent ? 'font-bold' : 'font-normal'} focus:outline-none`} 
+              onClick={() => handleClickNav('users')}>
+                <div className={`w-2.5 h-2.5 rounded-full mr-2 bg-[#BA007C] 
+                ${boldFont.boldUsersComponent ? '' : 'hidden'}`}>
+                </div>
+                {t("backofficePage.navbarComponent.users")}
             </button>
           </div>
         </nav>
 
-        <div className="col-span-6 m-5 lg:col-span-5">
+        <div className="col-span-6 m-1 lg:col-span-5">
+
           {/* Mobile */}
             <div className="flex items-center justify-end my-1 mr-2 lg:mr-10 cursor-pointer">
               {/*  */}
@@ -100,22 +110,21 @@ function ViewBackOffice(){
           )}
           {!isDropdownOpen && (
             <>
-              <div className={`${state.faqs ? 'component min-h-screen' : 'component hidden'}`}>
+              <div className={`${state.faqs ? 'component h-auto' : 'component hidden'}`}>
                 <FAQs />
               </div>
 
-              <div className={`${state.projectsComponent ? 'component min-h-screen' : 'component hidden'}`}>
+              <div className={`${state.projectsComponent ? 'component h-auto' : 'component hidden'}`}>
                 <ProjectsComponent />
               </div>
 
-              <div className={`${state.usersComponent ? 'component min-h-screen' : 'component hidden'}`}>
+              <div className={`${state.usersComponent ? 'component h-auto' : 'component hidden'}`}>
                 <BackOfficeUserSendCode />
               </div>
             </>
           )}
         </div>
       </main>
-    </>
   )
 }
 

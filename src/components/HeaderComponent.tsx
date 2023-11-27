@@ -1,8 +1,5 @@
 import { useState } from "react";
 import logo from "../assets/img/ITA_header_logo.png";
-import castellano from "../assets/img/castellano.png";
-import catala from "../assets/img/catala.png";
-import english from "../assets/img/english.png";
 import selector from "../assets/img/sel_right.png";
 import menu from "../assets/img/menu.svg";
 import LoginComponent from "./LoginComponent";
@@ -17,18 +14,18 @@ const Header = () => {
     useState<boolean>(false);
   const [isDropdownCuenta, setisDropdownCuenta] = useState<boolean>(false);
   const [isPasswordReminder, setIsPasswordReminder] = useState<boolean>(false);
-  const [languageSelected, setLanguageSelected] = useState('catala');
+  const [languageSelected, setLanguageSelected] = useState("catala");
 
-  const handleChangeLanguageOfTheWebsite = (lang:string):void => {
-    setLanguageSelected(lang)
-    i18n.changeLanguage(lang)
-  }
+  const handleChangeLanguageOfTheWebsite = (lang: string): void => {
+    setLanguageSelected(lang);
+    i18n.changeLanguage(lang);
+  };
 
   const toggleDropdown = (): void => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  console.log(i18n.language)
+  console.log(i18n.language);
 
   return (
     <header className="w-full z-10 absolute flex  justify-between  ">
@@ -42,12 +39,14 @@ const Header = () => {
       <div className=" flex  ">
         {/* Botón Desplegable Idiomas (solo visible en pantallas grandes) */}
         <div className="hidden lg:block relative mr-5 cursor-pointer">
-          <div
+          <button
             className="relative btn btn-outline btn-neutral h-full hover:bg-transparent border-gray-400 "
             onClick={toggleDropdown}
           >
             <div className="flex  items-center justify-between text-sm text-neutral font-bold text-gray-700 capitalize ">
-              <span>{t(`landingPage.languagesSwitcher.${languageSelected}`)}</span>
+              <span>
+                {t(`landingPage.languagesSwitcher.${languageSelected}`)}
+              </span>
               <div>
                 <svg
                   viewBox="0 0 20 20"
@@ -65,62 +64,64 @@ const Header = () => {
 
             {/* Tabla Idiomas (links) (solo visible en pantallas grandes) */}
             <ul
-              className={`absolute   right-0 top-full mt-4 w-60 rounded-xl bg-white border-2  ${
+              className={`absolute right-0 top-full mt-4 w-52 rounded-xl bg-white border-2  ${
                 isDropdownOpen ? "" : "hidden"
               }`}
             >
-              <li className="flex items-center px-4 py-2 hover:bg-gray-100 hover:rounded-xl flex-row" onClick={() => handleChangeLanguageOfTheWebsite('catala')}>
-                <div className="text-left flex-grow">
-                  <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
-                    {t('landingPage.languagesSwitcher.catala')}
+              <li>
+                <button
+                  className="w-full py-4 flex items-center px-4 hover:bg-gray-100 hover:rounded-xl flex-row"
+                  onClick={() => handleChangeLanguageOfTheWebsite("catala")}
+                >
+                  <div className="text-left flex-grow">
+                    <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
+                      {t("landingPage.languagesSwitcher.catala")}
+                    </div>
                   </div>
-                </div>
-                <img
-                  src={catala}
-                  alt="bandera Cat"
-                  className="h-53 w-53 scale-90 ml-4 flex-none"
-                />
+                </button>
               </li>
-              <li className="flex items-center px-4 py-2 hover:bg-gray-200 border-t border-gray-400 flex-row" onClick={() => handleChangeLanguageOfTheWebsite('espanol')}>
-                <div className="text-left flex-grow">
-                  <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
-                   {t('landingPage.languagesSwitcher.espanol')}
+              <li>
+                <button
+                  className="w-full py-4 flex items-center px-4 hover:bg-gray-200 border-t border-gray-400 flex-row"
+                  onClick={() => handleChangeLanguageOfTheWebsite("espanol")}
+                >
+                  <div className="text-left flex-grow">
+                    <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
+                      {t("landingPage.languagesSwitcher.espanol")}
+                    </div>
                   </div>
-                </div>
-                <img
-                  src={castellano}
-                  alt="bandera Esp"
-                  className="h-53 w-53 scale-90 ml-4 flex-none"
-                />
+                </button>
               </li>
-              <li className=" hover:rounded-b-xl flex items-center px-4 py-2 hover:bg-gray-200 border-t-2 border-gray-400 flex-row" onClick={() => handleChangeLanguageOfTheWebsite('english')}>
-                <div className="text-left flex-grow">
-                  <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
-                    {t('landingPage.languagesSwitcher.english')}
+              <li>
+                <button
+                  className="w-full py-4 hover:rounded-b-xl flex items-center px-4 hover:bg-gray-200 border-t border-gray-400 flex-row"
+                  onClick={() => handleChangeLanguageOfTheWebsite("english")}
+                >
+                  <div className="text-left flex-grow">
+                    <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
+                      {t("landingPage.languagesSwitcher.english")}
+                    </div>
                   </div>
-                </div>
-                <img
-                  src={english}
-                  alt="bandera Eng"
-                  className="h-53 w-53 scale-90 ml-4 flex-none"
-                />
+                </button>
               </li>
             </ul>
-          </div>
+          </button>
         </div>
 
         {/* Botón Entrar (solo visible en pantallas grandes) */}
         <div className="hidden lg:block   ">
           <button
             onClick={() => {
-              setIsDropdownOpen(false), setIsDropdownEnterButton(true);
+              setIsDropdownOpen(false); setIsDropdownEnterButton(true);
             }}
             className="h-full flex btn btn-outline hover:bg-transparent hover:text-black"
           >
             <div>
               <img src={selector} className="h-5 w-5 mr-2" />
             </div>
-            <span className="  font-bold capitalize  text-sm">{t('landingPage.loginModal.login')}</span>
+            <span className="  font-bold capitalize  text-sm">
+              {t("landingPage.loginModal.login")}
+            </span>
           </button>
         </div>
 
@@ -176,11 +177,6 @@ const Header = () => {
                   </div>
                 </li>
                 <li className="flex items-center px-8 py-4 ml-4    cursor-pointer    lg:hover:bg-gray-200 flex-row">
-                  <img
-                    src={catala}
-                    alt="bandera Cat"
-                    className="h-45 w-45 scale-90 flex-none"
-                  />
                   <div className="text-left flex-grow ml-2 text-gray-600 text-2xl text-[#7E7E7E]">
                     <h3 className=" hover:border-b-4 hover:border-blue-800">
                       Català
@@ -188,11 +184,6 @@ const Header = () => {
                   </div>
                 </li>
                 <li className="flex items-center px-8 py-2 ml-4 lg:hover:bg-gray-200 flex-row cursor-pointer">
-                  <img
-                    src={castellano}
-                    alt="bandera Esp"
-                    className="h-45 w-45 scale-90 flex-none"
-                  />
                   <div className="text-left flex-grow ml-2 text-gray-600 text-2xl text-[#7E7E7E]">
                     <h3 className=" hover:border-b-4 hover:border-blue-800">
                       Castellano
@@ -200,11 +191,6 @@ const Header = () => {
                   </div>
                 </li>
                 <li className="flex items-center px-8 py-2 ml-4 lg:hover:bg-gray-200 flex-row cursor-pointer">
-                  <img
-                    src={english}
-                    alt="bandera Eng"
-                    className="h-45 w-45 scale-90 flex-none"
-                  />
                   <div className="text-left flex-grow ml-2 text-gray-600 text-2xl text-[#7E7E7E]">
                     <h3 className=" hover:border-b-4 hover:border-blue-800">
                       English

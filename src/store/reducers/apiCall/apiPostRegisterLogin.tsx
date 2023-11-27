@@ -15,6 +15,8 @@ const initialState: loginRegisterParams = {
   showPasswordReminder: false,
 };
 
+const apiUrl = import.meta.env.VITE_REACT_APP_API_BASE_URL;
+
 export const apiSlice = createSlice({
   name: "apiPostRegister",
   initialState,
@@ -79,7 +81,7 @@ export const handleSubmit = async (
   //RESGISTER
   if (number === 1) {
     axios
-      .post("http://87.106.229.119/api/register", formData)
+      .post(apiUrl + "register", formData)
       .then((resp) => {
         console.log(resp);
         dispatch(
@@ -94,7 +96,7 @@ export const handleSubmit = async (
     //LOGIN
   } else if (number === 2) {
     axios
-      .post("http://87.106.229.119/api/login", formData)
+      .post(apiUrl + "login", formData)
       .then((resp) => {
         dispatch(setToken(resp.data.result.access_token));
         dispatch(setIsLogged(true));

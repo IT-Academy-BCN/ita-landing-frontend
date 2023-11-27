@@ -14,7 +14,7 @@ const CardComponentPopupCollaborate: React.FC<CardComponentPopupCollaborateProps
   description,
 }) => {
   return (
-    <div className="relative sm:w-1/2 lg:w-1/4 p-3">
+    <div className="relative p-3 sm:w-1/2 lg:w-1/4">
       <svg
         className="w-full h-full"
         viewBox="0 0 268 329"
@@ -26,18 +26,18 @@ const CardComponentPopupCollaborate: React.FC<CardComponentPopupCollaborateProps
           fill="#F0F0F0"
         />
       </svg>
-      <div className="absolute inset-0 flex flex-col w-full h-full justify-between p-3">
+      <div className="absolute inset-0 flex flex-col justify-between w-full h-full p-3">
         <div className="flex items-center h-1/6 pl-1.5">
-          <p className="font-medium text-sm text-gray-600 text-left">
+          <p className="text-base font-medium text-left text-gray-600">
             {pos}
           </p>
         </div>
         <div className="flex items-center justify-center p-2 h-4/6">
-          <img className="min-h-32 max-h-36 mx-auto mt-2" src={imgSrc1} alt="Logo" />
+          <img className="mx-auto mt-2 min-h-32 max-h-36" src={imgSrc1} alt="Logo" />
         </div>
         <div className="overflow-hidden">
-          <p className="text-center font-semibold text-2xl text-black ">{title}</p>
-          <p className="font-medium text-sm text-black mb-20">{description}</p>
+          <p className="text-2xl font-semibold text-center text-black ">{title}</p>
+          <p className="mb-20 text-sm font-medium text-black">{description}</p>
         </div>
       </div>
     </div>

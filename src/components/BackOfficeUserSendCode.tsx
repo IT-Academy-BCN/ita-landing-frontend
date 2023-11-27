@@ -1,12 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-// import resetIcon from "../assets/img/reset.svg";
 import checkIcon from "../assets/img/confirmationIcon.svg";
 import errorIcon from "../assets/img/error.svg";
 import { handleSubmit } from "../store/reducers/apiCall/apiSendCodeByEmail";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { createToken } from "../interfaces/interfaces";
-import { AdminButtons } from "./faqs/faqsAdminView/AdminButtons";
 import { useTranslation } from "react-i18next";
 
 const BackOfficeUserSendCode = () => {
@@ -84,10 +82,10 @@ const BackOfficeUserSendCode = () => {
   }, [showAlert]);
 
   return (
-    <section className="lg:px-10 h-full flex flex-col">
+    <section className="lg:px-10 h-auto flex flex-col">
 
-      <div className="flex flex-col place-items-center bg-white rounded-xl min-h-[90vh] mb-10">
-        <h1 className="font-black py-12 text-3xl mt-20">
+      <div className="flex flex-col place-items-center bg-white rounded-xl min-h-[85vh] mb-10">
+        <h1 className="font-black py-12 text-3xl mt-28">
           {t("backofficePage.usersComponent.title")}
         </h1>
         <input
@@ -130,7 +128,6 @@ const BackOfficeUserSendCode = () => {
             )}
           </button>
         </div>
-
         {error === "ERROR" && (
           <p className="text-base w-2/3 max-w-xs mt-4 text-red-600">
             No se ha podido realizar la operación. Por favor, inténtelo más

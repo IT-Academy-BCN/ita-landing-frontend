@@ -12,7 +12,7 @@ export const AdminButtons = () => {
 
   return (
     <>
-      <div className="flex w-full justify-end items-center lg:bg-backOffice-main py-2 relative">
+      <div className="flex w-auto justify-end items-center lg:bg-backOffice-main py-2 relative">
         <a className="flex items-center justify-center mr-1 w-12 h-10 rounded-lg bg-backOffice-main lg:bg-white">
           <img src={plusIcon} alt="plusIcon" className="w-5" />
         </a>
@@ -22,7 +22,7 @@ export const AdminButtons = () => {
           onClick={() => {
             if (document) {
               (
-                document.getElementById("my_modal_1") as HTMLFormElement
+                document.getElementById("logoutModal") as HTMLFormElement
               ).showModal();
             }
           }}
@@ -30,9 +30,9 @@ export const AdminButtons = () => {
           <img src={userIcon} alt="userIcon" className="w-8" />
         </button>
         {/* The modal in question */}
-        <dialog id="my_modal_1" className="modal">
+        <dialog id="logoutModal" className="modal">
           <button
-            className="modal-box absolute top-20 right-20 lg:right-16 w-48 py-3 font-bold shadow text-center hover:bg-backOffice-main focus:outline-none"
+            className="modal-box absolute top-20 right-16 lg:right-12 w-48 py-3 font-bold shadow text-center hover:bg-backOffice-main focus:outline-none"
             onClick={handleLogout}
           >
             Logout

@@ -36,7 +36,7 @@ function Collaborators() {
       <div className="flex  justify-center  my-5  w-11/12 m-auto  ">
         <div className="flex justify-center">
           <div className="flex flex-wrap navbar lg:bg-base-100  drop-shadow-md lg:justify-between justify-start rounded-full md:shadow-md">
-            <a className={
+            <button className={
                 loading && active === "AngularCard"
                 ? `${btnActive} loading loading-spinner`
                 : active === "AngularCard"
@@ -55,9 +55,9 @@ function Collaborators() {
               }
             >
               {loading && active === "AngularCard" ? "" : "Wiki"}
-            </a>
+            </button>
             
-            <a className={
+            <button className={
               loading && active === "ReactCard"
               ? `${btnActive} loading loading-spinner`
               : active === "ReactCard"
@@ -76,8 +76,8 @@ function Collaborators() {
               }
             >
               {loading && active === "ReactCard" ? "" : "Challenges"}
-            </a>
-            <a
+            </button>
+            <button
               className={
                 loading && active === "PHPCard"
                 ? `${btnActive} loading loading-spinner`
@@ -97,8 +97,8 @@ function Collaborators() {
               }
             >
              {loading && active === "PHPCard" ? "" : "Landing"}
-            </a>
-            <a
+            </button>
+            <button
               className={
                 loading && active === "NodeCard"
                 ? `${btnActive}  loading loading-spinner`
@@ -118,7 +118,7 @@ function Collaborators() {
               }
             >
               {loading && active === "NodeCard" ? "" : "Profiles"}
-            </a>
+            </button>
           </div>
         </div>
       </div>

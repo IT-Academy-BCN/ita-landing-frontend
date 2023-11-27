@@ -13,7 +13,7 @@ export const ProjectsComponent = () => {
   return (
     <>
       {/*Projects section*/}
-      <section className={`flex flex-col lg:px-10 h-full ${backofficePage_background ? 'lg:bg-backOffice-main' : 'bg-white'}`}>
+      <section className={`flex flex-col lg:px-10 h-auto ${backofficePage_background ? 'lg:bg-backOffice-main' : 'bg-white'}`}>
 
         {/* HomePage exclusive components */}
         {window.location.pathname !== "/backoffice" && (<> <TitleApps /> <TasksProcess /> </>)}
@@ -23,7 +23,7 @@ export const ProjectsComponent = () => {
             {window.location.pathname == "/backoffice" && (
               <>
 
-                <h2 className="md:col-span-2 lg:col-span-3 ml-10 font-black py-12 text-3xl font-poppins sm:text-center lg:text-left"> Apps </h2>
+                <h2 className="py-12 ml-10 text-3xl font-black md:col-span-2 lg:col-span-3 font-poppins sm:text-center lg:text-left"> Apps </h2>
                 <CreateApp />
               </>
             )}
