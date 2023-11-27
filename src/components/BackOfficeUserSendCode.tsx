@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-// import resetIcon from "../assets/img/reset.svg";
+import resetIcon from "../assets/img/reset.svg";
 import checkIcon from "../assets/img/confirmationIcon.svg";
 import errorIcon from "../assets/img/error.svg";
 import { handleSubmit } from "../store/reducers/apiCall/apiSendCodeByEmail";

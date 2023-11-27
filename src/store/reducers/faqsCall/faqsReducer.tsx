@@ -41,7 +41,7 @@ export const apiCall = async (dispatch: Dispatch) => {
 //Post //
 export const postApiFaqs = async (
   faqContent: faqContent,
-  acces_token: string,
+  access_token: string,
   dispatch: Dispatch
 ) => {
   try {
