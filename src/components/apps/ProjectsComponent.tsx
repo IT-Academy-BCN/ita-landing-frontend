@@ -14,22 +14,22 @@ export const ProjectsComponent = () => {
   return (
     <>
       {/*Projects section*/}
-      <section className={`flex flex-col lg:px-10 h-full ${backofficePage_background ? 'bg-backOffice-main' : 'bg-white'}`}>
+      <section className={`flex flex-col lg:pr-10 h-full ${backofficePage_background ? 'bg-backOffice-main' : 'bg-white'}`}>
 
         {/* HomePage exclusive components */}
         {window.location.pathname !== "/backoffice" && (<> <TitleApps /> <TasksProcess /> </>)}
         
         {/*Cards*/}
           {window.location.pathname == "/backoffice" && (
-            <div className="lg:col-span-3 w-full hidden lg:block">
+            <div className="hidden w-full lg:col-span-3 lg:block">
               <AdminButtons />
             </div>
           )}
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 w-full bg-white rounded-md mb-10">
+          <div className="grid w-full px-8 mb-10 bg-white rounded-md lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
             {window.location.pathname == "/backoffice" && (
               <>
 
-                <h2 className="md:col-span-2 lg:col-span-3 ml-10 font-black py-12 text-3xl font-poppins sm:text-center lg:text-left"> Apps </h2>
+                <h2 className="py-12 ml-10 text-3xl font-black md:col-span-2 lg:col-span-3 font-poppins sm:text-center lg:text-left"> Apps </h2>
                 <CreateApp />
               </>
             )}
