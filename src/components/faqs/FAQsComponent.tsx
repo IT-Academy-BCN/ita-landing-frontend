@@ -122,7 +122,7 @@ const FAQs = () => {
 
       <div className="w-full h-full px-8 mb-10 bg-white rounded-md">
         {window.location.pathname === "/" && (
-          <h2 className="mb-6 text-4xl text-center">
+          <h2 className="font-bold mb-6 text-4xl text-center">
             {t("landingPage.faqsComponent.title")}
           </h2>
         )}
