@@ -82,11 +82,10 @@ function ViewBackOffice(){
         <div className="col-span-6 m-1 lg:col-span-5">
 
           {/* Mobile */}
-            <div className="flex items-center justify-end my-1 mr-2 lg:mr-10 cursor-pointer">
-              {/*  */}
+            <div className="flex items-center justify-end my-1 mr-2 lg:mr-10">
               <AdminButtons />
-              <div className="lg:hidden w-12 h-12">
-                <img src={menu} className="h-full" onClick={toggleDropdown} />
+              <div className="lg:hidden w-12 h-12 mr-4" onClick={toggleDropdown}>
+                <img src={menu} className="h-full cursor-pointer"/>
               </div>
             </div>
           {isDropdownOpen && (
