@@ -6,8 +6,12 @@ const initialState = {
   faqs: [],
   title: "",
   description: "",
+};
+
+  const apiUrl = import.meta.env.VITE_REACT_APP_API_BASE_URL;
   statusMessage: "",
 };
+
 export const apiSlice = createSlice({
   name: "apiPostRegister",
   initialState,
@@ -27,7 +31,7 @@ export const { setFaqs, setStatusMessage } = apiSlice.actions;
 
 export const apiCall = async (dispatch: Dispatch) => {
   try {
-    const faqsCalled = await axios.get("http://87.106.229.119/api/faqs");
+    const faqsCalled = await axios.get(apiUrl + "faqs");
     dispatch(setFaqs(faqsCalled.data.faqs));
   } catch (error) {
     console.log(error);
@@ -45,9 +49,9 @@ export const postApiFaqs = async (
       title: faqContent.title,
       description: faqContent.description,
     };
-    await axios.post("http://87.106.229.119/api/faqs", newFaq, {
+    await axios.post(apiUrl + "faqs", newFaq, {
       headers: {
-        Authorization: `Bearer ${acces_token}`,
+        Authorization: `Bearer ${access_token}`,
       },
     });
     await apiCall(dispatch);
@@ -61,14 +65,14 @@ export const postApiFaqs = async (
 
 export const deleteApiFaqs = async (
   faqId: number,
-  acces_token: string,
+  access_token: string,
   dispatch: Dispatch
 ) => {
   try {
-    const url = `http://87.106.229.119/api/faqs/${faqId}`;
+    const url = apiUrl + `faqs/${faqId}`;
     await axios.delete(url, {
       headers: {
-        Authorization: `Bearer ${acces_token}`,
+        Authorization: `Bearer ${access_token}`,
       },
     });
 
@@ -86,7 +90,7 @@ export const putApiFaqs = async (
   dispatch: any
 ) => {
   try {
-    await axios.put(`http://87.106.229.119/api/faqs/${faqId}`, faqContent, {
+    await axios.put(apiUrl + `faqs/${faqId}`, faqContent, {
       headers: {
         Authorization: `Bearer ${acces_token}`,
       },

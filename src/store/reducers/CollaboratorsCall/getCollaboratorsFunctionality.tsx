@@ -9,7 +9,7 @@ const initialState =  {
   
 } 
 export const apiSlice = createSlice({
-  name: 'CollaboratorsCard',
+  name: "CollaboratorsCard",
   initialState,
   reducers: {
   

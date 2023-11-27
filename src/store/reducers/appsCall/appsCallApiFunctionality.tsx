@@ -9,6 +9,9 @@ const initialState = {
   stateProject: "",
   loadingApps: false,
 };
+
+const apiUrl = import.meta.env.VITE_REACT_APP_API_BASE_URL;
+
 export const apiSlice = createSlice({
   name: "appsCallApiFunctionality",
   initialState,
@@ -30,7 +33,7 @@ export const { setApps, setAppsInfo, setLoadingApps } = apiSlice.actions;
 //llamada api a apps//
 export const apiCallApps = async (dispatch: Dispatch) => {
   try {
-    const faqsCalled = await axios.get("http://87.106.229.119/api/apps");
+    const faqsCalled = await axios.get(apiUrl + "apps");
     dispatch(setApps(faqsCalled.data));
   } catch (error) {
     console.log(error);
@@ -45,17 +48,17 @@ export const apiCallAppsInfo = async (
   try {
     dispatch(setLoadingApps(true));
 
-    const faqsCalled = await axios.get(`http://87.106.229.119/api/apps/${id}`, {
+    const faqsCalled = await axios.get(apiUrl + `apps/${id}`, {
       headers: {
         Authorization: `Bearer ${acces_token}`,
       },
     });
     await dispatch(setAppsInfo(faqsCalled.data));
-    console.log(faqsCalled.data, `http://87.106.229.119/api/apps/${id}`);
+    console.log(faqsCalled.data, apiUrl + `apps/${id}`);
 
     dispatch(setLoadingApps(false));
   } catch (error) {
-    console.log(error, `http://87.106.229.119/api/apps/${id}`);
+    console.log(error, apiUrl + `apps/${id}`);
   }
 };
 //Post //
@@ -65,7 +68,7 @@ export const postApiApps = async (
   dispatch: Dispatch
 ) => {
   try {
-    await axios.post("http://87.106.229.119/api/apps", appsContent, {
+    await axios.post(apiUrl + "apps", appsContent, {
       headers: {
         Authorization: `Bearer ${acces_token}`,
       },
@@ -83,7 +86,7 @@ export const deleteApiApps = async (
   dispatch: Dispatch
 ) => {
   try {
-    const url = `http://87.106.229.119/api/apps/${appsID}`;
+    const url = apiUrl + `apps/${appsID}`;
     await axios.delete(url, {
       headers: {
         Authorization: `Bearer ${acces_token}`,
@@ -104,7 +107,7 @@ export const putApiApps = async (
   id: number
 ) => {
   try {
-    await axios.put("http://87.106.229.119/api/apps/" + id, faqContent, {
+    await axios.put(apiUrl + "apps/" + id, faqContent, {
       headers: {
         Authorization: `Bearer ${acces_token}`,
       },
