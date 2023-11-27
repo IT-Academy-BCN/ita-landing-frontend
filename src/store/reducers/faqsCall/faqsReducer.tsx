@@ -2,15 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { Dispatch } from "@reduxjs/toolkit";
 import { faqContent } from "../../../interfaces/interfaces";
+
 const initialState = {
   faqs: [],
   title: "",
   description: "",
-};
-
-  const apiUrl = import.meta.env.VITE_REACT_APP_API_BASE_URL;
   statusMessage: "",
 };
+
+const apiUrl = import.meta.env.VITE_REACT_APP_API_BASE_URL;
 
 export const apiSlice = createSlice({
   name: "apiPostRegister",
