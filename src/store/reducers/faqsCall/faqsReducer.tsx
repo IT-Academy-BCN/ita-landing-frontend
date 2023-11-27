@@ -8,7 +8,9 @@ const initialState = {
   description: "",
 };
 
-const apiUrl = import.meta.env.VITE_REACT_APP_API_BASE_URL;
+  const apiUrl = import.meta.env.VITE_REACT_APP_API_BASE_URL;
+  statusMessage: "",
+};
 
 export const apiSlice = createSlice({
   name: "apiPostRegister",
@@ -17,10 +19,13 @@ export const apiSlice = createSlice({
     setFaqs: (state, action) => {
       state.faqs = action.payload;
     },
+    setStatusMessage: (state, action) => {
+      state.statusMessage = action.payload;
+    },
   },
 });
 
-export const { setFaqs } = apiSlice.actions;
+export const { setFaqs, setStatusMessage } = apiSlice.actions;
 
 //llamada api a faqs//
 
@@ -36,7 +41,7 @@ export const apiCall = async (dispatch: Dispatch) => {
 //Post //
 export const postApiFaqs = async (
   faqContent: faqContent,
-  access_token: string,
+  acces_token: string,
   dispatch: Dispatch
 ) => {
   try {
@@ -50,8 +55,10 @@ export const postApiFaqs = async (
       },
     });
     await apiCall(dispatch);
+    dispatch(setStatusMessage("FAQ created successfully!"));
   } catch (error) {
     console.log(error);
+    dispatch(setStatusMessage("Failed to create new FAQ. Please try again."));
   }
 };
 //delete //

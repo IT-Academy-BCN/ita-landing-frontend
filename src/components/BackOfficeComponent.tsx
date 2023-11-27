@@ -52,25 +52,35 @@ function ViewBackOffice(){
 
         <nav className="hidden lg:block">
           <img src={itImage} alt="img-logo" className="mx-auto mt-5" />
-          <div className="grid grid-rows-3 my-10">
-            <button className={`flex justify-center items-center py-2 my-4 ml-2 ${boldFont.boldFaqs ? 'font-bold' : 'font-normal'}`} onClick={() => handleClickNav('faqs')}>
-              <div className={`w-2 h-2 rounded-full mr-2 bg-[#BA007C] ${boldFont.boldFaqs ? '' : 'hidden'}`}></div>
-              {t("backofficePage.navbarComponent.faqs")}
+          <div className="grid grid-rows-3 my-36">
+              <button className={`flex justify-start items-center py-2 my-4 ml-12  
+              ${boldFont.boldFaqs ? 'font-bold hover:divide-y-8' : 'font-normal'} focus:outline-none`}
+              onClick={() => handleClickNav('faqs')}>
+                <div className={`w-2.5 h-2.5 rounded-full mr-2 bg-[#BA007C] ${boldFont.boldFaqs ? '' : 'hidden'}`}></div>
+                {t("backofficePage.navbarComponent.faqs")}
             </button>
 
-            <button className={`flex justify-center items-center py-2 my-4 ml-2 ${boldFont.boldProjectsComponent ? 'font-bold' : 'font-normal'}`} onClick={() => handleClickNav('apps')}>
-              <div className={`w-2 h-2 rounded-full mr-2 bg-[#BA007C] ${boldFont.boldProjectsComponent ? '' : 'hidden'}`}></div>
-              {t("backofficePage.navbarComponent.apps")}
+            <button className={`flex justify-start items-center py-2 my-4 ml-12 
+              ${boldFont.boldProjectsComponent ? 'font-bold' : 'font-normal'} focus:outline-none`} 
+              onClick={() => handleClickNav('apps')}>
+                <div className={`w-2.5 h-2.5 rounded-full mr-2 bg-[#BA007C] 
+                ${boldFont.boldProjectsComponent ? '' : 'hidden'}`}>
+                </div>
+                {t("backofficePage.navbarComponent.apps")}
             </button>
 
-            <button className={`flex justify-center items-center py-2 my-4 ml-2 ${boldFont.boldUsersComponent ? 'font-bold' : 'font-normal'}`} onClick={() => handleClickNav('users')}>
-              <div className={`w-2 h-2 rounded-full mr-2 bg-[#BA007C] ${boldFont.boldUsersComponent ? '' : 'hidden'}`}></div>
-              {t("backofficePage.navbarComponent.users")}
+            <button className={`flex justify-start items-center py-2 my-4 ml-12  
+              ${boldFont.boldUsersComponent ? 'font-bold' : 'font-normal'} focus:outline-none`} 
+              onClick={() => handleClickNav('users')}>
+                <div className={`w-2.5 h-2.5 rounded-full mr-2 bg-[#BA007C] 
+                ${boldFont.boldUsersComponent ? '' : 'hidden'}`}>
+                </div>
+                {t("backofficePage.navbarComponent.users")}
             </button>
           </div>
         </nav>
 
-        <div className="col-span-6 m-5 lg:col-span-5">
+        <div className="col-span-6 mt-1 lg:col-span-5">
 
           {/* Mobile */}
           <div className='lg:hidden'>

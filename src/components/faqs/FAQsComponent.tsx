@@ -112,7 +112,7 @@ const FAQs = () => {
   };
 
   return (
-    <section className="flex flex-col h-full lg:px-10">
+    <section className="flex flex-col h-full lg:pr-10">
 
       {window.location.pathname === "/backoffice" && (
         <div className="hidden w-full lg:block">
@@ -120,7 +120,7 @@ const FAQs = () => {
         </div>
       )}
 
-      <div className="w-full h-full mb-10 bg-white rounded-md">
+      <div className="w-full h-full px-8 mb-10 bg-white rounded-md">
         {window.location.pathname === "/" && (
           <h2 className="mb-6 text-4xl text-center">
             {t("landingPage.faqsComponent.title")}
@@ -147,7 +147,7 @@ const FAQs = () => {
                   <div className="flex items-center w-full">
                   <input
                     type="text"
-                    className="z-10 content-center pl-2 text-white input input-ghost flex-grow"
+                    className="z-10 content-center flex-grow pl-2 text-white input input-ghost"
                     placeholder={faqsClone[index].title}
                     value={inputNewTitleValue}
                     onChange={(e) => setInputNewTitleValue(e.target.value)}
