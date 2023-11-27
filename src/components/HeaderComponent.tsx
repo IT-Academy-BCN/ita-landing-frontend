@@ -42,7 +42,7 @@ const Header = () => {
       <div className=" flex  ">
         {/* Botón Desplegable Idiomas (solo visible en pantallas grandes) */}
         <div className="hidden lg:block relative mr-5 cursor-pointer">
-          <div
+          <button
             className="relative btn btn-outline btn-neutral h-full hover:bg-transparent border-gray-400 "
             onClick={toggleDropdown}
           >
@@ -71,38 +71,44 @@ const Header = () => {
                 isDropdownOpen ? "" : "hidden"
               }`}
             >
-              <li
-                className="py-4 flex items-center px-4 hover:bg-gray-100 hover:rounded-xl flex-row"
-                onClick={() => handleChangeLanguageOfTheWebsite("catala")}
-              >
-                <div className="text-left flex-grow">
-                  <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
-                    {t("landingPage.languagesSwitcher.catala")}
+              <li>
+                <button
+                  className="w-full py-4 flex items-center px-4 hover:bg-gray-100 hover:rounded-xl flex-row"
+                  onClick={() => handleChangeLanguageOfTheWebsite("catala")}
+                >
+                  <div className="text-left flex-grow">
+                    <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
+                      {t("landingPage.languagesSwitcher.catala")}
+                    </div>
                   </div>
-                </div>
+                </button>
               </li>
-              <li
-                className="py-4 flex items-center px-4 hover:bg-gray-200 border-t border-gray-400 flex-row"
-                onClick={() => handleChangeLanguageOfTheWebsite("espanol")}
-              >
-                <div className="text-left flex-grow">
-                  <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
-                    {t("landingPage.languagesSwitcher.espanol")}
+              <li>
+                <button
+                  className="w-full py-4 flex items-center px-4 hover:bg-gray-200 border-t border-gray-400 flex-row"
+                  onClick={() => handleChangeLanguageOfTheWebsite("espanol")}
+                >
+                  <div className="text-left flex-grow">
+                    <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
+                      {t("landingPage.languagesSwitcher.espanol")}
+                    </div>
                   </div>
-                </div>
+                </button>
               </li>
-              <li
-                className="py-4 hover:rounded-b-xl flex items-center px-4 hover:bg-gray-200 border-t-2 border-gray-400 flex-row"
-                onClick={() => handleChangeLanguageOfTheWebsite("english")}
-              >
-                <div className="text-left flex-grow">
-                  <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
-                    {t("landingPage.languagesSwitcher.english")}
+              <li>
+                <button
+                  className="w-full py-4 hover:rounded-b-xl flex items-center px-4 hover:bg-gray-200 border-t border-gray-400 flex-row"
+                  onClick={() => handleChangeLanguageOfTheWebsite("english")}
+                >
+                  <div className="text-left flex-grow">
+                    <div className="rounded-full h-53 w-53 flex items-left text-gray-700 font-bold text-sm capitalize whitespace-nowrap">
+                      {t("landingPage.languagesSwitcher.english")}
+                    </div>
                   </div>
-                </div>
+                </button>
               </li>
             </ul>
-          </div>
+          </button>
         </div>
 
         {/* Botón Entrar (solo visible en pantallas grandes) */}
