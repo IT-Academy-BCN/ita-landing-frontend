@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from "react"
-import resetIcon from "../assets/img/reset.svg"
-import checkIcon from "../assets/img/confirmationIcon.svg"
-import errorIcon from "../assets/img/error.svg"
+import { useState, useRef, useEffect } from "react";
+// import resetIcon from "../assets/img/reset.svg";
+import checkIcon from "../assets/img/confirmationIcon.svg";
+import errorIcon from "../assets/img/error.svg";
 import { handleSubmit } from "../store/reducers/apiCall/apiSendCodeByEmail";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
@@ -11,77 +11,78 @@ import { useTranslation } from "react-i18next";
 
 const BackOfficeUserSendCode = () => {
   const [t] = useTranslation();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const { acces_token }: createToken = useSelector(
     (state: RootState) => state.apiPostRegister
   );
 
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const [colorInput, setColorInput] = useState("input-secondary");
-  const [colorButton, setColorButton] = useState('bg-[#BA007C]');
+  const [colorButton, setColorButton] = useState("bg-[#BA007C]");
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
-  const [desactivateInputElements, setDesactivateInputElements] = useState(false);
+  const [desactivateInputElements, setDesactivateInputElements] =
+    useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const requestStatus = useSelector((state: RootState) => state.apiSendCodeByEmail.requestStatus);
+  const requestStatus = useSelector(
+    (state: RootState) => state.apiSendCodeByEmail.requestStatus
+  );
 
-  const validateEmail = (email:string) => {
-    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/ 
-    return emailPattern.test(email)
-  }
+  const validateEmail = (email: string) => {
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailPattern.test(email);
+  };
 
   const handleSendEmail = async (e: React.MouseEvent<HTMLButtonElement>) => {
     if (validateEmail(email)) {
-      setDesactivateInputElements(true)
+      setDesactivateInputElements(true);
       setError("none-error");
+      setIsLoading(true);
 
-      e.preventDefault()
-      try{
-        await handleSubmit(dispatch, email, acces_token)
-        setShowAlert(true)    
-        // requestStatus === '200' ? (setColorButton('btn-success'),  setColorInput('input-success'), console.log('dentro')) : (setColorButton('btn-error'), setColorInput('input-error'), console.log('fuera'))
+      e.preventDefault();
+      try {
+        await handleSubmit(dispatch, email, acces_token);
+        setShowAlert(true);
 
         setTimeout(() => {
-          handleResetEmail("reset-email")
+          handleResetEmail("reset-email");
+          setIsLoading(false);
           setShowAlert(false);
-        }, 2000);
-
-      }catch(error){
-        handleResetEmail("reset-email")
-        console.error(error)
+        }, 1000);
+      } catch (error) {
+        handleResetEmail("reset-email");
+        console.error(error);
       }
-
     } else {
       setError("ERROR");
-      setColorInput('input-error')
-      setColorButton('btn-error')
+      setColorButton("btn-error");
     }
   };
-  
-  const handleResetEmail = (resetEmail:string) => {
-    resetEmail === 'reset-email' ? setEmail("") : ''
-    setDesactivateInputElements(false)
+
+  // when we focus on the input this happens
+  const handleResetEmail = (resetEmail: string) => {
+    if (resetEmail === "reset-email") {
+      setEmail("");
+    }
+    setDesactivateInputElements(false);
     setError("");
-    setColorInput('input-secondary')
-    setColorButton('bg-pink-it')
-    setShowAlert(false)
+    setColorButton("bg-pink-it");
+    setShowAlert(false);
     inputRef.current?.focus();
-  }
+  };
 
   useEffect(() => {
-    if(requestStatus === '200' && showAlert===true) {
-      setColorButton('btn-success')
-      setColorInput('input-success')
-    }else if(requestStatus === '404' && showAlert===true){
-      setColorButton('btn-error')
-      setColorInput('input-error')
-    }else{
-      handleResetEmail("reset-email")
+    if (requestStatus === "200" && showAlert === true) {
+      setColorButton("btn-success");
+    } else if (requestStatus === "404" && showAlert === true) {
+      setColorButton("btn-error");
+    } else {
+      handleResetEmail("reset-email");
     }
-  }, [showAlert])
-    
+  }, [showAlert]);
+
   return (
     <section className="flex flex-col h-full lg:pr-10">
 
@@ -95,32 +96,40 @@ const BackOfficeUserSendCode = () => {
           type="email"
           ref={inputRef}
           disabled={desactivateInputElements}
-          onFocus={() => handleResetEmail('no-reset-email')}
+          onFocus={() => handleResetEmail("no-reset-email")}
           placeholder={t("backofficePage.usersComponent.emailInput")}
-          className={`flex my-8 input input-bordered ${colorInput} focus:outline-none w-2/3 max-w-xs`}
+          className={`my-8 input border border-neutral-300 focus:outline-none w-2/3 max-w-xs`}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <div className="flex w-1/3">
-          <button   className={`btn w-full ${colorButton} text-white ${colorButton === 'btn-success' || colorButton === 'btn-error' ? 'pointer-events-none' : ''}`} onClick={handleSendEmail}>
-          {error === '' ? (
-            <span>{t("backofficePage.usersComponent.buttonTitle")}</span>
-          ) : error === "ERROR" ? (
-            <span>{t("backofficePage.usersComponent.emailIncorrect")}</span>
-          ) : showAlert === true && requestStatus==='200' ? (
-            <div className="flex items-center justify-items-center">
-              <img src={checkIcon} className="w-6" alt="OK" />
-              <p className="ml-2 font-bold normal-case"> {t("backofficePage.usersComponent.emailSendIt")} </p>
-            </div>
-          ) : showAlert === true && requestStatus!=='200' ? (
-            <div className="flex items-center justify-items-center">
-              <img src={errorIcon} className="w-6" alt="Error" />
-              <p className="ml-2 font-bold normal-case"> {t("backofficePage.usersComponent.emailNotSendIt")} </p>
-            </div>) :
-          (
-            <span className="loading loading-spinner"></span>
-          )}
-
+        <div className="flex w-2/3 max-w-xs">
+          <button
+            className={`btn w-full ${colorButton} text-white ${
+              isLoading ? "pointer-events-none" : ""
+            }`}
+            onClick={handleSendEmail}
+          >
+            {error === "" ? (
+              `${t("backofficePage.usersComponent.buttonTitle")}`
+            ) : error === "ERROR" ? (
+              `${t("backofficePage.usersComponent.emailIncorrect")}`
+            ) : showAlert && requestStatus === "200" ? (
+              <div className="flex items-center justify-items-center">
+                <img src={checkIcon} className="w-6" alt="OK" />
+                <p className="ml-2 font-bold normal-case">
+                  {t("backofficePage.usersComponent.emailSendIt")}
+                </p>
+              </div>
+            ) : showAlert && requestStatus !== "200" ? (
+              <div className="flex items-center justify-items-center">
+                <img src={errorIcon} className="w-6" alt="Error" />
+                <p className="ml-2 font-bold normal-case">
+                  {t("backofficePage.usersComponent.emailNotSendIt")}
+                </p>
+              </div>
+            ) : (
+              <span className="loading loading-spinner"></span>
+            )}
           </button>
           {error === "ERROR" && (
             <button className="ml-2 btn btn-square btn-neutral" onClick={() => handleResetEmail('reset-email')}>
@@ -133,7 +142,7 @@ const BackOfficeUserSendCode = () => {
         }
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default BackOfficeUserSendCode
+export default BackOfficeUserSendCode;
