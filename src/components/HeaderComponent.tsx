@@ -115,7 +115,7 @@ const Header = () => {
         <div className="hidden lg:block   ">
           <button
             onClick={() => {
-              setIsDropdownOpen(false), setIsDropdownEnterButton(true);
+              setIsDropdownOpen(false); setIsDropdownEnterButton(true);
             }}
             className="h-full flex btn btn-outline hover:bg-transparent hover:text-black"
           >

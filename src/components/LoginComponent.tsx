@@ -95,7 +95,7 @@ export default function LoginComponent({
             <button
               onClick={() => {
                 dispatch(eraseMessageError());
-                setIsDropdownEnterButton(false), setisDropdownCuenta(true);
+                setIsDropdownEnterButton(false); setisDropdownCuenta(true);
               }}
               className="border-b-2 border-black"
             >
