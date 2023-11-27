@@ -159,8 +159,8 @@ const Header = () => {
             style={{ borderRadius: "10px" }}
             onClick={toggleDropdown}
           >
-            <div className="">
-              <img src={menu} className="h-8 w-8" />
+            <div className="w-12 h-12">
+              <img src={menu} className="h-full" />
             </div>
           </div>
           {/* </div> */}
