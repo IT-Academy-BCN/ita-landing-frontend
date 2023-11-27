@@ -47,7 +47,6 @@ function ViewBackOffice(){
   }, []);
 
   return (
-    <>
       <main className="grid w-screen h-full min-h-screen grid-cols-6 lg:bg-backOffice-main">
 
         <nav className="hidden lg:block">
@@ -130,7 +129,6 @@ function ViewBackOffice(){
           )}
         </div>
       </main>
-    </>
   )
 }
 
