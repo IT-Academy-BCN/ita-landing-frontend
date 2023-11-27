@@ -84,9 +84,9 @@ function ViewBackOffice(){
           {/* Mobile */}
             <div className="flex items-center justify-end my-1 mr-2 lg:mr-10">
               <AdminButtons />
-              <div className="lg:hidden w-12 h-12 mr-4" onClick={toggleDropdown}>
+              <button className="lg:hidden w-12 h-12 mr-4" onClick={toggleDropdown}>
                 <img src={menu} className="h-full cursor-pointer"/>
-              </div>
+              </button>
             </div>
           {isDropdownOpen && (
             <div className='flex flex-col'>
