@@ -112,7 +112,7 @@ const FAQs = () => {
   };
 
   return (
-    <section className="flex flex-col h-full lg:pr-10">
+    <section className="flex flex-col h-full lg:pr-10 mt-24">
       {window.location.pathname === "/backoffice" && (
         <div className="hidden w-full lg:block">
           <AdminButtons />
