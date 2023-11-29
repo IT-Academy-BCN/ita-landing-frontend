@@ -12,7 +12,7 @@ function Router() {
             <Route element={<ProtectedRoute/>}>
                 <Route path="/backoffice" element={<BackOffice/>} />
             </Route>
-            <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
+            <Route path="/reset-password/:token" element={<LandingPage />} />
         </Routes>
         </>
     )
