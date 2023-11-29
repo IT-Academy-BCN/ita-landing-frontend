@@ -1,23 +1,23 @@
 ﻿{
     "landingPage": {
-        "title": "Guanya i valida experiència com a programador",
+        "title": "Agafa experiència i rodatge abans d’entrar al mercat laboral",
         "buttonCollaborate": {
             "buttonTitle": "Com col·laborar?",
-            "title": "Com col·laborar en projectes IT Academy?",
+            "title": "Com entrar als projectes de la IT Academy",
             "firstCard": {
-                "title": "Pregunta al teu mentor",
-                "description": "Resoldrà tots els teus dubtes i t'ajudarà amb el setup del projecte"
+                "title": "Finalitza la teva especialització",
+                "description": "El projecte només està disponible per l’alumnat que acaba l’especialització"
             },
             "secondCard": {
-                "title": "Uneix-te a l'equip",
-                "description": "El teu mentor de projecte t'ajudarà"
+                "title": "Parla amb el teu mentor/a de projecte",
+                "description": "La informació la tens al Hello World"
             },
             "thirdCard": {
-                "title": "Entrega les teves funcionalitats",
-                "description": "Una vegada hagis finalizat les teves tasques"
+                "title": "Uneix-te al teu equip",
+                "description": "El mentor/a et passarà tot el que necessites per accedir"
             }
         },
-        "descriptionHeader": "La falta d'experiència et dificulta conseguir treball? Treballa en equip i posat a prova amb els nostre projectes",
+        "descriptionHeader": "Treballa en equip i posat a prova amb els nostres projectes",
         "languagesSwitcher": {
             "catala": "Català",
             "espanol": "Castellà",
@@ -44,8 +44,8 @@
         "appsComponent": {
             "title": "Directori d'aplicacions IT Academy",
             "status": {
-                "finished": "Acabades",
-                "construction": "En construcció",
+                "finished": "Publicades",
+                "construction": "En desenvolupament",
                 "soon": "Pròximament"
             }
         },
@@ -54,7 +54,7 @@
             "description": "Els projectes son realitzats per equips que combinen les següents tecnologies"
         },
         "collaboratorsComponent": {
-            "title": "Col·laboradors de projectes",
+            "title": "Alumnat que ha col·laborat",
             "buttonViewAll": "Veure tots >"
         },
         "faqsComponent": {

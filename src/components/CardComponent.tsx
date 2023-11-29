@@ -55,9 +55,9 @@ const CardComponent = ({
           className="z-40 absolute inset-0 flex flex-col overflow-hidden m-6 mt-16 p-5 pt-2 text-left opacity-0 hover:opacity-100"
           style={{ backgroundColor: "#F0F0F0" }}
         >
-          <div className=" overflow-hidden">
+          <div className="mt-16 overflow-hidden">
             {paragraphs.map((paragraphs, index) => (
-              <p key={index} className="font-medium text-sm text-black mb-3">
+              <p key={index} className="font-medium text-md text-black mb-3">
                 {paragraphs}
               </p>
             ))}

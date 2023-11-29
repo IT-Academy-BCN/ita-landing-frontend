@@ -5,9 +5,9 @@ const apiUrl = import.meta.env.VITE_REACT_APP_API_BASE_URL;
 
 export const getCollaboratorsData = createAsyncThunk(
   "getinitialdataCollaborators",
-  async () => {
+  async (name:string) => {
     try {
-      const { data } = await axios.get(apiUrl + "collaborators/landing");
+      const { data } = await axios.get(apiUrl + "collaborators/"+name);
 
       const dataTotal = data.sort(() => Math.random() - 0.5);
       return dataTotal;

@@ -16,11 +16,11 @@ const PopupHowToCollaborate: React.FC<{ onClose: () => void }> = ({
   return (
     <div className="bg-black bg-opacity-50 fixed inset-0 flex items-center justify-center z-50">
       <div className="bg-white flex-col border-2 rounded-xl top-40 font-black bg-opacity-80 fixed z-50 container mx-auto">
-        <div className="p-3 flex">
-          <button onClick={closePopup}>
+        <div className="p-5 pb-1">
+          <button onClick={closePopup} className="float-right">
             <img
               src={cross}
-              className="cursor-pointer w-3 ml-auto absolute top-3 right-3"
+              className="cursor-pointer w-6 ml-auto "
               alt="button_close"
             />
           </button>

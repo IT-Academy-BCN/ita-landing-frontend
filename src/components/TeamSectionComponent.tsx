@@ -32,7 +32,7 @@ const TeamSectionComponent = () => {
         imgSrc2={nodejsLogo}
         title={"React & Node"}
         description={
-          "Lorem ipsum dolor sit amet consectetur adipiscing elit nullam pellentesque dignissim interdum feugiat tortor ut.\nVelitbus vulputate neque lacinia faucibus blandit diam parturient luctus."
+          "L’alumnat de Node i de React treballa de forma conjunta per desenvolupar i mantenir els aplicatius que tinguin assignats."
         }
       />
       <CardComponent
@@ -41,15 +41,15 @@ const TeamSectionComponent = () => {
         imgSrc2={javaLogo}
         title={"Angular & Java"}
         description={
-          "Lorem ipsum dolor sit amet consectetur adipiscing elit nullam pellentesque dignissim interdum feugiat tortor ut.\nVelitbus vulputate neque lacinia faucibus blandit diam parturient luctus."
+          "L’alumnat de Java i de Angular treballa de forma conjunta per desenvolupar i mantenir els aplicatius que tinguin assignats."
         }
       />
       <CardComponent
         pos={"03"}
         imgSrc1={phpLogo}
-        title={"PHP"}
+        title={"PHP & React"}
         description={
-          "Lorem ipsum dolor sit amet consectetur adipiscing elit nullam pellentesque dignissim interdum feugiat tortor ut.\nVelitbus vulputate neque lacinia faucibus blandit diam parturient luctus."
+          "L’alumnat de PHP i de React treballa de forma conjunta per desenvolupar i mantenir els aplicatius que tinguin assignats."
         }
       />
       <CardComponent
@@ -57,7 +57,7 @@ const TeamSectionComponent = () => {
         imgSrc1={pythonLogo}
         title={"Data Science"}
         description={
-          "Lorem ipsum dolor sit amet consectetur adipiscing elit nullam pellentesque dignissim interdum feugiat tortor ut.\nVelitbus vulputate neque lacinia faucibus blandit diam parturient luctus."
+          "L’alumnat de Data Science treballa de forma conjunta per desenvolupar i mantenir els aplicatius que tinguin assignats."
         }
       />
     </div>
