@@ -13,13 +13,13 @@ export const ProjectsComponent = () => {
   return (
     <>
       {/*Projects section*/}
-      <section className={`flex flex-col lg:px-10 h-auto ${backofficePage_background ? 'lg:bg-backOffice-main' : 'bg-white'}`}>
+      <section className={`flex flex-col lg:pr-10 py-2 h-auto ${backofficePage_background ? 'lg:bg-backOffice-main' : 'bg-white'}`}>
 
         {/* HomePage exclusive components */}
         {window.location.pathname !== "/backoffice" && (<> <TitleApps /> <TasksProcess /> </>)}
         
         {/*Cards*/}
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 w-full bg-white rounded-md mb-10">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 w-full bg-white rounded-xl mb-10">
             {window.location.pathname == "/backoffice" && (
               <>
 

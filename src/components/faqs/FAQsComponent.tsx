@@ -111,9 +111,9 @@ const FAQs = () => {
   };
 
   return (
-    <section className="flex flex-col h-full lg:pr-10 mt-16">
+    <section className="flex flex-col h-auto lg:pr-10 py-2">
 
-      <div className="w-full h-full px-8 bg-white rounded-md">
+      <div className="w-full h-full px-8 bg-white rounded-xl mb-10">
         {window.location.pathname === "/" && (
           <h2 className="font-bold mb-6 text-4xl text-center">
             {t("landingPage.faqsComponent.title")}

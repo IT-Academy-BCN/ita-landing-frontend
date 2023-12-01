@@ -82,7 +82,7 @@ const BackOfficeUserSendCode = () => {
   }, [showAlert]);
 
   return (
-    <section className="lg:px-10 h-auto flex flex-col">
+    <section className="lg:pr-10 h-auto flex flex-col py-2">
 
       <div className="flex flex-col place-items-center bg-white rounded-xl min-h-[85vh] mb-10">
         <h1 className="font-black py-12 text-3xl mt-28">

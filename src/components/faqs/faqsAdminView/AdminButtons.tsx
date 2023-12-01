@@ -13,9 +13,6 @@ export const AdminButtons = () => {
   return (
     <>
       <div className="flex w-auto justify-end items-center lg:bg-backOffice-main py-2 relative">
-        <a className="flex items-center justify-center mr-1 w-12 h-10 rounded-lg bg-backOffice-main lg:bg-white">
-          <img src={plusIcon} alt="plusIcon" className="w-5" />
-        </a>
 
         <button
           className="flex items-center justify-center ml-1 w-12 h-10 rounded-lg bg-backOffice-main lg:bg-white  cursor-pointer"
