@@ -1,4 +1,3 @@
-import plusIcon from "../../../assets/img/plus.svg";
 import userIcon from "../../../assets/img/user.svg";
 import { useDispatch } from "react-redux";
 import { setIsLogged } from "../../../store/reducers/apiCall/apiPostRegisterLogin";
