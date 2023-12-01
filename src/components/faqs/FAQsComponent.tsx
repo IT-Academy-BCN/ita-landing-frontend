@@ -111,7 +111,7 @@ const FAQs = () => {
   };
 
   return (
-    <section className="flex flex-col h-auto lg:px-10">
+    <section className="flex flex-col h-full lg:pr-10 mt-16">
 
       <div className="w-full h-full px-8 bg-white rounded-md">
         {window.location.pathname === "/" && (

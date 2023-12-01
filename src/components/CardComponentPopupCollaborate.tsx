@@ -32,12 +32,12 @@ const CardComponentPopupCollaborate: React.FC<CardComponentPopupCollaborateProps
             {pos}
           </p>
         </div>
-        <div className="flex items-center justify-center p-2 h-4/6">
-          <img className="mx-auto mt-2 min-h-32 max-h-36" src={imgSrc1} alt="Logo" />
+        <div className="flex items-center justify-center p-2 h-50">
+          <img className="mx-auto mt-2" src={imgSrc1} alt="Logo" />
         </div>
         <div className="overflow-hidden">
-          <p className="text-2xl font-semibold text-center text-black ">{title}</p>
-          <p className="mb-20 text-sm font-medium text-black">{description}</p>
+          <p className="text-2xl font-semibold text-center text-black mt-5 h-[3em]">{title}</p>
+          <p className="mb-20 text-sm font-medium text-gray-700">{description}</p>
         </div>
       </div>
     </div>

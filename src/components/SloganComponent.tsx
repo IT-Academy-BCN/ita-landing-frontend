@@ -95,35 +95,35 @@ const SloganComponent = () => {
             className="lg:w-1/2 w-0   lg:visible invisible   grid  grid-cols-3      "
           >
             <img
-              className="  xl:w-32 ml-5   "
+              className="xl:w-28 ml-8"
               src={angularLogo}
               alt="Angular Logo"
             ></img>
             <img
-              className="  xl:w-32  pt-20    "
+              className="xl:w-28 pt-20"
               src={reactLogo}
               alt="React Logo"
             ></img>
 
-            <img className="  xl:w-32    " src={phpLogo} alt="PHP Logo"></img>
-            <img className="  xl:w-32    " src={javaLogo} alt="Java Logo"></img>
+            <img className="xl:w-28" src={phpLogo} alt="PHP Logo"></img>
+            <img className="xl:w-24 ml-8" src={javaLogo} alt="Java Logo"></img>
             <img
-              className="  xl:w-32 justify-self-center pt-12   "
+              className="  xl:w-28 justify-self-center pt-12"
               src={nodejsLogo}
               alt="Nodejs Logo"
             ></img>
             <img
-              className="  xl:w-32  justify-self-end pr-5  "
+              className="  xl:w-28  justify-self-end pr-5  "
               src={pythonLogo}
               alt="Python Logo"
             ></img>
             <img
-              className="  xl:w-32   justify-self-end place-self-end   "
+              className="  xl:w-28 justify-self-end place-self-end mb-8"
               src={gitLogo}
               alt="Scrum Logo"
             ></img>
             <img
-              className="  xl:w-32    justify-self-end  "
+              className="  xl:w-28    justify-self-end  "
               src={scrumLogo}
               alt="Scrum Logo"
             ></img>
