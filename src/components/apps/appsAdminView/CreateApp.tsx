@@ -6,6 +6,7 @@ import { useState } from "react";
 import ModalsAddApps from "./ModalsAddApps";
 import plusIcon from "../../../assets/img/plus.svg"
 import { useTranslation } from "react-i18next";
+import { appInfo } from "../../../interfaces/interfaces";
 
 
 declare global {
@@ -24,8 +25,9 @@ const CreateApp = () => {
   const { acces_token }: createToken = useSelector(
     (state: RootState) => state.apiPostRegister
   );
+
   
-  const [newInfoApps, setNewInfoApps] = useState({
+  const [newInfoApps, setNewInfoApps] = useState<appInfo>({
     title: "",
     description: "",
     url: "",
