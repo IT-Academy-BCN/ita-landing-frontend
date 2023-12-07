@@ -1,69 +1,45 @@
-import { useState, useEffect } from "react";
 import Cross from "../../../assets/img/cross.png";
 import { useTranslation } from "react-i18next";
-import { appInfo } from "../../../interfaces/interfaces";
+import { appInfo, createToken } from "../../../interfaces/interfaces";
+import { z } from "zod";
+import { FormDataSchema } from "./formSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../../store/store";
+import { postApiApps } from "../../../store/reducers/appsCall/appsCallApiFunctionality";
 
 export default function ModalsAddApps({
   newInfoApps,
   setNewInfoApps,
-  sendInfo,
 }: {
   newInfoApps: appInfo;
   setNewInfoApps: React.Dispatch<React.SetStateAction<appInfo>>;
-  sendInfo: () => void;
 }) {
-
   const [t] = useTranslation();
-  const [errors, setErrors] = useState<any>({});
+  type formSchema = z.infer<typeof FormDataSchema>;
+  const dispatch = useDispatch();
 
-  const resetForm = () => {
-    setNewInfoApps({
-      title: "",
-      description: "",
-      url: "",
-      github: "",
-      state: "",
-    });
+  const { acces_token }: createToken = useSelector(
+    (state: RootState) => state.apiPostRegister
+  );
+
+  // const [formData, setFormData] = useState<formSchema>();
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { errors },
+  } = useForm<formSchema>({ resolver: zodResolver(FormDataSchema) });
+
+  console.log(watch("state"));
+
+  const sendForm: SubmitHandler<formSchema> = (data) => {
+    postApiApps(data, acces_token, dispatch);
+    reset();
   };
-
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, field: string) => {
-    const value = e.target.value;
-    setNewInfoApps({ ...newInfoApps, [field]: value.trim() });
-    setErrors((prevErrors: any) => ({ ...prevErrors, [field]: value.trim() === "" ? `This field is required!` : null }));
-  };
-
-  const isFormValid = () => {
-    const hasErrors = Object.values(errors).some((error) => error !== null);
-    return !hasErrors;
-  };
-
-  useEffect(() => {
-    // clean errors
-    setErrors({});
-  }, [newInfoApps]);
-
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    setErrors({
-      title: newInfoApps.title.trim() === "" ? "This field is required!" : null,
-      description: newInfoApps.description.trim() === "" ? "This field is required!" : null,
-      url: newInfoApps.url.trim() === "" || !newInfoApps.url.trim().startsWith("https://") ? "URL is required and must start with 'https://'." : null,
-      github: newInfoApps.github.trim() === "" || !newInfoApps.github.trim().startsWith("https://") ? "Github is required and must start with 'https://'." : null,
-      state: newInfoApps.state.trim() === "" ? "This field is required!" : null,
-    });
-
-    if (isFormValid()) {
-      try {
-        sendInfo();
-      } catch (error) {
-        console.log(error);
-      }
-    }
-  };
-
 
   // add state that shows or hide modal bc i cant close it.
 
@@ -72,9 +48,12 @@ export default function ModalsAddApps({
       <form
         method="dialog"
         className="flex flex-col px-8 pt-5 pb-6 bg-white modal-box text-start min-h-5/6 "
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(sendForm)}
       >
-        <button type="button" onClick={() => close()} className="ml-auto bg-transparent border-0 cursor-pointer focus:outline-none hover:bg-transparent">
+        <button
+          type="button"
+          className="ml-auto bg-transparent border-0 cursor-pointer focus:outline-none hover:bg-transparent"
+        >
           <img src={Cross} alt="Cross button" />
         </button>
 
@@ -82,26 +61,25 @@ export default function ModalsAddApps({
           placeholder={t(
             "backofficePage.appsComponent.createButton.titleInput"
           )}
-          onChange={(e) =>
-            handleInputChange(e, "title")
-          }
           className="mb-2 font-bold text-black focus:outline-none font-poppins"
           type="text"
+          {...register("title")}
         />
-        {errors.title && <span className="text-red-500">{errors.title}</span>}
+        {errors.title?.message && (
+          <span className="text-red-500">{errors.title.message}</span>
+        )}
 
         <textarea
           rows={5}
           placeholder={t(
             "backofficePage.appsComponent.createButton.textDescription"
           )}
-          onChange={(e) =>
-            handleInputChange(e, "description")
-
-          }
           className="overflow-y-auto pr-4 focus:outline-none mt-2 mb-2 w-full text-[#7e7e7e]"
+          {...register("description")}
         />
-        {errors.description && <span className="text-red-500">{errors.description}</span>}
+        {/* {errors.description && (
+        <span className="text-red-500">{errors.description}</span>
+        )} */}
 
         <div className="my-2">
           <h3 className="font-bold text-base text-[#4F4F4F] mb-1.5">
@@ -111,15 +89,11 @@ export default function ModalsAddApps({
             placeholder={t(
               "backofficePage.appsComponent.createButton.inputText"
             )}
-            onChange={(e) =>
-              handleInputChange(e, "url")
-
-            }
             type="text"
             className="w-full py-1 input input-bordered focus:outline-none"
+            {...register("url")}
           />
-        {errors.url && <span className="text-red-500">{errors.url}</span>}
-
+          {/* {errors.url && <span className="text-red-500">{errors.url}</span>} */}
         </div>
 
         <div className="my-2">
@@ -130,15 +104,13 @@ export default function ModalsAddApps({
             placeholder={t(
               "backofficePage.appsComponent.createButton.inputText"
             )}
-            onChange={(e) =>
-              handleInputChange(e, "github")
-
-            }
+            {...register("github")}
             type="text"
             className="w-full py-1 input input-bordered focus:outline-none"
           />
-        {errors.github && <span className="text-red-500">{errors.github}</span>}
-
+          {/* {errors.github && (
+            <span className="text-red-500">{errors.github}</span>
+          )} */}
         </div>
 
         <h3 className="font-bold text-base text-[#4F4F4F] mt-2 mb-1.5">
@@ -146,13 +118,10 @@ export default function ModalsAddApps({
         </h3>
         <div className="flex w-fit rounded-full p-1 mb-4 border border-[#BDBDBD]">
           <button
-            onClick={(e) => {
-              e.preventDefault();
-              setNewInfoApps({ ...newInfoApps, state: "COMPLETED" });
-            }}
+            // {...register("state", { value: "COMPLETED" })}
             className={`
                 ${
-                  newInfoApps.state == "COMPLETED"
+                  { ...register("state", { value: "COMPLETED" }) }
                     ? "font-bold bg-completed rounded-full p-3 cursor-pointer"
                     : "cursor-pointer p-3"
                 } text-sm`}
@@ -160,13 +129,9 @@ export default function ModalsAddApps({
             {t("backofficePage.appsComponent.createButton.status.finished")}
           </button>
           <button
-            onClick={(e) => {
-              e.preventDefault();
-              setNewInfoApps({ ...newInfoApps, state: "IN PROGRESS" });
-            }}
             className={`
                 ${
-                  newInfoApps.state == "IN PROGRESS"
+                  { ...register("state", { value: "IN PROGRESS" }) }
                     ? "font-bold bg-building ml-2 rounded-full p-3 cursor-pointer"
                     : "cursor-pointer p-3 ml-2"
                 } text-sm`}
@@ -174,13 +139,9 @@ export default function ModalsAddApps({
             {t("backofficePage.appsComponent.createButton.status.construction")}
           </button>
           <button
-            onClick={(e) => {
-              e.preventDefault();
-              setNewInfoApps({ ...newInfoApps, state: "SOON" });
-            }}
             className={`
                 ${
-                  newInfoApps.state == "SOON"
+                  { ...register("state", { value: "SOON" }) }
                     ? "font-bold bg-soon ml-2 rounded-full p-3 cursor-pointer"
                     : "cursor-pointer p-3 ml-2"
                 } text-sm`}
@@ -188,15 +149,16 @@ export default function ModalsAddApps({
             {t("backofficePage.appsComponent.createButton.status.soon")}
           </button>
         </div>
-        {errors.state && <span className="text-red-500">{errors.state}</span>}
+        {/* {errors.state && <span className="text-red-500">{errors.state}</span>} */}
 
         <div className="flex gap-5 mt-4 mb-0 place-content-center">
-          <button className="btn text-sm font-bold rounded-xl xl:px-5 text-[#7e7e7e] border border-[#808080] bg-white" type="reset" 
-          onClick={resetForm}>
-            
+          <button className="btn text-sm font-bold rounded-xl xl:px-5 text-[#7e7e7e] border border-[#808080] bg-white">
             {t("backofficePage.appsComponent.createButton.closeButton")}
           </button>
-          <button className="text-sm text-white normal-case btn rounded-xl xl:px-10 bg-pink-it hover:bg-pink-hover">
+          <button
+            type="submit"
+            className="text-sm text-white normal-case btn rounded-xl xl:px-10 bg-pink-it hover:bg-pink-hover"
+          >
             {t("backofficePage.appsComponent.createButton.saveButton")}
           </button>
         </div>
