@@ -69,8 +69,8 @@ export default function ModalsAddApps() {
             "backofficePage.appsComponent.createButton.titleInput"
           )}
           className={`${
-            errors.title ? "border-b-2 border-red-500" : null
-          } mb-2 font-bold text-black focus:outline-none font-poppins`}
+            errors.title ? "border-b-[1px] border-red-500" : null
+          }  pl-0  mb-2 font-bold text-black focus:outline-none font-poppins`}
           type="text"
           {...register("title")}
         />
@@ -87,7 +87,7 @@ export default function ModalsAddApps() {
           )}
           className={`${
             errors.description ? "border border-red-500" : null
-          } overflow-y-auto pr-4 focus:outline-none mt-2 mb-2 w-full rounded-lg text-[#7e7e7e]`}
+          } overflow-y-auto p-2 focus:outline-none mt-2 mb-2 w-full rounded-lg text-[#7e7e7e]`}
           {...register("description")}
         />
         {errors.description && (
@@ -141,7 +141,7 @@ export default function ModalsAddApps() {
         <h3 className="font-bold text-base text-[#4F4F4F] mt-2 mb-1.5">
           {t("backofficePage.appsComponent.createButton.state")}
         </h3>
-        <div className="flex w-fit rounded-full p-1 mb-4 border border-[#BDBDBD]">
+        <div className="flex w-fit rounded-full p-1  border border-[#BDBDBD]">
           <button
             type="button"
             onClick={() => {
@@ -192,7 +192,7 @@ export default function ModalsAddApps() {
           </button>
         </div>
         {errors.state && (
-          <span className="text-red-500 select-none">
+          <span className="text-red-500 mt-1 mb-4 select-none">
             {errors.state.message}
           </span>
         )}
