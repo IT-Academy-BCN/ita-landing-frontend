@@ -1,21 +1,16 @@
-import Cross from "../../../assets/img/cross.png";
-import { useTranslation } from "react-i18next";
-import { appInfo, createToken } from "../../../interfaces/interfaces";
-import { z } from "zod";
-import { FormDataSchema } from "./formSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../store/store";
+import { z } from "zod";
+import Cross from "../../../assets/img/cross.png";
+import { createToken } from "../../../interfaces/interfaces";
 import { postApiApps } from "../../../store/reducers/appsCall/appsCallApiFunctionality";
+import { RootState } from "../../../store/store";
+import { FormDataSchema } from "./formSchema";
 
-export default function ModalsAddApps({
-  newInfoApps,
-  setNewInfoApps,
-}: {
-  newInfoApps: appInfo;
-  setNewInfoApps: React.Dispatch<React.SetStateAction<appInfo>>;
-}) {
+export default function ModalsAddApps() {
   const [t] = useTranslation();
   type formSchema = z.infer<typeof FormDataSchema>;
   const dispatch = useDispatch();
@@ -25,12 +20,14 @@ export default function ModalsAddApps({
   );
 
   // const [formData, setFormData] = useState<formSchema>();
+  const [active, setActive] = useState("");
 
   const {
     register,
     handleSubmit,
     reset,
     watch,
+    setValue,
     formState: { errors },
   } = useForm<formSchema>({ resolver: zodResolver(FormDataSchema) });
 
@@ -118,10 +115,13 @@ export default function ModalsAddApps({
         </h3>
         <div className="flex w-fit rounded-full p-1 mb-4 border border-[#BDBDBD]">
           <button
-            // {...register("state", { value: "COMPLETED" })}
+            onClick={() => {
+              setValue("state", "COMPLETED");
+              setActive("COMPLETED");
+            }}
             className={`
                 ${
-                  { ...register("state", { value: "COMPLETED" }) }
+                  active === "COMPLETED"
                     ? "font-bold bg-completed rounded-full p-3 cursor-pointer"
                     : "cursor-pointer p-3"
                 } text-sm`}
@@ -129,9 +129,13 @@ export default function ModalsAddApps({
             {t("backofficePage.appsComponent.createButton.status.finished")}
           </button>
           <button
+            onClick={() => {
+              setValue("state", "IN PROGRESS");
+              setActive("IN PROGRESS");
+            }}
             className={`
                 ${
-                  { ...register("state", { value: "IN PROGRESS" }) }
+                  active === "IN PROGRESS"
                     ? "font-bold bg-building ml-2 rounded-full p-3 cursor-pointer"
                     : "cursor-pointer p-3 ml-2"
                 } text-sm`}
@@ -139,9 +143,13 @@ export default function ModalsAddApps({
             {t("backofficePage.appsComponent.createButton.status.construction")}
           </button>
           <button
+            onClick={() => {
+              setValue("state", "SOON");
+              setActive("SOON");
+            }}
             className={`
                 ${
-                  { ...register("state", { value: "SOON" }) }
+                  active === "SOON"
                     ? "font-bold bg-soon ml-2 rounded-full p-3 cursor-pointer"
                     : "cursor-pointer p-3 ml-2"
                 } text-sm`}

@@ -12,5 +12,7 @@ export const FormDataSchema = z.object({
         .string({required_error: "This field is required", invalid_type_error: "Github URL must be a string",})
         .startsWith("https://", { message: "Must start with https://" }),
     state: z
-        .enum(["COMPLETED" && "IN PROGRESS" && "SOON"], {required_error: "This field is required", invalid_type_error: "State must be a string",})
+        .enum(["COMPLETED", "IN PROGRESS", "SOON", "",], {required_error: "This field is required"})
+        .default("")
+        //not sure if default is defaulting to empty string here.
 })
