@@ -1,7 +1,9 @@
 import { z } from 'zod'
 
 export const FormDataSchema = z.object({
-    title: z.string({required_error: "This field is required", invalid_type_error: "Title must be a string",}),
+    title: z
+        .string({required_error: "This field is required", invalid_type_error: "Title must be a string",})
+        .min(4, {message: "Title must be at least 4 characters long"}),
     description: z
         .string({required_error: "This field is required", invalid_type_error: "Description must be a string",})
         .min(6, { message: 'Message must be at least 6 characters.' }),
@@ -12,7 +14,6 @@ export const FormDataSchema = z.object({
         .string({required_error: "This field is required", invalid_type_error: "Github URL must be a string",})
         .startsWith("https://", { message: "Must start with https://" }),
     state: z
-        .enum(["COMPLETED", "IN PROGRESS", "SOON", "",], {required_error: "This field is required"})
-        .default("")
-        //not sure if default is defaulting to empty string here.
+        .string({required_error: "State of app is required",})
+
 })
