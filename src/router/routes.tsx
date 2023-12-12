@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import LandingPage from "../pages/LandingPage";
 import BackOffice from "../pages/BackOffice";
 import ProtectedRoute from "./protectedRoutes";
+import ResetPasswordPage from "../pages/ResetPasswordPage";
 
 function Router() {
   return (
