@@ -2,7 +2,6 @@ import Apps from "./Apps";
 import CreateApp from "./appsAdminView/CreateApp";
 import TasksProcess from "./appsHomepageView/TasksProcess";
 import TitleApps from "./appsHomepageView/TitleApps";
-import { AdminButtons } from "../faqs/faqsAdminView/AdminButtons";
 import { useLocation } from 'react-router-dom';
 
 export const ProjectsComponent = () => {
@@ -14,18 +13,13 @@ export const ProjectsComponent = () => {
   return (
     <>
       {/*Projects section*/}
-      <section className={`flex flex-col lg:pr-10 h-full ${backofficePage_background ? 'bg-backOffice-main' : 'bg-white'}`}>
+      <section className={`flex flex-col lg:pr-10 py-2 h-auto ${backofficePage_background ? 'lg:bg-backOffice-main' : 'bg-white'}`}>
 
         {/* HomePage exclusive components */}
         {window.location.pathname !== "/backoffice" && (<> <TitleApps /> <TasksProcess /> </>)}
         
         {/*Cards*/}
-          {window.location.pathname == "/backoffice" && (
-            <div className="hidden w-full lg:col-span-3 lg:block">
-              <AdminButtons />
-            </div>
-          )}
-          <div className="grid w-full px-8 mb-10 bg-white rounded-md lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 w-full bg-white rounded-xl mb-10">
             {window.location.pathname == "/backoffice" && (
               <>
 

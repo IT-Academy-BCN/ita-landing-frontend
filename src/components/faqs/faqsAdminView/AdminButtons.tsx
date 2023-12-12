@@ -1,15 +1,9 @@
-import { useState } from "react";
 import userIcon from "../../../assets/img/user.svg";
 import { useDispatch } from "react-redux";
 import { setIsLogged } from "../../../store/reducers/apiCall/apiPostRegisterLogin";
 
 export const AdminButtons = () => {
-  const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useDispatch();
-
-  const handleClickUserButton = () => {
-    modalOpen === false ? setModalOpen(true) : setModalOpen(false);
-  };
 
   const handleLogout = () => {
     dispatch(setIsLogged(false));
@@ -17,17 +11,34 @@ export const AdminButtons = () => {
 
   return (
     <>
-      <div className="relative flex items-center justify-end w-full py-2 lg:bg-backOffice-main">
-        <button className="flex items-center justify-center w-12 h-10 ml-1 bg-white rounded-lg" onClick={handleClickUserButton}>
+      <div className="flex w-auto justify-end items-center lg:bg-backOffice-main py-2 relative">
+
+        <button
+          className="flex items-center justify-center ml-1 w-12 h-10 rounded-lg bg-backOffice-main lg:bg-white  cursor-pointer"
+          onClick={() => {
+            if (document) {
+              (
+                document.getElementById("logoutModal") as HTMLFormElement
+              ).showModal();
+            }
+          }}
+        >
           <img src={userIcon} alt="userIcon" className="w-8" />
         </button>
-
-        {modalOpen && (
-          <button className="absolute z-50 px-8 py-2 mx-6 my-4 mr-2 font-bold bg-white border-2 border-gray-400 rounded-lg top-12 hover-bg-transparent" onClick={handleLogout}>
+        {/* The modal in question */}
+        <dialog id="logoutModal" className="modal">
+          <button
+            className="modal-box absolute top-20 right-16 lg:right-12 w-48 py-3 font-bold shadow text-center hover:bg-backOffice-main focus:outline-none"
+            onClick={handleLogout}
+          >
             Logout
           </button>
-        )}
+          {/* This closes the modal if we click anywhere else. */}
+          <form method="dialog" className="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
       </div>
     </>
   );
-}
+};

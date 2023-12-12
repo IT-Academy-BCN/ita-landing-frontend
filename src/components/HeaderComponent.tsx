@@ -1,7 +1,7 @@
 import { useState } from "react";
 import logo from "../assets/img/ITA_header_logo.png";
 import selector from "../assets/img/sel_right.png";
-import menu from "../assets/img/menu.png";
+import menu from "../assets/img/menu.svg";
 import LoginComponent from "./LoginComponent";
 import RegisterComponent from "./Registercomponent";
 import PasswordReminderComponent from "./PasswordReminderComponent";
@@ -159,8 +159,8 @@ const Header = () => {
             style={{ borderRadius: "10px" }}
             onClick={toggleDropdown}
           >
-            <div className="">
-              <img src={menu} className="h-8 w-8" />
+            <div className="w-12 h-12">
+              <img src={menu} className="h-full" />
             </div>
           </div>
           {/* </div> */}

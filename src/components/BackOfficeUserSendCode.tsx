@@ -1,12 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import resetIcon from "../assets/img/reset.svg";
 import checkIcon from "../assets/img/confirmationIcon.svg";
 import errorIcon from "../assets/img/error.svg";
 import { handleSubmit } from "../store/reducers/apiCall/apiSendCodeByEmail";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { createToken } from "../interfaces/interfaces";
-import { AdminButtons } from "./faqs/faqsAdminView/AdminButtons";
 import { useTranslation } from "react-i18next";
 
 const BackOfficeUserSendCode = () => {
@@ -84,14 +82,12 @@ const BackOfficeUserSendCode = () => {
   }, [showAlert]);
 
   return (
-    <section className="flex flex-col h-full lg:pr-10">
+    <section className="lg:pr-10 h-auto flex flex-col py-2">
 
-      <div className="hidden w-full lg:block">
-        <AdminButtons />
-      </div>
-
-      <div className="flex flex-col h-full mb-10 bg-white rounded-md place-items-center">
-        <h1 className="py-12 text-3xl font-black md:col-span-2 lg:col-span-3 font-poppins sm:text-center lg:text-left">{t("backofficePage.usersComponent.title")}</h1>
+      <div className="flex flex-col place-items-center bg-white rounded-xl min-h-[85vh] mb-10">
+        <h1 className="font-black py-12 text-3xl mt-28">
+          {t("backofficePage.usersComponent.title")}
+        </h1>
         <input
           type="email"
           ref={inputRef}
@@ -131,15 +127,13 @@ const BackOfficeUserSendCode = () => {
               <span className="loading loading-spinner"></span>
             )}
           </button>
-          {error === "ERROR" && (
-            <button className="ml-2 btn btn-square btn-neutral" onClick={() => handleResetEmail('reset-email')}>
-              <img src={resetIcon} className="w-8" alt="resetIcon" />
-            </button>
-          )}
         </div>
-        {showAlert===true && requestStatus!=='200' &&
-          <p className="w-1/2 mt-4 text-xs text-red-600 lg:w-1/3">No se ha podido realizar la operación. Por favor, inténtelo más tarde</p>
-        }
+        {error === "ERROR" && (
+          <p className="text-base w-2/3 max-w-xs mt-4 text-red-600">
+            No se ha podido realizar la operación. Por favor, inténtelo más
+            tarde
+          </p>
+        )}
       </div>
     </section>
   );

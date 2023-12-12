@@ -2,7 +2,7 @@ import itImage from "../assets/img/ITA_Logo.png";
 import { useEffect, useState } from "react";
 import FAQs from "./faqs/FAQsComponent";
 import ProjectsComponent from "./apps/ProjectsComponent";
-import menu from "../assets/img/menu.png";
+import menu from "../assets/img/menu.svg";
 import { AdminButtons } from "./faqs/faqsAdminView/AdminButtons";
 import BackOfficeUserSendCode from "./BackOfficeUserSendCode";
 import { useTranslation } from "react-i18next";
@@ -79,15 +79,15 @@ function ViewBackOffice(){
           </div>
         </nav>
 
-        <div className="col-span-6 mt-1 lg:col-span-5">
+        <div className="col-span-6 m-1 lg:col-span-5">
 
           {/* Mobile */}
-          <div className='lg:hidden'>
-            <div className="flex justify-end my-4 mr-4 cursor-pointer">
+            <div className="flex items-center justify-end my-1 mr-2 lg:mr-10">
               <AdminButtons />
-              <img src={menu} className="w-8 h-8" onClick={toggleDropdown} />
+              <button className="lg:hidden w-12 h-12 mr-4" onClick={toggleDropdown}>
+                <img src={menu} className="h-full cursor-pointer"/>
+              </button>
             </div>
-          </div>
           {isDropdownOpen && (
             <div className='flex flex-col'>
               <button className={`flex justify-center items-center py-2 my-4 ml-2 ${boldFont.boldFaqs ? 'font-bold' : 'font-normal'}`} onClick={() => handleClickNav('faqs')}>
@@ -104,25 +104,20 @@ function ViewBackOffice(){
                 <div className={`w-2 h-2 rounded-full mr-2 bg-[#BA007C] ${boldFont.boldUsersComponent ? '' : 'hidden'}`}></div>
                 Usuari@s
               </button>
+
             </div>
           )}
           {!isDropdownOpen && (
             <>
-              <div className={`${state.faqs ? 'component h-full' : 'component hidden'}`}>
-                {/* <div className="hidden lg:block">
-                  <AdminButtons />
-                </div> */}
+              <div className={`${state.faqs ? 'component h-auto' : 'component hidden'}`}>
                 <FAQs />
               </div>
 
-              <div className={`${state.projectsComponent ? 'component h-full' : 'component hidden'}`}>
-                {/* <div className="hidden lg:block">
-                  <AdminButtons />
-                </div> */}
+              <div className={`${state.projectsComponent ? 'component h-auto' : 'component hidden'}`}>
                 <ProjectsComponent />
               </div>
 
-              <div className={`${state.usersComponent ? 'component h-full' : 'component hidden'}`}>
+              <div className={`${state.usersComponent ? 'component h-auto' : 'component hidden'}`}>
                 <BackOfficeUserSendCode />
               </div>
             </>
