@@ -5,6 +5,7 @@ import ProtectedRoute from "./protectedRoutes";
 import ResetPasswordPage from "../pages/ResetPasswordPage";
 
 function Router() {
+
   return (
     <>
       <Routes>
