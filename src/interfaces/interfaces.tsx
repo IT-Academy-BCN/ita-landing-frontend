@@ -24,6 +24,14 @@ export interface AppData {
   github: string;
 }
 
+export type appInfo = {
+  title: string,
+  description: string,
+  url: string,
+  state: "SOON" | "COMPLETED" | "IN PROGRESS" | "",
+  github: string
+}
+
 export interface faqContent {
   title: string;
   description: string;
