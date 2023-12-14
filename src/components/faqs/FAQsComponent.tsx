@@ -112,7 +112,6 @@ const FAQs = () => {
 
   return (
     <section className="flex flex-col h-auto lg:pr-10 py-2">
-
       <div className="w-full h-full px-8 bg-white rounded-xl mb-10">
         {window.location.pathname === "/" && (
           <h2 className="font-bold mb-6 text-4xl text-center">
@@ -135,11 +134,11 @@ const FAQs = () => {
               className={`collapse rounded-lg mb-5 shadow-[0_2px_6px_rgba(70,70,70,0.2)] border-[1px] `}
             >
               <input type="checkbox" className="peer" id={index.toString()} />
-              <div className="collapse-title relative lg:flex items-center rounded-b-md bg-white text-justify text-[#092C4C] text-4 font-poppins font-bold peer-checked:bg-[#BA007C] peer-checked:rounded-b-[0px] peer-checked:text-[#fff] h-[62px]">
+              <div className="collapse-title relative lg:flex rounded-b-md bg-white items-center text-[#092C4C] font-poppins font-bold peer-checked:bg-[#BA007C] peer-checked:rounded-b-[0px] peer-checked:text-[#fff] min-h-12">
                 {window.location.pathname == "/backoffice" &&
                 isContentEditing &&
                 index.toString() === positionIndex ? (
-                  <div className="flex items-center w-full">
+                  <div className="flex w-full">
                     <input
                       type="text"
                       className="z-10 content-center flex-grow pl-2 text-white input input-ghost"
@@ -149,15 +148,13 @@ const FAQs = () => {
                     />
                   </div>
                 ) : (
-                  <p className="lg:text-justify sm:text-center max-w-[75%] ">
-                    {faqsClone[index].title}
-                  </p>
+                  <p className="text-left">{faqsClone[index].title}</p>
                 )}
 
                 {/*Buttons editar/eliminar sin desplegar   */}
 
                 {window.location.pathname == "/backoffice" && titleButtons && (
-                  <div className="relative z-10 flex justify-end mt-8 ml-auto lg:mt-0">
+                  <div className="relative z-10 flex justify-end mt-3 ml-auto lg:mt-0">
                     <button
                       className="mx-4 px-4 text-[#808080] font-semibold border bg-white border-[#D9D9D9] rounded-lg h-[30px] self-center"
                       onClick={() => displayInput(index, faqsClone[index])}
@@ -186,7 +183,7 @@ const FAQs = () => {
               {/*Edit: area texto  */}
 
               <div className="collapse-content rounded-b-md">
-                <p className="py-4 mx-0 my-6 leading-relaxed text-justify text-[#092C4C] text-4 font-poppins">
+                <p className="py-4 mx-0 my-6 leading-relaxed text-left text-[#092C4C] text-4 font-poppins">
                   {window.location.pathname == "/backoffice" &&
                   isContentEditing &&
                   index.toString() === positionIndex ? (

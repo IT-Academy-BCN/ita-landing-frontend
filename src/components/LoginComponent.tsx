@@ -36,7 +36,10 @@ export default function LoginComponent({
         className={`absolute z-50 right-0 top-full mt-6 w-80 rounded-xl bg-white border-2 `}
       >
         <div className="p-3">
-          <button onClick={() => setIsDropdownEnterButton(false)} className="float-right ">
+          <button
+            onClick={() => setIsDropdownEnterButton(false)}
+            className="float-right "
+          >
             <img src={cross} className="cursor-pointer w-3 ml-auto " alt="" />
           </button>
         </div>
@@ -57,25 +60,6 @@ export default function LoginComponent({
               placeholder={t("landingPage.loginModal.passwordInput")}
             />
 
-            <div className="text-xs text-end">
-              <button
-                className="border-b-2 border-black"
-                onClick={() => {
-                  dispatch(
-                    passwordReminderReducer({
-                      type: "SHOW_PASSWORD_REMINDER",
-                    })
-                  );
-                  dispatch(eraseMessageError());
-                  setIsDropdownEnterButton(false);
-                  setisDropdownCuenta(false);
-                  setIsPasswordReminder(true);
-                }}
-              >
-                {t("landingPage.loginModal.changePassword")}
-              </button>
-            </div>
-
             <button
               type="submit"
               className="mt-5 btn btn-block bg-pink-it text-white"
@@ -91,11 +75,30 @@ export default function LoginComponent({
               )}
             </button>
           </form>
+          <div className="text-xs text-end">
+            <button
+              className="border-b-2 border-black"
+              onClick={() => {
+                dispatch(
+                  passwordReminderReducer({
+                    type: "SHOW_PASSWORD_REMINDER",
+                  })
+                );
+                dispatch(eraseMessageError());
+                setIsDropdownEnterButton(false);
+                setisDropdownCuenta(false);
+                setIsPasswordReminder(true);
+              }}
+            >
+              {t("landingPage.loginModal.changePassword")}
+            </button>
+          </div>
           <div className="text-xs mt-5 ">
             <button
               onClick={() => {
                 dispatch(eraseMessageError());
-                setIsDropdownEnterButton(false); setisDropdownCuenta(true);
+                setIsDropdownEnterButton(false);
+                setisDropdownCuenta(true);
               }}
               className="border-b-2 border-black"
             >
