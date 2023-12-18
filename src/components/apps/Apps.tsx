@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 import {
   apiCallApps,
   apiCallAppsInfo,
-  deleteApiApps,
 } from "../../store/reducers/appsCall/appsCallApiFunctionality";
 import { useDispatch, useSelector } from "react-redux";
 import ModalApps from "./appsAdminView/modalApps";
 import trashIcon from "../../assets/img/icon-delete-faq-backoffice.png";
 import githubLogo from "../../assets/img/githubLogo.svg";
+import DeleteAppModal from "./appsAdminView/DeleteAppModal";
 import { useTranslation } from "react-i18next";
 
 declare global {
@@ -49,6 +49,14 @@ const Apps = () => {
     github: "",
   });
 
+  const [deleteModal, setDeleteModal] = useState(false);
+  const [selectedAppId, setSelectedAppId] = useState<number | null>(null);
+
+  const handleDelete = (appId: number) => {
+    setSelectedAppId(appId);
+    setDeleteModal(true);
+  };
+
   return (
     <>
       {apps.map((app) => {
@@ -73,10 +81,9 @@ const Apps = () => {
                 </button>
                 <a
                   className="flex mt-3 mr-4"
-                  onClick={() => deleteApiApps(app.id, acces_token, dispatch)}
+                  onClick={() => handleDelete(app.id)}
                   onKeyDown={(event) => {
-                    if (event.key === "Enter")
-                      deleteApiApps(app.id, acces_token, dispatch);
+                    if (event.key === "Enter") handleDelete(app.id);
                   }}
                 >
                   <img src={trashIcon} alt="eliminar" className="w-10" />
@@ -109,6 +116,21 @@ const Apps = () => {
         );
       })}
       <ModalApps newInfoApps={newInfoApps} setNewInfoApps={setNewInfoApps} />
+
+      {/* DeleteAppModal rendered conditionally */}
+      {window.location.pathname === "/backoffice" &&
+        deleteModal &&
+        selectedAppId !== null && (
+          <DeleteAppModal
+            deleteModal={() => setDeleteModal(false)}
+            appId={selectedAppId}
+            acces_token={acces_token}
+            dispatch={dispatch}
+            handleDeleteConfirmation={function (): void {
+              throw new Error("Function not implemented.");
+            }}
+          />
+        )}
     </>
   );
 };

@@ -1,18 +1,18 @@
-import { deleteApiFaqs } from "../../../store/reducers/faqsCall/faqsReducer";
 import locker from "../../../assets/img/locker.png";
 import { useTranslation } from "react-i18next";
-import { DeleteFaqModalProps } from "../../../interfaces/interfaces";
+import { DeleteAppModalProps } from "../../../interfaces/interfaces";
+import { deleteAppById } from "../../../store/reducers/appsCall/appsCallApiFunctionality";
 
-function DeleteFaqModal({
+function DeleteAppModal({
   deleteModal,
-  faqId,
+  appId,
   acces_token,
   dispatch,
-}: DeleteFaqModalProps) {
+}: DeleteAppModalProps) {
   const [t] = useTranslation();
 
   const handleDeleteButtonClick = () => {
-    deleteApiFaqs(faqId, acces_token, dispatch);
+    deleteAppById(appId, acces_token, dispatch);
     deleteModal(false);
   };
 
@@ -54,4 +54,5 @@ function DeleteFaqModal({
     </div>
   );
 }
-export default DeleteFaqModal;
+
+export default DeleteAppModal;

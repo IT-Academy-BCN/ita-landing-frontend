@@ -1,3 +1,5 @@
+import { Dispatch } from "@reduxjs/toolkit";
+
 export interface ChildComponentProps {
   setIsDropdownEnterButton: React.Dispatch<React.SetStateAction<boolean>>;
   setisDropdownCuenta: React.Dispatch<React.SetStateAction<boolean>>;
@@ -25,17 +27,33 @@ export interface AppData {
 }
 
 export type appInfo = {
-  title: string,
-  description: string,
-  url: string,
-  state: "SOON" | "COMPLETED" | "IN PROGRESS" | "",
-  github: string
-}
+  title: string;
+  description: string;
+  url: string;
+  state: "SOON" | "COMPLETED" | "IN PROGRESS" | "";
+  github: string;
+};
 
 export interface faqContent {
   title: string;
   description: string;
 }
+
+export interface DeleteFaqModalProps {
+  deleteModal: (flag: boolean) => void;
+  faqId: number;
+  acces_token: string;
+  dispatch: Dispatch;
+}
+
+export interface DeleteAppModalProps {
+  deleteModal: (status: boolean) => void;
+  appId: number;
+  acces_token: string;
+  dispatch: (action: any) => void; // replace 'any' with your actual dispatch action type
+  handleDeleteConfirmation: () => void;
+}
+
 export interface RootState {
   apiPostRegister: ApiPostRegisterState;
 }

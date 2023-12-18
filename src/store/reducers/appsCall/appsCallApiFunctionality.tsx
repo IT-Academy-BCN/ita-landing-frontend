@@ -1,6 +1,9 @@
 import { createSlice, Dispatch } from "@reduxjs/toolkit";
+import { ThunkDispatch } from "redux-thunk";
 import axios from "axios";
 import { faqContent } from "../../../interfaces/interfaces";
+import { RootState } from "../../store";
+
 const initialState = {
   apps: [],
   appsInfo: [],
@@ -12,56 +15,64 @@ const initialState = {
 
 const apiUrl = import.meta.env.VITE_REACT_APP_API_BASE_URL;
 
-export const apiSlice = createSlice({
+export const appsSlice = createSlice({
   name: "appsCallApiFunctionality",
   initialState,
   reducers: {
     setApps: (state, action) => {
       state.apps = action.payload;
+      state.loadingApps = false;
     },
-    setAppsInfo: (state, actions) => {
-      state.appsInfo = actions.payload;
+    setAppsInfo: (state, action) => {
+      state.appsInfo = action.payload;
+      state.loadingApps = false;
     },
-    setLoadingApps: (state, actions) => {
-      state.loadingApps = actions.payload;
+    setLoadingApps: (state, action) => {
+      state.loadingApps = action.payload;
     },
   },
 });
 
-export const { setApps, setAppsInfo, setLoadingApps } = apiSlice.actions;
+export const { setApps, setAppsInfo, setLoadingApps } = appsSlice.actions;
 
-//llamada api a apps//
-export const apiCallApps = async (dispatch: Dispatch) => {
+// API calls
+export const apiCallApps = async (
+  dispatch: ThunkDispatch<RootState, void, any>
+) => {
   try {
-    const faqsCalled = await axios.get(apiUrl + "apps");
-    dispatch(setApps(faqsCalled.data));
+    dispatch(setLoadingApps(true));
+    const appsCalled = await axios.get(apiUrl + "apps");
+    dispatch(setApps(appsCalled.data));
   } catch (error) {
-    console.log(error);
+    console.error("Error fetching Apps:", error);
+    dispatch(setLoadingApps(false));
   }
 };
-//llamada api Apps ID//
+
 export const apiCallAppsInfo = async (
-  dispatch: Dispatch,
+  dispatch: ThunkDispatch<RootState, void, any>,
   id: number,
-  acces_token: string
+  access_token: string
 ) => {
   try {
     dispatch(setLoadingApps(true));
 
-    const faqsCalled = await axios.get(apiUrl + `apps/${id}`, {
+    const appsInfo = await axios.get(apiUrl + `apps/${id}`, {
       headers: {
-        Authorization: `Bearer ${acces_token}`,
+        Authorization: `Bearer ${access_token}`,
       },
     });
-    await dispatch(setAppsInfo(faqsCalled.data));
-    console.log(faqsCalled.data, apiUrl + `apps/${id}`);
+
+    dispatch(setAppsInfo(appsInfo.data));
+    console.log(appsInfo.data, apiUrl + `apps/${id}`);
 
     dispatch(setLoadingApps(false));
   } catch (error) {
-    console.log(error, apiUrl + `apps/${id}`);
+    console.error("Error fetching App info:", error);
+    dispatch(setLoadingApps(false));
   }
 };
-//Post //
+
 export const postApiApps = async (
   appsContent: faqContent,
   acces_token: string,
@@ -75,47 +86,45 @@ export const postApiApps = async (
     });
     await apiCallApps(dispatch);
   } catch (error) {
-    console.log(error);
+    console.error("Error posting App:", error);
   }
 };
-//delete //
 
-export const deleteApiApps = async (
-  appsID: number,
-  acces_token: string,
-  dispatch: Dispatch
+export const deleteAppById = async (
+  appId: number,
+  access_token: string,
+  dispatch: ThunkDispatch<RootState, void, any>
 ) => {
   try {
-    const url = apiUrl + `apps/${appsID}`;
+    const url = apiUrl + `apps/${appId}`;
     await axios.delete(url, {
       headers: {
-        Authorization: `Bearer ${acces_token}`,
+        Authorization: `Bearer ${access_token}`,
       },
     });
 
     await apiCallApps(dispatch);
   } catch (error) {
-    console.error("Error al eliminar el FAQ:", error);
+    console.error("Error deleting App:", error);
   }
 };
-//put//
 
 export const putApiApps = async (
   faqContent: any,
   acces_token: string,
-  dispatch: any,
+  dispatch: Dispatch,
   id: number
 ) => {
   try {
-    await axios.put(apiUrl + "apps/" + id, faqContent, {
+    await axios.put(apiUrl + `apps/${id}`, faqContent, {
       headers: {
         Authorization: `Bearer ${acces_token}`,
       },
     });
     await apiCallApps(dispatch);
   } catch (error) {
-    console.log(error);
+    console.error("Error updating App:", error);
   }
 };
 
-export default apiSlice.reducer;
+export default appsSlice.reducer;
