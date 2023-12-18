@@ -5,13 +5,20 @@ import { useEffect, useState } from "react";
 import {
   apiCallApps,
   apiCallAppsInfo,
+<<<<<<< HEAD
   deleteAppById,
+=======
+  deleteApiApps,
+>>>>>>> develop
 } from "../../store/reducers/appsCall/appsCallApiFunctionality";
 import { useDispatch, useSelector } from "react-redux";
 import ModalApps from "./appsAdminView/modalApps";
 import trashIcon from "../../assets/img/icon-delete-faq-backoffice.png";
 import githubLogo from "../../assets/img/githubLogo.svg";
+<<<<<<< HEAD
 import DeleteAppModal from "./appsAdminView/DeleteAppModal";
+=======
+>>>>>>> develop
 import { useTranslation } from "react-i18next";
 
 declare global {
@@ -82,9 +89,16 @@ const Apps = () => {
                 </button>
                 <a
                   className="flex mt-3 mr-4"
+<<<<<<< HEAD
                   onClick={() => handleDelete(app.id)}
                   onKeyDown={(event) => {
                     if (event.key === "Enter") handleDelete(app.id);
+=======
+                  onClick={() => deleteApiApps(app.id, acces_token, dispatch)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter")
+                      deleteApiApps(app.id, acces_token, dispatch);
+>>>>>>> develop
                   }}
                 >
                   <img src={trashIcon} alt="eliminar" className="w-10" />
@@ -117,6 +131,7 @@ const Apps = () => {
         );
       })}
       <ModalApps newInfoApps={newInfoApps} setNewInfoApps={setNewInfoApps} />
+<<<<<<< HEAD
 
       {/* DeleteAppModal rendered conditionally */}
       {window.location.pathname === "/backoffice" &&
@@ -132,6 +147,8 @@ const Apps = () => {
             }}
           />
         )}
+=======
+>>>>>>> develop
     </>
   );
 };

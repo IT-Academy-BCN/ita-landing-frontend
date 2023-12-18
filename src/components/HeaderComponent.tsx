@@ -1,7 +1,7 @@
 import { useState } from "react";
 import logo from "../assets/img/ITA_header_logo.png";
 import selector from "../assets/img/sel_right.png";
-import menu from "../assets/img/menu.png";
+import menu from "../assets/img/menu.svg";
 import LoginComponent from "./LoginComponent";
 import RegisterComponent from "./Registercomponent";
 import PasswordReminderComponent from "./PasswordReminderComponent";
@@ -112,7 +112,8 @@ const Header = () => {
         <div className="hidden lg:block   ">
           <button
             onClick={() => {
-              setIsDropdownOpen(false); setIsDropdownEnterButton(true);
+              setIsDropdownOpen(false);
+              setIsDropdownEnterButton(true);
             }}
             className="h-full flex btn btn-outline hover:bg-transparent hover:text-black"
           >
@@ -151,7 +152,7 @@ const Header = () => {
         {/* Menú desplegable para pantallas pequeñas */}
         {/* <div className="flex-grow flex justify-end items-center"> */}
         <div
-          className="lg:hidden m  flex-grow flex justify-end items-center"
+          className="lg:hidden flex-grow flex justify-end items-center"
           style={{ borderRadius: "10px" }}
         >
           <div
@@ -159,8 +160,8 @@ const Header = () => {
             style={{ borderRadius: "10px" }}
             onClick={toggleDropdown}
           >
-            <div className="">
-              <img src={menu} className="h-8 w-8" />
+            <div className="w-12 h-12">
+              <img src={menu} className="h-full" />
             </div>
           </div>
           {/* </div> */}
@@ -168,7 +169,7 @@ const Header = () => {
           {/* Desplegable Idiomas + Administración (pantallas pequeñas) */}
           {isDropdownOpen && (
             <>
-              <ul className=" z-50 lg:hidden justify-items-end bg-[#FFFF] absolute top-full  mt-16 mr-0 rounded-tl-xl rounded-bl-xl border-2 border-[#BDBDBD] ">
+              <ul className=" z-50 lg:hidden justify-items-end bg-[#FFFF] absolute top-full  mt-12 mr-0 rounded-tl-xl rounded-bl-xl border-2 border-[#BDBDBD] ">
                 <li className="flex items-center px-8 py-8 ml-4 mt-6 hover:bg-gray-200 flex-row text-[#7E7E7E]">
                   <div className="text-left flex-grow">
                     <div className="rounded-full h-53 w-53 flex items-left text-black font-bold text-2xl">
@@ -176,25 +177,38 @@ const Header = () => {
                     </div>
                   </div>
                 </li>
-                <li className="flex items-center px-8 py-4 ml-4    cursor-pointer    lg:hover:bg-gray-200 flex-row">
+                <li className="flex items-center px-8 py-4 ml-4 cursor-pointer lg:hover:bg-gray-200 flex-row">
                   <div className="text-left flex-grow ml-2 text-gray-600 text-2xl text-[#7E7E7E]">
-                    <h3 className=" hover:border-b-4 hover:border-blue-800">
+                    <button
+                      className=" hover:border-b-4 hover:border-blue-800"
+                      onClick={() => handleChangeLanguageOfTheWebsite("catala")}
+                    >
                       Català
-                    </h3>
+                    </button>
                   </div>
                 </li>
                 <li className="flex items-center px-8 py-2 ml-4 lg:hover:bg-gray-200 flex-row cursor-pointer">
                   <div className="text-left flex-grow ml-2 text-gray-600 text-2xl text-[#7E7E7E]">
-                    <h3 className=" hover:border-b-4 hover:border-blue-800">
+                    <button
+                      className=" hover:border-b-4 hover:border-blue-800"
+                      onClick={() =>
+                        handleChangeLanguageOfTheWebsite("espanol")
+                      }
+                    >
                       Castellano
-                    </h3>
+                    </button>
                   </div>
                 </li>
                 <li className="flex items-center px-8 py-2 ml-4 lg:hover:bg-gray-200 flex-row cursor-pointer">
                   <div className="text-left flex-grow ml-2 text-gray-600 text-2xl text-[#7E7E7E]">
-                    <h3 className=" hover:border-b-4 hover:border-blue-800">
+                    <button
+                      className=" hover:border-b-4 hover:border-blue-800"
+                      onClick={() =>
+                        handleChangeLanguageOfTheWebsite("english")
+                      }
+                    >
                       English
-                    </h3>
+                    </button>
                   </div>
                 </li>
                 <li className="flex items-center px-8 py-8 ml-4 mr-8 mt-6 hover:bg-gray-200 flex-row">
@@ -209,6 +223,10 @@ const Header = () => {
                   <button
                     className="bg-transparent transparent px-4 py-2 ml-12 mb-8 mt-0 flex items-center"
                     style={{ borderRadius: "10px", border: "1px solid black" }}
+                    onClick={() => {
+                      setIsDropdownOpen(false);
+                      setIsDropdownEnterButton(true);
+                    }}
                   >
                     <div className="ml-2 mt-4 mb-4">
                       <img src={selector} className="h-8 w-8" />
